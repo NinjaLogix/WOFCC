@@ -28,9 +28,9 @@ class ConnectedServices extends React.Component{
         const elements = getServices();
         return(
             <div>
-            {elements.map(el =>
-                <WebCard image={'28.jpg'} headline={'New Members Classes'}/>
-            )}
+                {elements.map(el =>
+                    <WebCard image={'28.jpg'} headline={'New Members Classes'}/>
+                )}
             </div>
         );
     }

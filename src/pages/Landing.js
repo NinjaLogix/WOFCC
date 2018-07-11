@@ -58,18 +58,10 @@ class ConnectedLanding extends React.Component{
                     >
                         <Carousel bsClass={'carousel'} indicators={false}>
                             <Carousel.Item>
-                                <img width={900} height={500} alt={'900x500'} src={require('../resources/carousel/TheBig18.png')}/>
-                                <Carousel.Caption>
-                                    <h3>Test Caption</h3>
-                                    <p>test paragraph</p>
-                                </Carousel.Caption>
+                                <img width={840} height={400} alt={'840x400'} src={require('../resources/carousel/TheBig18.png')}/>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img width={900} height={500} alt={'900x500'} src={require('../resources/carousel/Hebrews 1025.png')}/>
-                                <Carousel.Caption>
-                                    <h3>Test Caption</h3>
-                                    <p>test paragraph</p>
-                                </Carousel.Caption>
+                                <img width={840} height={400} alt={'840x400'} src={require('../resources/carousel/Hebrews 1025.png')}/>
                             </Carousel.Item>
                         </Carousel>
                     </Fade>

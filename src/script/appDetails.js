@@ -9,7 +9,7 @@ export const getLinks = (page) => {
         case 'services':
             return [
                 {key: uuidv1(), img: '28.jpg', img_desc: 'New Members Classes', link_text: 'Designed by ijeab / Freepik'},
-                {key: uuidv1(), img: '11405.jpg', img_desc: 'Children\’s Ministry', link_text: 'Designed by brgfx / Freepik'},
+                {key: uuidv1(), img: '11405.jpg', img_desc: 'Childrens Ministry', link_text: 'Designed by brgfx / Freepik'},
                 {key: uuidv1(), img: '1869.jpg', img_desc: 'Worship Service', link_text: 'Designed by onlyyouqj / Freepik'},
                 {key: uuidv1(), img: '12.jpg', img_desc: 'Corporate Confession', link_text: 'Designed by ijeab / Freepik'},
                 {key: uuidv1(), img: '', img_desc: 'background', link_text: 'Designed by Bedneyimages / Freepik'},
@@ -40,7 +40,7 @@ export const getServices = () => {
         {key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: '4 Classes Total<br/><br/>by appointment in the Augusta Room.'},
         {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: 'Sunday’s from 9:30am to 9:45am'},
         {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: 'Sundays @ 9.45am<br/>First Sundays: <br/>Holy Communion & Mission'},
-        {key: uuidv1(), image: '11405.jpg', title: 'Children\'s Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room<br/>Not held on 1st or 5th Sundays ages 5 - 11'},
+        {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room<br/>Not held on 1st or 5th Sundays ages 5 - 11'},
         {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: '24/7 365! <br/>Just Call (769) 232-6457 or email wofccsouthaven@gmail.com'}
     ];
 };
