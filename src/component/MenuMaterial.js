@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /**
  * @param state
@@ -39,13 +40,13 @@ const ConnectedMenu = ({currentPage}) => {
 
             <Nav pullRight>
                 {currentPage !== 'landing' &&
-                    <NavItem eventKey={0}>Home</NavItem>
+                    <NavItem componentClass={Link} href={'/'} to={'/'} eventKey={0}>Home</NavItem>
                 }
-                <NavItem eventKey={1}>About Us</NavItem>
-                <NavItem eventKey={2}>Services</NavItem>
-                <NavItem eventKey={3}>Directions</NavItem>
-                <NavItem eventKey={4}>Contact Us</NavItem>
-                <NavItem eventKey={5}>Ministries</NavItem>
+                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={1}>About Us</NavItem>
+                <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={2}>Services</NavItem>
+                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={3}>Directions</NavItem>
+                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={4}>Contact Us</NavItem>
+                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={5}>Ministries</NavItem>
             </Nav>
         </Navbar>
     );

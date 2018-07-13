@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
     card: {
-        maxWidth: 345,
+        minWidth: 150,
+        maxWidth: 200
     },
     media: {
         height: 0,
@@ -16,25 +17,40 @@ const styles = {
     },
 };
 
-const WebCard = ({props}) => {
-    const { classes } = props;
-    return(
-        <div>
-            <Card className={classes.card}>
-                <CardMedia className={classes.media} image={require(`../resources/freepik/${props.image}`)}
-                           title={'New Member Classes'}/>
-                <CardContent>
-                    <Typography gutterBottom variant="headline" component="h2">
-                        {props.headline}
-                    </Typography>
-                    <Typography component={'p'}>
-                        {props.context}
-                    </Typography>
-                </CardContent>
-            </Card>
-        </div>
-    );
-};
+class WebCard extends React.Component{
+    static propTypes = {
+        headline: PropTypes.string,
+        image: PropTypes.string,
+        context: PropTypes.string
+    };
+
+    static defaultProps = {
+      headline: 'This is a headline',
+      image: '12.jpg',
+      context: 'This is the context'
+    };
+
+    render(){
+        const { classes } = this.props;
+
+        return(
+            <div>
+                <Card className={classes.card}>
+                    <CardMedia className={classes.media} image={require(`../resources/freepik/${this.props.image}`)}
+                               title={'New Member Classes'}/>
+                    <CardContent>
+                        <Typography gutterBottom variant="headline" component="h2">
+                            {this.props.headline}
+                        </Typography>
+                        <Typography component={'p'}>
+                            {this.props.context}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
+        );
+    }
+}
 
 WebCard.propTypes = {
   classes: PropTypes.object.isRequired,

@@ -15,6 +15,12 @@ const copyright = () => {
     )
 };
 
+/**
+ * Stateless functional component
+ * @param page
+ * @returns {*}
+ * @constructor
+ */
 const Footer = ({page}) => {
     const elements = getLinks(page);
     return(
@@ -32,7 +38,7 @@ const Footer = ({page}) => {
                       {!(elements === undefined || elements.length === 0) &&
                           <ul>
                               {elements.map(el =>
-                                <a href={'http://www.freepik.com'}>{el.link_text}</a>
+                                <li><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
                               )}
                           </ul>
                       }

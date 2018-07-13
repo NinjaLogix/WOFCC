@@ -5,31 +5,31 @@ export const getLinks = (page) => {
         case 'landing':
             return [];
         case 'about_us':
-            return [{key: uuidv1(), img: '', img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}];
+            return [{key: uuidv1(), img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}];
         case 'services':
             return [
-                {key: uuidv1(), img: '28.jpg', img_desc: 'New Members Classes', link_text: 'Designed by ijeab / Freepik'},
-                {key: uuidv1(), img: '11405.jpg', img_desc: 'Childrens Ministry', link_text: 'Designed by brgfx / Freepik'},
-                {key: uuidv1(), img: '1869.jpg', img_desc: 'Worship Service', link_text: 'Designed by onlyyouqj / Freepik'},
-                {key: uuidv1(), img: '12.jpg', img_desc: 'Corporate Confession', link_text: 'Designed by ijeab / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'background', link_text: 'Designed by Bedneyimages / Freepik'},
-                {key: uuidv1(), img: '397.jpg', img_desc: 'Pastoral Care', link_text: 'Designed by ijeab / Freepik'}
+                {key: uuidv1(), img_desc: 'New Members Classes', link_text: 'Designed by ijeab / Freepik'},
+                {key: uuidv1(), img_desc: 'Childrens Ministry', link_text: 'Designed by brgfx / Freepik'},
+                {key: uuidv1(), img_desc: 'Worship Service', link_text: 'Designed by onlyyouqj / Freepik'},
+                {key: uuidv1(), img_desc: 'Corporate Confession', link_text: 'Designed by ijeab / Freepik'},
+                {key: uuidv1(), img_desc: 'background', link_text: 'Designed by Bedneyimages / Freepik'},
+                {key: uuidv1(), img_desc: 'Pastoral Care', link_text: 'Designed by ijeab / Freepik'}
             ];
         case 'directions':
-            return [{key: uuidv1(), img: '', img_desc: 'green_background', link_text: 'Designed by Freepik'}];
+            return [{key: uuidv1(), img_desc: 'green_background', link_text: 'Designed by Freepik'}];
         case 'contact_us':
-            return [{key: uuidv1(), img: '', img_desc: 'background', link_text: 'Designed by GarryKillian / Freepik'}];
+            return [{key: uuidv1(), img_desc: 'background', link_text: 'Designed by GarryKillian / Freepik'}];
         case 'ministries':
             return [
-                {key: uuidv1(), img: '', img_desc: 'Children’s Ministry', link_text: 'Designed by brgfx / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'Media Ministry', link_text: 'Designed by Jannoon028 / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'Hospitality', link_text: 'Designed by Mrsiraphol / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'Couples in covenant', link_text: 'Designed by Freepic.diller / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'Youth Ministry', link_text: 'Designed by Kjpargeter / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'Greeters', link_text: 'Designed by Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'bridge connectors', link_text: 'Designed by Vectorarte / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'free worshipers', link_text: 'Designed by kjpargeter / Freepik'},
-                {key: uuidv1(), img: '', img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}
+                {key: uuidv1(), img_desc: 'Children’s Ministry', link_text: 'Designed by brgfx / Freepik'},
+                {key: uuidv1(), img_desc: 'Media Ministry', link_text: 'Designed by Jannoon028 / Freepik'},
+                {key: uuidv1(), img_desc: 'Hospitality', link_text: 'Designed by Mrsiraphol / Freepik'},
+                {key: uuidv1(), img_desc: 'Couples in covenant', link_text: 'Designed by Freepic.diller / Freepik'},
+                {key: uuidv1(), img_desc: 'Youth Ministry', link_text: 'Designed by Kjpargeter / Freepik'},
+                {key: uuidv1(), img_desc: 'Greeters', link_text: 'Designed by Freepik'},
+                {key: uuidv1(), img_desc: 'bridge connectors', link_text: 'Designed by Vectorarte / Freepik'},
+                {key: uuidv1(), img_desc: 'free worshipers', link_text: 'Designed by kjpargeter / Freepik'},
+                {key: uuidv1(), img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}
             ];
         default:
     }

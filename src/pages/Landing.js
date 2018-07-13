@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Carousel } from 'react-bootstrap';
 import { change_page } from "../redux-def/actions";
+import { Carousel } from 'react-bootstrap';
 import Footer from '../component/Footer';
 import Fade from '@material-ui/core/Fade';
 import '../style/Landing.css';
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch =>{
   };
 };
 
-class ConnectedLanding extends React.Component{
+class ConnectedLanding extends React.PureComponent{
     constructor(){
       super();
 
