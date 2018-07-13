@@ -1,10 +1,13 @@
 .service-container{
     margin-top: 50px;
     height: 100%;
+    display:flex;
+    flex-direction: column;
 }
 
 .service-container .service-footer{
     padding-top: 40px;
+    flex-shrink: 0;
 }
 
 .service-container .service-mid-container{
@@ -12,17 +15,31 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 70%;
-    padding-bottom: 10px;
+
+    /*shadow*/
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+
+    flex: 1 0 auto;
 }
 
 .service-container .service-mid-container h3{
     text-align: center;
-    padding: 25px;
 }
 
 .service-container .service-mid-container .service-flexbox{
     position: center;
     display: flex;
     flex-flow: row wrap;
+    width: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.service-container .service-mid-container .service-flexbox .service-webCard-container{
+    padding: 10px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import Footer from '../component/Footer';
+//import Footer from '../component/Footer';
 import Fade from '@material-ui/core/Fade';
 import '../style/Landing.css';
 
@@ -66,10 +66,12 @@ class ConnectedLanding extends React.PureComponent{
                         </Carousel>
                     </Fade>
                 </div>
-                <Footer page={this.state.page}/>
+                {/*<div className={'landing-footer'}>
+                    <Footer page={this.state.page}/>
+                </div>*/}
             </div>
         )
-    }
+    };
 }
 
 const Landing = connect(null, mapDispatchToProps)(ConnectedLanding);

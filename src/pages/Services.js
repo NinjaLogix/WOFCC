@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {change_page} from "../redux-def/actions";
 import WebCard from '../component/WebCard';
-import Footer from '../component/Footer';
-import { getServices } from "../script/appDetails";
+//import Footer from '../component/Footer';
+import { getServiceContext } from "../script/appContext";
 import '../style/Services.css';
 
 const mapDispatchToProps = dispatch =>{
@@ -27,20 +27,22 @@ class ConnectedServices extends React.PureComponent{
     }
 
     render(){
-        const elements = getServices();
+        const elements = getServiceContext();
         return(
             <div className={'service-container'}>
                 <div className={'service-mid-container'}>
                     <h3>Our Services to You</h3>
                     <div className={'service-flexbox'}>
                         {elements.map(el =>
-                            <WebCard image={el.image} headline={el.title} context={el.context}/>
+                            <div className={'service-webCard-container'}>
+                                <WebCard image={el.image} headline={el.title} context={el.context}/>
+                            </div>
                         )}
                     </div>
                 </div>
-                <div className={'service-footer'}>
+                {/*<div className={'service-footer'}>
                     <Footer page={this.state.page}/>
-                </div>
+                </div>*/}
             </div>
         )
     }

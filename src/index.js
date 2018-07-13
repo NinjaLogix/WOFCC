@@ -7,10 +7,10 @@ import store from './redux-def/store/index';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router>
+    <Router>
+        <Provider store={store}>
             <App/>
-        </Router>
-    </Provider>,
-    document.getElementById('wofcc'));
+        </Provider>
+    </Router>,
+    document.getElementById('app'));
 registerServiceWorker();

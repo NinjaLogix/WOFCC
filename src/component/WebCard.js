@@ -8,8 +8,11 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
     card: {
-        minWidth: 150,
-        maxWidth: 200
+        minWidth: 100,
+        maxWidth: 250,
+        minHeight: 350,
+        maxHeight: 400,
+        paddingBottom: 10
     },
     media: {
         height: 0,
@@ -39,10 +42,10 @@ class WebCard extends React.Component{
                     <CardMedia className={classes.media} image={require(`../resources/freepik/${this.props.image}`)}
                                title={'New Member Classes'}/>
                     <CardContent>
-                        <Typography gutterBottom variant="headline" component="h2">
+                        <Typography gutterBottom variant={'display1'} component="h2">
                             {this.props.headline}
                         </Typography>
-                        <Typography component={'p'}>
+                        <Typography variant={'headline'} component={'p'}>
                             {this.props.context}
                         </Typography>
                     </CardContent>

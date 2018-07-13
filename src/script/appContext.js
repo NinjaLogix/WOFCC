@@ -1,0 +1,80 @@
+import uuidv1 from "uuid";
+
+export const getLinks = (page) => {
+    switch(page){
+        case 'landing':
+            return [];
+        case 'about_us':
+            return [{key: uuidv1(), img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}];
+        case 'services':
+            return [
+                {key: uuidv1(), img_desc: 'New Members Classes', link_text: 'Designed by ijeab / Freepik'},
+                {key: uuidv1(), img_desc: 'Childrens Ministry', link_text: 'Designed by brgfx / Freepik'},
+                {key: uuidv1(), img_desc: 'Worship Service', link_text: 'Designed by onlyyouqj / Freepik'},
+                {key: uuidv1(), img_desc: 'Corporate Confession', link_text: 'Designed by ijeab / Freepik'},
+                {key: uuidv1(), img_desc: 'background', link_text: 'Designed by Bedneyimages / Freepik'},
+                {key: uuidv1(), img_desc: 'Pastoral Care', link_text: 'Designed by ijeab / Freepik'}
+            ];
+        case 'directions':
+            return [{key: uuidv1(), img_desc: 'green_background', link_text: 'Designed by Freepik'}];
+        case 'contact_us':
+            return [{key: uuidv1(), img_desc: 'background', link_text: 'Designed by GarryKillian / Freepik'}];
+        case 'ministries':
+            return [
+                {key: uuidv1(), img_desc: 'Children’s Ministry', link_text: 'Designed by brgfx / Freepik'},
+                {key: uuidv1(), img_desc: 'Media Ministry', link_text: 'Designed by Jannoon028 / Freepik'},
+                {key: uuidv1(), img_desc: 'Hospitality', link_text: 'Designed by Mrsiraphol / Freepik'},
+                {key: uuidv1(), img_desc: 'Couples in covenant', link_text: 'Designed by Freepic.diller / Freepik'},
+                {key: uuidv1(), img_desc: 'Youth Ministry', link_text: 'Designed by Kjpargeter / Freepik'},
+                {key: uuidv1(), img_desc: 'Greeters', link_text: 'Designed by Freepik'},
+                {key: uuidv1(), img_desc: 'bridge connectors', link_text: 'Designed by Vectorarte / Freepik'},
+                {key: uuidv1(), img_desc: 'free worshipers', link_text: 'Designed by kjpargeter / Freepik'},
+                {key: uuidv1(), img_desc: 'background', link_text: 'Designed by Kjpargeter / Freepik'}
+            ];
+        default:
+    }
+};
+export const getLandingContext = () => {};
+export const getAboutUsContext = () => {};
+export const getServiceContext = () => {
+    return [
+        {key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: '4 Classes Total by appointment in the Augusta Room.'},
+        {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: 'Sunday’s from 9:30am to 9:45am'},
+        {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: 'Sundays @ 9.45am First Sundays: Holy Communion & Mission'},
+        {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room Not held on 1st or 5th Sundays ages 5 - 11'},
+        {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: '24/7 365! Just Call (769) 232-6457 or email wofccsouthaven@gmail.com'}
+    ];
+};
+export const getDirectionsContext = () => {};
+export const getContactUsContext = () => {};
+export const getMinistriesContext = () => {};
+
+/**
+ * TODO - this need to replace the previous getPageName functions that return the appropriate contexts for the desired page
+ * The issue may have something to do with the type of components that call them. A stateless functional component implemented
+ * with an arrow function seems to work just fine, but a pure component seems to result in undefined all the time. Issue
+ * needs more research so for now we just use the previous function
+ * @param page
+ * @returns {*}
+ */
+export const designContext = (page) => {
+    switch(page){
+        case 'landing':
+            return [];
+        case 'about_us':
+            return [];
+        case 'services':
+            return [{key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: '4 Classes Total by appointment in the Augusta Room.'},
+                {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: 'Sunday’s from 9:30am to 9:45am'},
+                {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: 'Sundays @ 9.45am First Sundays: Holy Communion & Mission'},
+                {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room Not held on 1st or 5th Sundays ages 5 - 11'},
+                {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: '24/7 365! Just Call (769) 232-6457 or email wofccsouthaven@gmail.com'}];
+        case 'directions':
+            return [];
+        case 'contact_us':
+            return [];
+        case 'ministries':
+            return [];
+        default:
+    }
+};
