@@ -13,6 +13,7 @@
 }
 
 .direction-container .directions-map-container{
+    /*need to set max and min height instead of a static height*/
     height: 200px;
     background-image: url('../resources/freepik/102434-OLS3V2-932.jpg');
     background-size: cover;
