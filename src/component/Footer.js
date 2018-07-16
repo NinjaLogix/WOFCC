@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { getLinks } from '../script/appContext';
+import { freePikCredits } from '../script/appContext';
 import '../style/Footer.css';
 //side note: importing without the curly braces will cause you to import with the default export.
 //           doing with them uses the exported object
@@ -22,7 +22,7 @@ const copyright = () => {
  * @constructor
  */
 const Footer = ({page}) => {
-    const elements = getLinks(page);
+    const elements = freePikCredits(page);
     return(
           <Grid className={'footer'}>
               <Row className={'show-grid'}>

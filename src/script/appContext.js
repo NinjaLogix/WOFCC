@@ -1,6 +1,6 @@
 import uuidv1 from "uuid";
 
-export const getLinks = (page) => {
+export const freePikCredits = (page) => {
     switch(page){
         case 'landing':
             return [];
@@ -34,29 +34,7 @@ export const getLinks = (page) => {
         default:
     }
 };
-export const getLandingContext = () => {};
-export const getAboutUsContext = () => {};
-export const getServiceContext = () => {
-    return [
-        {key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: '4 Classes Total by appointment in the Augusta Room.'},
-        {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: 'Sunday’s from 9:30am to 9:45am'},
-        {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: 'Sundays @ 9.45am First Sundays: Holy Communion & Mission'},
-        {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room Not held on 1st or 5th Sundays ages 5 - 11'},
-        {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: '24/7 365! Just Call (769) 232-6457 or email wofccsouthaven@gmail.com'}
-    ];
-};
-export const getDirectionsContext = () => {};
-export const getContactUsContext = () => {};
-export const getMinistriesContext = () => {};
 
-/**
- * TODO - this need to replace the previous getPageName functions that return the appropriate contexts for the desired page
- * The issue may have something to do with the type of components that call them. A stateless functional component implemented
- * with an arrow function seems to work just fine, but a pure component seems to result in undefined all the time. Issue
- * needs more research so for now we just use the previous function
- * @param page
- * @returns {*}
- */
 export const designContext = (page) => {
     switch(page){
         case 'landing':
@@ -64,11 +42,11 @@ export const designContext = (page) => {
         case 'about_us':
             return [];
         case 'services':
-            return [{key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: '4 Classes Total by appointment in the Augusta Room.'},
-                {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: 'Sunday’s from 9:30am to 9:45am'},
-                {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: 'Sundays @ 9.45am First Sundays: Holy Communion & Mission'},
-                {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: '2nd & 3rd Sunday’s @ 9:45am in the Augusta Room Not held on 1st or 5th Sundays ages 5 - 11'},
-                {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: '24/7 365! Just Call (769) 232-6457 or email wofccsouthaven@gmail.com'}];
+            return [{key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: `<p>4 Classes Total by appointment in the Augusta Room.</p>`},
+                {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: `<p>Sunday’s<br/>9:30am to 9:45am</p>`},
+                {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: `<p>Sunday's @ 9.45am<br/>First Sundays: Holy Communion & Mission</p>`},
+                {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: `<p>2nd & 3rd Sunday's<br/>9:45am in the Augusta Room<br/>Not held on 1st or 5th Sunday's<br/>ages 5 - 11</p>`},
+                {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: `<p>24/7 365!<br/>Call (769) 232-6457<br/>Email wofccsouthaven@gmail.com</p>`}];
         case 'directions':
             return [];
         case 'contact_us':
@@ -76,5 +54,15 @@ export const designContext = (page) => {
         case 'ministries':
             return [];
         default:
+            return [];
     }
 };
+
+export const latLng = {lat: 34.9868725, long: -90.0680343};
+
+/**
+ * key supplied from google maps tutorial
+ * https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
+ * @type {string}
+ */
+export const testGoogleApiKey = 'AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo';

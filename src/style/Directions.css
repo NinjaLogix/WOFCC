@@ -1,0 +1,25 @@
+.direction-container{
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.direction-container h1,h3{
+    margin-top: 1px;
+    color: black;
+    position: relative;
+    alignment: center;
+    text-align: center;
+}
+
+.direction-container .directions-map-container{
+    height: 200px;
+    background-image: url('../resources/freepik/102434-OLS3V2-932.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /*shadow needs to be on top and bottom*/
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}

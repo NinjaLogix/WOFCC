@@ -44,7 +44,7 @@ const ConnectedMenu = ({currentPage}) => {
                 }
                 <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={1}>About Us</NavItem>
                 <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={2}>Services</NavItem>
-                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={3}>Directions</NavItem>
+                <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={3}>Directions</NavItem>
                 <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={4}>Contact Us</NavItem>
                 <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={5}>Ministries</NavItem>
             </Nav>
