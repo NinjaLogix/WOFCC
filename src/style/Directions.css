@@ -5,22 +5,28 @@
 }
 
 .direction-container h1,h3{
-    margin-top: 1px;
     color: black;
     position: relative;
     alignment: center;
     text-align: center;
 }
 
+/*TODO - Need to make sure I setup the media querires here for the screen sizes ~ for now it's set to a fullscreen 13" macbook*/
 .direction-container .directions-map-container{
-    /*need to set max and min height instead of a static height*/
-    height: 200px;
+    min-height:350px;
+    max-height:457px;
     background-image: url('../resources/freepik/102434-OLS3V2-932.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 
-    /*shadow needs to be on top and bottom*/
     -moz-box-shadow: 0 0 30px 5px #999;
     -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
+/*TODO - Need media queries here as well*/
+.directions-iframe-gmaps{
+    height:65%;
+    width: 60%;
+    margin-left:20%;
 }

@@ -57,12 +57,3 @@ export const designContext = (page) => {
             return [];
     }
 };
-
-export const latLng = {lat: 34.9868725, long: -90.0680343};
-
-/**
- * key supplied from google maps tutorial
- * https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
- * @type {string}
- */
-export const testGoogleApiKey = 'AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo';
