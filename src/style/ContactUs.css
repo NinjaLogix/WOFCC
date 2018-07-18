@@ -1,0 +1,40 @@
+.contact-container .contact-header{
+    width:100%;
+    height:400px;
+    background-image: url('../resources/freepik/1024.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.contact-container h1,h2,h3{
+    margin-top: 1px;
+    color: black;
+    position: relative;
+    alignment: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.contact-container .contact-social-badge{
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.contact-container .contact-left-bottom{
+    float:left;
+    width:50%;
+}
+
+.contact-container .contact-pastor{
+
+}
+
+.contact-container .contact-right-bottom-form{
+    float: right;
+    width:50%;
+}
