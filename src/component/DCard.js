@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Container = styled.div`
     width: 800px;
-    height: 200px;
+    height: 220px;
     display: flex;
     margin: 10px;
     background-color: rgba(50, 50, 50, 0.8);
