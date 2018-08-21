@@ -43,7 +43,7 @@ const ConnectedMenu = ({currentPage}) => {
                     <NavItem componentClass={Link} href={'/'} to={'/'} eventKey={0}>Home</NavItem>
                 }
                 {/*TODO - maybe add a divider here*/}
-                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={1}>About Us</NavItem>
+                <NavItem componentClass={Link} href={'/about-us'} to={'/about-us'} eventKey={1}>About Us</NavItem>
                 <NavItem componentClass={Link} href={'/contact-us'} to={'/contact-us'} eventKey={4}>Contact Us</NavItem>
                 <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={6}>Daily</NavItem>
                 <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={3}>Directions</NavItem>
