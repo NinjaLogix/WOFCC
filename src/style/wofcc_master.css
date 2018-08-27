@@ -1,3 +1,8 @@
+/* ---------------------------------------------------------------------------------------------------------- Global */
+.h1{font-family: 'Permanent Marker', cursive;}
+.h2{font-family: 'Courgette', cursive;}
+.h3{font-family: 'Teko', sans-serif;}
+.p{font-family: 'Nunito', sans-serif;}
 /* --------------------------------------------------------------------------------------------------- Media Queries */
 /* Smartphones (portrait and landscape) */
 @media only screen
@@ -147,16 +152,7 @@ html,body{
     padding-top: 10px;
 }
 
-.contact-container h1{
-    font-family: 'Pacifico', cursive;
-}
-
-.contact-container h2,h3{
-    font-family: 'Teko', sans-serif;
-}
-
 .contact-container p{
-    font-family: 'Nunito', sans-serif;
     font-size: 20px;
 }
 
@@ -255,7 +251,6 @@ html,body{
     alignment: center;
     text-align: center;
     padding-top: 10px;
-    font-family: 'Permanent Marker', cursive;
 }
 
 .center-carousel{
