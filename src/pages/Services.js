@@ -4,7 +4,7 @@ import {change_page} from "../redux-def/actions";
 import WebCard from '../component/WebCard';
 //import Footer from '../component/Footer';
 import { designContext } from '../script/appContext';
-import '../style/Services.css';
+import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
     return{

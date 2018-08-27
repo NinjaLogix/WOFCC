@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { freePikCredits } from '../script/appContext';
-import '../style/Footer.css';
+import '../style/wofcc_master.css';
 //side note: importing without the curly braces will cause you to import with the default export.
 //           doing with them uses the exported object
 

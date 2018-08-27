@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
 import Fade from '@material-ui/core/Fade';
-import '../style/Landing.css';
+import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
   return{

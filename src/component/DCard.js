@@ -7,7 +7,6 @@ const Container = styled.div`
     height: 200px;
     display: flex;
     margin: 10px;
-    background-color: rgba(50, 50, 50, 0.8);
 `
 
 const TextContainer = styled.div`
@@ -16,7 +15,6 @@ const TextContainer = styled.div`
 `
 
 const ImageContainer = styled.div`
-    float: ${props => props.inverted ? 'left' : 'right'};
     height: 200px;
     width: 200px;
     background-color: rgba(50, 50, 50, 0.8);
@@ -29,44 +27,57 @@ const DImage = styled.img`
 
 const Title = styled.h1`
     font-family: 'Permanent Marker', cursive;
-    text-align: ${props => props.inverted ? 'right' : 'left'};
+    position: relative;
+    text-align: ${props => props.inverted ? 'left':'right'};
+    padding: 5px;
 `
 
-const Paragraph = styled.p`
-    font-family: 'Teko', sans-serif;
-    text-align: justify-all;
+const Paragraph = styled.div`
+    max-width: 570px;
+    max-height: 100px;
+    margin-left: ${props => props.inverted ? '10px':'0px'}
+    margin-right: ${props => props.inverted ? '0px':'10px'}
+    text-align: justified;
 `
 
 class DCard extends React.Component{
     static propTypes = {
-        mode: PropTypes.string,
         imageUrl: PropTypes.string,
         title: PropTypes.string,
         alt: PropTypes.string,
-        content: PropTypes.string
+        content: PropTypes.object,
+        inverted: PropTypes.bool
     };
 
     static defaultProps = {
-        mode: 'left',
         imageUrl: '../resources/freebies/WDF_1461291.jpg',
         title: 'Sample Title',
         alt: 'Sample Image',
-        content: 'Sample Message'
+        content: 'Sample Message',
+        inverted: true
     };
+
     render(){
         return(
             <Container>
+                {this.props.inverted &&
                 <ImageContainer>
-                    <DImage src={require('../resources/freebies/WDF_1461291.jpg')} alt={'some image'}/>
+                    <DImage src={this.props.imageUrl} alt={this.props.alt}/>
                 </ImageContainer>
+                }
                 <TextContainer>
-                    <Title>
+                    <Title inverted={this.props.inverted}>
                         {this.props.title}
                     </Title>
-                    <Paragraph>
+                    <Paragraph inverted={this.props.inverted}>
                         {this.props.content}
                     </Paragraph>
                 </TextContainer>
+                {!this.props.inverted &&
+                <ImageContainer>
+                    <DImage src={this.props.imageUrl} alt={this.props.alt}/>
+                </ImageContainer>
+                }
             </Container>
         )
     };

@@ -1,0 +1,314 @@
+/* --------------------------------------------------------------------------------------------------- Media Queries */
+/* Smartphones (portrait and landscape) */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* Styles */
+}
+
+/* Smartphones (landscape) */
+@media only screen
+and (min-width : 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) */
+@media only screen
+and (max-width : 320px) {
+    /* Styles */
+}
+
+/* iPads (portrait and landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+    /* Styles */
+}
+
+/* iPads (landscape) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    /* Styles */
+}
+
+/* iPads (portrait) */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    /* Styles */
+}
+
+/* Desktops and laptops */
+@media only screen
+and (min-width : 1224px) {
+    /* Styles */
+}
+
+/* Large screens */
+@media only screen
+and (min-width : 1824px) {
+    /* Styles */
+}
+
+/* iPhone 4 - 5s */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+}
+
+/* iPhone 6 */
+@media
+only screen and (max-device-width: 667px),
+only screen and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+}
+
+/* iPhone 6+ */
+@media
+only screen and (min-device-width : 414px),
+only screen and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}
+
+/* Samsung Galaxy S7 Edge */
+@media only screen
+and (-webkit-min-device-pixel-ratio: 3)
+and (min-resolution: 192dpi)and (max-width:640px) {
+    /* Styles */
+}
+/* --------------------------------------------------------------------------------------------------- Pages --------*/
+/* ------------------------------------------------------------------------------------------------------------- App */
+html,body{
+    height:100%;
+}
+
+.container{
+    position: absolute;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin: 0;
+}
+.app-container{
+    min-height:100%;
+}
+/* --------------------------------------------------------------------------------------------------------- AboutUs */
+.about-container{
+    margin-top: 50px;
+}
+
+.about-container .about-header{
+    width: 100%;
+    height: 150px;
+    background-image: url('../resources/freepik/2144.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
+.about-container .about-header h1, h2, h3{
+    text-align: center;
+}
+
+.about-container .about-context{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ------------------------------------------------------------------------------------------------------- ContactUs */
+.contact-container{
+    margin-top: 50px;
+}
+
+.contact-container .contact-header{
+    width:100%;
+    height:400px;
+    background-image: url('../resources/freepik/1024.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
+.contact-container h1,h2,h3,p{
+    margin-top: 1px;
+    color: black;
+    position: relative;
+    alignment: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.contact-container h1{
+    font-family: 'Pacifico', cursive;
+}
+
+.contact-container h2,h3{
+    font-family: 'Teko', sans-serif;
+}
+
+.contact-container p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.contact-container .contact-header .contact-a-container{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-container .contact-header .contact-a-container .contact-social-badge{
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+    display: block;
+}
+
+.contact-container .contact-left-bottom{
+    float:left;
+    width:30%;
+    margin-top: 20px;
+}
+
+.contact-container .contact-left-bottom .contact-pastor-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-container .contact-right-bottom{
+    float:right;
+    width:70%;
+    margin-top: 20px;
+}
+/* ------------------------------------------------------------------------------------------------------ Directions */
+.direction-container{
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.direction-container h1,h3{
+    color: black;
+    position: relative;
+    alignment: center;
+    text-align: center;
+}
+
+/*TODO - Need to make sure I setup the media querires here for the screen sizes ~ for now it's set to a fullscreen 13" macbook*/
+.direction-container .directions-map-container{
+    min-height:350px;
+    max-height:457px;
+    background-image: url('../resources/freepik/102434-OLS3V2-932.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
+/*TODO - Need media queries here as well*/
+.directions-iframe-gmaps{
+    height:65%;
+    width: 60%;
+    margin-left:20%;
+}
+/* ---------------------------------------------------------------------------------------------------------- Footer */
+.footer{
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 10px;
+    width: auto;
+}
+
+.footer p {
+    color: #7A7A7B;
+}
+/* --------------------------------------------------------------------------------------------------------- Landing */
+.landing-main{
+    margin-top: 50px;
+    background-image: url('../resources/freebies/WDF_1461291.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.landing-main h1{
+    margin-top: 1px;
+    color: black;
+    position: relative;
+    alignment: center;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.center-carousel{
+    position: relative;
+    alignment: center;
+    min-width: 40%;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 25px;
+}
+/* -------------------------------------------------------------------------------------------------------- Services */
+.service-container{
+    margin-top: 50px;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.service-container .service-footer{
+    padding-top: 40px;
+    flex-shrink: 0;
+}
+
+.service-container .service-mid-container{
+    background-image: url('../resources/freepik/ODRAX20.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /*shadow*/
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+
+    flex: 1 0 auto;
+}
+
+.service-container .service-mid-container h3{
+    text-align: center;
+}
+
+.service-container .service-mid-container .service-flexbox{
+    position: center;
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.service-container .service-mid-container .service-flexbox .service-webCard-container{
+    padding: 10px;
+}

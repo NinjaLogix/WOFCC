@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import DCard from "../component/DCard";
-import '../style/AboutUs.css'
+import { designContext } from '../script/appContext';
+import '../style/wofcc_master.css'
 
 const mapDispatchToProps = dispatch => {
   return{
@@ -15,13 +16,19 @@ class ConnectedAboutUs extends React.PureComponent{
         super();
 
         this.state = {
-            page: ''
+            page: '',
+            context: []
         };
     };
 
     componentDidMount(){
         this.setState({page: 'about_us'});
-        this.props.change_page('about_us')
+        this.props.change_page('about_us');
+        this.setState({context: designContext('about_us')});
+    }
+
+    flipFlop(index){
+        return index % 2 > 0;
     }
 
     render(){
@@ -32,7 +39,14 @@ class ConnectedAboutUs extends React.PureComponent{
                     <h1>A little about who we are...</h1>
                 </div>
                 <div className={'about-context'}>
-                    <DCard inverted/>
+                    {this.state.context.map((el, index) => (
+                        <DCard
+                            inverted={this.flipFlop(index+1)}
+                            imageUrl={String('../'+el.image)}
+                            title={el.title}
+                            content={el.context}
+                        />
+                    ))}
                 </div>
             </div>
         )

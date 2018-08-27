@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuMaterial from './component/MenuMaterial';
 import PageFlow from './component/PageFlow';
-import './style/App.css';
+import './style/wofcc_master.css';
 
 /**
  * TODO - Need to add the footer at the bottom of the App instead of at the bottom of each page.
