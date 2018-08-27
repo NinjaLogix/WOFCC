@@ -5,88 +5,92 @@ h3{font-family: 'Teko', sans-serif;}
 p{font-family: 'Nunito', sans-serif;}
 /* --------------------------------------------------------------------------------------------------- Media Queries */
 /* Smartphones (portrait and landscape) */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-    /* Styles */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    :root{
+        --maxWidth: '480px';
+        --minWidth: '320px';
+    }
 }
 
 /* Smartphones (landscape) */
-@media only screen
-and (min-width : 321px) {
-    /* Styles */
+@media only screen and (min-width : 321px) {
+    :root{
+
+    }
 }
 
 /* Smartphones (portrait) */
-@media only screen
-and (max-width : 320px) {
-    /* Styles */
+@media only screen and (max-width : 320px) {
+    :root{
+
+    }
 }
 
 /* iPads (portrait and landscape) */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-    /* Styles */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    :root{
+
+    }
 }
 
 /* iPads (landscape) */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-    /* Styles */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    :root{
+
+    }
 }
 
 /* iPads (portrait) */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-    /* Styles */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    :root{
+
+    }
 }
 
 /* Desktops and laptops */
-@media only screen
-and (min-width : 1224px) {
-    /* Styles */
+@media only screen and (min-width : 1224px) {
+    :root{
+
+    }
 }
 
 /* Large screens */
-@media only screen
-and (min-width : 1824px) {
-    /* Styles */
+@media only screen and (min-width : 1824px) {
+    :root{
+
+    }
 }
 
 /* iPhone 4 - 5s */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-    /* Styles */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+    :root{
+
+    }
 }
 
 /* iPhone 6 */
-@media
-only screen and (max-device-width: 667px),
-only screen and (-webkit-device-pixel-ratio: 2) {
-    /* Styles */
+@media only screen and (max-device-width: 667px), only screen and (-webkit-device-pixel-ratio: 2) {
+    :root{
+
+    }
 }
 
 /* iPhone 6+ */
-@media
-only screen and (min-device-width : 414px),
-only screen and (-webkit-device-pixel-ratio: 3) {
-    /* Styles */
+@media only screen and (min-device-width : 414px), only screen and (-webkit-device-pixel-ratio: 3) {
+    :root{
+
+    }
 }
 
 /* Samsung Galaxy S7 Edge */
-@media only screen
-and (-webkit-min-device-pixel-ratio: 3)
-and (min-resolution: 192dpi)and (max-width:640px) {
-    /* Styles */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)and (max-width:640px) {
+    :root{
+
+    }
 }
-/* --------------------------------------------------------------------------------------------------- Pages --------*/
-/* ------------------------------------------------------------------------------------------------------------- App */
+/* ----------------------------------------------------------------------------------------------------------- Pages */
+/* ------------------------------------------------- App */
 html,body{
     height:100%;
 }
@@ -101,7 +105,7 @@ html,body{
 .app-container{
     min-height:100%;
 }
-/* --------------------------------------------------------------------------------------------------------- AboutUs */
+/* --------------------------------------------- AboutUs */
 .about-container{
     margin-top: 50px;
 }
@@ -126,7 +130,7 @@ html,body{
     margin-left: auto;
     margin-right: auto;
 }
-/* ------------------------------------------------------------------------------------------------------- ContactUs */
+/* ------------------------------------------- ContactUs */
 .contact-container{
     margin-top: 50px;
 }
@@ -187,7 +191,7 @@ html,body{
     width:70%;
     margin-top: 20px;
 }
-/* ------------------------------------------------------------------------------------------------------ Directions */
+/* ------------------------------------------ Directions */
 .direction-container{
     margin-top: 50px;
     width: 100%;
@@ -220,7 +224,7 @@ html,body{
     width: 60%;
     margin-left:20%;
 }
-/* ---------------------------------------------------------------------------------------------------------- Footer */
+/* ---------------------------------------------- Footer */
 .footer{
     background-color: rgba(50, 50, 50, 0.8);
     padding: 10px;
@@ -230,7 +234,7 @@ html,body{
 .footer p {
     color: #7A7A7B;
 }
-/* --------------------------------------------------------------------------------------------------------- Landing */
+/* --------------------------------------------- Landing */
 .landing-main{
     margin-top: 50px;
     background-image: url('../resources/freebies/WDF_1461291.jpg');
@@ -261,7 +265,7 @@ html,body{
     margin: 0 auto;
     padding: 25px;
 }
-/* -------------------------------------------------------------------------------------------------------- Services */
+/* -------------------------------------------- Services */
 .service-container{
     margin-top: 50px;
     height: 100%;
@@ -280,7 +284,6 @@ html,body{
     background-repeat: no-repeat;
     background-position: center center;
 
-    /*shadow*/
     -moz-box-shadow: 0 0 30px 5px #999;
     -webkit-box-shadow: 0 0 30px 5px #999;
 
