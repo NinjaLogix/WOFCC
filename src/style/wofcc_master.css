@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------------------------------------------------- Global */
-.h1{font-family: 'Permanent Marker', cursive;}
-.h2{font-family: 'Courgette', cursive;}
-.h3{font-family: 'Teko', sans-serif;}
-.p{font-family: 'Nunito', sans-serif;}
+h1{font-family: 'Permanent Marker', cursive;}
+h2{font-family: 'Courgette', cursive;}
+h3{font-family: 'Teko', sans-serif;}
+p{font-family: 'Nunito', sans-serif;}
 /* --------------------------------------------------------------------------------------------------- Media Queries */
 /* Smartphones (portrait and landscape) */
 @media only screen
