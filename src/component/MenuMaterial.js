@@ -23,7 +23,7 @@ const ConnectedMenu = ({currentPage}) => {
             {currentPage !== 'landing' &&
                 <Navbar.Header>
                     <Navbar.Brand>
-                        WOFCC-Southaven
+                        <Link to={'/'}>WOFCC-Southaven</Link>
                     </Navbar.Brand>
                 </Navbar.Header>
             }
@@ -39,16 +39,13 @@ const ConnectedMenu = ({currentPage}) => {
             }
 
             <Nav pullRight>
-                {currentPage !== 'landing' &&
-                    <NavItem componentClass={Link} href={'/'} to={'/'} eventKey={0}>Home</NavItem>
-                }
                 {/*TODO - maybe add a divider here*/}
                 <NavItem componentClass={Link} href={'/about-us'} to={'/about-us'} eventKey={1}>About Us</NavItem>
                 <NavItem componentClass={Link} href={'/contact-us'} to={'/contact-us'} eventKey={4}>Contact Us</NavItem>
                 <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={6}>Daily</NavItem>
                 <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={3}>Directions</NavItem>
                 <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={2}>Services</NavItem>
-                <NavItem componentClass={Link} href={'#'} to={'#'} eventKey={5}>Ministries</NavItem>
+                <NavItem componentClass={Link} href={'/ministries'} to={'/ministries'} eventKey={5}>Ministries</NavItem>
             </Nav>
         </Navbar>
     );

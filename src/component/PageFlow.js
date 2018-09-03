@@ -5,6 +5,7 @@ import Services from '../pages/Services';
 import Directions from '../pages/Directions';
 import ContactUs from '../pages/ContactUs';
 import AboutUs from "../pages/AboutUs";
+import Ministries from '../pages/Ministries';
 
 class PageFlow extends React.Component{
     render(){
@@ -15,6 +16,7 @@ class PageFlow extends React.Component{
                 <Route path={'/directions'} component={Directions}/>
                 <Route path={'/contact-us'} component={ContactUs}/>
                 <Route path={'/about-us'} component={AboutUs}/>
+                <Route path={'/ministries'} component={Ministries}/>
             </Switch>
         );
     }

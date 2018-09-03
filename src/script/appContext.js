@@ -218,28 +218,60 @@ export const designContext = (page) => {
             return [];
         case 'ministries':
             return [{key: uuidv1(), title: "Children's", image: FREEPIK_DIR + '11405.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Media', image: FREEPIK_DIR + '1773.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Hospitality', image: FREEPIK_DIR + 'ODRAX20.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Couples in Covanant', image: FREEPIK_DIR + '55.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Youth', image: FREEPIK_DIR + '2159.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Ushers and Greeters', image: FREEPIK_DIR + '272299-P5OLTS-748.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Bridge Connectors', image: FREEPIK_DIR + 'OQ5KAW0.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Free Worshipers', image: FREEPIK_DIR + '3893.jpg',
-                        context: <p></p>,
+                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
+                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
+                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
+                            diam sollicitudin.</p>,
                         detail: <p></p>}];
         default:
             return [];

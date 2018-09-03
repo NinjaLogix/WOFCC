@@ -31,7 +31,7 @@ class ConnectedServices extends React.PureComponent{
         return(
             <div className={'service-container'}>
                 <div className={'service-mid-container'}>
-                    <h3>Our Services to You</h3>
+                    <h1>Our Services to You</h1>
                     <div className={'service-flexbox'}>
                         {elms.map(el =>
                             <div className={'service-webCard-container'}>

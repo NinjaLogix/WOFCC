@@ -6,25 +6,24 @@ import { designContext } from '../script/appContext';
 import '../style/wofcc_master.css'
 
 const mapDispatchToProps = dispatch => {
-  return{
-      change_page: page => dispatch(change_page(page))
-  };
+    return{
+        change_page: page => dispatch(change_page(page))
+    };
 };
 
-class ConnectedAboutUs extends React.PureComponent{
+class ConnectedMinistries extends React.PureComponent{
     constructor(){
         super();
-
-        this.state = {
+        this.state={
             page: '',
             context: []
         };
     };
 
     componentDidMount(){
-        this.setState({page: 'about_us'});
-        this.props.change_page('about_us');
-        this.setState({context: designContext('about_us')});
+        this.setState({page: 'ministries'});
+        this.props.change_page('ministries');
+        this.setState({context: designContext('ministries')});
     }
 
     flipFlop(index){
@@ -36,7 +35,7 @@ class ConnectedAboutUs extends React.PureComponent{
             <div className={'about-ministries-container'}>
                 <div className={'about-ministries-header'}>
                     <h2>WOFCC - Southaven</h2>
-                    <h3>A little about who we are...</h3>
+                    <h3>The ministries we currently provide...</h3>
                 </div>
                 <div className={'about-ministries-context'}>
                     <ul className={'about-ministries-list'}>
@@ -54,9 +53,9 @@ class ConnectedAboutUs extends React.PureComponent{
                 </div>
             </div>
         )
-    }
+    };
 }
 
-const AboutUs = connect(null, mapDispatchToProps)(ConnectedAboutUs);
+const Ministries = connect(null, mapDispatchToProps)(ConnectedMinistries);
 
-export default AboutUs;
+export default Ministries;

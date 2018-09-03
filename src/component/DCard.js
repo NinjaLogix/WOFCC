@@ -7,30 +7,30 @@ const Container = styled.div`
     height: 200px;
     display: flex;
     margin: 10px;
-`
+`;
 
 const TextContainer = styled.div`
     flex: 1 0 auto;
     flexDirection: column;
-`
+`;
 
 const ImageContainer = styled.div`
     height: 200px;
     width: 200px;
     background-color: rgba(50, 50, 50, 0.8);
-`
+`;
 
 const DImage = styled.img`
     height: 200px;
     width: 200px;
-`
+`;
 
 const Title = styled.h1`
     font-family: 'Permanent Marker', cursive;
     position: relative;
     text-align: ${props => props.inverted ? 'left':'right'};
     padding: 5px;
-`
+`;
 
 const Paragraph = styled.div`
     max-width: 570px;
@@ -38,7 +38,7 @@ const Paragraph = styled.div`
     margin-left: ${props => props.inverted ? '10px':'0px'}
     margin-right: ${props => props.inverted ? '0px':'10px'}
     text-align: justified;
-`
+`;
 
 class DCard extends React.Component{
     static propTypes = {
