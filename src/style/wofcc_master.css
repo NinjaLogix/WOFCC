@@ -89,6 +89,12 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
 
     }
 }
+/* TODO - need to move this into the styled component - all component based css needs to be in a styled component */
+/* ---------------------------------------------------------------------------------------------------------- Modals */
+.custom-modal{
+    width: 70%;
+    text-align: center;
+}
 /* ----------------------------------------------------------------------------------------------------------- Pages */
 /* ------------------------------------------------- App */
 html,body{

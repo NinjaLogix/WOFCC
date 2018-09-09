@@ -1,10 +1,39 @@
 import uuidv1 from "uuid";
 import React from 'react';
 
-let RESOURCES_HOME = 'resources/';
-let FREEPIK_DIR = RESOURCES_HOME + 'freepik/';
-let FREEBIES_DIR = RESOURCES_HOME + 'freebies/';
-let PASTOR_DIR = RESOURCES_HOME + 'pastor/';
+/* resources - pastor */
+import Bishop from '../resources/pastor/Bishop KAB-large.jpg';
+import PBLC from '../resources/pastor/PBLC-3.png';
+
+/* resources - freebies */
+import Cross from '../resources/freebies/b6c8eca1-0910-4fd9-b154-849aef0af522.png';
+import BibleHistory from '../resources/freebies/Bible_History.jpg';
+import Facebook from '../resources/freebies/Facebook_Home_logo_old.svg.png';
+import WDF from '../resources/freebies/WDF_1461291.jpg';
+
+/* resources - logo */
+import LogoSmall from '../resources/logo/badge_small.png';
+import LogoLarge from '../resources/logo/logo_large.png';
+
+/* resources - freepik */
+import Freepik12 from '../resources/freepik/12.jpg';
+import Freepik28 from '../resources/freepik/28.jpg';
+import Freepik55 from '../resources/freepik/55.jpg';
+import Freepik397 from '../resources/freepik/397.jpg';
+import Freepik1024 from '../resources/freepik/1024.jpg';
+import Freepik1773 from '../resources/freepik/1773.jpg';
+import Freepik1869 from '../resources/freepik/1869.jpg';
+import Freepik2144 from '../resources/freepik/2144.jpg';
+import Freepik2159 from '../resources/freepik/2159.jpg';
+import Freepik3893 from '../resources/freepik/3893.jpg';
+import Freepik11405 from '../resources/freepik/11405.jpg';
+import Freepik120434 from '../resources/freepik/102434-OLS3V2-932.jpg';
+import Freepik272299 from '../resources/freepik/272299-P5OLTS-748.jpg';
+import Freepik768832 from '../resources/freepik/768832.jpg';
+import FreepikOCCN5Z0 from '../resources/freepik/OCCN5Z0.jpg';
+import FreepikODRAX20 from '../resources/freepik/ODRAX20.jpg';
+import FreepikOGDRVD0 from '../resources/freepik/OGDRVD0.jpg';
+import FreepikOQ5KAW0 from '../resources/freepik/OQ5KAW0.jpg';
 
 export const freePikCredits = (page) => {
     switch(page){
@@ -45,7 +74,7 @@ export const designContext = (page) => {
         case 'landing':
             return [];
         case 'about_us':
-            return [{key: uuidv1(), title: 'Founders', image: PASTOR_DIR + 'Bishop KAB-large.jpg',
+            return [{key: uuidv1(), title: 'Founders', image: Bishop,
                         context: <p>In May 1978 Bishop Keith and Mrs. Deborah Butler graduate
                             from Rhema Bible Training Center in Tulsa, Oklahoma with a mandate from God and a burning desire
                             to obey that mandate - to fight the good fight of faith. Bishop Butler founded Word of Faith
@@ -114,7 +143,7 @@ export const designContext = (page) => {
                             Word TV and radio broadcast. Through these media, Bishop Butler was able to touch the cities
                             with the Word of God, reaching out to various cities around the country such as Philadelphia,
                             PA, Atlanta, GA, Jackson, MS, Jacksonville, FL, St. Thomas, USVI, and Detroit, MI.</p>},
-                    {key: uuidv1(), title: 'Pastors', image: PASTOR_DIR +'PBLC-3.png',
+                    {key: uuidv1(), title: 'Pastors', image: PBLC,
                         context: <p>Pastor Joe Louis Butts graduated from the Word of Faith School of Ministry,
                             Southfield Michigan in 1991. He was President and Student Council President. After
                             graduating, Pastor Butts was sent by Bishop Keith Butler, founder of Word of Faith
@@ -147,7 +176,7 @@ export const designContext = (page) => {
                             Team. First Lady Constance will be instrumental in the growth of the Southaven
                             ministry. Her compassionate and dedicated spirit has warmed and touched the hearts
                             of others to know the love of Jesus.</p>},
-                    {key: uuidv1(), title: 'History', image: FREEBIES_DIR + 'Bible History.jpg',
+                    {key: uuidv1(), title: 'History', image: BibleHistory,
                         context: <p>Bishop Keith A. Butler, founder of Word of Faith International Christian
                             Center, founded Word of Faith, Jackson, MS in 1995 under the pastorship of Bishop
                             Kevin E. Wright. WOF - Jackson held its opening day service on Sunday August 6th,
@@ -174,7 +203,7 @@ export const designContext = (page) => {
                             September 3rd, 2009 under the leadership of Pastor Joe L. Butts. We extend an
                             invitation to all the families of Southaven, Horn Lake, Olive Branch and other
                             surrounding areas to become apart of the Word of Faith family!</p>},
-                    {key: uuidv1(), title: 'Statement of Faith', image: FREEBIES_DIR + 'logo_large.png',
+                    {key: uuidv1(), title: 'Statement of Faith', image: LogoLarge,
                         context: <p>We Believe...The Bible, That the Bible is the divinely inspired Word of God.
                             The Holy Trinity, In the Trinity of God; the Father, the Son, and the Holy Ghost.
                             Salvation, All have sinned and come short of the glory of God and are in need of salvation.
@@ -190,7 +219,7 @@ export const designContext = (page) => {
                             The Rapture, There shall be bodily resurrection of the just and unjust.<br/>
                             Christ's Return, In the personal, visible, imminent return of Jesus Christ.<br/>
                             Water Baptism, In water baptism, and the observance of the Lord's Supper.</p>},
-                    {key: uuidv1(), title: 'Vision', image: FREEBIES_DIR + 'b6c8eca1-0910-4fd9-b154-849aef0af522.png',
+                    {key: uuidv1(), title: 'Vision', image: Cross,
                         context: <p>1. Secure a church building that meets all aspects of the ministry, including growth.<br/>
                             2. Establish a Bible School to provide learning classes for the Laymen.<br/>
                             3. Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
@@ -207,66 +236,66 @@ export const designContext = (page) => {
                             9. Expand the ministry to Radio and Television/Cable<br/>
                             10. Establish Word - Based Teaching Centers in North Mississippi and Memphis, Tennessee.</p>}];
         case 'services':
-            return [{key: uuidv1(), image: '28.jpg', title: 'New Members Classes', context: <p>4 Classes Total by appointment in the Augusta Room.</p>},
-                    {key: uuidv1(), image: '12.jpg', title: 'Corporate Confession', context: <p>Sunday’s<br/>9:30am to 9:45am</p>},
-                    {key: uuidv1(), image: '1869.jpg', title: 'Worship Service', context: <p>Sunday's @ 9.45am<br/>First Sundays: Holy Communion & Mission</p>},
-                    {key: uuidv1(), image: '11405.jpg', title: 'Childrens Ministry', context: <p>2nd & 3rd Sunday's<br/>9:45am in the Augusta Room<br/>Not held on 1st or 5th Sunday's<br/>ages 5 - 11</p>},
-                    {key: uuidv1(), image: '397.jpg', title: 'Pastoral Care', context: <p>24/7 365!<br/>Call (769) 232-6457<br/>Email wofccsouthaven@gmail.com</p>}];
+            return [{key: uuidv1(), image: Freepik28, title: 'New Members Classes', context: <p>4 Classes Total by appointment in the Augusta Room.</p>},
+                    {key: uuidv1(), image: Freepik12, title: 'Corporate Confession', context: <p>Sunday’s<br/>9:30am to 9:45am</p>},
+                    {key: uuidv1(), image: Freepik1869, title: 'Worship Service', context: <p>Sunday's @ 9.45am<br/>First Sundays: Holy Communion & Mission</p>},
+                    {key: uuidv1(), image: Freepik11405, title: 'Childrens Ministry', context: <p>2nd & 3rd Sunday's<br/>9:45am in the Augusta Room<br/>Not held on 1st or 5th Sunday's<br/>ages 5 - 11</p>},
+                    {key: uuidv1(), image: Freepik397, title: 'Pastoral Care', context: <p>24/7 365!<br/>Call (769) 232-6457<br/>Email wofccsouthaven@gmail.com</p>}];
         case 'directions':
             return [];
         case 'contact_us':
             return [];
         case 'ministries':
-            return [{key: uuidv1(), title: "Children's", image: FREEPIK_DIR + '11405.jpg',
+            return [{key: uuidv1(), title: "Children's", image: Freepik11405,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Media', image: FREEPIK_DIR + '1773.jpg',
+                    {key: uuidv1(), title: 'Media', image: Freepik1773,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Hospitality', image: FREEPIK_DIR + 'ODRAX20.jpg',
+                    {key: uuidv1(), title: 'Hospitality', image: FreepikOGDRVD0,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Couples in Covanant', image: FREEPIK_DIR + '55.jpg',
+                    {key: uuidv1(), title: 'Couples in Covanant', image: Freepik55,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Youth', image: FREEPIK_DIR + '2159.jpg',
+                    {key: uuidv1(), title: 'Youth', image: Freepik2159,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Ushers and Greeters', image: FREEPIK_DIR + '272299-P5OLTS-748.jpg',
+                    {key: uuidv1(), title: 'Ushers and Greeters', image: Freepik272299,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Bridge Connectors', image: FREEPIK_DIR + 'OQ5KAW0.jpg',
+                    {key: uuidv1(), title: 'Bridge Connectors', image: FreepikOQ5KAW0,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
                             vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
                             diam sollicitudin.</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Free Worshipers', image: FREEPIK_DIR + '3893.jpg',
+                    {key: uuidv1(), title: 'Free Worshipers', image: Freepik3893,
                         context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
                             scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam

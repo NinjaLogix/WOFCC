@@ -34,7 +34,7 @@ class ConnectedMinistries extends React.PureComponent{
         return(
             <div className={'about-ministries-container'}>
                 <div className={'about-ministries-header'}>
-                    <h2>WOFCC - Southaven</h2>
+                    <h1>WOFCC - Southaven</h1>
                     <h3>The ministries we currently provide...</h3>
                 </div>
                 <div className={'about-ministries-context'}>

@@ -39,7 +39,7 @@ class WebCard extends React.Component{
         return(
             <div>
                 <Card className={classes.card}>
-                    <CardMedia className={classes.media} image={require(`../resources/freepik/${this.props.image}`)}
+                    <CardMedia className={classes.media} image={this.props.image}
                                title={this.props.headline}/>
                     <CardContent>
                         <Typography gutterBottom variant={'display1'} component="h2">

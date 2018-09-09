@@ -35,7 +35,7 @@ class ConnectedAboutUs extends React.PureComponent{
         return(
             <div className={'about-ministries-container'}>
                 <div className={'about-ministries-header'}>
-                    <h2>WOFCC - Southaven</h2>
+                    <h1>WOFCC - Southaven</h1>
                     <h3>A little about who we are...</h3>
                 </div>
                 <div className={'about-ministries-context'}>
@@ -44,9 +44,10 @@ class ConnectedAboutUs extends React.PureComponent{
                             <li key={el.key}>
                                 <DCard
                                     inverted={this.flipFlop(index+1)}
-                                    imageUrl={String('../'+el.image)}
+                                    imageUrl={String(el.image)}
                                     title={el.title}
                                     content={el.context}
+                                    enableModal={true}
                                 />
                             </li>
                         ))}
