@@ -11,7 +11,6 @@ const mapStateToProps = state => {
     return { currentPage: state.page };
 };
 /**
- * TODO - make sure there is a shadow under the menu
  * @param currentPage
  * @returns {*}
  * @constructor

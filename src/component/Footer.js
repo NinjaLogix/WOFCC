@@ -1,7 +1,12 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { freePikCredits, copyright } from '../script/appContext';
+import { connect } from 'react-redux';
 import '../style/wofcc_master.css';
+
+const mapStateToProps = state => {
+    return { page: state.page };
+};
 
 /**
  * Stateless functional component
@@ -9,8 +14,8 @@ import '../style/wofcc_master.css';
  * @returns {*}
  * @constructor
  */
-//TODO - footer not showing correctly on the following pages: landing and contact us
-const Footer = ({page}) => {
+//TODO - this needs to change to a smart component, maybe this will work
+const ConnectedFooter = ({page}) => {
     const elements = freePikCredits(page);
     return(
           <Grid className={'footer'}>
@@ -43,5 +48,7 @@ const Footer = ({page}) => {
           </Grid>
     );
 };
+
+const Footer = connect(mapStateToProps)(ConnectedFooter);
 
 export default Footer;
