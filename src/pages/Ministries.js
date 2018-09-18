@@ -16,14 +16,13 @@ class ConnectedMinistries extends React.PureComponent{
         super();
         this.state={
             page: '',
-            context: []
+            context: designContext('ministries')
         };
     };
 
     componentDidMount(){
         this.setState({page: 'ministries'});
         this.props.change_page('ministries');
-        this.setState({context: designContext('ministries')});
     }
 
     flipFlop(index){

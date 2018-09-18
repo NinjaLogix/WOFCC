@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {change_page} from "../redux-def/actions";
 import WebCard from '../component/WebCard';
-//import Footer from '../component/Footer';
 import { designContext } from '../script/appContext';
 import '../style/wofcc_master.css';
 
@@ -17,7 +16,8 @@ class ConnectedServices extends React.PureComponent{
         super();
 
         this.state = {
-            page: ''
+            page: '',
+            context: designContext('services')
         }
     };
 
@@ -27,22 +27,18 @@ class ConnectedServices extends React.PureComponent{
     }
 
     render(){
-        const elms = designContext(this.state.page);
         return(
             <div className={'service-container'}>
                 <div className={'service-mid-container'}>
                     <h1>Our Services to You</h1>
                     <div className={'service-flexbox'}>
-                        {elms.map(el =>
+                        {this.state.context.map(el =>
                             <div className={'service-webCard-container'}>
                                 <WebCard image={el.image} headline={el.title} context={el.context}/>
                             </div>
                         )}
                     </div>
                 </div>
-                {/*<div className={'service-footer'}>
-                    <Footer page={this.state.page}/>
-                </div>*/}
             </div>
         )
     }

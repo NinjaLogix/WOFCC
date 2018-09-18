@@ -81,7 +81,7 @@ class DCard extends React.Component{
                     <Modal  show={this.state.showModal}
                             onHide={()=> this.setState({showModal: false})}
                             dialogClassName="custom-modal">
-                        <Modal.Header closeButton>
+                        <Modal.Header closeButton={()=>this.setState({showModal: false})}>
                             <Modal.Title>{this.props.title}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>{this.props.detail}</Modal.Body>

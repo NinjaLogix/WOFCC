@@ -28,7 +28,7 @@ const ConnectedMenu = ({currentPage}) => {
                 </Navbar.Header>
             }
 
-            {/*Show the logo if we are on the landing page*/}
+            {/*TODO - Show the logo if we are on the landing page*/}
             {currentPage === 'landing' &&
                 <Navbar.Header>
                     <Navbar.Brand>

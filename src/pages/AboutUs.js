@@ -6,9 +6,9 @@ import { designContext } from '../script/appContext';
 import '../style/wofcc_master.css'
 
 const mapDispatchToProps = dispatch => {
-  return{
-      change_page: page => dispatch(change_page(page))
-  };
+    return{
+        change_page: page => dispatch(change_page(page))
+    };
 };
 
 class ConnectedAboutUs extends React.PureComponent{
@@ -17,14 +17,14 @@ class ConnectedAboutUs extends React.PureComponent{
 
         this.state = {
             page: '',
-            context: []
+            context: designContext('about_us')
         };
     };
 
     componentDidMount(){
         this.setState({page: 'about_us'});
         this.props.change_page('about_us');
-        this.setState({context: designContext('about_us')});
+        //this.setState({context: designContext('about_us')});
     }
 
     flipFlop(index){
@@ -47,6 +47,7 @@ class ConnectedAboutUs extends React.PureComponent{
                                     imageUrl={String(el.image)}
                                     title={el.title}
                                     content={el.context}
+                                    detail={el.detail}
                                     enableModal={true}
                                 />
                             </li>

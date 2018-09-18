@@ -4,6 +4,8 @@ import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
 import Fade from '@material-ui/core/Fade';
 import '../style/wofcc_master.css';
+import PageFlow from "../component/PageFlow";
+import Footer from "../component/Footer";
 
 const mapDispatchToProps = dispatch =>{
   return{

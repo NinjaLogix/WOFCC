@@ -2,6 +2,7 @@ import React from 'react';
 import MenuMaterial from './component/MenuMaterial';
 import PageFlow from './component/PageFlow';
 import './style/wofcc_master.css';
+import Footer from "./component/Footer";
 
 /**
  * TODO - Need to add the footer at the bottom of the App instead of at the bottom of each page.
@@ -14,6 +15,7 @@ const App = () => {
       <div className={'app-container'}>
           <MenuMaterial/>
           <PageFlow/>
+          <Footer/>
       </div>
     );
 };

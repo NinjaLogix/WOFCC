@@ -35,6 +35,11 @@ import FreepikODRAX20 from '../resources/freepik/ODRAX20.jpg';
 import FreepikOGDRVD0 from '../resources/freepik/OGDRVD0.jpg';
 import FreepikOQ5KAW0 from '../resources/freepik/OQ5KAW0.jpg';
 
+export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
+                             Branden Boyington<br/>
+                             <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>
+                         </p>;
+
 export const freePikCredits = (page) => {
     switch(page){
         case 'landing':
@@ -74,6 +79,7 @@ export const designContext = (page) => {
         case 'landing':
             return [];
         case 'about_us':
+
             return [{key: uuidv1(), title: 'Founders', image: Bishop,
                         context: <p>In May 1978 Bishop Keith and Mrs. Deborah Butler graduate
                             from Rhema Bible Training Center in Tulsa, Oklahoma with a mandate from God and a burning desire
@@ -225,16 +231,16 @@ export const designContext = (page) => {
                             3. Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
                             4. Award Scholarships to provide financial aid to students first year of college.<br/>
                             5. 24 - hour hotline for homeless and runaways.</p>,
-                        detail: <p>1. Secure a church building that meets all aspects of the ministry, including growth.<br/>
-                            2. Establish a Bible School to provide learning classes for the Laymen.<br/>
-                            3. Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
-                            4. Award Scholarships to provide financial aid to students first year of college.<br/>
-                            5. 24 - hour hotline for homeless and runaways.<br/>
-                            6. Establish a Blessing/Disaster Center; providing food and clothing for families with needs.<br/>
-                            7. Support and contribute to Missions.<br/>
-                            8. Establish a WOF - Ride transportation service.<br/>
-                            9. Expand the ministry to Radio and Television/Cable<br/>
-                            10. Establish Word - Based Teaching Centers in North Mississippi and Memphis, Tennessee.</p>}];
+                        detail: <p><b>1.</b> Secure a church building that meets all aspects of the ministry, including growth.<br/>
+                            <b>2.</b> Establish a Bible School to provide learning classes for the Laymen.<br/>
+                            <b>3.</b> Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
+                            <b>4.</b> Award Scholarships to provide financial aid to students first year of college.<br/>
+                            <b>5.</b> 24 - hour hotline for homeless and runaways.<br/>
+                            <b>6.</b> Establish a Blessing/Disaster Center; providing food and clothing for families with needs.<br/>
+                            <b>7.</b> Support and contribute to Missions.<br/>
+                            <b>8.</b> Establish a WOF - Ride transportation service.<br/>
+                            <b>9.</b> Expand the ministry to Radio and Television/Cable<br/>
+                            <b>10.</b> Establish Word - Based Teaching Centers in North Mississippi and Memphis, Tennessee.</p>}];
         case 'services':
             return [{key: uuidv1(), image: Freepik28, title: 'New Members Classes', context: <p>4 Classes Total by appointment in the Augusta Room.</p>},
                     {key: uuidv1(), image: Freepik12, title: 'Corporate Confession', context: <p>Sunday’s<br/>9:30am to 9:45am</p>},
@@ -306,3 +312,5 @@ export const designContext = (page) => {
             return [];
     }
 };
+
+export const FacebookUrl = 'https://www.facebook.com/WordOfFaithSouthaven';

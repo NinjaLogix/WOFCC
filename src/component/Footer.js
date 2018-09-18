@@ -1,19 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { freePikCredits } from '../script/appContext';
+import { freePikCredits, copyright } from '../script/appContext';
 import '../style/wofcc_master.css';
-//side note: importing without the curly braces will cause you to import with the default export.
-//           doing with them uses the exported object
-
-const copyright = () => {
-    return (
-        <p>
-            Copyright ©{(new Date().getFullYear())}<br/>
-            Branden Boyington<br/>
-            <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>
-        </p>
-    )
-};
 
 /**
  * Stateless functional component
@@ -21,6 +9,7 @@ const copyright = () => {
  * @returns {*}
  * @constructor
  */
+//TODO - footer not showing correctly on the following pages: landing and contact us
 const Footer = ({page}) => {
     const elements = freePikCredits(page);
     return(
@@ -47,7 +36,7 @@ const Footer = ({page}) => {
                   <Col xs={2} md={4}>
                       <p>
                           Developer Credits
-                          {copyright()}
+                          {copyright}
                       </p>
                   </Col>
               </Row>
