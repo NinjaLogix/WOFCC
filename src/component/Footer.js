@@ -14,7 +14,6 @@ const mapStateToProps = state => {
  * @returns {*}
  * @constructor
  */
-//TODO - this needs to change to a smart component, maybe this will work
 const ConnectedFooter = ({page}) => {
     const elements = freePikCredits(page);
     return(
