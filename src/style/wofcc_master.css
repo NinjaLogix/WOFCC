@@ -89,12 +89,16 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
 
     }
 }
-/* ---------------------------------------------------------------------------------------------------------- Modals */
+/* ------------------------------------------------------------------------------------------------------ Components */
+/* ----------------------------------------------- Modal */
 .custom-modal{
     width: 70%;
     text-align: center;
 }
-/* ----------------------------------------------------------------------------------------------------------- Pages */
+/* ------------------------------------------------ Menu */
+.menu_logo{
+
+}
 /* ---------------------------------------------- Footer */
 .footer{
     background-color: rgba(50, 50, 50, 0.8);
@@ -104,6 +108,7 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
     margin-left: 5%;
     margin-right: 5%;
 }
+/* ----------------------------------------------------------------------------------------------------------- Pages */
 /* ------------------------------------------------- App */
 html,body{
     padding: 0;
@@ -130,15 +135,16 @@ html,body{
 
 .app-container{
     width: 100%;
+    /*Only need this background on the landing page*/
+    /*background-image: url('../resources/freebies/WDF_1461291.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;*/
 }
 /* --------------------------------------------- Landing */
 .landing-main{
     flex: 1 100%;
     margin-top: 50px;
-    /*background-image: url('../resources/freebies/WDF_1461291.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;*/
 }
 
 .landing-main h1{
@@ -157,6 +163,11 @@ html,body{
     max-width: 840px;
     margin: 0 auto;
     padding: 25px;
+}
+
+.center-carousel ~ img {
+    width: 840px;
+    height: 400px;
 }
 /* --------------------------------------------- AboutUs */
 .about-container{

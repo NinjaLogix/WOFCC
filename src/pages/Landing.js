@@ -1,11 +1,11 @@
 import React from 'react';
+import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import Fade from '@material-ui/core/Fade';
+import { Dropbox } from 'dropbox';
+import { DropboxTeam } from 'dropbox';
 import '../style/wofcc_master.css';
-import PageFlow from "../component/PageFlow";
-import Footer from "../component/Footer";
 
 const mapDispatchToProps = dispatch =>{
   return{
@@ -26,23 +26,10 @@ class ConnectedLanding extends React.PureComponent{
     componentDidMount(){
         this.setState({page: 'landing'});
         this.props.change_page('landing');
-    };
 
-    /**
-     * TODO - get this working by retrieving a list of images from server side directory
-     * get a list of files from server side location
-     * compare against regex and only get ones with a relevant date
-     *
-     *  ex:
-     *  - regex something like ^[a-z].*_mm.dd.yyyy_mm.dd.yyyy\..*$ ==> fileName_startDate_endDate.extension
-     *  - should match a file named something like imageName_180712_180716.png
-     *
-     * when this component loads we need to check for matching files and load them to the carousel
-     * basic check is to see if current date is between the start date and end date of the desired image
-     * we only want to load the relevant ones so this will allow only relevant content to show
-     */
-    getFiles(){
-        // /^[a-z].*_[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}_[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}..*$/ .test();
+        //TODO - implement the dropbox stuff for the carousel here maybe, look into the documentation to figure out how to use it
+        //authenticate dropbox here
+
     };
 
     render(){
@@ -59,10 +46,10 @@ class ConnectedLanding extends React.PureComponent{
                     >
                         <Carousel bsClass={'carousel'} indicators={false}>
                             <Carousel.Item>
-                                <img width={840} height={400} alt={'840x400'} src={require('../resources/carousel/TheBig18.png')}/>
+                                <img alt={'840x400'} src={require('../resources/carousel/TheBig18.png')}/>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img width={840} height={400} alt={'840x400'} src={require('../resources/carousel/Hebrews 1025.png')}/>
+                                <img alt={'840x400'} src={require('../resources/carousel/Hebrews 1025.png')}/>
                             </Carousel.Item>
                         </Carousel>
                     </Fade>

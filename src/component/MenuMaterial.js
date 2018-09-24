@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import {Navbar, NavItem, Nav, Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import badgeSmall from '../resources/logo/badge_small.png';
 
 /**
  * @param state
@@ -18,7 +19,6 @@ const mapStateToProps = state => {
 const ConnectedMenu = ({currentPage}) => {
     return (
         <Navbar bsStyle={'inverse'} fixedTop collapseOnSelect fluid>
-            {/*Show only the words if the current page isn't the landing page*/}
             {currentPage !== 'landing' &&
                 <Navbar.Header>
                     <Navbar.Brand>
@@ -27,12 +27,11 @@ const ConnectedMenu = ({currentPage}) => {
                 </Navbar.Header>
             }
 
-            {/*TODO - Show the logo if we are on the landing page*/}
             {currentPage === 'landing' &&
                 <Navbar.Header>
                     <Navbar.Brand>
                         {/*Logo goes here*/}
-                        {/*<Image src=badge_small responsive/>*/}
+                        <img className={'menu_logo'} src={badgeSmall} alt={'badge'}/>
                     </Navbar.Brand>
                 </Navbar.Header>
             }
@@ -40,10 +39,10 @@ const ConnectedMenu = ({currentPage}) => {
             <Nav pullRight>
                 {/*TODO - maybe add a divider here*/}
                 <NavItem componentClass={Link} href={'/about-us'} to={'/about-us'} eventKey={1}>About Us</NavItem>
-                <NavItem componentClass={Link} href={'/contact-us'} to={'/contact-us'} eventKey={4}>Contact Us</NavItem>
-                {/*<NavItem componentClass={Link} href={'#'} to={'#'} eventKey={5}>Daily</NavItem>*/}
-                <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={3}>Directions</NavItem>
-                <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={2}>Services</NavItem>
+                <NavItem componentClass={Link} href={'/contact-us'} to={'/contact-us'} eventKey={2}>Contact Us</NavItem>
+                {/*<NavItem componentClass={Link} href={'#'} to={'#'} eventKey={3}>Daily</NavItem>*/}
+                <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={4}>Directions</NavItem>
+                <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={5}>Services</NavItem>
                 <NavItem componentClass={Link} href={'/ministries'} to={'/ministries'} eventKey={6}>Ministries</NavItem>
             </Nav>
         </Navbar>
