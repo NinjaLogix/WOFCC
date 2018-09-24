@@ -97,7 +97,9 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
 }
 /* ------------------------------------------------ Menu */
 .menu_logo{
-
+    position: absolute;
+    width: 120px;
+    height: 120px;
 }
 /* ---------------------------------------------- Footer */
 .footer{
@@ -107,6 +109,13 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
     margin-top: 10px;
     margin-left: 5%;
     margin-right: 5%;
+}
+.footer .footer-list{
+    list-style: none;
+}
+
+.footer .footer-list li a{
+    color: lightgrey;
 }
 /* ----------------------------------------------------------------------------------------------------------- Pages */
 /* ------------------------------------------------- App */

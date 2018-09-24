@@ -29,7 +29,7 @@ const ConnectedFooter = ({page}) => {
                         Freepik Credits
                           {/*If there are images to credit then show them, otherwise don't render anything from this IIFE*/}
                           {!(elements === undefined || elements.length === 0) &&
-                              <ul>
+                              <ul className={'footer-list'}>
                                   {elements.map(el =>
                                     <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
                                   )}
