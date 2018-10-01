@@ -4,7 +4,6 @@ import {change_page} from "../redux-def/actions";
 import { FacebookUrl } from '../script/appContext';
 import Facebook from '../resources/freebies/Facebook_Home_logo_old.svg.png';
 import PBLC from '../resources/pastor/PBLC-3.png';
-import Footer from '../component/Footer';
 
 import '../style/wofcc_master.css';
 

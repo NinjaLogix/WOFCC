@@ -8,11 +8,11 @@ import PBLC from '../resources/pastor/PBLC-3.png';
 /* resources - freebies */
 import Cross from '../resources/freebies/b6c8eca1-0910-4fd9-b154-849aef0af522.png';
 import BibleHistory from '../resources/freebies/Bible_History.jpg';
-import Facebook from '../resources/freebies/Facebook_Home_logo_old.svg.png';
-import WDF from '../resources/freebies/WDF_1461291.jpg';
+//import Facebook from '../resources/freebies/Facebook_Home_logo_old.svg.png';
+//import WDF from '../resources/freebies/WDF_1461291.jpg';
 
 /* resources - logo */
-import LogoSmall from '../resources/logo/badge_small.png';
+//import LogoSmall from '../resources/logo/badge_small.png';
 import LogoLarge from '../resources/logo/logo_large.png';
 
 /* resources - freepik */
@@ -20,21 +20,22 @@ import Freepik12 from '../resources/freepik/12.jpg';
 import Freepik28 from '../resources/freepik/28.jpg';
 import Freepik55 from '../resources/freepik/55.jpg';
 import Freepik397 from '../resources/freepik/397.jpg';
-import Freepik1024 from '../resources/freepik/1024.jpg';
+//import Freepik1024 from '../resources/freepik/1024.jpg';
 import Freepik1773 from '../resources/freepik/1773.jpg';
 import Freepik1869 from '../resources/freepik/1869.jpg';
-import Freepik2144 from '../resources/freepik/2144.jpg';
+//import Freepik2144 from '../resources/freepik/2144.jpg';
 import Freepik2159 from '../resources/freepik/2159.jpg';
 import Freepik3893 from '../resources/freepik/3893.jpg';
 import Freepik11405 from '../resources/freepik/11405.jpg';
-import Freepik120434 from '../resources/freepik/102434-OLS3V2-932.jpg';
+//import Freepik120434 from '../resources/freepik/102434-OLS3V2-932.jpg';
 import Freepik272299 from '../resources/freepik/272299-P5OLTS-748.jpg';
-import Freepik768832 from '../resources/freepik/768832.jpg';
-import FreepikOCCN5Z0 from '../resources/freepik/OCCN5Z0.jpg';
-import FreepikODRAX20 from '../resources/freepik/ODRAX20.jpg';
+//import Freepik768832 from '../resources/freepik/768832.jpg';
+//import FreepikOCCN5Z0 from '../resources/freepik/OCCN5Z0.jpg';
+//import FreepikODRAX20 from '../resources/freepik/ODRAX20.jpg';
 import FreepikOGDRVD0 from '../resources/freepik/OGDRVD0.jpg';
 import FreepikOQ5KAW0 from '../resources/freepik/OQ5KAW0.jpg';
 
+export const CAROUSEL_PATH = '/carousel';
 export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
                              Branden Boyington<br/>
                              <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>

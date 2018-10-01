@@ -3,8 +3,9 @@ import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import { Dropbox } from 'dropbox';
-import { DropboxTeam } from 'dropbox';
+import { CAROUSEL_PATH } from '../script/appContext';
+import Dropbox from 'dropbox';
+//import DropboxTeam from 'dropbox';
 import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
@@ -19,18 +20,47 @@ class ConnectedLanding extends React.PureComponent{
 
       this.state = {
           page: '',
-          checked: true
-      }
+          checked: true,
+          displayUrl: []
+      };
+
+      this.handleImages = this.handleImages.bind(this.handleImages);
     };
 
     componentDidMount(){
         this.setState({page: 'landing'});
         this.props.change_page('landing');
 
-        //TODO - implement the dropbox stuff for the carousel here maybe, look into the documentation to figure out how to use it
-        //authenticate dropbox here
-
+        const dropBox = new Dropbox.Dropbox({accessToken: TOKEN});
+        console.log('handleImages', this.handleImages(dropBox));
     };
+
+    handleImages(dropBoxObj){
+        let urlArr = [];
+
+        dropBoxObj.filesListFolder({path: CAROUSEL_PATH})
+            .then(response => {
+                response.entries.map( thing => {
+                    dropBoxObj.sharingCreateSharedLinkWithSettings({
+                            path: thing.path_display,
+                            settings: {requested_visibility: {'.tag': 'public'}}
+                        })
+                        .catch(error => console.error('Error creating shared link', error));
+                    dropBoxObj.sharingListSharedLinks({path: thing.path_display})
+                        .then(response => {
+                            response.links.map( innerThing => {
+                                if (innerThing['.tag'] === 'file') {
+                                    urlArr.push(innerThing)
+                                }
+                            })
+                        })
+                        .catch(error => console.log('Error listing files', error));
+                })
+            })
+            .catch( error => { console.error('Error listing files', error) });
+
+        return urlArr;
+    }
 
     render(){
         const { checked } = this.state;
@@ -45,12 +75,11 @@ class ConnectedLanding extends React.PureComponent{
                         {...(checked ? { timeout: 2000 } : {})}
                     >
                         <Carousel bsClass={'carousel'} indicators={false}>
-                            <Carousel.Item>
-                                <img alt={'840x400'} src={require('../resources/carousel/TheBig18.png')}/>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img alt={'840x400'} src={require('../resources/carousel/Hebrews 1025.png')}/>
-                            </Carousel.Item>
+                            {this.state.displayUrl.map( element =>
+                                <Carousel.Item>
+                                    <img alt={'840x400'} src={element.url}/>
+                                </Carousel.Item>
+                            )}
                         </Carousel>
                     </Fade>
                 </div>

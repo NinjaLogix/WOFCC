@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Navbar, NavItem, Nav, Image} from 'react-bootstrap';
+import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import badgeSmall from '../resources/logo/badge_small.png';
 

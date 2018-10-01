@@ -38,10 +38,8 @@ const ConnectedFooter = ({page}) => {
                       </p>
                   </Col>
                   <Col xs={2} md={4}>
-                      <p>
-                          Developer Credits
+                        Developer Credits
                           {copyright}
-                      </p>
                   </Col>
               </Row>
           </Grid>
