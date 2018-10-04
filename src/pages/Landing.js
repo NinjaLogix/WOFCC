@@ -3,8 +3,9 @@ import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import { CAROUSEL_PATH } from '../script/appContext';
+import { CAROUSEL_PATH, TOKEN, FILE_REGEX, DROPBOX_BAD_URL, DROPBOX_GOOD_URL } from '../script/appContext';
 import Dropbox from 'dropbox';
+//import axios from 'axios';
 //import DropboxTeam from 'dropbox';
 import '../style/wofcc_master.css';
 
@@ -24,7 +25,7 @@ class ConnectedLanding extends React.PureComponent{
           displayUrl: []
       };
 
-      this.handleImages = this.handleImages.bind(this.handleImages);
+      this.fixUrl = this.fixUrl.bind(this.fixUrl);
     };
 
     componentDidMount(){
@@ -32,25 +33,38 @@ class ConnectedLanding extends React.PureComponent{
         this.props.change_page('landing');
 
         const dropBox = new Dropbox.Dropbox({accessToken: TOKEN});
-        console.log('handleImages', this.handleImages(dropBox));
-    };
-
-    handleImages(dropBoxObj){
-        let urlArr = [];
-
-        dropBoxObj.filesListFolder({path: CAROUSEL_PATH})
+        dropBox.filesListFolder({path: CAROUSEL_PATH})
             .then(response => {
                 response.entries.map( thing => {
-                    dropBoxObj.sharingCreateSharedLinkWithSettings({
-                            path: thing.path_display,
-                            settings: {requested_visibility: {'.tag': 'public'}}
-                        })
-                        .catch(error => console.error('Error creating shared link', error));
-                    dropBoxObj.sharingListSharedLinks({path: thing.path_display})
+                    //TODO - check if file matches the correct pattern ~ file_name-yyyymmdd-yyyymmdd.ext
+                    //if(FILE_REGEX.test(thing.path_display)){
+                        //TODO - split filename and get start and end dates
+                        //split file code goes here
+                        //let fileName =
+                        //let startDate =
+                        //let endDate =
+                        //TODO - check if today's date is within the file's run dates and if it is attempt to create a share link
+                        //if (today's date >= startDate and today's date <= endDate) {
+                            dropBox.sharingCreateSharedLinkWithSettings({
+                                path: thing.path_display,
+                                settings: {requested_visibility: {'.tag': 'public'}}
+                            })
+                                .catch(error => console.error('Shared link error: ', error));
+                        //} elseif (today's date > endDate) {
+                        /*TODO - check if today's date is after the exp date and if it is then remove the share link
+                            dropBox.sharingUnshareFile({file: ''}) //full path of the file
+                                .then()
+                                .catch();
+                        */
+                        //}
+                    //}
+                    dropBox.sharingListSharedLinks({path: thing.path_display})
                         .then(response => {
                             response.links.map( innerThing => {
                                 if (innerThing['.tag'] === 'file') {
-                                    urlArr.push(innerThing)
+                                    this.setState(prevState => ({
+                                        displayUrl:[...prevState.displayUrl, innerThing]
+                                    }))
                                 }
                             })
                         })
@@ -58,8 +72,10 @@ class ConnectedLanding extends React.PureComponent{
                 })
             })
             .catch( error => { console.error('Error listing files', error) });
+    };
 
-        return urlArr;
+    fixUrl(url){
+        return url.replace(DROPBOX_BAD_URL, DROPBOX_GOOD_URL);
     }
 
     render(){
@@ -77,7 +93,7 @@ class ConnectedLanding extends React.PureComponent{
                         <Carousel bsClass={'carousel'} indicators={false}>
                             {this.state.displayUrl.map( element =>
                                 <Carousel.Item>
-                                    <img alt={'840x400'} src={element.url}/>
+                                    <img alt={'840x400'} src={this.fixUrl(element.url)}/>
                                 </Carousel.Item>
                             )}
                         </Carousel>
