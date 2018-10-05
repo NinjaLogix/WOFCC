@@ -35,10 +35,8 @@ import Freepik272299 from '../resources/freepik/272299-P5OLTS-748.jpg';
 import FreepikOGDRVD0 from '../resources/freepik/OGDRVD0.jpg';
 import FreepikOQ5KAW0 from '../resources/freepik/OQ5KAW0.jpg';
 
-export const DROPBOX_BAD_URL = 'www.dropbox.com';
-export const DROPBOX_GOOD_URL = 'dl.dropboxusercontent.com';
 export const FILE_REGEX = RegExp('^.*[0-9]{4}/[0-9]{2}/[0-9]{2}-[0-9]{4}/[0-9]{2}/[0-9]{2}\.(jpg|jpeg)$');
-export const CAROUSEL_PATH = '/carousel';
+
 export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
                              Branden Boyington<br/>
                              <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>

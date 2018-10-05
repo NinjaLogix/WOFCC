@@ -3,10 +3,8 @@ import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import { CAROUSEL_PATH, TOKEN, FILE_REGEX, DROPBOX_BAD_URL, DROPBOX_GOOD_URL } from '../script/appContext';
+import FILE_REGEX from '../script/appContext';
 import Dropbox from 'dropbox';
-//import axios from 'axios';
-//import DropboxTeam from 'dropbox';
 import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
@@ -32,8 +30,8 @@ class ConnectedLanding extends React.PureComponent{
         this.setState({page: 'landing'});
         this.props.change_page('landing');
 
-        const dropBox = new Dropbox.Dropbox({accessToken: TOKEN});
-        dropBox.filesListFolder({path: CAROUSEL_PATH})
+        const dropBox = new Dropbox.Dropbox({accessToken: process.env.REACT_APP_TOKEN});
+        dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
             .then(response => {
                 response.entries.map( thing => {
                     //TODO - check if file matches the correct pattern ~ file_name-yyyymmdd-yyyymmdd.ext
@@ -75,7 +73,7 @@ class ConnectedLanding extends React.PureComponent{
     };
 
     fixUrl(url){
-        return url.replace(DROPBOX_BAD_URL, DROPBOX_GOOD_URL);
+        return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
     }
 
     render(){
