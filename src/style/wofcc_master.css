@@ -143,7 +143,11 @@ html,body{
 }
 
 .app-container{
-    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100% ! important;
     /*Only need this background on the landing page*/
     /*background-image: url('../resources/freebies/WDF_1461291.jpg');
     background-size: cover;
