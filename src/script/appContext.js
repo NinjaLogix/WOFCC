@@ -1,5 +1,6 @@
 import uuidv1 from "uuid";
 import React from 'react';
+import Dropbox from 'dropbox';
 
 /* resources - pastor */
 import Bishop from '../resources/pastor/Bishop KAB-large.jpg';
@@ -35,11 +36,19 @@ import Freepik272299 from '../resources/freepik/272299-P5OLTS-748.jpg';
 import FreepikOGDRVD0 from '../resources/freepik/OGDRVD0.jpg';
 import FreepikOQ5KAW0 from '../resources/freepik/OQ5KAW0.jpg';
 
-export const CAROUSEL_PATH = '/carousel';
+export const dropBox = new Dropbox.Dropbox({accessToken: process.env.REACT_APP_TOKEN});
+let date = new Date();
+
+export const FILE_REGEX = RegExp('^.*-(([A-z]*|[a-z]*) ([0-9]{1}|[0-9]{2}), [0-9]{4})-(([A-z]*|[a-z]*) ([0-9]{1}|[0-9]{2}), [0-9]{4})');
+export const EXT_REGEX = RegExp('\.(jpg|jpeg|png)');
+export const ALT_REGEX = RegExp('^.*-' + date.getFullYear());
+
 export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
                              Branden Boyington<br/>
                              <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>
                          </p>;
+
+export const FacebookUrl = 'https://www.facebook.com/WordOfFaithSouthaven';
 
 export const freePikCredits = (page) => {
     switch(page){
@@ -313,5 +322,3 @@ export const designContext = (page) => {
             return [];
     }
 };
-
-export const FacebookUrl = 'https://www.facebook.com/WordOfFaithSouthaven';

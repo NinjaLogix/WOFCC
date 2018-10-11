@@ -3,9 +3,7 @@ import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import { CAROUSEL_PATH } from '../script/appContext';
-import Dropbox from 'dropbox';
-//import DropboxTeam from 'dropbox';
+import { FILE_REGEX, EXT_REGEX, ALT_REGEX, dropBox } from '../script/appContext';
 import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
@@ -24,33 +22,50 @@ class ConnectedLanding extends React.PureComponent{
           displayUrl: []
       };
 
-      this.handleImages = this.handleImages.bind(this.handleImages);
+      this.fixUrl = this.fixUrl.bind(this.fixUrl);
     };
 
     componentDidMount(){
         this.setState({page: 'landing'});
         this.props.change_page('landing');
 
-        const dropBox = new Dropbox.Dropbox({accessToken: TOKEN});
-        console.log('handleImages', this.handleImages(dropBox));
-    };
-
-    handleImages(dropBoxObj){
-        let urlArr = [];
-
-        dropBoxObj.filesListFolder({path: CAROUSEL_PATH})
+        dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
             .then(response => {
-                response.entries.map( thing => {
-                    dropBoxObj.sharingCreateSharedLinkWithSettings({
-                            path: thing.path_display,
-                            settings: {requested_visibility: {'.tag': 'public'}}
-                        })
-                        .catch(error => console.error('Error creating shared link', error));
-                    dropBoxObj.sharingListSharedLinks({path: thing.path_display})
+                response.entries.forEach( fileName => {
+                    let extIndex = fileName.name.indexOf('.');
+                    let ext = fileName.name.substring(extIndex);
+                    let file = fileName.name.substring(0, extIndex);
+                    let today = new Date();
+
+                    if((FILE_REGEX.test(file) || ALT_REGEX.test(file)) && EXT_REGEX.test(ext)){
+                        let pieces = file.split('-');
+                        let startDate = new Date(pieces[1]);
+                        let endDate = new Date(pieces[2]);
+
+                        if (today >= startDate && today < endDate) {
+                            dropBox.sharingCreateSharedLinkWithSettings({
+                                path: fileName.path_display,
+                                settings: {requested_visibility: {'.tag': 'public'}}
+                            })
+                                .catch(error => console.error('Shared link error: ', error));
+                        }
+                    } else {
+                        console.log('Image naming not in correct format: ', fileName.name);
+                    }
+                    dropBox.sharingListSharedLinks({path: fileName.path_display})
                         .then(response => {
-                            response.links.map( innerThing => {
+                            response.links.forEach( innerThing => {
                                 if (innerThing['.tag'] === 'file') {
-                                    urlArr.push(innerThing)
+                                    let file = innerThing.name.substring(0, innerThing.name.indexOf('.'));
+                                    let startDate = new Date(file.split('-')[1]);
+                                    let endDate = new Date(file.split('-')[2]);
+                                    let today = new Date();
+
+                                    if ((today >= startDate && today < endDate) || (ALT_REGEX.test(file))) {
+                                        this.setState(prevState => ({
+                                            displayUrl: [...prevState.displayUrl, innerThing]
+                                        }))
+                                    }
                                 }
                             })
                         })
@@ -58,8 +73,10 @@ class ConnectedLanding extends React.PureComponent{
                 })
             })
             .catch( error => { console.error('Error listing files', error) });
+    };
 
-        return urlArr;
+    fixUrl(url){
+        return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
     }
 
     render(){
@@ -77,7 +94,7 @@ class ConnectedLanding extends React.PureComponent{
                         <Carousel bsClass={'carousel'} indicators={false}>
                             {this.state.displayUrl.map( element =>
                                 <Carousel.Item>
-                                    <img alt={'840x400'} src={element.url}/>
+                                    <img alt={'840x400'} src={this.fixUrl(element.url)}/>
                                 </Carousel.Item>
                             )}
                         </Carousel>
