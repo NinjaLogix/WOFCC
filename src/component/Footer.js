@@ -20,7 +20,7 @@ const ConnectedFooter = ({page}) => {
                   </Col>
                   <Col xs={2} md={4}>
                       <p>
-                        Freepik Credits
+                        Freepik Image Credits
                           {/*If there are images to credit then show them, otherwise don't render anything from this IIFE*/}
                           {!(elements === undefined || elements.length === 0) &&
                               <ul className={'footer-list'}>
