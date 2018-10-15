@@ -11,7 +11,6 @@ const mapDispatchToProps = dispatch =>{
     };
 };
 
-//TODO - fix footer
 class ConnectedServices extends React.PureComponent{
     constructor(){
         super();
