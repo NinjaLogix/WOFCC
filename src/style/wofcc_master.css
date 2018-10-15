@@ -109,6 +109,7 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
     margin-top: 10px;
     margin-left: 5%;
     margin-right: 5%;
+    position: absolute;
 }
 .footer .footer-list{
     list-style: none;
@@ -118,7 +119,7 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
     color: lightgrey;
 }
 /* ----------------------------------------------------------------------------------------------------------- Pages */
-/* ------------------------------------------------- App */
+/* ---------------------------------- App, Html, and Body*/
 html,body{
     padding: 0;
     margin: 0;
@@ -191,7 +192,7 @@ html,body{
 .about-container .about-header{
     width: 100%;
     height: 150px;
-    background-image: url('../resources/freepik/2144.jpg');
+    background-image: url('https://dl.dropboxusercontent.com/s/bbvj88mh3lfpe72/2144.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -224,7 +225,7 @@ html,body{
 .contact-container .contact-header{
     width:100%;
     height:400px;
-    background-image: url('../resources/freepik/1024.jpg');
+    background-image: url('https://dl.dropboxusercontent.com/s/pix7dlvl058zxse/1024.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -290,7 +291,7 @@ html,body{
 .about-ministries-container .about-ministries-header{
     width: 100%;
     height: 150px;
-    background-image: url('../resources/freepik/2144.jpg');
+    background-image: url('https://dl.dropboxusercontent.com/s/bbvj88mh3lfpe72/2144.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -333,7 +334,7 @@ html,body{
 .direction-container .directions-map-container{
     min-height:350px;
     max-height:457px;
-    background-image: url('../resources/freepik/102434-OLS3V2-932.jpg');
+    background-image: url('https://dl.dropboxusercontent.com/s/m6kn6g3og3sb9iu/102434-OLS3V2-932.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -348,23 +349,14 @@ html,body{
     width: 60%;
     margin-left:20%;
 }
-/* ---------------------------------------------- Footer */
-
 /* -------------------------------------------- Services */
 .service-container{
     margin-top: 50px;
     height: 100%;
-    display:flex;
-    flex-direction: column;
-}
-
-.service-container .service-footer{
-    padding-top: 40px;
-    flex-shrink: 0;
 }
 
 .service-container .service-mid-container{
-    background-image: url('../resources/freepik/ODRAX20.jpg');
+    background-image: url('https://dl.dropboxusercontent.com/s/7kzql4yaoi59xl8/ODRAX20.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -372,23 +364,16 @@ html,body{
     -moz-box-shadow: 0 0 30px 5px #999;
     -webkit-box-shadow: 0 0 30px 5px #999;
 
-    flex: 1 0 auto;
-}
-
-.service-container .service-mid-container{
     text-align: center;
 }
 
 .service-container .service-mid-container .service-flexbox{
-    position: center;
     display: flex;
     flex-flow: row wrap;
     width: auto;
-    display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;
     align-items: center;
     justify-content: center;
 }

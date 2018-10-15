@@ -3,7 +3,8 @@ import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import { FILE_REGEX, EXT_REGEX, ALT_REGEX, dropBox } from '../script/appContext';
+import BackgroundImg from '../component/BackgroundImg';
+import { FILE_REGEX, EXT_REGEX, ALT_REGEX, dropBox, fixUrl } from '../script/appContext';
 import '../style/wofcc_master.css';
 
 const mapDispatchToProps = dispatch =>{
@@ -21,8 +22,6 @@ class ConnectedLanding extends React.PureComponent{
           checked: true,
           displayUrl: []
       };
-
-      this.fixUrl = this.fixUrl.bind(this.fixUrl);
     };
 
     componentDidMount(){
@@ -75,14 +74,11 @@ class ConnectedLanding extends React.PureComponent{
             .catch( error => { console.error('Error listing files', error) });
     };
 
-    fixUrl(url){
-        return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
-    }
-
     render(){
         const { checked } = this.state;
         return(
             <div className={'landing-main'}>
+                <BackgroundImg/>
                 <h1>Word of Faith Christian Center Southaven Mississippi</h1>
                 {/*come back and make this better with the getFiles function*/}
                 <div className={'center-carousel'}>
@@ -94,7 +90,7 @@ class ConnectedLanding extends React.PureComponent{
                         <Carousel bsClass={'carousel'} indicators={false}>
                             {this.state.displayUrl.map( element =>
                                 <Carousel.Item>
-                                    <img alt={'840x400'} src={this.fixUrl(element.url)}/>
+                                    <img alt={'840x400'} src={fixUrl(element.url)}/>
                                 </Carousel.Item>
                             )}
                         </Carousel>

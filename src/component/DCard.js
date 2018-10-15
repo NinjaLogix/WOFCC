@@ -60,12 +60,12 @@ class DCard extends React.Component{
         alt: PropTypes.string,
         content: PropTypes.object,
         inverted: PropTypes.bool,
-        detail: PropTypes.string,
+        detail: PropTypes.object,
         enableModal: PropTypes.bool
     };
 
     static defaultProps = {
-        imageUrl: '../resources/freebies/WDF_1461291.jpg',
+        imageUrl: '#',
         title: 'Sample Title',
         alt: 'Sample Image',
         content: 'Sample Message',

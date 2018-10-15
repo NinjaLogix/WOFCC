@@ -2,20 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import badgeSmall from '../resources/logo/badge_small.png';
+import {LogoSmall} from '../script/appContext';
 
-/**
- * @param state
- * @returns {{currentPage: *}}
- */
 const mapStateToProps = state => {
     return { currentPage: state.page };
 };
-/**
- * @param currentPage
- * @returns {*}
- * @constructor
- */
+
 const ConnectedMenu = ({currentPage}) => {
     return (
         <Navbar bsStyle={'inverse'} fixedTop collapseOnSelect fluid>
@@ -31,13 +23,12 @@ const ConnectedMenu = ({currentPage}) => {
                 <Navbar.Header>
                     <Navbar.Brand>
                         {/*Logo goes here*/}
-                        <img className={'menu_logo'} src={badgeSmall} alt={'badge'}/>
+                        <img className={'menu_logo'} src={LogoSmall} alt={'badge'}/>
                     </Navbar.Brand>
                 </Navbar.Header>
             }
 
             <Nav pullRight>
-                {/*TODO - maybe add a divider here*/}
                 <NavItem componentClass={Link} href={'/about-us'} to={'/about-us'} eventKey={1}>About Us</NavItem>
                 <NavItem componentClass={Link} href={'/contact-us'} to={'/contact-us'} eventKey={2}>Contact Us</NavItem>
                 {/*<NavItem componentClass={Link} href={'#'} to={'#'} eventKey={3}>Daily</NavItem>*/}

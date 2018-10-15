@@ -8,12 +8,6 @@ const mapStateToProps = state => {
     return { page: state.page };
 };
 
-/**
- * Stateless functional component
- * @param page
- * @returns {*}
- * @constructor
- */
 const ConnectedFooter = ({page}) => {
     const elements = freePikCredits(page);
     return(
