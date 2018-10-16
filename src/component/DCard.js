@@ -5,8 +5,8 @@ import { Modal, Button } from 'react-bootstrap';
 import '../style/wofcc_master.css'
 
 const Container = styled.div`
-    width: 800px;
-    height: 200px;
+    width: auto;
+    height: auto;
     display: flex;
     margin: 10px;
 `;
@@ -18,14 +18,14 @@ const TextContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 230px;
     background-color: rgba(50, 50, 50, 0.8);
 `;
 
 const DImage = styled.img`
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 230px;
 `;
 
 const Title = styled.h1`

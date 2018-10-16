@@ -59,7 +59,7 @@ class ConnectedContactUs extends React.PureComponent{
                                 />
                         </a>
                     </div>
-                    <h3>Some text goes here about facebook</h3>
+                    <h3>Keep in touch with us on Facebook!</h3>
                 </div>
                 <div className={'bottom-container'}>
                     <div className={'contact-left-bottom'}>

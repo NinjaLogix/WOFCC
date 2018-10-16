@@ -149,16 +149,11 @@ html,body{
     top: 0;
     bottom: 0;
     width: 100% ! important;
-    /*Only need this background on the landing page*/
-    /*background-image: url('../resources/freebies/WDF_1461291.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;*/
 }
 /* --------------------------------------------- Landing */
 .landing-main{
     flex: 1 100%;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .landing-main h1{
@@ -305,7 +300,7 @@ html,body{
 
 .about-ministries-context{
     position: relative;
-    margin: 0;
+    width: 50%;
 }
 
 .about-ministries-container .about-ministries-context .about-ministries-list{
@@ -314,7 +309,7 @@ html,body{
     margin-left: auto;
     margin-right: auto;
     list-style: none;
-    max-width: 70%;
+    width: 50%;
 }
 /* ------------------------------------------ Directions */
 .direction-container{
@@ -332,8 +327,9 @@ html,body{
 
 /*TODO - Need to make sure I setup the media querires here for the screen sizes ~ for now it's set to a fullscreen 13" macbook*/
 .direction-container .directions-map-container{
-    min-height:350px;
-    max-height:457px;
+    /*min-height:350px;
+    max-height:457px;*/
+    height: 65%;
     background-image: url('https://dl.dropboxusercontent.com/s/m6kn6g3og3sb9iu/102434-OLS3V2-932.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
