@@ -282,7 +282,7 @@ export const designContext = (page) => {
                             great, and creating announcements and fliers are all things we love to do for the people
                             of God."</p>,
                         detail: <p></p>},
-                    /*{key: uuidv1(), title: 'Hospitality', image: freepikogdrvdoImg, //coffe image
+                    /*{key: uuidv1(), title: 'Hospitality', image: freepikogdrvdoImg, //coffee image
                         context: <p>"Contributes to the needs of visitors and members by providing warm words of
                             welcome, information and refreshments."</p>,
                         detail: <p></p>},*/
@@ -290,7 +290,8 @@ export const designContext = (page) => {
                         context: <p>"Keeping the spark in God's married couples, Loving in marriage as Jesus loves the church."</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Youth', image: freepik2159Img,
-                        context: <p>"Reaching out the youth as they are our future leaders"</p>, //TODO - this isn't good enough
+                        context: <p>"Reaching out the youth as they are our future leaders. Setting the example in speech,
+                            conduct, love, faith, and purity."</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Hospitality', image: freepik272299Img,
                         context: <p>"Contributes to the needs of visitors and members by providing warm words of
