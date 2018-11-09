@@ -251,7 +251,8 @@ export const designContext = (page) => {
                             2. Establish a Bible School to provide learning classes for the Laymen.<br/>
                             3. Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
                             4. Award Scholarships to provide financial aid to students first year of college.<br/>
-                            5. 24 - hour hotline for homeless and runaways.</p>,
+                            5. 24 - hour hotline for homeless and runaways.<br/>
+                            ...</p>,
                         detail: <p><b>1.</b> Secure a church building that meets all aspects of the ministry, including growth.<br/>
                             <b>2.</b> Establish a Bible School to provide learning classes for the Laymen.<br/>
                             <b>3.</b> Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>
@@ -274,60 +275,32 @@ export const designContext = (page) => {
             return [];
         case 'ministries':
             return [{key: uuidv1(), title: "Children's", image: freepik11405Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                        context: <p>"Showing children the love of God, the way Jesus teaches."</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Media', image: freepik1773Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                        context: <p>"Proving a free copy of the message, making sure all audio sounds and performs
+                            great, and creating announcements and fliers are all things we love to do for the people
+                            of God."</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Hospitality', image: freepikogdrvdoImg,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
-                        detail: <p></p>},
-                    {key: uuidv1(), title: 'Couples in Covanant', image: freepik55Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                    /*{key: uuidv1(), title: 'Hospitality', image: freepikogdrvdoImg, //coffe image
+                        context: <p>"Contributes to the needs of visitors and members by providing warm words of
+                            welcome, information and refreshments."</p>,
+                        detail: <p></p>},*/
+                    {key: uuidv1(), title: 'Couples in Covenant', image: freepik55Img,
+                        context: <p>"Keeping the spark in God's married couples, Loving in marriage as Jesus loves the church."</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Youth', image: freepik2159Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                        context: <p>"Reaching out the youth as they are our future leaders"</p>, //TODO - this isn't good enough
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Ushers and Greeters', image: freepik272299Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                    {key: uuidv1(), title: 'Hospitality', image: freepik272299Img,
+                        context: <p>"Contributes to the needs of visitors and members by providing warm words of
+                            welcome, information and refreshments."</p>,
                         detail: <p></p>},
                     {key: uuidv1(), title: 'Bridge Connectors', image: freepikoq5kaw0Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                        context: <p>"Bridging the gap between the generations, showing that God reaches all!"</p>,
                         detail: <p></p>},
-                    {key: uuidv1(), title: 'Free Worshipers', image: freepik3893Img,
-                        context: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Lacus sed turpis tincidunt id aliquet. A
-                            scelerisque purus semper eget duis. Elementum tempus egestas sed sed risus pretium quam
-                            vulputate. Est lorem ipsum dolor sit amet. Porta lorem mollis aliquam ut porttitor leo a
-                            diam sollicitudin.</p>,
+                    {key: uuidv1(), title: 'Praise Team', image: freepik3893Img,
+                        context: <p>"Leading the charge in setting the atmosphere for true praise!"</p>,
                         detail: <p></p>}];
         default:
             return [];

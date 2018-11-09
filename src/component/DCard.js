@@ -20,12 +20,14 @@ const TextContainer = styled.div`
 const ImageContainer = styled.div`
     height: 180px;
     width: 230px;
-    background-color: rgba(50, 50, 50, 0.8);
 `;
 
 const DImage = styled.img`
     height: 180px;
-    width: 230px;
+    width: 220px;
+    border-radius: 50%;
+    -moz-box-shadow: 0 0 5px 2px #899;
+    -webkit-box-shadow: 0 0 5px 2px #899;
 `;
 
 const Title = styled.h1`
@@ -35,12 +37,24 @@ const Title = styled.h1`
     padding: 5px;
 `;
 
+const ButtonText = styled.h4`
+    font-family: 'Permanent Marker', cursive;
+`;
+
 const Paragraph = styled.div`
     max-width: 570px;
     max-height: 100px;
     margin-left: ${props => props.inverted ? '5px':'0px'}
     margin-right: ${props => props.inverted ? '0px':'5px'}
     text-align: justified;
+`;
+
+const SubHeading = styled.h3`
+    max-width: 570px;
+    max-height: 100px;
+    margin-left: ${props => props.inverted ? '5px':'0px'}
+    margin-right: ${props => props.inverted ? '0px':'5px'}
+    text-align: ${props => props.inverted ? 'left': 'right'}
 `;
 
 const ButtonContainer = styled.div`
@@ -61,7 +75,8 @@ class DCard extends React.Component{
         content: PropTypes.object,
         inverted: PropTypes.bool,
         detail: PropTypes.object,
-        enableModal: PropTypes.bool
+        enableModal: PropTypes.bool,
+        small: PropTypes.bool
     };
 
     static defaultProps = {
@@ -71,10 +86,35 @@ class DCard extends React.Component{
         content: 'Sample Message',
         inverted: true,
         detail: 'Some Detail About a Thing',
-        enableModal: false
+        enableModal: false,
+        small: false
     };
 
     render(){
+        let context;
+
+        if (this.props.small) {
+            context = <SubHeading inverted = {this.props.inverted}>
+                {this.props.content}
+                {this.props.enableModal &&
+                <ButtonContainer inverted={this.props.inverted}>
+                    <Button bsSize="xsmall" bsStyle={'Link'}
+                            onClick={() => this.setState({showModal: true})}><ButtonText>...more</ButtonText></Button>
+                </ButtonContainer>
+                }
+            </SubHeading>
+        } else {
+            context = <Paragraph inverted={this.props.inverted}>
+                {this.props.content}
+                {this.props.enableModal &&
+                <ButtonContainer inverted={this.props.inverted}>
+                    <Button bsSize="xsmall" bsStyle={'Link'}
+                            onClick={() => this.setState({showModal: true})}><ButtonText>...more</ButtonText></Button>
+                </ButtonContainer>
+                }
+            </Paragraph>
+        }
+
         return(
             <Container>
                 {this.props.enableModal &&
@@ -101,15 +141,7 @@ class DCard extends React.Component{
                     <Title inverted={this.props.inverted}>
                         {this.props.title}
                     </Title>
-                    <Paragraph inverted={this.props.inverted}>
-                        {this.props.content}
-                        {this.props.enableModal &&
-                            <ButtonContainer inverted={this.props.inverted}>
-                                <Button bsSize="xsmall" bsStyle={'Link'}
-                                        onClick={() => this.setState({showModal: true})}>...more</Button>
-                            </ButtonContainer>
-                        }
-                    </Paragraph>
+                    {context}
                 </TextContainer>
 
                 {!this.props.inverted &&

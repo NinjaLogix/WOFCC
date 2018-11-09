@@ -64,6 +64,7 @@ class ConnectedMinistries extends React.PureComponent{
                                     imageUrl={provideUrl(this.state.displayUrl, el.image)}
                                     title={el.title}
                                     content={el.context}
+                                    small = {true}
                                 />
                             </li>
                         ))}
