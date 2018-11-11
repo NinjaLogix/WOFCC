@@ -22,10 +22,10 @@ const ConnectedFooter = ({page}) => {
     return(
           <Grid className={'footer'}>
               <Row className={'show-grid'}>
-                  <Col xs={2} xsOffset={2}>
+                  <Col xs={2} md={4}>
                       <p>
-                        Pages
                           <ul style={footerUl}>
+                              <li>Pages</li>
                               <li><Link to={'/'} style={listItem}>Home</Link></li>
                               <li><Link to={'/about-us'} style={listItem}>About Us</Link></li>
                               <li><Link to={'/contact-us'} style={listItem}>Contact Us</Link></li>
@@ -36,17 +36,16 @@ const ConnectedFooter = ({page}) => {
                       </p>
                   </Col>
                   <Col xs={2} md={4}>
-                      <p>
-                        Freepik Image Credits
-                          {/*If there are images to credit then show them, otherwise don't render anything from this IIFE*/}
                           {!(elements === undefined || elements.length === 0) &&
-                              <ul className={'footer-list'}>
-                                  {elements.map(el =>
-                                    <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
-                                  )}
-                              </ul>
+                              <p>
+                                  <ul className={'footer-list'}>
+                                      <li>Freepik Image Credits</li>
+                                      {elements.map(el =>
+                                        <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
+                                      )}
+                                  </ul>
+                              </p>
                           }
-                      </p>
                   </Col>
                   <Col xs={2} md={4}>
                       <p>
