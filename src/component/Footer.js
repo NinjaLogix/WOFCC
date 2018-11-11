@@ -36,16 +36,16 @@ const ConnectedFooter = ({page}) => {
                       </p>
                   </Col>
                   <Col xs={2} md={4}>
-                          {!(elements === undefined || elements.length === 0) &&
-                              <p>
-                                  <ul className={'footer-list'}>
-                                      <li>Freepik Image Credits</li>
-                                      {elements.map(el =>
-                                        <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
-                                      )}
-                                  </ul>
-                              </p>
-                          }
+                    {!(elements === undefined || elements.length === 0) &&
+                        <p>
+                            <ul className={'footer-list'}>
+                                <li>Freepik Image Credits</li>
+                                {elements.map(el =>
+                                    <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
+                                )}
+                            </ul>
+                        </p>
+                    }
                   </Col>
                   <Col xs={2} md={4}>
                       <p>
