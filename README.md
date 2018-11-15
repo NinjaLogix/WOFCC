@@ -1,3 +1,2 @@
-Readme is to be updated soon.
 # WOFCC
-created by  Branden Boyington
+created in 2018 by Branden Boyington on my 

@@ -32,14 +32,18 @@ const freepikoq5kaw0Img = 'OQ5KAW0.jpg';
 
 let date = new Date();
 
-export const dropBox = new Dropbox.Dropbox({accessToken: process.env.REACT_APP_TOKEN});
-export const FILE_REGEX = RegExp('^.*-(([A-z]*|[a-z]*) ([0-9]{1}|[0-9]{2}), [0-9]{4})-(([A-z]*|[a-z]*) ([0-9]{1}|[0-9]{2}), [0-9]{4})');
-export const EXT_REGEX = RegExp('\.(jpg|jpeg|png)');
-export const ALT_REGEX = RegExp('^.*-' + date.getFullYear());
+export const dropBox = new Dropbox.Dropbox({accessToken: process.env.REACT_APP_TOKEN_PROD});
 
+export const FILE_REGEX = RegExp(process.env.REACT_APP_REGEX_FILE);
+export const EXT_REGEX = RegExp(process.env.REACT_APP_REGEX_EXT);
+export const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + date.getFullYear());
+
+const githubUrl = process.env.REACT_APP_GITHUB_COPYRIGHT_URL;
+const githubLabel = process.env.REACT_APP_GITHUB_COPYRIGHT_LABEL;
+const githubText = process.env.REACT_APP_GITHUB_COPYRIGHT_TEXT;
 export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
                              Branden Boyington<br/>
-                             <a className="github-button" href="https://github.com/NinjaLogix" aria-label="Follow @NinjaLogix on GitHub">Follow @NinjaLogix</a>
+                             <a className="github-button" href={githubUrl} aria-label={githubLabel}>{githubText}</a>
                          </p>;
 
 export const fixUrl = (url) => {
@@ -57,10 +61,10 @@ export const provideUrl = (array, fileName) => {
     }
 };
 
-export const FacebookUrl = 'https://www.facebook.com/WordOfFaithSouthaven';
-export const landingBackground = 'https://dl.dropboxusercontent.com/s/xzkkpptp6a1sm1o/WDF_1461291.jpg?dl=0';
-export const LogoSmall = 'https://dl.dropboxusercontent.com/s/vpsuohcjpk6hgak/badge_small.png?dl=0';
-export const LogoLarge = 'https://dl.dropboxusercontent.com/s/xnfbcf6ul86dhwe/logo_large.png?dl=0';
+export const FacebookUrl = process.env.REACT_APP_FACEBOOK_URL;
+export const landingBackground = process.env.REACT_APP_LANDING_BACKGROUND_URL;
+export const LogoSmall = process.env.REACT_APP_LOGO_SMALL_URL;
+export const LogoLarge = process.env.REACT_APP_LOGO_LARGE_URL;
 
 export const freePikCredits = (page) => {
     switch(page){

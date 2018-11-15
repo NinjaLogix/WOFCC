@@ -184,8 +184,8 @@ html,body{
 
 .about-container .about-header{
     width: 100%;
-    height: 150px;
-    background-image: url('https://dl.dropboxusercontent.com/s/bbvj88mh3lfpe72/2144.jpg?dl=0');
+    height: 150px;    /* TODO - take out all these url's in the css */
+    background-image: url('https://dl.dropboxusercontent.com/s/4b8it4x7nfkefbs/2144.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -218,7 +218,7 @@ html,body{
 .contact-container .contact-header{
     width:100%;
     height:400px;
-    background-image: url('https://dl.dropboxusercontent.com/s/pix7dlvl058zxse/1024.jpg?dl=0');
+    background-image: url('https://dl.dropboxusercontent.com/s/x1detiu8flqq3cq/1024.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -287,7 +287,7 @@ html,body{
 .about-ministries-container .about-ministries-header{
     width: 100%;
     height: 150px;
-    background-image: url('https://dl.dropboxusercontent.com/s/bbvj88mh3lfpe72/2144.jpg?dl=0');
+    background-image: url('https://dl.dropboxusercontent.com/s/4b8it4x7nfkefbs/2144.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -331,7 +331,7 @@ html,body{
     /*min-height:350px;
     max-height:457px;*/
     height: 65%;
-    background-image: url('https://dl.dropboxusercontent.com/s/m6kn6g3og3sb9iu/102434-OLS3V2-932.jpg?dl=0');
+    background-image: url('https://dl.dropboxusercontent.com/s/xfjbsqugk29jtmw/102434-OLS3V2-932.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -353,7 +353,7 @@ html,body{
 }
 
 .service-container .service-mid-container{
-    background-image: url('https://dl.dropboxusercontent.com/s/7kzql4yaoi59xl8/ODRAX20.jpg?dl=0');
+    background-image: url('https://dl.dropboxusercontent.com/s/931csoonk8h0utf/ODRAX20.jpg?dl=0');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

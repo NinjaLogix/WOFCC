@@ -41,7 +41,7 @@ class ConnectedLanding extends React.PureComponent{
                         let startDate = new Date(pieces[1]);
                         let endDate = new Date(pieces[2]);
 
-                        if (today >= startDate && today < endDate) {
+                        if ((today >= startDate && today < endDate)|| (ALT_REGEX.test(file))) {
                             dropBox.sharingCreateSharedLinkWithSettings({
                                 path: fileName.path_display,
                                 settings: {requested_visibility: {'.tag': 'public'}}
@@ -49,7 +49,7 @@ class ConnectedLanding extends React.PureComponent{
                                 .catch(error => console.error('Shared link error: ', error));
                         }
                     } else {
-                        console.log('Image naming not in correct format: ', fileName.name);
+                        console.error('Image naming not in correct format: ', fileName.name);
                     }
                     dropBox.sharingListSharedLinks({path: fileName.path_display})
                         .then(response => {
