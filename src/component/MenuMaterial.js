@@ -57,6 +57,7 @@ class ConnectedMenu extends React.Component{
                         <NavItem componentClass={Link} href={'/directions'} to={'/directions'} eventKey={4}>Directions</NavItem>
                         <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={5}>Services</NavItem>
                         <NavItem componentClass={Link} href={'/ministries'} to={'/ministries'} eventKey={6}>Ministries</NavItem>
+                        <NavItem componentClass={Link} href={'/recent-events'} to={'/recent-events'} eventKey={7}>Recent Events</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

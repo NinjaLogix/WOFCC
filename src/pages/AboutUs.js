@@ -4,7 +4,6 @@ import { change_page } from "../redux-def/actions";
 import DCard from "../component/DCard";
 import { designContext, dropBox, provideUrl } from '../script/appContext';
 import '../style/wofcc_master.css'
-import Dropbox from "dropbox";
 
 const mapDispatchToProps = dispatch => {
     return{

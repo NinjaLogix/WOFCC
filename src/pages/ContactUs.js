@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {change_page} from "../redux-def/actions";
-import { FacebookUrl, dropBox, facebookImg, pblcImg, provideUrl, freepik1024Img } from '../script/appContext';
+import { FacebookUrl, dropBox, facebookImg, pblcImg, provideUrl } from '../script/appContext';
 
 import '../style/wofcc_master.css';
 

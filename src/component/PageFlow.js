@@ -6,6 +6,8 @@ import Directions from '../pages/Directions';
 import ContactUs from '../pages/ContactUs';
 import AboutUs from "../pages/AboutUs";
 import Ministries from '../pages/Ministries';
+import RecentEvents from '../pages/RecentEvents';
+import GalleryView from "./GalleryView";
 
 class PageFlow extends React.Component{
     render(){
@@ -17,6 +19,8 @@ class PageFlow extends React.Component{
                 <Route path={'/contact-us'} component={ContactUs}/>
                 <Route path={'/about-us'} component={AboutUs}/>
                 <Route path={'/ministries'} component={Ministries}/>
+                <Route path={'/recent-events'} component={RecentEvents}/>
+                <Route path={'/gallery-view'} component={GalleryView}/>
             </Switch>
         );
     }

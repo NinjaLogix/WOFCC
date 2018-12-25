@@ -7,27 +7,27 @@ const bishopImg = 'Bishop-KAB-large.jpg';
 export const pblcImg = 'PBLC-3.png';
 const crossImg = 'b6c8eca1-0910-4fd9-b154-849aef0af522.png';
 const bibleHistoryImg = 'Bible_History.jpg';
-const logoSmallImg = 'badge_small.png';
+//const logoSmallImg = 'badge_small.png';
 const logoLargeImg = 'logo_large.png';
 export const facebookImg = 'Facebook_Home_logo_old.svg.png';
-const wdfImg = 'WDF_1461291.jpg';
+//const wdfImg = 'WDF_1461291.jpg';
 const freepik12Img = '12.jpg';
 const freepik28Img = '28.jpg';
 const freepik55Img = '55.jpg';
 const freepik397Img = '397.jpg';
-export const freepik1024Img = '1024.jpg';
+//export const freepik1024Img = '1024.jpg';
 const freepik1773Img = '1773.jpg';
 const freepik1869Img = '1869.jpg';
-const freepik2144Img = '2144.jpg';
+//const freepik2144Img = '2144.jpg';
 const freepik2159Img = '2159.jpg';
 const freepik3893Img = '3893.jpg';
 const freepik11405Img = '11405.jpg';
-const freepik102434Img = '102434-OLS3V2-932.jpg';
+//const freepik102434Img = '102434-OLS3V2-932.jpg';
 const freepik272299Img = '272299-P5OLTS-748.jpg';
-const freepik768832Img = '768832.jpg';
-const freepikoccn5z0Img = 'OCCN5Z0.jpg';
-const freepikodrax20Img = 'ODRAX20.jpg';
-const freepikogdrvdoImg = 'OGDRVD0.jpg';
+//const freepik768832Img = '768832.jpg';
+//const freepikoccn5z0Img = 'OCCN5Z0.jpg';
+//const freepikodrax20Img = 'ODRAX20.jpg';
+//const freepikogdrvdoImg = 'OGDRVD0.jpg';
 const freepikoq5kaw0Img = 'OQ5KAW0.jpg';
 
 let date = new Date();
@@ -55,7 +55,6 @@ export const provideUrl = (array, fileName) => {
     for (let i=0; i< array.length && !found; i++) {
         if (array[i].url.includes(fileName)) {
             found = true;
-            console.log('provideUrl', array[i]);
             return array[i].url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
         }
     }

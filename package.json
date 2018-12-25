@@ -15,6 +15,9 @@
     "react-dom": "^16.4.1",
     "react-https-redirect": "^1.0.11",
     "react-iframe": "^1.2.0",
+    "react-images": "^0.5.19",
+    "react-measure": "^2.2.2",
+    "react-photo-gallery": "^6.2.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -22,7 +25,8 @@
     "recompose": "^0.27.1",
     "redux": "^4.0.0",
     "styled-components": "^3.4.2",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
