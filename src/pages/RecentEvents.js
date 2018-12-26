@@ -28,12 +28,13 @@ class ConnectedRecentEvents extends React.PureComponent{
         let galleryPaths = [];
 
         response.entries.forEach(entry=>{
-           if (entry['.tag'] === 'file' && entry.name === 'gallery.conf'){ //TODO -> hide this in the .env file
+           if (entry['.tag'] === 'file' && entry.name === process.env.REACT_APP_GALLERY_CONF){
+               console.log('entry.name', entry.path_display);
                let confUrl = this.handleShareLinks(entry.path_display, entry.name);
                confUrl.then(configurationUrl => {
                   let tempValue = {
                       confLink: configurationUrl,
-                      confPath: entry.path_display.replace(/\/gallery.conf/g,''), //TODO -> hide this in the .env file
+                      confPath: '/' + entry.path_display.split('/')[1] + '/' + entry.path_display.split('/')[2],
                       urls: [],
                       data: []
                   };
@@ -84,7 +85,7 @@ class ConnectedRecentEvents extends React.PureComponent{
         if (galleryObj.confLink !== undefined) {
             txtFile.open("GET", fixUrl(galleryObj.confLink), true);
             txtFile.onreadystatechange = () => {
-                if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
+                if (txtFile.readyState === 4) {
                     if (txtFile.status === 200) {
                         galleryObj.data = txtFile.responseText.split("\n");
 

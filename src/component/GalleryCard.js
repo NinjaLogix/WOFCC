@@ -91,6 +91,11 @@ class ConnectedGalleryCard extends React.PureComponent{
         }
     };
 
+    handleRedirect=()=>{
+        this.props.set_gallery(this.props.eventGallery);
+        this.set_redirect()
+    };
+
     render(){
         const {classes}=this.props;
 
@@ -104,16 +109,13 @@ class ConnectedGalleryCard extends React.PureComponent{
                             <Typography component={'h6'} variant={'h6'}>{this.props.eventDate}</Typography>
                         </section>
                     </section>
-                    <CardMedia className={classes.media} image={this.props.eventCoverImageUrl} title={this.props.eventTitle}/>
+                    {this.render_redrect()}
+                    <CardMedia className={classes.media} image={this.props.eventCoverImageUrl} title={this.props.eventTitle} onClick={this.handleRedirect}/>
                     <CardContent>
-                        <Typography gutterBottom variant={'headline'} component='p'>{/*["display4","display3","display2","display1","headline","title","subheading","body2","body1","caption","button"]*/}
+                        <Typography gutterBottom variant={'headline'} component='p'>
                             {this.props.eventSubheading}
                         </Typography>
-                        {this.render_redrect()}
-                        <Button className={classes.cardButton} bsSize="xsmall" bsStyle={'link'} onClick={()=>{
-                            this.props.set_gallery(this.props.eventGallery);
-                            this.set_redirect()
-                        }}>Check out the pics!</Button>
+                        <Button className={classes.cardButton} bsSize="xsmall" bsStyle={'link'} onClick={this.handleRedirect}>Check out the pics!</Button>
                     </CardContent>
                 </Card>
             </div>
