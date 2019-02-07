@@ -28,6 +28,8 @@ class ConnectedMenu extends React.Component{
     }
 
     render(){
+        const giving_url = process.env.REACT_APP_GIVING_URL;
+
         return(
             <Navbar bsStyle={'inverse'} fixedTop collapseOnSelect fluid onToggle={this.setNavExpanded} expanded={this.state.navExpanded}>
                 {this.props.currentPage !== 'landing' &&
@@ -58,6 +60,7 @@ class ConnectedMenu extends React.Component{
                         <NavItem componentClass={Link} href={'/services'} to={'/services'} eventKey={5}>Services</NavItem>
                         <NavItem componentClass={Link} href={'/ministries'} to={'/ministries'} eventKey={6}>Ministries</NavItem>
                         <NavItem componentClass={Link} href={'/recent-events'} to={'/recent-events'} eventKey={7}>Recent Events</NavItem>
+                        <NavItem onClick={()=>{window.location.href = giving_url}}>Giving</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

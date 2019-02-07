@@ -116,6 +116,14 @@ only screen and (-webkit-min-device-pixel-ratio: 3) and (min-resolution: 192dpi)
 .footer .footer-list li a{
     color: lightgrey;
 }
+
+.custom_a{
+    color: grey;
+}
+
+.custom_a:hover{
+    color: grey;
+}
 /* ----------------------------------------------------------------------------------------------------------- Pages */
 /* ---------------------------------- App, Html, and Body*/
 html,body{

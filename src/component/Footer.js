@@ -19,6 +19,8 @@ const ConnectedFooter = ({page}) => {
         color: 'grey'
     };
 
+    let giving_url = process.env.REACT_APP_GIVING_URL;
+
     return(
           <Grid className={'footer'}>
               <Row className={'show-grid'}>
@@ -32,6 +34,7 @@ const ConnectedFooter = ({page}) => {
                               <li><Link to={'/directions'} style={listItem}>Directions</Link></li>
                               <li><Link to={'/ministries'} style={listItem}>Ministries</Link></li>
                               <li><Link to={'/services'} style={listItem}>Services</Link></li>
+                              <li><a href={giving_url} className={'custom_a'}>Giving</a></li>
                           </ul>
                       </p>
                   </Col>
