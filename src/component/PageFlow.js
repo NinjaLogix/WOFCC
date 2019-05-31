@@ -19,7 +19,7 @@ class PageFlow extends React.Component{
                 <Route path={'/contact-us'} component={ContactUs}/>
                 <Route path={'/about-us'} component={AboutUs}/>
                 <Route path={'/ministries'} component={Ministries}/>
-                <Route path={'/recent-events'} component={RecentEvents}/>
+                <Route path={'/events'} component={RecentEvents}/>
                 <Route path={'/gallery-view'} component={GalleryView}/>
             </Switch>
         );

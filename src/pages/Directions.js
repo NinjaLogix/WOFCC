@@ -28,7 +28,7 @@ class ConnectedDirections extends React.PureComponent{
         return(
             <div className={'direction-container'}>
                 <h1>Trying to Find Us?</h1>
-                <h2>We aren't too hard to find. Our building is located in suite D.</h2>
+                <h2>We aren't too hard to find. Our building is located in suite D</h2>
                 <h3>Mailing Address</h3>
                 <p>P.O. Box 1968 Southaven, MS 38671</p>
                 <div className={'directions-map-container'}>

@@ -76,8 +76,15 @@ class ConnectedContactUs extends React.PureComponent{
                             Feel free to email us at:
                         </p>
                         <h2>wofccsouthaven@gmail.com</h2>
+
+                        <p>You can find us here:</p>
+                        <h3>1881 Nail Rd suite D</h3>
+                        <h3>Horn Lake, MS 38637</h3>
+
                         <p>or give us a call at:</p>
                         <h2>(769) 232-6457</h2>
+                        <p>or</p>
+                        <h2>(662) 536-6236</h2>
                     </div>
                 </div>
             </div>

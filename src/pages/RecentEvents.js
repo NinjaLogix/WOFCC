@@ -4,6 +4,14 @@ import '../style/wofcc_master.css'
 import {change_page} from "../redux-def/actions";
 import connect from "react-redux/es/connect/connect";
 import { dropBox, fixUrl, EXT_REGEX } from '../script/appContext';
+import { css } from '@emotion/core';
+import { BarLoader } from 'react-spinners';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 const mapDispatchToProps = dispatch => {
     return{
@@ -103,6 +111,8 @@ class ConnectedRecentEvents extends React.PureComponent{
                         this.setState(prevState => ({
                             galleryCards: [...prevState.galleryCards, galleryCard]
                         }));
+
+                        this.setState({loading: false});
                     }
                 }
             };
@@ -139,10 +149,25 @@ class ConnectedRecentEvents extends React.PureComponent{
         return(
             <div className={'events-container'}>
                 <div className={'events-header'}>
-                    <h3>A few of our recent events</h3>
+                    <h3>A few of our recent and upcoming events</h3>
                 </div>
                 <div className={'events-flexbox'}>
-                    {this.state.galleryCards}
+                    {this.state.loading
+                        ?
+                            <div className={'spinner-box'}>
+                                <div className='sweet-loading'>
+                                    <BarLoader
+                                        css={override}
+                                        sizeUnit={"px"}
+                                        size={150}
+                                        color={'#123abc'}
+                                        loading={this.state.loading}
+                                    />
+                                </div>
+                            </div>
+                        :
+                            this.state.galleryCards
+                    }
                 </div>
 
             </div>

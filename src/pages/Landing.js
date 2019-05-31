@@ -1,11 +1,10 @@
 import React from 'react';
-import Fade from '@material-ui/core/Fade';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import { Carousel } from 'react-bootstrap';
-import BackgroundImg from '../component/BackgroundImg';
 import { FILE_REGEX, EXT_REGEX, ALT_REGEX, dropBox, fixUrl } from '../script/appContext';
 import '../style/wofcc_master.css';
+import {SoundPlayer} from "../component";
 
 const mapDispatchToProps = dispatch =>{
   return{
@@ -27,6 +26,8 @@ class ConnectedLanding extends React.PureComponent{
     componentDidMount(){
         this.setState({page: 'landing'});
         this.props.change_page('landing');
+
+        let tempArr = [];
 
         dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
             .then(response => {
@@ -61,10 +62,10 @@ class ConnectedLanding extends React.PureComponent{
                                     let today = new Date();
 
                                     if ((today >= startDate && today < endDate) || (ALT_REGEX.test(file))) {
-                                        this.setState(prevState => ({
-                                            displayUrl: [...prevState.displayUrl, innerThing]
-                                        }))
+                                        tempArr = [...tempArr, innerThing];
                                     }
+
+                                    this.setState({displayUrl: tempArr.sort()});
                                 }
                             })
                         })
@@ -75,18 +76,10 @@ class ConnectedLanding extends React.PureComponent{
     };
 
     render(){
-        const { checked } = this.state;
         return(
             <div className={'landing-main'}>
-                <BackgroundImg/>
-                <h1>Word of Faith Christian Center Southaven Mississippi</h1>
-                {/*come back and make this better with the getFiles function*/}
-                <div className={'center-carousel'}>
-                    <Fade
-                        in={checked}
-                        style={{ transformOrigin: '0 0 0' }}
-                        {...(checked ? { timeout: 2000 } : {})}
-                    >
+                <div className='carousel-box'>
+                    <div className={'center-carousel'}>
                         <Carousel bsClass={'carousel'} indicators={false}>
                             {this.state.displayUrl.map( element =>
                                 <Carousel.Item>
@@ -94,8 +87,19 @@ class ConnectedLanding extends React.PureComponent{
                                 </Carousel.Item>
                             )}
                         </Carousel>
-                    </Fade>
+                    </div>
                 </div>
+                <h1>Word of Faith Christian Center Mississippi</h1>
+                <section className={'audio-landing'}>
+                    <SoundPlayer/>
+
+                    <div className={'audio-box'}>
+                        <h1>Come as you are</h1>
+                        <h2>Find Us @</h2>
+                        <h3>1881 Nail Rd suite D</h3>
+                        <h3>Horn Lake, MS 38637</h3>
+                    </div>
+                </section>
             </div>
         )
     };
