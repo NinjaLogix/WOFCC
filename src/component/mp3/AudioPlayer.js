@@ -3,7 +3,6 @@ import {provideAudioUrl} from '../../util';
 import ReactAudioPlayer from 'react-audio-player';
 
 const data = provideAudioUrl();
-console.log('url', data);
 
 export default class SoundPlayer extends React.Component {
     render(){

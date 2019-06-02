@@ -26,7 +26,6 @@ export const provideAudioUrl = () => {
     conf.onreadystatechange = () => {
         if (conf.readyState === 4 && conf.status === 200){
             const response = conf.responseText.split("\n");
-            console.log('response', response);
             const titleSplit = response[0].split(':')[1];
             audioData.title = titleSplit.split('-')[0];
             audioData.date = titleSplit.split('-')[1];
@@ -36,4 +35,19 @@ export const provideAudioUrl = () => {
     conf.send(null);
 
     return audioData;
+};
+
+export const compareCarousel = (a,b) => {
+    const compA = a.name.toUpperCase();
+    const compB = b.name.toUpperCase();
+
+    let comparison = 0;
+
+    if (compA > compB){
+        comparison = 1;
+    } else if (compA < compB) {
+        comparison = -1;
+    }
+
+    return comparison;
 };
