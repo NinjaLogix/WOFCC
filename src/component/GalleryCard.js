@@ -30,7 +30,8 @@ const styles = {
     card: {
         minWidth: 50,
         maxWidth: 300,
-        paddingBottom: 10
+        paddingBottom: 10,
+        minHeight: 400
     },
     media: {
         minHeight: 20,
@@ -106,7 +107,12 @@ class ConnectedGalleryCard extends React.PureComponent{
                         <Avatar className={classes.avatar}>{this.provideAvatarText(this.props.eventTitle)}</Avatar>
                         <section className={classes.subSectionFlex}>
                             <Typography component={'h3'} variant={'h6'}>{this.props.eventTitle}</Typography>
-                            <Typography component={'h6'} variant={'h6'}>{this.props.eventDate}</Typography>
+                            {this.props.eventDate
+                                ?
+                                    <Typography component={'h6'} variant={'h6'}>{this.props.eventDate}</Typography>
+                                :
+                                    <br/>
+                            }
                         </section>
                     </section>
                     {this.render_redrect()}
