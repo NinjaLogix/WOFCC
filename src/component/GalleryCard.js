@@ -31,7 +31,8 @@ const styles = {
         minWidth: 50,
         maxWidth: 300,
         paddingBottom: 10,
-        minHeight: 400
+        minHeight: 400,
+        maxHeight: 400
     },
     media: {
         minHeight: 20,
