@@ -45,12 +45,15 @@ const styles = {
         align: 'center'
     },
     sectionFlex: {
+        width: '100%',
         display: 'inline-flex'
     },
     subSectionFlex: {
         display: 'flex',
-        flexDirection: 'column',
-        alignText: 'left'
+        width: '100%',
+        flexDirection: 'row',
+        alignContent: 'center',
+        justifyContent: 'flex-start'
     }
 };
 
@@ -106,13 +109,13 @@ class ConnectedGalleryCard extends React.PureComponent{
                     <section className={classes.sectionFlex}>
                         <Avatar className={classes.avatar}>{this.provideAvatarText(this.props.eventTitle)}</Avatar>
                         <section className={classes.subSectionFlex}>
-                            <Typography component={'h3'} variant={'h6'}>{this.props.eventTitle}</Typography>
-                            {this.props.eventDate
+                            <Typography component={'h3'} variant={'h3'} style={{lineHeight: 1, alignSelf: 'center'}}>{this.props.eventTitle}</Typography>
+                            {/*this.props.eventDate
                                 ?
                                     <Typography component={'h6'} variant={'h6'}>{this.props.eventDate}</Typography>
                                 :
                                     <br/>
-                            }
+                            */}
                         </section>
                     </section>
                     {this.render_redrect()}
