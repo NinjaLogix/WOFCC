@@ -82,7 +82,7 @@ class ConnectedLanding extends React.Component{
         return(
             <div className={'landing-main'}>
                 <div className={'landing-header'}>
-                    <h1 style={{fontSize: '3.5em', lineHeight: '2'}}>Word of Faith Christian Center Mississippi</h1>
+                    <h1 style={{fontSize: '3.5em', lineHeight: '2'}}>Word of Faith Christian Center</h1>
                 </div>
                 <div className='carousel-box'>
                     <section className={'audio-landing'} style={{paddingTop: '10px', paddingBottom: '10px'}}>
