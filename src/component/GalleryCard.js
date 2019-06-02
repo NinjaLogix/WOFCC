@@ -101,7 +101,7 @@ class ConnectedGalleryCard extends React.PureComponent{
 
         return(
             <div className={classes.container}>
-                <Card className={classes.card}>
+                <Card className={classes.card} onClick={this.props.eventGallery ? this.handleRedirect : console.log('no pics')}>
                     <section className={classes.sectionFlex}>
                         <Avatar className={classes.avatar}>{this.provideAvatarText(this.props.eventTitle)}</Avatar>
                         <section className={classes.subSectionFlex}>
@@ -110,12 +110,12 @@ class ConnectedGalleryCard extends React.PureComponent{
                         </section>
                     </section>
                     {this.render_redrect()}
-                    <CardMedia className={classes.media} image={this.props.eventCoverImageUrl} title={this.props.eventTitle} onClick={this.handleRedirect}/>
+                    <CardMedia className={classes.media} image={this.props.eventCoverImageUrl} title={this.props.eventTitle}/>
                     <CardContent>
                         <Typography gutterBottom variant={'headline'} component='p'>
                             {this.props.eventSubheading}
                         </Typography>
-                        <Button className={classes.cardButton} bsSize="xsmall" bsStyle={'link'} onClick={this.handleRedirect}>Check out the pics!</Button>
+                        <Button className={classes.cardButton} bsSize="xsmall" bsStyle={'link'} onClick={this.props.eventGallery ? this.handleRedirect : console.log('no pics')}>Check out the pics!</Button>
                     </CardContent>
                 </Card>
             </div>
