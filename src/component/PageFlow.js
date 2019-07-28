@@ -9,6 +9,7 @@ import Ministries from '../pages/Ministries';
 import RecentEvents from '../pages/RecentEvents';
 import GalleryView from "./GalleryView";
 
+//TODO -> get history working and strip out the redux stuff
 class PageFlow extends React.Component{
     render(){
         return(

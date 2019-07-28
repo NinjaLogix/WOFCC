@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { change_page } from "../redux-def/actions";
 import DCard from "../component/DCard";
-import {designContext, dropBox, provideUrl} from '../script/appContext';
+import {designContext, provideUrl} from '../script/appContext';
+import {provideMinistriesImages} from '../util';
 import '../style/wofcc_master.css'
 
 const mapDispatchToProps = dispatch => {
@@ -25,28 +26,12 @@ class ConnectedMinistries extends React.PureComponent{
         this.setState({page: 'ministries'});
         this.props.change_page('ministries');
 
-        dropBox.filesListFolder({path: process.env.REACT_APP_MINISTRIES_PATH})
-            .then(response => {
-                response.entries.forEach(fileName => {
-                    dropBox.sharingListSharedLinks({path: fileName.path_display})
-                        .then(response => {
-                            response.links.forEach(innerThing => {
-                                if (innerThing['.tag'] === 'file') {
-                                    this.setState(prevState => ({
-                                        displayUrl: [...prevState.displayUrl, innerThing]
-                                    }))
-                                }
-                            })
-                        })
-                        .catch(error => console.error('Error getting shared links', error))
-                })
-            })
-            .catch(error => console.log('error listing files...'));
+        provideMinistriesImages()
+            .then(response => this.setState({displayUrl: response}))
+            .catch(error => console.log('error retrieving ministries objects', error));
     }
 
-    flipFlop(index){
-        return index % 2 > 0;
-    }
+    flipFlop = index => index % 2 > 0;
 
     render(){
         return(
