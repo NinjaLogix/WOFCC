@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Route, Switch} from "react-router-dom";
 import history from './history/history';
-import Landing from "./pages/Landing";
+import {Landing} from "./pages/landing";
 // import Services from "./pages/Services";
 // import Directions from "./pages/Directions";
 // import ContactUs from "./pages/ContactUs";

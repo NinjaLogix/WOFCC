@@ -1,10 +1,11 @@
 import React from 'react';
-import {SoundPlayer} from "../component";
-import {Footer, Menu} from '../component/navigation';
-import {provideAudioData} from '../util';
-import {WofccCarousel} from '../component/carousel';
-import {LogoSmall} from '../script/appContext';
-import '../style/wofcc_master.css';
+import {SoundPlayer} from "../../component";
+import {Menu} from '../../component/navigation/menu';
+import {Footer} from '../../component/navigation/footer';
+import {provideAudioData} from '../../util';
+import {WofccCarousel} from '../../component/carousel';
+import {LogoSmall} from '../../script/appContext';
+import '../../style/wofcc_master.css';
 
 export default class Landing extends React.Component{
     state = {

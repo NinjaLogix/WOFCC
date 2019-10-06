@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { freePikCredits, copyright } from '../../script/appContext';
+import { freePikCredits, copyright } from '../../../script/appContext';
 import { Link } from 'react-router-dom';
-import '../../style/wofcc_master.css';
+import '../../../style/wofcc_master.css';
 
 export const Footer = ({page}) => {
     const elements = freePikCredits(page);
