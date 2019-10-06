@@ -46,10 +46,6 @@ export const copyright = <p> Copyright ©{(new Date().getFullYear())}<br/>
                              <a className="github-button" href={githubUrl} aria-label={githubLabel}>{githubText}</a>
                          </p>;
 
-export const fixUrl = (url) => {
-    return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
-};
-
 /**
  * Formats the dropbox url for viewing
  * @param {*} array 

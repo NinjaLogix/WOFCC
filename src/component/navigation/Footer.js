@@ -1,15 +1,10 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { freePikCredits, copyright } from '../script/appContext';
-import { connect } from 'react-redux';
+import { freePikCredits, copyright } from '../../script/appContext';
 import { Link } from 'react-router-dom';
-import '../style/wofcc_master.css';
+import '../../style/wofcc_master.css';
 
-const mapStateToProps = state => {
-    return { page: state.page };
-};
-
-const ConnectedFooter = ({page}) => {
+export const Footer = ({page}) => {
     const elements = freePikCredits(page);
     let footerUl = {
         listStyleType: 'none'
@@ -60,7 +55,3 @@ const ConnectedFooter = ({page}) => {
           </Grid>
     );
 };
-
-const Footer = connect(mapStateToProps)(ConnectedFooter);
-
-export default Footer;

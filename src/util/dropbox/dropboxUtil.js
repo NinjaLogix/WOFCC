@@ -1,4 +1,5 @@
-import {dropBox, fixUrl} from "../../script/appContext";
+import {dropBox} from "../../component/api";
+import {ALT_REGEX} from '../../script/appContext';
 
 /**
  * @param path
@@ -14,33 +15,6 @@ export const handleSharedLink = async (path) => {
     }
 
     return urls.links[0].url;
-};
-
-/**
- * 
- */
-export const provideAudioUrl = () => {
-    let audioData = {
-        title: '',
-        date: '',
-        url: ''
-    };
-    let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-    let conf = new XMLHttpRequest();
-    conf.open('GET', fixUrl('https://www.dropbox.com/s/tgwjdh9dybne5xn/audio.conf?dl=0'), true);
-    conf.onreadystatechange = () => {
-        if (conf.readyState === 4 && conf.status === 200){
-            const response = conf.responseText.split("\n");
-            const titleSplit = response[0].split(':')[1];
-            audioData.title = titleSplit.split('-')[0];
-            audioData.date = titleSplit.split('-')[1];
-            audioData.url = fixUrl(response[1].split(':')[1] + ':' + response[1].split(':')[2]);
-        }
-    };
-    conf.send(null);
-
-    return audioData;
 };
 
 /**
@@ -88,3 +62,31 @@ export const provideMinistriesImages = async () => {
         console.log('dropboxUtil -> ', error)
     }
 }
+
+//* --------> General
+export const fixUrl = (url) => {
+    return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+};
+
+//! -------------------------------------------------------------> @Depreciated
+//* ----------> Carousel Related
+export const provideCarouselImages = async () =>{
+    const returnArr = [];
+
+    const response = await dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
+
+    response.entries.forEach(async (fileName) => {
+        const response2 = await dropBox.sharingListSharedLinks({path: fileName.path_display});
+
+        const file = response2.links[0].name.substring(0, response2.links[0].name.indexOf('.'));
+        const startDate = new Date(file.split('-')[1]);
+        const endDate = new Date(file.split('-')[2]);
+        const today = new Date();
+
+        if ((today >= startDate && today < endDate) || (ALT_REGEX.test(file))) {
+            returnArr.push(response2.links[0]);
+        }
+    });
+
+    return returnArr.sort(compareCarousel);
+};

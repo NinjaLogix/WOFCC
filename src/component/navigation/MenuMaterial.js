@@ -1,14 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {LogoSmall} from '../script/appContext';
+import {LogoSmall} from '../../script/appContext';
 
-const mapStateToProps = state => {
-    return { currentPage: state.page };
-};
-
-class ConnectedMenu extends React.Component{
+export default class MenuMaterial extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -65,7 +60,3 @@ class ConnectedMenu extends React.Component{
         )
     }
 }
-
-const MenuMaterial = connect(mapStateToProps)(ConnectedMenu);
-
-export default MenuMaterial;
