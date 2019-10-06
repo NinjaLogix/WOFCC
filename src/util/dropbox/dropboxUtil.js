@@ -88,5 +88,5 @@ export const provideCarouselImages = async () =>{
         }
     });
 
-    return returnArr.sort(compareCarousel);
+    return returnArr;
 };

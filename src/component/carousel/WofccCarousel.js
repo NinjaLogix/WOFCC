@@ -1,9 +1,9 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
-import {provideCarouselImages, fixUrl} from '../../util'
+import {fixUrl} from '../../util'
 import {dropBox} from '../../component/api';
 import {ALT_REGEX} from '../../script/appContext';
-import {compareCarousel} from '../../util';
+//import {compareCarousel} from '../../util';
 
 export default class WofccCarousel extends React.Component{
     constructor(){
@@ -16,8 +16,6 @@ export default class WofccCarousel extends React.Component{
     }
 
     getData = async () => {
-        const returnArr = [];
-    
         const response = await dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
     
         response.entries.forEach(async (fileName) => {

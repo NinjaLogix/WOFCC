@@ -1,8 +1,9 @@
 import React from 'react';
 import {SoundPlayer} from "../component";
-import {MenuMaterial, Footer} from '../component/navigation/index';
+import {Footer, Menu} from '../component/navigation';
 import {provideAudioData} from '../util';
 import {WofccCarousel} from '../component/carousel';
+import {LogoSmall} from '../script/appContext';
 import '../style/wofcc_master.css';
 
 export default class Landing extends React.Component{
@@ -10,6 +11,7 @@ export default class Landing extends React.Component{
         audioData: null
     }
 
+    //* ----------------------------------------------------> Lifecycle Methods
     componentDidMount(){
         provideAudioData()
             .then(response => this.setState({audioData: response}))
@@ -21,10 +23,15 @@ export default class Landing extends React.Component{
 
         return(
             <div className={'landing-main'}>
-                <MenuMaterial/>
-
                 <section className={'landing-header'}>
-                    <h1 style={{fontSize: '3.5em', lineHeight: '2'}}>Word of Faith Christian Center</h1>
+                    <Menu/>
+
+                    <section className={'landing-title'}>
+                        <h1 style={{fontSize: '3.5em', lineHeight: '2', alignSelf: 'center', zIndex: '1'}}>Word of Faith Christian Center</h1>
+                        <section style={{alignSelf: 'center', zIndex: '0', height: '4em'}}>
+                            <img src={LogoSmall} alt={'badge'}/>
+                        </section>
+                    </section>
                 </section>
 
                 <section className='carousel-box'>

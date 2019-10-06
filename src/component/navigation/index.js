@@ -1,7 +1,7 @@
-import MenuMaterial from './MenuMaterial';
 import {Footer} from './Footer';
+import Menu from './Menu';
 
 export {
-    MenuMaterial,
-    Footer
+    Footer,
+    Menu
 }
