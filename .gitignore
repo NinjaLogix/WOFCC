@@ -2,8 +2,7 @@
 .iml
 .DS_Store
 node_modules
-.env
 build
 .history
-.env.development
-.env.production
+.env
+.env.*
