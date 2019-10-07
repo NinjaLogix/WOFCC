@@ -167,8 +167,6 @@ html,body{
 /* --------------------------------------------- Landing */
 .landing-main{
     flex: 1 100%;
-    padding-bottom: 10px;
-    margin-bottom: -10px;
 }
 
 .landing-title{
@@ -183,8 +181,6 @@ html,body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    -moz-box-shadow: 0 0 30px 5px #999;
-    -webkit-box-shadow: 0 0 30px 5px #999;
 }
 
 .landing-main h1{

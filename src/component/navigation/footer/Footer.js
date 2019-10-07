@@ -1,57 +1,46 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
-import { freePikCredits, copyright } from '../../../script/appContext';
+import {Wrapper, PagesWrapper, DevCreditWrapper, FooterH4} from './FooterStyle';
+import {DevCredit} from '../dev-credits';
 import { Link } from 'react-router-dom';
 import '../../../style/wofcc_master.css';
 
-export const Footer = ({page}) => {
-    const elements = freePikCredits(page);
-    let footerUl = {
-        listStyleType: 'none'
+export default class Footer extends React.PureComponent{
+    state = {
+        givingUrl: '',
+        navOptions: [
+            {title: 'About Us', url: '/about-us'},
+            {title: 'Contact Us', url: '/contact-us'},
+            {title: 'Directions', url: '/directions'},
+            {title: 'Services', url: '/services'},
+            {title: 'Ministries', url: '/ministries'},
+            {title: 'Events', url: '/events'},
+            {title: 'Giving'}
+        ]
     };
 
-    let listItem = {
-        color: 'grey'
-    };
+    componentDidMount(){
+        this.setState({givingUrl: process.env.REACT_APP_GIVING_URL})
+    }
 
-    let giving_url = process.env.REACT_APP_GIVING_URL;
+    render(){
+        const {navOptions, givingUrl} = this.state;
 
-    return(
-          <Grid className={'footer'}>
-              <Row className={'show-grid'}>
-                  <Col xs={2} md={4}>
-                      <p>
-                          <ul style={footerUl}>
-                              <li>Pages</li>
-                              <li><Link to={'/'} style={listItem}>Home</Link></li>
-                              <li><Link to={'/about-us'} style={listItem}>About Us</Link></li>
-                              <li><Link to={'/contact-us'} style={listItem}>Contact Us</Link></li>
-                              <li><Link to={'/directions'} style={listItem}>Directions</Link></li>
-                              <li><Link to={'/ministries'} style={listItem}>Ministries</Link></li>
-                              <li><Link to={'/services'} style={listItem}>Services</Link></li>
-                              <li><a href={giving_url} className={'custom_a'}>Giving</a></li>
-                          </ul>
-                      </p>
-                  </Col>
-                  <Col xs={2} md={4}>
-                    {!(elements === undefined || elements.length === 0) &&
-                        <p>
-                            <ul className={'footer-list'}>
-                                <li>Freepik Image Credits</li>
-                                {elements.map(el =>
-                                    <li key={el.key}><a href={'http://www.freepik.com'}>{el.link_text}</a></li>
-                                )}
-                            </ul>
-                        </p>
-                    }
-                  </Col>
-                  <Col xs={2} md={4}>
-                      <p>
-                        Developer Credits
-                          {copyright}
-                      </p>
-                  </Col>
-              </Row>
-          </Grid>
-    );
-};
+        return(
+            <Wrapper>
+                <PagesWrapper>
+                    {navOptions.map(option => 
+                        option.title !== 'Giving'
+                        ?
+                            <Link to={option.url}><FooterH4>{option.title}</FooterH4></Link>
+                        :
+                            <FooterH4 onClick={() => window.location.replace(givingUrl)}>{option.title}</FooterH4>
+                    )}
+                </PagesWrapper>
+
+                <DevCreditWrapper>
+                    
+                </DevCreditWrapper>
+            </Wrapper>
+        )
+    }
+}
