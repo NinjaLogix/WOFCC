@@ -27,6 +27,11 @@ export default class Menu extends React.PureComponent{
         return (
             <Wrapper>
                 <MenuBase>
+                    {window.location.pathname !== '/' && 
+                        <Link key={Date.now()} to={'/'}>
+                            <MenuH2>Home</MenuH2>
+                        </Link>
+                    }
                     {navOptions.map((option, index) => 
                         option.title !== 'Giving'
                         ?

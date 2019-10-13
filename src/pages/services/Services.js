@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import WebCard from '../../component/WebCard';
 import {designContext, dropBox, provideUrl} from '../../script/appContext';
-import {withContext} from '../../component/context-api/withContext';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import '../../style/wofcc_master.css';
@@ -35,6 +34,20 @@ const Services = () => {
         setContext(designContext('services'));
     }
 
+    const provideCards = () => {
+        if (context){
+            return (
+                <div className={'service-flexbox'}>
+                        {context.map((el, index) =>
+                            <div key={index} className={'service-webCard-container'}>
+                                <WebCard image={provideUrl(displayUrl, el.image)} headline={el.title} context={el.context}/>
+                            </div>
+                        )}
+                </div>
+            )
+        }
+    }
+
     useEffect(() => {
         if (!dataLoaded.context && !dataLoaded.urls){
             setupServices();
@@ -53,13 +66,7 @@ const Services = () => {
             <div className={'service-mid-container'}>
                 <Menu/>
                 <h1>Our Services to You</h1>
-                <div className={'service-flexbox'}>
-                    {context.map((el, index) =>
-                        <div key={index} className={'service-webCard-container'}>
-                            <WebCard image={provideUrl(displayUrl, el.image)} headline={el.title} context={el.context}/>
-                        </div>
-                    )}
-                </div>
+                {provideCards()}
             </div>
 
             <Footer/>
@@ -67,4 +74,4 @@ const Services = () => {
     )
 }
 
-export default withContext(Services);
+export default Services;
