@@ -264,7 +264,6 @@ html,body{
 }
 /* ------------------------------------------- ContactUs */
 .contact-container{
-    margin-top: 50px;
 }
 
 .contact-container .contact-header{
@@ -274,9 +273,6 @@ html,body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
-    -moz-box-shadow: 0 0 30px 5px #999;
-    -webkit-box-shadow: 0 0 30px 5px #999;
 }
 
 .contact-container h1,h2,h3,p{
