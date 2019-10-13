@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { FacebookUrl, dropBox, facebookImg, pblcImg, provideUrl } from '../../script/appContext';
 import '../../style/wofcc_master.css';
 import { Menu } from '../../component/navigation/menu';
-import {Footer} from '../../component/navigation/footer';
+import { Footer } from '../../component/navigation/footer';
 
 export const ContactUs = (props) => {
     const [displayUrl, setDisplayUrl] = useState([]);

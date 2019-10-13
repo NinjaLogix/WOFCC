@@ -1,8 +1,7 @@
 import React from 'react';
 import {Router, Route, Switch} from "react-router-dom";
 import history from './history/history';
-import {Landing, Services, Directions, ContactUs} from './pages';
-// import AboutUs from "./pages/AboutUs";
+import {Landing, Services, Directions, ContactUs, AboutUs} from './pages';
 // import Ministries from "./pages/Ministries";
 // import RecentEvents from "./pages/RecentEvents";
 // import GalleryView from "./component/GalleryView";
@@ -17,8 +16,8 @@ const App = () => {
                     <Route path={'/services'} component={Services}/>
                     <Route path={'/directions'} component={Directions}/>
                     <Route path={'/contact-us'} component={ContactUs}/>
-                    {/* <Route path={'/about-us'} component={AboutUs}/>
-                    <Route path={'/ministries'} component={Ministries}/>
+                    <Route path={'/about-us'} component={AboutUs}/>
+                    {/* <Route path={'/ministries'} component={Ministries}/>
                     <Route path={'/events'} component={RecentEvents}/>
                     <Route path={'/gallery-view'} component={GalleryView}/> */}
                 </Switch>
