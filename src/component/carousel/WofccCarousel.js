@@ -42,8 +42,6 @@ export default class WofccCarousel extends React.Component{
         return(
             <Carousel indicators={true} pauseOnHover={true} slide={true} wrap={true}>
                 {slidesToShow.map((image, index) => {
-                        console.log('image', image);
-    
                         return(
                             <Carousel.Item key={index}>
                                 <img alt={'840x400'} src={fixUrl(image.url)}/>

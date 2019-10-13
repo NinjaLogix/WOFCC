@@ -67,26 +67,3 @@ export const provideMinistriesImages = async () => {
 export const fixUrl = (url) => {
     return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
 };
-
-//! -------------------------------------------------------------> @Depreciated
-//* ----------> Carousel Related
-export const provideCarouselImages = async () =>{
-    const returnArr = [];
-
-    const response = await dropBox.filesListFolder({path: process.env.REACT_APP_CAROUSEL_PATH})
-
-    response.entries.forEach(async (fileName) => {
-        const response2 = await dropBox.sharingListSharedLinks({path: fileName.path_display});
-
-        const file = response2.links[0].name.substring(0, response2.links[0].name.indexOf('.'));
-        const startDate = new Date(file.split('-')[1]);
-        const endDate = new Date(file.split('-')[2]);
-        const today = new Date();
-
-        if ((today >= startDate && today < endDate) || (ALT_REGEX.test(file))) {
-            returnArr.push(response2.links[0]);
-        }
-    });
-
-    return returnArr;
-};

@@ -27,14 +27,14 @@ export default class Menu extends React.PureComponent{
         return (
             <Wrapper>
                 <MenuBase>
-                    {navOptions.map(option => 
+                    {navOptions.map((option, index) => 
                         option.title !== 'Giving'
                         ?
-                            <Link to={option.url}>
+                            <Link key={index} to={option.url}>
                                 <MenuH2>{option.title}</MenuH2>
                             </Link>
                         :
-                            <section onClick={() => window.location.replace(givingUrl)}>
+                            <section key={index} onClick={() => window.location.replace(givingUrl)}>
                                 <MenuH2>{option.title}</MenuH2>
                             </section>
                     )}

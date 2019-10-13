@@ -28,12 +28,12 @@ export default class Footer extends React.PureComponent{
         return(
             <Wrapper>
                 <PagesWrapper>
-                    {navOptions.map(option => 
+                    {navOptions.map((option, index) => 
                         option.title !== 'Giving'
                         ?
-                            <Link to={option.url}><FooterH4>{option.title}</FooterH4></Link>
+                            <Link key={index} to={option.url}><FooterH4>{option.title}</FooterH4></Link>
                         :
-                            <FooterH4 onClick={() => window.location.replace(givingUrl)}>{option.title}</FooterH4>
+                            <FooterH4 key={index} onClick={() => window.location.replace(givingUrl)}>{option.title}</FooterH4>
                     )}
                 </PagesWrapper>
 
