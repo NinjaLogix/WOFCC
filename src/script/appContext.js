@@ -267,6 +267,11 @@ export const designContext = (page) => {
                             <b>8.</b> Establish a WOF - Ride transportation service.<br/>
                             <b>9.</b> Expand the ministry to Radio and Television/Cable<br/>
                             <b>10.</b> Establish Word - Based Teaching Centers in North Mississippi and Memphis, Tennessee.</p>}];
+        case 'services':
+            return [{key: uuidv1(), image: freepik28Img, title: 'New Members Classes', context: <p>4 Classes Total by appointment in the business suite.</p>},
+                    {key: uuidv1(), image: freepik1869Img, title: 'Worship Service & Corporate Confession', context: <p>Sunday's @ 9.45am<br/>First Sundays: Holy Communion & Mission</p>},
+                    {key: uuidv1(), image: freepik11405Img, title: 'Children\'s Ministry', context: <p>2nd & 3rd Sunday's<br/>9:45am in the Children's Zone<br/>Not held on 1st or 5th Sunday's<br/>ages 5 - 11</p>},
+                    {key: uuidv1(), image: freepik397Img, title: 'Pastoral Care', context: <p>24/7 365!<br/>Visit the <Link to={'/contact-us'}>Contact Us</Link> page for contact information</p>}];
         case 'directions':
             return [];
         case 'contact_us':

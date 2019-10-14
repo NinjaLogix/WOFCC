@@ -1,9 +1,22 @@
 import React, {useState, useEffect} from 'react';
-import WebCard from '../../component/WebCard';
-import {designContext, dropBox, provideUrl} from '../../script/appContext';
+import uuidv1 from "uuid";
+import WebCard from '../../component/info/WebCard';
+import {dropBox, provideUrl} from '../../script/appContext';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
+import {Link} from 'react-router-dom';
 import '../../style/wofcc_master.css';
+
+const freepik28Img = '28.jpg';
+const freepik55Img = '55.jpg';
+const freepik397Img = '397.jpg';
+const freepik1773Img = '1773.jpg';
+const freepik1869Img = '1869.jpg';
+const freepik2159Img = '2159.jpg';
+const freepik3893Img = '3893.jpg';
+const freepik11405Img = '11405.jpg';
+const freepik272299Img = '272299-P5OLTS-748.jpg';
+const freepikoq5kaw0Img = 'OQ5KAW0.jpg';
 
 const Services = () => {
     const [context, setContext] = useState([]);
@@ -31,7 +44,14 @@ const Services = () => {
     }
 
     const setupContext = () => {
-        setContext(designContext('services'));
+        setContext(
+            [
+                {key: uuidv1(), image: freepik28Img, title: 'New Members Classes', context: <p>4 Classes Total by appointment in the business suite.</p>},
+                {key: uuidv1(), image: freepik1869Img, title: 'Worship Service & Corporate Confession', context: <p>Sunday's @ 9.45am<br/>First Sundays: Holy Communion & Mission</p>},
+                {key: uuidv1(), image: freepik11405Img, title: 'Children\'s Ministry', context: <p>2nd & 3rd Sunday's<br/>9:45am in the Children's Zone<br/>Not held on 1st or 5th Sunday's<br/>ages 5 - 11</p>},
+                {key: uuidv1(), image: freepik397Img, title: 'Pastoral Care', context: <p>24/7 365!<br/>Visit the <Link to={'/contact-us'}>Contact Us</Link> page for contact information</p>}
+            ]
+        );
     }
 
     const provideCards = () => {

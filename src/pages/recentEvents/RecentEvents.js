@@ -1,9 +1,8 @@
 import React from 'react';
-import GalleryCard from '../component/GalleryCard';
-import '../style/wofcc_master.css'
-import {change_page} from "../redux-def/actions";
-import connect from "react-redux/es/connect/connect";
-import { dropBox, fixUrl, EXT_REGEX } from '../script/appContext';
+import GalleryCard from '../../component/gallery/GalleryCard';
+import '../../style/wofcc_master.css';
+import { dropBox, EXT_REGEX } from '../../script/appContext';
+import {fixUrl} from '../../util';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 
@@ -13,13 +12,7 @@ const override = css`
     border-color: red;
 `;
 
-const mapDispatchToProps = dispatch => {
-    return{
-        change_page: page => dispatch(change_page(page))
-    };
-};
-
-class ConnectedRecentEvents extends React.PureComponent{
+class RecentEvents extends React.PureComponent{
     constructor(){
         super();
         this.state = {
@@ -141,10 +134,6 @@ class ConnectedRecentEvents extends React.PureComponent{
         this.handleTopLevelFolders();
     }
 
-    componentDidMount(){
-        this.props.change_page('recent_events');
-    }
-
     render(){
         return(
             <div className={'events-container'}>
@@ -174,7 +163,5 @@ class ConnectedRecentEvents extends React.PureComponent{
         )
     };
 }
-
-const RecentEvents = connect(null, mapDispatchToProps)(ConnectedRecentEvents);
 
 export default RecentEvents;

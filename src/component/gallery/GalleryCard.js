@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { Button } from 'react-bootstrap';
 import Avatar from "@material-ui/core/Avatar";
 import { Redirect } from 'react-router-dom';
-import {set_gallery} from "../redux-def/actions";
+import {set_gallery} from "../../redux-def/actions";
 import connect from "react-redux/es/connect/connect";
 
 const mapDispatchToProps = dispatch =>{

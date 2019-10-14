@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import DCard from "../../component/DCard";
+import DCard from "../../component/info/DCard";
 import { designContext, dropBox, provideUrl } from '../../script/appContext';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
+import {texts} from './AboutUsText';
 import '../../style/wofcc_master.css';
 
 export const AboutUs = props => {
@@ -29,7 +30,7 @@ export const AboutUs = props => {
     }
 
     const setupDesign = () => {
-        setDesign(designContext('about_us'));
+        setDesign(texts);
     }
 
     const flipFlop = index => {

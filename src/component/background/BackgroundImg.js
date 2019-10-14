@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { landingBackground } from '../script/appContext';
+import { landingBackground } from '../../script/appContext';
 
 const mapStateToProps = state => {
     return { currentPage: state.page };
