@@ -18,7 +18,7 @@ const freepik11405Img = '11405.jpg';
 const freepik272299Img = '272299-P5OLTS-748.jpg';
 const freepikoq5kaw0Img = 'OQ5KAW0.jpg';
 
-const Services = () => {
+export const Services = () => {
     const [context, setContext] = useState([]);
     const [displayUrl, setDisplayUrl] = useState([]);
     const [dataLoaded, setDataLoaded] = useState({context: false, urls: false});
@@ -93,5 +93,3 @@ const Services = () => {
         </div>
     )
 }
-
-export default Services;

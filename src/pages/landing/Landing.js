@@ -1,5 +1,5 @@
 import React from 'react';
-import {SoundPlayer} from "../../component";
+import {SoundPlayer} from "../../component/mp3";
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {provideAudioData} from '../../util';
