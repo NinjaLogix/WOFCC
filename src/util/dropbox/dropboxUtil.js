@@ -1,5 +1,6 @@
 import {dropBox} from "../../component/api";
-import {ALT_REGEX} from '../../script/appContext';
+
+const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
 /**
  * @param path
@@ -66,4 +67,19 @@ export const provideMinistriesImages = async () => {
 //* --------> General
 export const fixUrl = (url) => {
     return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+};
+
+/**
+* Formats the dropbox url for viewing
+* @param {*} array 
+* @param {*} fileName 
+*/
+export const provideUrl = (array, fileName) => {
+   let found = false;
+   for (let i=0; i< array.length && !found; i++) {
+       if (array[i].url.includes(fileName)) {
+           found = true;
+           return array[i].url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+       }
+   }
 };

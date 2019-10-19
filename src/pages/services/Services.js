@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import uuidv1 from "uuid";
 import WebCard from '../../component/info/WebCard';
-import {dropBox, provideUrl} from '../../script/appContext';
+import {provideUrl} from '../../util';
+import {dropBox} from '../../component/api';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {Link} from 'react-router-dom';

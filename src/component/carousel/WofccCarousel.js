@@ -2,11 +2,12 @@ import React from 'react';
 import {Carousel} from 'react-bootstrap';
 import {fixUrl} from '../../util'
 import {dropBox} from '../../component/api';
-import {ALT_REGEX} from '../../script/appContext';
 
 export default class WofccCarousel extends React.Component{
     constructor(){
         super();
+
+        this.ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
         this.state = {
             slidesToShow: [],
@@ -25,7 +26,7 @@ export default class WofccCarousel extends React.Component{
             const endDate = new Date(file.split('-')[2]);
             const today = new Date();
     
-            if ((today >= startDate && today < endDate) || (ALT_REGEX.test(file))) {
+            if ((today >= startDate && today < endDate) || (this.ALT_REGEX.test(file))) {
                 this.setState({slidesToShow: [...this.state.slidesToShow, response2.links[0]]})
             }
         });

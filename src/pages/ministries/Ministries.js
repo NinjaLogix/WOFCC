@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {DCard} from "../../component/info";
-import {provideUrl} from '../../script/appContext';
-import {provideMinistriesImages} from '../../util';
+import {provideMinistriesImages, provideUrl} from '../../util';
 import {texts} from './MinistriesText';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';

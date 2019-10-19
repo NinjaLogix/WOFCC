@@ -1,12 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { landingBackground } from '../../script/appContext';
 
-const mapStateToProps = state => {
-    return { currentPage: state.page };
-};
-
-const ConnectedBackgroundImage = ({currentPage}) => {
+const BackgroundImage = ({currentPage}) => {
     let divStyle = {
         position: 'fixed',
         top: '-50%',
@@ -28,8 +22,8 @@ const ConnectedBackgroundImage = ({currentPage}) => {
 
     let bgImage = '#';
 
-    if (currentPage === 'landing'){
-        bgImage = landingBackground;
+    if (window.location.pathname === '/'){
+        bgImage = process.env.REACT_APP_LANDING_BACKGROUND_URL;
     }
 
     return (
@@ -38,7 +32,5 @@ const ConnectedBackgroundImage = ({currentPage}) => {
         </div>
     );
 };
-
-const BackgroundImage = connect(mapStateToProps)(ConnectedBackgroundImage);
 
 export default BackgroundImage;

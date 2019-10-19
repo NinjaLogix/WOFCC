@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import GalleryCard from '../../component/gallery/GalleryCard';
-import {EXT_REGEX} from '../../script/appContext';
 import {dropBox} from '../../component/api';
 import {fixUrl} from '../../util';
 import {css} from '@emotion/core';
@@ -15,6 +14,8 @@ export default function Events(props){
     const [confObjs, setConfObjs] = useState([]);
     const [loaded, setLoaded] = useState(false);
     const [loading, setLoading] = useState(true);
+
+    const EXT_REGEX = RegExp(process.env.REACT_APP_REGEX_EXT);
 
     const override = css`
         display: block;

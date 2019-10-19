@@ -4,13 +4,14 @@ import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {provideAudioData} from '../../util';
 import {WofccCarousel} from '../../component/carousel';
-import {LogoSmall} from '../../script/appContext';
 import {Wrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel} from './LandingStyle';
 
 export default class Landing extends React.Component{
     state = {
         audioData: null
     }
+
+    LogoSmall = process.env.REACT_APP_LOGO_SMALL_URL;
 
     //* ----------------------------------------------------> Lifecycle Methods
     componentDidMount(){
@@ -29,7 +30,7 @@ export default class Landing extends React.Component{
                     <Title>
                         <h1>Word of Faith Christian Center</h1>
                         <section>
-                            <img src={LogoSmall} alt={'badge'}/>
+                            <img src={this.LogoSmall} alt={'badge'}/>
                         </section>
                     </Title>
                 </Header>

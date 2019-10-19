@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import DCard from "../../component/info/DCard";
-import { designContext, dropBox, provideUrl } from '../../script/appContext';
+import {dropBox} from '../../component/api';
+import {provideUrl} from '../../util';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {texts} from './AboutUsText';

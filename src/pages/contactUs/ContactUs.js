@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { FacebookUrl, dropBox, facebookImg, pblcImg, provideUrl } from '../../script/appContext';
+import {dropBox} from '../../component/api';
+import {provideUrl} from '../../util';
 import { Menu } from '../../component/navigation/menu';
 import { Footer } from '../../component/navigation/footer';
 import {Container, Header, Heading1, Heading2, Heading3, P, ContactAContainer, SocialBadge, BottomContainer, ContactLeftBottom, PastorImg, ContactRightBottom} from './ContactUsStyle';
@@ -7,6 +8,10 @@ import {Container, Header, Heading1, Heading2, Heading3, P, ContactAContainer, S
 export const ContactUs = (props) => {
     const [displayUrl, setDisplayUrl] = useState([]);
     const [loaded, setLoaded] = useState(false);
+
+    const pblcImg = 'PBLC-3.png';
+    const facebookImg = 'Facebook_Home_logo_old.svg.png';
+    const FacebookUrl = process.env.REACT_APP_FACEBOOK_URL;
 
     const setupInfo = () => {
         dropBox.filesListFolder({path: process.env.REACT_APP_CONTACT_US_PATH})
