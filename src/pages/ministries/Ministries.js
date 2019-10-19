@@ -5,9 +5,9 @@ import {provideMinistriesImages} from '../../util';
 import {texts} from './MinistriesText';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
-import '../../style/wofcc_master.css'
+import {Wrapper, Header, Context, List} from './MinistriesStyle';
 
-export const Ministries = props => {
+export const Ministries = function(props) {
     const [context, setContext] = useState([]);
     const [displayUrl, setDisplayUrl] = useState([]);
     const [loaded, setLoaded] = useState(false);
@@ -33,14 +33,14 @@ export const Ministries = props => {
     }, []);
 
     return(
-        <div className={'about-ministries-container'}>
-            <div className={'about-ministries-header'}>
+        <Wrapper>
+            <Header>
                 <Menu/>
                 <h1>WOFCC - Southaven</h1>
                 <h3>The ministries we currently provide...</h3>
-            </div>
-            <div className={'about-ministries-context'}>
-                <ul className={'about-ministries-list'}>
+            </Header>
+            <Context>
+                <List>
                     {context.map((el, index) => (
                         <li key={el.key}>
                             <DCard
@@ -52,9 +52,9 @@ export const Ministries = props => {
                             />
                         </li>
                     ))}
-                </ul>
-            </div>
+                </List>
+            </Context>
             <Footer/>
-        </div>
+        </Wrapper>
     )
 }

@@ -1,38 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import GalleryCard from '../../component/gallery/GalleryCard';
 import {EXT_REGEX} from '../../script/appContext';
 import {dropBox} from '../../component/api';
 import {fixUrl} from '../../util';
 import {css} from '@emotion/core';
 import {BarLoader} from 'react-spinners';
+import {Menu} from '../../component/navigation/menu';
+import {Footer} from '../../component/navigation/footer';
+import {Wrapper, Header, FlexBox, SpinnerBox} from './RecentEventsStyle';
 import '../../style/wofcc_master.css';
 
-const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-`;
+export default function Events(props){
+    const [galleryCards, setGalleryCards] = useState([]);
+    const [galleryContexts, setGalleryContexts] = useState([]);
+    const [confObjs, setConfObjs] = useState([]);
+    const [loaded, setLoaded] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-class RecentEvents extends React.PureComponent{
-    constructor(){
-        super();
-        this.state = {
-            page: '',
-            galleryCards: [],
-            galleryContexts: [],
-            confObjs:[],
-            loading: true
-        }
-    }
+    const override = css`
+        display: block;
+        margin: 0 auto;
+        border-color: red;
+    `;
 
-    async handleTopLevelFolders(){
+    const handleTopLevelFolders = async () => {
         let response = await dropBox.filesListFolder({path: process.env.REACT_APP_GALLERY_PATH, recursive:true});
         let galleryPaths = [];
 
         response.entries.forEach(entry=>{
            if (entry['.tag'] === 'file' && entry.name === process.env.REACT_APP_GALLERY_CONF){
                console.log('entry.name', entry.path_display);
-               let confUrl = this.handleShareLinks(entry.path_display, entry.name);
+               let confUrl = handleShareLinks(entry.path_display, entry.name);
                confUrl.then(configurationUrl => {
                   let tempValue = {
                       confLink: configurationUrl,
@@ -43,13 +41,12 @@ class RecentEvents extends React.PureComponent{
 
                   galleryPaths.push(tempValue);
 
-                  this.handleImageLinks(tempValue);
+                  handleImageLinks(tempValue);
                });
            }
         });
     };
-
-    async handleShareLinks(path){
+    const handleShareLinks = async (path) => {
         let temp = await dropBox.sharingListSharedLinks({path: path});
 
         if (temp.links.length <= 0){
@@ -57,18 +54,17 @@ class RecentEvents extends React.PureComponent{
         } else {
             return temp.links[0].url;
         }
-    }
-
-    async handleImageLinks(pathObj){
+    };
+    const handleImageLinks = async (pathObj) => {
         let response = await dropBox.filesListFolder({path: pathObj.confPath});
         let urls = [];
         let tempUrlObj = {src: '', width: 1, height: 1};
 
         response.entries.forEach(entry => {
             if (EXT_REGEX.test(entry.name)){
-                let link = this.handleSharedLink(entry.path_display);
+                let link = handleSharedLink(entry.path_display);
                 link.then(thing => {
-                    tempUrlObj = {src: fixUrl(thing), width: this.provideWidthHieght('width'), height: 4};
+                    tempUrlObj = {src: fixUrl(thing), width: provideWidthHieght('width'), height: 4};
                     urls.push(tempUrlObj);
                 })
             }
@@ -76,10 +72,9 @@ class RecentEvents extends React.PureComponent{
 
         pathObj.urls = urls;
 
-        this.setupGalleryCards(pathObj);
-    }
-
-    setupGalleryCards = (galleryObj) => {
+        setupGalleryCards(pathObj);
+    };
+    const setupGalleryCards = (galleryObj) => {
         //shhh this is janky, I know
         let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         let txtFile = new XMLHttpRequest();
@@ -102,19 +97,16 @@ class RecentEvents extends React.PureComponent{
                                                          eventCoverImageUrl={coverUrl}
                                                          eventGallery={galleryObj.urls}/>;
 
-                        this.setState(prevState => ({
-                            galleryCards: [...prevState.galleryCards, galleryCard]
-                        }));
+                        setGalleryCards(prevGalleryCards => [...prevGalleryCards, galleryCard]);
 
-                        this.setState({loading: false});
+                        setLoading(false);
                     }
                 }
             };
             txtFile.send(null);
         }
     };
-
-    async handleSharedLink(path){
+    const handleSharedLink = async (path) => {
         let urls = await dropBox.sharingListSharedLinks({path: path});
 
         if (urls.links.length === 0){
@@ -125,44 +117,50 @@ class RecentEvents extends React.PureComponent{
         }
 
         return urls.links[0].url;
-    }
-
-    provideWidthHieght(mode){
-        return Math.floor((Math.random() * 4) + 3);
-    }
-
-    componentWillMount(){
-        this.handleTopLevelFolders();
-    }
-
-    render(){
-        return(
-            <div className={'events-container'}>
-                <div className={'events-header'}>
-                    <h3>A few of our recent and upcoming events</h3>
-                </div>
-                <div className={'events-flexbox'}>
-                    {this.state.loading
-                        ?
-                            <div className={'spinner-box'}>
-                                <div className='sweet-loading'>
-                                    <BarLoader
-                                        css={override}
-                                        sizeUnit={"px"}
-                                        size={150}
-                                        color={'#123abc'}
-                                        loading={this.state.loading}
-                                    />
-                                </div>
-                            </div>
-                        :
-                            this.state.galleryCards
-                    }
-                </div>
-
-            </div>
-        )
     };
-}
+    const provideWidthHieght = (mode) => {
+        return Math.floor((Math.random() * 4) + 3);
+    };
 
-export default RecentEvents;
+    useEffect(() => {
+        if (!loaded){
+            handleTopLevelFolders();
+        }
+        return () => {
+            if (!loaded){
+                setLoaded(true);
+            }
+        }
+    }, []);
+
+    return(
+        <Wrapper>
+            <Header>
+                <Menu/>
+                <h3>A few of our recent and upcoming events</h3>
+            </Header>
+            <FlexBox>
+                {loading
+                    ?
+                        <SpinnerBox>
+                            <div>
+                                <BarLoader
+                                    css={override}
+                                    sizeUnit={"px"}
+                                    size={150}
+                                    color={'#123abc'}
+                                    loading={loading}
+                                />
+                            </div>
+                        </SpinnerBox>
+                    :
+                        galleryCards
+                }
+            </FlexBox>
+            
+            {!loading && 
+                <Footer/>
+            }
+        </Wrapper>
+    )
+}

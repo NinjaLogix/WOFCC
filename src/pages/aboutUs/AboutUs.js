@@ -4,9 +4,9 @@ import { designContext, dropBox, provideUrl } from '../../script/appContext';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {texts} from './AboutUsText';
-import '../../style/wofcc_master.css';
+import {Wrapper, Header, Context, List} from './AboutUsStyle';
 
-export const AboutUs = props => {
+export const AboutUs = function(props) {
     const [info, setInfo] = useState([]);
     const [design, setDesign] = useState([]);
     const [loaded, setLoaded] = useState(false);
@@ -51,14 +51,14 @@ export const AboutUs = props => {
     }, []);
 
     return (
-        <div className={'about-ministries-container'}>
-            <div className={'about-ministries-header'}>
+        <Wrapper>
+            <Header>
                 <Menu/>
                 <h1>WOFCC - Southaven</h1>
                 <h3>A little about who we are...</h3>
-            </div>
-            <div className={'about-ministries-context'}>
-                <ul className={'about-ministries-list'}>
+            </Header>
+            <Context>
+                <List>
                     {design.map((el, index) => (
                         <li key={el.key}>
                             <DCard
@@ -71,9 +71,9 @@ export const AboutUs = props => {
                             />
                         </li>
                     ))}
-                </ul>
-            </div>
+                </List>
+            </Context>
             <Footer/>
-        </div>
+        </Wrapper>
     )
 }
