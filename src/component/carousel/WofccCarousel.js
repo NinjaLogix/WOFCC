@@ -3,7 +3,6 @@ import {Carousel} from 'react-bootstrap';
 import {fixUrl} from '../../util'
 import {dropBox} from '../../component/api';
 import {ALT_REGEX} from '../../script/appContext';
-//import {compareCarousel} from '../../util';
 
 export default class WofccCarousel extends React.Component{
     constructor(){

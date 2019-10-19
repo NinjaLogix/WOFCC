@@ -5,7 +5,7 @@ import {Footer} from '../../component/navigation/footer';
 import {provideAudioData} from '../../util';
 import {WofccCarousel} from '../../component/carousel';
 import {LogoSmall} from '../../script/appContext';
-import '../../style/wofcc_master.css';
+import {Wrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel} from './LandingStyle';
 
 export default class Landing extends React.Component{
     state = {
@@ -23,40 +23,39 @@ export default class Landing extends React.Component{
         const {audioData} = this.state;
 
         return(
-            <div className={'landing-main'}>
-                <section className={'landing-header'}>
+            <Wrapper>
+                <Header>
                     <Menu/>
-
-                    <section className={'landing-title'}>
-                        <h1 style={{fontSize: '3.5em', lineHeight: '2', alignSelf: 'center', zIndex: '1'}}>Word of Faith Christian Center</h1>
-                        <section style={{alignSelf: 'center', zIndex: '0', height: '4em'}}>
+                    <Title>
+                        <h1>Word of Faith Christian Center</h1>
+                        <section>
                             <img src={LogoSmall} alt={'badge'}/>
                         </section>
-                    </section>
-                </section>
+                    </Title>
+                </Header>
 
-                <section className='carousel-box'>
-                    <section className={'audio-landing'} style={{paddingTop: '10px', paddingBottom: '10px'}}>
+                <CarouselBox>
+                    <AudioLanding>
                         {audioData && 
                             <SoundPlayer data={audioData}/>
                         }
 
-                        <div className={'audio-box'}>
+                        <AudioBox>
                             <h1>Come as you are</h1>
                             <h2>Service Time @ 9:45am</h2>
                             <h2>Find Us @</h2>
                             <h3>1881 Nail Rd suite D</h3>
                             <h3>Horn Lake, MS 38637</h3>
-                        </div>
-                    </section>
-                </section>
+                        </AudioBox>
+                    </AudioLanding>
+                </CarouselBox>
 
-                <section className={'center-carousel'} style={{margin: 'auto'}}>
+                <CenterCarousel style={{margin: 'auto'}}>
                     <WofccCarousel/>
-                </section>
+                </CenterCarousel>
 
                 <Footer/>
-            </div>
+            </Wrapper>
         )
     }
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Modal } from 'react-bootstrap';
 
 export const Container = styled.div`
     width: auto;
@@ -55,4 +56,9 @@ export const SubHeading = styled.h3`
 
 export const ButtonContainer = styled.div`
     float: ${props => props.inverted ? 'left':'right'}
+`;
+
+export const CustomModal = styled(Modal)`
+    width: 70%;
+    text-align: center;
 `;

@@ -8,7 +8,6 @@ import {BarLoader} from 'react-spinners';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {Wrapper, Header, FlexBox, SpinnerBox} from './RecentEventsStyle';
-import '../../style/wofcc_master.css';
 
 export default function Events(props){
     const [galleryCards, setGalleryCards] = useState([]);

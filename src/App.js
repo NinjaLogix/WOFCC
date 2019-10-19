@@ -3,11 +3,19 @@ import {Router, Route, Switch} from "react-router-dom";
 import history from './history/history';
 import {Landing, Services, Directions, ContactUs, AboutUs, Ministries, RecentEvents} from './pages';
 import {GalleryView} from './component/gallery';
-import './style/wofcc_master.css';
+import styled from 'styled-components';
+
+const AppStyle = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100% ! important;
+`;
 
 const App = () => {
     return (
-        <div className={'app-container'}>
+        <AppStyle>
             <Router history={history}>
                 <Switch>
                     <Route exact path={'/'} component={Landing}/>
@@ -20,7 +28,7 @@ const App = () => {
                     <Route path={'/gallery-view'} component={GalleryView}/>
                 </Switch>
             </Router>
-        </div>
+        </AppStyle>
     );
 };
 

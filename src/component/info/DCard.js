@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import {Container, TextContainer, ImageContainer, DImage, Title, ButtonText, Paragraph, SubHeading, ButtonContainer} from './DCardStyle';
-import '../../style/wofcc_master.css';
+import {Container, TextContainer, ImageContainer, DImage, Title, ButtonText, Paragraph, SubHeading, ButtonContainer, CustomModal} from './DCardStyle';
 
 export default class DCard extends React.Component{
     constructor(){
@@ -39,9 +38,9 @@ export default class DCard extends React.Component{
         return(
             <Container>
                 {this.props.enableModal &&
-                    <Modal  show={this.state.showModal}
+                    <CustomModal  show={this.state.showModal}
                             onHide={()=> this.setState({showModal: false})}
-                            dialogClassName="custom-modal">
+                            >
                         <Modal.Header closeButton={()=>this.setState({showModal: false})}>
                             <Modal.Title>{this.props.title}</Modal.Title>
                         </Modal.Header>
@@ -49,7 +48,7 @@ export default class DCard extends React.Component{
                         <Modal.Footer>
                             <Button onClick={()=>this.setState({showModal: false})}>Close</Button>
                         </Modal.Footer>
-                    </Modal>
+                    </CustomModal>
                 }
 
                 {this.props.inverted &&

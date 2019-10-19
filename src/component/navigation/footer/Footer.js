@@ -2,7 +2,6 @@ import React from 'react';
 import {Wrapper, PagesWrapper, DevCreditWrapper, FooterH4} from './FooterStyle';
 import {DevCredit} from '../dev-credits';
 import { Link } from 'react-router-dom';
-import '../../../style/wofcc_master.css';
 
 export default class Footer extends React.PureComponent{
     state = {
