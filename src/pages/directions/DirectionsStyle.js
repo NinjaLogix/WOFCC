@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import Iframe from 'react-iframe';
 
+const container_url = process.env.REACT_APP_DIRECTIONS_CONTAINER_URL;
+
 export const Container = styled.div`
 width: 100%;
 height: 100%;
-background-image: url('https://dl.dropboxusercontent.com/s/xfjbsqugk29jtmw/102434-OLS3V2-932.jpg?dl=0');
+background-image: url('${container_url}');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center center;

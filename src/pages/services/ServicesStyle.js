@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+const mid_container_url = process.env.REACT_APP_SERVICES_MID_CONTAINER_URL;
+
 export const Container = styled.div`
     height: 100vh;
 `;
 
 export const MidContainer = styled.section`
-background-image: url('https://dl.dropboxusercontent.com/s/931csoonk8h0utf/ODRAX20.jpg?dl=0');
+background-image: url('${mid_container_url}');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center center;

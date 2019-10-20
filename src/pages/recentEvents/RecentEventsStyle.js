@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const header_url = process.env.REACT_APP_RECENT_EVENTS_HEADER_URL;
+
 export const Wrapper = styled.div`
     width: 100%;
 `;
@@ -7,7 +9,7 @@ export const Wrapper = styled.div`
 export const Header = styled.section`
     width: 100%;
     height: 75px;
-    background-image: url('https://dl.dropboxusercontent.com/s/4b8it4x7nfkefbs/2144.jpg?dl=0');
+    background-image: url('${header_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

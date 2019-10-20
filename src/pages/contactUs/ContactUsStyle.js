@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const header_url = process.env.REACT_APP_CONTACT_US_HEADER_URL;
+
 export const Container = styled.div`
 
 `;
@@ -7,7 +9,7 @@ export const Container = styled.div`
 export const Header = styled.section`
     width:100%;
     height:400px;
-    background-image: url('https://dl.dropboxusercontent.com/s/x1detiu8flqq3cq/1024.jpg?dl=0');
+    background-image: url('${header_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

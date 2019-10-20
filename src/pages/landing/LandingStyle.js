@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+const header_url = process.env.REACT_APP_LANDING_HEADER_URL;
+
 export const Wrapper = styled.div`
     flex: 1 100%;
 `;
 
 export const Header = styled.section`
-    background-image: url('https://dl.dropboxusercontent.com/s/xfjbsqugk29jtmw/102434-OLS3V2-932.jpg?dl=0');
+    background-image: url('${header_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
