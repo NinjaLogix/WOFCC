@@ -8,11 +8,16 @@ export const Wrapper = styled.div`
 
 export const Header = styled.section`
     width: 100%;
-    height: 75px;
+    height: 15vh;
     background-image: url('${header_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    h2 {
+        text-align: center;
+        line-height: 0;
+    }
 `;
 
 export const FlexBox = styled.section`

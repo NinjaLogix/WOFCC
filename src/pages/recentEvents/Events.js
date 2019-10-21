@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import GalleryCard from '../../component/gallery/GalleryCard';
+import {GalleryCard} from '../../component/gallery/GalleryCard';
 import {dropBox} from '../../component/api';
 import {fixUrl} from '../../util';
 import {css} from '@emotion/core';
 import {BarLoader} from 'react-spinners';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
-import {Wrapper, Header, FlexBox, SpinnerBox} from './RecentEventsStyle';
+import {Wrapper, Header, FlexBox, SpinnerBox} from './EventsStyle';
 
-export default function Events(props){
+export const Events = function(props){
     const [galleryCards, setGalleryCards] = useState([]);
     const [galleryContexts, setGalleryContexts] = useState([]);
     const [confObjs, setConfObjs] = useState([]);
@@ -38,6 +38,8 @@ export default function Events(props){
                       urls: [],
                       data: []
                   };
+
+                  console.log('tempValue', tempValue);
 
                   galleryPaths.push(tempValue);
 
@@ -137,7 +139,7 @@ export default function Events(props){
         <Wrapper>
             <Header>
                 <Menu/>
-                <h3>A few of our recent and upcoming events</h3>
+                <h2>A few of our events</h2>
             </Header>
             <FlexBox>
                 {loading

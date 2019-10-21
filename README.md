@@ -9,3 +9,7 @@ TODOs
     --> fix history
     --> add something to show upcoming events
     --> get info from Essence on ribbon cutting, new building pictures, and dedication service
+
+# New Page Structure
+- pages
+- components

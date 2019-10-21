@@ -64,7 +64,6 @@ export const provideMinistriesImages = async () => {
     }
 }
 
-//* --------> General
 export const fixUrl = (url) => {
     return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
 };

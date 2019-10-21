@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Route, Switch} from "react-router-dom";
 import history from './history/history';
-import {Landing, Services, Directions, ContactUs, AboutUs, Ministries, RecentEvents} from './pages';
+import {Landing, Services, Directions, ContactUs, AboutUs, Ministries, Events} from './pages';
 import {GalleryView} from './component/gallery';
 import styled from 'styled-components';
 
@@ -24,7 +24,7 @@ const App = () => {
                     <Route path={'/contact-us'} component={ContactUs}/>
                     <Route path={'/about-us'} component={AboutUs}/>
                     <Route path={'/ministries'} component={Ministries}/>
-                    <Route path={'/events'} component={RecentEvents}/>
+                    <Route path={'/events'} component={Events}/>
                     <Route path={'/gallery-view'} component={GalleryView}/>
                 </Switch>
             </Router>
