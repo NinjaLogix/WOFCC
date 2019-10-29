@@ -6,14 +6,17 @@ import { Button } from 'react-bootstrap';
 
 export const Container = styled.div`
     padding: 2%;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const StyledCard = styled(Card)`
     max-width: 300px;
     min-width: 50px;
+    height: 350px;
     padding-bottom: 10px;
-    min-height: 400px;
-    max-height: 400px;
 `;
 
 export const StyledCardMedia = styled(CardMedia)`

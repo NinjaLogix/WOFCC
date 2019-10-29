@@ -1,30 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { Button } from 'react-bootstrap';
-import Avatar from "@material-ui/core/Avatar";
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {Container, StyledCard, SectionFlex, StyledAvatar, SubSectionFlex, GalleryH3, StyledCardMedia, StyledButton} from './GalleryCardStyle';
 
 export const GalleryCard = props => {
     const [redirect, setRedirect] = useState(false);
-
-    const set_redirect = () => setRedirect(true);
-
-    const render_redrect = () => {
-        if (redirect){
-            return <Redirect push={'/recent-events'} to={'/gallery-view'}/>
-        }
-    };
-
-    const handleRedirect = props =>{
-        console.log('handle redirect props', props);
-        props.set_gallery(props.eventGallery);
-        set_redirect()
-    };
 
     const provideAvatarText = title_explicit => {
         let tempArr = [];
@@ -34,26 +16,29 @@ export const GalleryCard = props => {
         return tempArr[0] + tempArr[tempArr.length-1];
     }
 
-    return(
-        <Container>
-            <StyledCard onClick={() => handleRedirect(props)}>
-                <SectionFlex>
-                    <StyledAvatar>{provideAvatarText(props.eventTitle)}</StyledAvatar>
-                    <SubSectionFlex>
-                        <GalleryH3>{props.eventTitle}</GalleryH3>
-                    </SubSectionFlex>
-                </SectionFlex>
-                {render_redrect()}
-                <StyledCardMedia image={props.eventCoverImageUrl} title={props.eventTitle}/>
-                <CardContent>
-                    <Typography gutterBottom variant={'headline'} component='p'>
-                        {props.eventSubheading}
-                    </Typography>
-                    <StyledButton bsSize="xsmall" bsStyle={'link'} onClick={() => handleRedirect(props)}>Check out the pics!</StyledButton>
-                </CardContent>
-            </StyledCard>
-        </Container>
-    )
+    if (redirect){
+        return <Redirect to={{pathname: '/gallery-view', state: {gallery_context: props.eventGallery}}}/>
+    }
+    else {
+        return(
+            <Container onClick={() => setRedirect(true)}>
+                <StyledCard onClick={() => setRedirect(true)}>
+                    <SectionFlex>
+                        <StyledAvatar>{provideAvatarText(props.eventTitle)}</StyledAvatar>
+                        <SubSectionFlex>
+                            <GalleryH3>{props.eventTitle}</GalleryH3>
+                        </SubSectionFlex>
+                    </SectionFlex>
+                    <StyledCardMedia image={props.eventCoverImageUrl} title={props.eventTitle}/>
+                    <CardContent>
+                        <Typography gutterBottom variant={'headline'} component='p'>
+                            {props.eventSubheading}
+                        </Typography>
+                    </CardContent>
+                </StyledCard>
+            </Container>
+        )
+    }
 }
 
 GalleryCard.propTypes = {
