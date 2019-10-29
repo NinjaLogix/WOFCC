@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, PagesWrapper, DevCreditWrapper, FooterH4} from './FooterStyle';
+import {Wrapper, FooterH4} from './FooterStyle';
 import {DevCredit} from '../dev-credits';
 import { Link } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ export default class Footer extends React.PureComponent{
             {title: 'Services', url: '/services'},
             {title: 'Ministries', url: '/ministries'},
             {title: 'Events', url: '/events'},
+            {title: 'Credits', url: '/credits'},
             {title: 'Giving'}
         ]
     };
@@ -26,19 +27,21 @@ export default class Footer extends React.PureComponent{
 
         return(
             <Wrapper>
-                <PagesWrapper>
                     {navOptions.map((option, index) => 
                         option.title !== 'Giving'
                         ?
-                            <Link key={index} to={option.url}><FooterH4>{option.title}</FooterH4></Link>
+                            <section>
+                                <Link key={index} to={option.url}><FooterH4>{option.title}</FooterH4></Link>
+                            </section>
                         :
-                            <FooterH4 key={index} onClick={() => window.location.replace(givingUrl)}>{option.title}</FooterH4>
+                            <section>
+                                <FooterH4 key={index} onClick={() => window.location.replace(givingUrl)}>{option.title}</FooterH4>
+                            </section>
                     )}
-                </PagesWrapper>
 
-                <DevCreditWrapper>
-                    
-                </DevCreditWrapper>
+                <section>
+                    <DevCredit/>
+                </section>
             </Wrapper>
         )
     }

@@ -5,6 +5,7 @@ import {ContactUs} from './contactUs/ContactUs';
 import {AboutUs} from './aboutUs/AboutUs';
 import {Ministries} from './ministries/Ministries';
 import {Events} from './recentEvents/Events';
+import {Credits} from './credits/Credits';
 
 export {
     Landing,
@@ -13,5 +14,6 @@ export {
     ContactUs,
     AboutUs,
     Ministries,
-    Events
+    Events,
+    Credits
 }

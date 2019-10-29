@@ -2,24 +2,15 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 80px;
-    background-color: #595959;
-`;
-
-export const PagesWrapper = styled.section`
-    width: 30%;
-    padding: 0 7px;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-between;
-`;
-
-export const DevCreditWrapper = styled.section`
-    width: 50%;
+    height: 50px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-top: 5%;
+    border-top: 5px solid #595959;
 `;
 
 export const FooterH4 = styled.h4`
     font-weight: 600;
+    color: black;
 `;
