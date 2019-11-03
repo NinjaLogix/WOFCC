@@ -8,6 +8,12 @@ export const Wrapper = styled.div`
     align-content: center;
     margin-top: 5%;
     border-top: 5px solid #595959;
+
+    section {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 `;
 
 export const FooterH4 = styled.h4`

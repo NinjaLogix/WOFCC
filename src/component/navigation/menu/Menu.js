@@ -39,9 +39,9 @@ export default class Menu extends React.PureComponent{
                                 <MenuH2>{option.title}</MenuH2>
                             </Link>
                         :
-                            <section key={index} onClick={() => window.location.replace(givingUrl)}>
+                            <a target='_blank' href={givingUrl} key={index}>
                                 <MenuH2>{option.title}</MenuH2>
-                            </section>
+                            </a>
                     )}
                 </MenuBase>
             </Wrapper>
