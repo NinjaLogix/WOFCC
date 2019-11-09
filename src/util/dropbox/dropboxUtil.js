@@ -1,4 +1,6 @@
-import {dropBox, fixUrl} from "../../script/appContext";
+import {dropBox} from "../../component/api";
+
+const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
 /**
  * @param path
@@ -14,33 +16,6 @@ export const handleSharedLink = async (path) => {
     }
 
     return urls.links[0].url;
-};
-
-/**
- * 
- */
-export const provideAudioUrl = () => {
-    let audioData = {
-        title: '',
-        date: '',
-        url: ''
-    };
-    let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-    let conf = new XMLHttpRequest();
-    conf.open('GET', fixUrl('https://www.dropbox.com/s/tgwjdh9dybne5xn/audio.conf?dl=0'), true);
-    conf.onreadystatechange = () => {
-        if (conf.readyState === 4 && conf.status === 200){
-            const response = conf.responseText.split("\n");
-            const titleSplit = response[0].split(':')[1];
-            audioData.title = titleSplit.split('-')[0];
-            audioData.date = titleSplit.split('-')[1];
-            audioData.url = fixUrl(response[1].split(':')[1] + ':' + response[1].split(':')[2]);
-        }
-    };
-    conf.send(null);
-
-    return audioData;
 };
 
 /**
@@ -88,3 +63,22 @@ export const provideMinistriesImages = async () => {
         console.log('dropboxUtil -> ', error)
     }
 }
+
+export const fixUrl = (url) => {
+    return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+};
+
+/**
+* Formats the dropbox url for viewing
+* @param {*} array 
+* @param {*} fileName 
+*/
+export const provideUrl = (array, fileName) => {
+   let found = false;
+   for (let i=0; i< array.length && !found; i++) {
+       if (array[i].url.includes(fileName)) {
+           found = true;
+           return array[i].url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+       }
+   }
+};

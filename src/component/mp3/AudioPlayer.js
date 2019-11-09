@@ -1,22 +1,19 @@
 import React from 'react';
-import {provideAudioUrl} from '../../util';
 import ReactAudioPlayer from 'react-audio-player';
 
-const data = provideAudioUrl();
-
-export default class SoundPlayer extends React.Component {
-    render(){
-        return(
-            <div className={'audio-box'}>
-                <h1>A snippet from Sunday</h1>
-                <h2>{data.title}</h2>
-                <h3>{data.date}</h3>
-                <ReactAudioPlayer
-                    src={data.url}
-                    controls
-                    style={{alignSelf: 'center'}}
-                />
-            </div>
-        )
-    }
+const SoundPlayer = props => {
+    return(
+        <div className={'audio-box'}>
+            <h1>A snippet from Sunday</h1>
+            <h2>{props.data.title}</h2>
+            <h3>{props.data.date}</h3>
+            <ReactAudioPlayer
+                src={props.data.url}
+                controls
+                style={{alignSelf: 'center'}}
+            />
+        </div>
+    )
 }
+
+export default SoundPlayer;
