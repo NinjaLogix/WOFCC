@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Wrapper, FooterH4} from './FooterStyle';
 import {DevCredit} from '../dev-credits';
-import { Link, Redirect } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export const Footer = function(props){
     const [navOptions] = useState([

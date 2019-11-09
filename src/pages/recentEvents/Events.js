@@ -103,7 +103,7 @@ export const Events = function(props){
                 <h2>A few of our events</h2>
             </Header>
             <FlexBox>
-                {galleries.length > 0
+                {!loading
                     ?
                         galleries
                     :

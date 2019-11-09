@@ -16,15 +16,9 @@ export const Services = () => {
 
     //*-------------> Constants
     const freepik28Img = '28.jpg';
-    const freepik55Img = '55.jpg';
     const freepik397Img = '397.jpg';
-    const freepik1773Img = '1773.jpg';
     const freepik1869Img = '1869.jpg';
-    const freepik2159Img = '2159.jpg';
-    const freepik3893Img = '3893.jpg';
     const freepik11405Img = '11405.jpg';
-    const freepik272299Img = '272299-P5OLTS-748.jpg';
-    const freepikoq5kaw0Img = 'OQ5KAW0.jpg';
 
     //*----------> Component Functions
     const setupServices = () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu } from '../../component/navigation/menu';
+import { Footer } from '../../component/navigation/footer';
 import {Container, Heading1, Heading2, MapContainer, GMapsIframe} from './DirectionsStyle';
 
 export const Directions = () => {
@@ -24,6 +25,7 @@ export const Directions = () => {
                     <h2>Our building is located in suite D</h2>
                 </section>
             </MapContainer>
+            <Footer/>
         </Container>
     )
 }

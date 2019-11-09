@@ -13,6 +13,10 @@ export const Header = styled.section`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    h3 {
+        text-align: center;
+    }
 `;
 
 export const Heading1 = styled.h1`

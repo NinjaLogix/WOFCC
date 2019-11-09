@@ -53,20 +53,14 @@ export const ContactUs = (props) => {
                 <Heading2>FaceBook</Heading2>
                 <ContactAContainer>
                     <a href={FacebookUrl}>
-                        <SocialBadge
-                            src={provideUrl(displayUrl, facebookImg)}
-                            alt={'facebook'}
-                            />
+                        <SocialBadge src={process.env.REACT_APP_FACEBOOK_IMG} alt={'facebook'}/>
                     </a>
                 </ContactAContainer>
                 <h3>Keep in touch with us on Facebook!</h3>
             </Header>
             <BottomContainer>
                 <ContactLeftBottom>
-                    <PastorImg
-                        src={provideUrl(displayUrl, pblcImg)}
-                        alt={'pastor'}
-                        />
+                    <PastorImg src={process.env.REACT_APP_PASTOR_IMG} alt={'pastor'}/>
                 </ContactLeftBottom>
                 <ContactRightBottom>
                     <p>

@@ -8,7 +8,7 @@ import {Wrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarou
 
 export const Landing = function(props){
     const [audioData, setAudioData] = useState(null);
-    const [config, setConfig] = useState(null);
+    //const [config, setConfig] = useState(null);
     const [loaded, setLoaded] = useState(false);
 
     const LogoSmall = process.env.REACT_APP_LOGO_SMALL_URL;
@@ -19,9 +19,9 @@ export const Landing = function(props){
                 .then(response => setAudioData(response))
                 .catch(error => console.log('error getting audio data', error));
     
-            providePageConfig()
-                .then(response => setConfig(response))
-                .catch(error => console.log('service error --x trying to get page config'));
+            // providePageConfig()
+            //     .then(response => setConfig(response))
+            //     .catch(error => console.log('service error --x trying to get page config'));
         }
         
         return () => {
