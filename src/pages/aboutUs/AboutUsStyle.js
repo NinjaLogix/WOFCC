@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const Header = styled.section`
     width: 100%;
     height: 150px;
-    background-image: url('${header_url}');
+    background-image: url('${props => props.backgroundImg ? props.backgroundImg : header_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

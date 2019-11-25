@@ -1,66 +1,40 @@
 import React, {useState, useEffect} from 'react';
-import {dropBox} from '../../component/api';
-import {provideUrl} from '../../util';
+import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
 import { Menu } from '../../component/navigation/menu';
 import { Footer } from '../../component/navigation/footer';
 import {Container, Header, Heading1, Heading2, Heading3, P, ContactAContainer, SocialBadge, BottomContainer, ContactLeftBottom, PastorImg, ContactRightBottom} from './ContactUsStyle';
 
 export const ContactUs = (props) => {
-    const [displayUrl, setDisplayUrl] = useState([]);
-    const [loaded, setLoaded] = useState(false);
-
-    const pblcImg = 'PBLC-3.png';
-    const facebookImg = 'Facebook_Home_logo_old.svg.png';
+    const [context, setContext] = useState({});
     const FacebookUrl = process.env.REACT_APP_FACEBOOK_URL;
 
-    const setupInfo = () => {
-        dropBox.filesListFolder({path: process.env.REACT_APP_CONTACT_US_PATH})
-            .then(response => {
-                response.entries.forEach(fileName => {
-                    dropBox.sharingListSharedLinks({path: fileName.path_display})
-                        .then(response => {
-                            response.links.forEach(innerThing => {
-                                if (innerThing['.tag'] === 'file') {
-                                    setDisplayUrl(prevDisplayUrl => [...prevDisplayUrl, innerThing]);
-                                }
-                            })
-                        })
-                        .catch(error => console.error('Error getting shared links', error))
-                })
-            })
-            .catch(error => console.log('error listing files...'));
+    const setupContext = () => {
+        handlePageConfig('contact-us')
+            .then(response => setContext(response.data))
+            .catch();
     }
 
     useEffect(() => {
-        if (!loaded){
-            setupInfo();
-        }
-
-        return() => {
-            if (!loaded){
-                setLoaded(true);
-            }
-        }
-
+        setupContext();
     }, []);
 
     return(
         <Container>
-            <Header>
+            <Header backgroundImg={context.header_img ? fixUrl(context.header_img) : '#'}>
                 <Menu/>
                 <Heading1>Keep In Touch</Heading1>
                 <Heading3>We love you! Come back anytime!</Heading3>
                 <Heading2>FaceBook</Heading2>
                 <ContactAContainer>
                     <a href={FacebookUrl}>
-                        <SocialBadge src={process.env.REACT_APP_FACEBOOK_IMG} alt={'facebook'}/>
+                        <SocialBadge src={context.social_facebook ? fixUrl(context.social_facebook) : '#'} alt={'facebook'}/>
                     </a>
                 </ContactAContainer>
                 <h3>Keep in touch with us on Facebook!</h3>
             </Header>
             <BottomContainer>
                 <ContactLeftBottom>
-                    <PastorImg src={process.env.REACT_APP_PASTOR_IMG} alt={'pastor'}/>
+                    <PastorImg src={context.pastors ? fixUrl(context.pastors) : '#'} alt={'pastor'}/>
                 </ContactLeftBottom>
                 <ContactRightBottom>
                     <p>
@@ -69,16 +43,15 @@ export const ContactUs = (props) => {
                         <br/>
                         Feel free to email us at:
                     </p>
-                    <Heading2>wofccsouthaven@gmail.com</Heading2>
+                    <Heading2>{context.contact_info ? context.contact_info.email : ''}</Heading2>
 
                     <P>You can find us here:</P>
-                    <Heading3>1881 Nail Rd suite D</Heading3>
-                    <Heading3>Horn Lake, MS 38637</Heading3>
+                    <Heading3 dangerouslySetInnerHTML={{__html: context.contact_info ? convertMarkdown(context.contact_info.addrs) : ''}}/>
 
                     <P>or give us a call at:</P>
-                    <Heading2>(769) 232-6457</Heading2>
+                    <Heading2>{context.contact_info ? context.contact_info.phone_one : ''}</Heading2>
                     <P>or</P>
-                    <Heading2>(662) 536-6236</Heading2>
+                    <Heading2>{context.contact_info ? context.contact_info.phone_two : ''}</Heading2>
                 </ContactRightBottom>
             </BottomContainer>
             <Footer/>

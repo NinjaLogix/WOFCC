@@ -31,7 +31,7 @@ export const Events = function(props){
                 //get conf object for this folder
                 const configPath = `${entry.path_lower}/${process.env.REACT_APP_GALLERY_CONF}`;
                 const shareLink = await handleShareLinks(configPath);
-                const configuration = await readConfig(shareLink);
+                const configuration = await readConfig(shareLink, true);
 
                 //then get images for this folder
                 const files = await handleImageLinks(entry.path_lower);

@@ -1,4 +1,5 @@
 import {dropBox} from "../../component/api";
+import {readConfig} from '..';
 
 const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
@@ -81,4 +82,45 @@ export const provideUrl = (array, fileName) => {
            return array[i].url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
        }
    }
+};
+
+/**
+ * Reads the config file for a page and returns an object with the page details
+ * @param {*} page 
+ */
+export const handlePageConfig = async page => {
+    const conf = {};
+
+    switch (page){
+        case 'services':
+            conf.url = process.env.REACT_APP_SERVICES_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_SERVICES_CONF);
+            break;
+        case 'directions':
+            conf.url = process.env.REACT_APP_DIRECTIONS_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_DIRECTIONS_CONF);
+            break;
+        case 'contact-us':
+            conf.url = process.env.REACT_APP_CONTACT_US_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_CONTACT_US_CONF);
+            break;
+        case 'about-us':
+            conf.url = process.env.REACT_APP_ABOUT_US_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_ABOUT_US_CONF);
+            break;
+        case 'ministries':
+            conf.url = process.env.REACT_APP_MINISTRIES_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_MINISTRIES_CONF);
+            break;
+        case 'events':
+            conf.url = process.env.REACT_APP_RECENT_EVENTS_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_RECENT_EVENTS_CONF);
+            break;
+        default:
+            conf.url = process.env.REACT_APP_LANDING_CONF;
+            conf.data = await readConfig(process.env.REACT_APP_LANDING_CONF);
+            break;
+    }
+
+    return conf;
 };

@@ -1,5 +1,6 @@
-import {handleSharedLink, compareCarousel, provideMinistriesImages, provideCarouselImages, fixUrl, provideUrl} from "./dropbox/dropboxUtil";
+import {handleSharedLink, compareCarousel, provideMinistriesImages, provideCarouselImages, fixUrl, provideUrl, handlePageConfig} from "./dropbox/dropboxUtil";
 import {provideAudioData, providePageConfig, readConfig} from './axios/axiosUtil';
+import {convertMarkdown} from './markdown/mdUtil';
 
 export {
     handleSharedLink,
@@ -10,5 +11,7 @@ export {
     provideAudioData,
     provideUrl,
     providePageConfig,
-    readConfig
+    readConfig,
+    handlePageConfig,
+    convertMarkdown
 }

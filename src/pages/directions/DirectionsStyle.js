@@ -6,7 +6,7 @@ const container_url = process.env.REACT_APP_DIRECTIONS_CONTAINER_URL;
 export const Container = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url('${container_url}');
+    background-image: url('${props => props ? props.backgroundImage : container_url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
