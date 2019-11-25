@@ -15,7 +15,7 @@ export default class DCard extends React.Component{
 
         if (this.props.small) {
             context = <SubHeading inverted = {this.props.inverted}>
-                {this.props.content}
+                <section dangerouslySetInnerHTML={{__html: this.props.content}}/>
                 {this.props.enableModal &&
                 <ButtonContainer inverted={this.props.inverted}>
                     <Button bsSize="xsmall" bsStyle={'Link'}
@@ -25,7 +25,7 @@ export default class DCard extends React.Component{
             </SubHeading>
         } else {
             context = <Paragraph inverted={this.props.inverted}>
-                {this.props.content}
+                <section dangerouslySetInnerHTML={{__html: this.props.content}}/>
                 {this.props.enableModal &&
                 <ButtonContainer inverted={this.props.inverted}>
                     <Button bsSize="xsmall" bsStyle={'Link'}
@@ -44,7 +44,7 @@ export default class DCard extends React.Component{
                         <Modal.Header closeButton={()=>this.setState({showModal: false})}>
                             <Modal.Title>{this.props.title}</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>{this.props.detail}</Modal.Body>
+                        <Modal.Body><section dangerouslySetInnerHTML={{__html: this.props.detail}}/></Modal.Body>
                         <Modal.Footer>
                             <Button onClick={()=>this.setState({showModal: false})}>Close</Button>
                         </Modal.Footer>

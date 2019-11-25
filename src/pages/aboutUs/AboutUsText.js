@@ -7,7 +7,7 @@ const logoLargeImg = 'logo_large.png';
 const crossImg = 'b6c8eca1-0910-4fd9-b154-849aef0af522.png';
 
 export const texts = [
-    {key: uuidv1(), title: 'Pastors', image: pblcImg,
+    {key: 'pastors', title: 'Pastors', image: pblcImg,
 context: <p>Pastor Joe Louis Butts graduated from the Word of Faith School of Ministry,
     Southfield Michigan in 1991. He was President and Student Council President. After
     graduating, Pastor Butts was sent by Bishop Keith Butler, founder of Word of Faith
@@ -40,7 +40,7 @@ detail: <p><h1>Pastor Joe Louis Butts</h1> graduated from the Word of Faith Scho
     Team. First Lady Constance will be instrumental in the growth of the Southaven
     ministry. Her compassionate and dedicated spirit has warmed and touched the hearts
     of others to know the love of Jesus.</p>},
-{key: uuidv1(), title: 'History', image: bibleHistoryImg,
+{key: 'history', title: 'History', image: bibleHistoryImg,
 context: <p>Bishop Keith A. Butler, founder of Word of Faith International Christian
     Center, founded Word of Faith, Jackson, MS in 1995 under the pastorship of Bishop
     Kevin E. Wright. WOF - Jackson held its opening day service on Sunday August 6th,
@@ -67,7 +67,7 @@ detail: <p>Bishop Keith A. Butler, founder of Word of Faith International Christ
     September 3rd, 2009 under the leadership of Pastor Joe L. Butts. We extend an
     invitation to all the families of Southaven, Horn Lake, Olive Branch and other
     surrounding areas to become apart of the Word of Faith family!</p>},
-{key: uuidv1(), title: 'Founders', image: bishopImg,
+{key: 'founders', title: 'Founders', image: bishopImg,
 context: <p>In May 1978 Bishop Keith and Mrs. Deborah Butler graduate
 from Rhema Bible Training Center in Tulsa, Oklahoma with a mandate from God and a burning desire
 to obey that mandate - to fight the good fight of faith. Bishop Butler founded Word of Faith
@@ -136,7 +136,7 @@ location, 1994 would usher in a new phase of Bishop Butler’s outreach ministry
 Word TV and radio broadcast. Through these media, Bishop Butler was able to touch the cities
 with the Word of God, reaching out to various cities around the country such as Philadelphia,
 PA, Atlanta, GA, Jackson, MS, Jacksonville, FL, St. Thomas, USVI, and Detroit, MI.</p>},
-{key: uuidv1(), title: 'Statement of Faith', image: logoLargeImg,
+{key: 'statement', title: 'Statement of Faith', image: logoLargeImg,
 context: <p>We Believe...The Bible, That the Bible is the divinely inspired Word of God.
     The Holy Trinity, In the Trinity of God; the Father, the Son, and the Holy Ghost.
     Salvation, All have sinned and come short of the glory of God and are in need of salvation.
@@ -152,7 +152,7 @@ detail: <p><h1>We Believe</h1><br/>The Bible, That the Bible is the divinely ins
     The Rapture, There shall be bodily resurrection of the just and unjust.<br/>
     Christ's Return, In the personal, visible, imminent return of Jesus Christ.<br/>
     Water Baptism, In water baptism, and the observance of the Lord's Supper.</p>},
-{key: uuidv1(), title: 'Vision', image: crossImg,
+{key: 'vision', title: 'Vision', image: crossImg,
 context: <p>1. Secure a church building that meets all aspects of the ministry, including growth.<br/>
     2. Establish a Bible School to provide learning classes for the Laymen.<br/>
     3. Expand to include a Youth Ministry; Generation 6:20, with seperate service area.<br/>

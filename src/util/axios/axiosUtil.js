@@ -60,7 +60,7 @@ export const providePageConfig = async () => {
     return final_config;
 }
 
-export const readConfig = async location => {
+export const readConfig = async (location, split) => {
     const response = await axios.get(fixUrl(location));
-    return response.data.split('\n');
+    return split ? response.data.split('\n') : response.data;
 }

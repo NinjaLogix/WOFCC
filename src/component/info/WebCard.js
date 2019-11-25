@@ -45,9 +45,9 @@ class WebCard extends React.Component{
                         <Typography gutterBottom variant={'display1'} component="h2">
                             {this.props.headline}
                         </Typography>
-                        <Typography variant={'headline'} component={'p'}>
-                            {this.props.context}
-                        </Typography>
+                        {this.props.context && 
+                            <section dangerouslySetInnerHTML={{__html: this.props.context}}/>
+                        }
                     </CardContent>
                 </Card>
             </div>
