@@ -17,6 +17,7 @@ export const Title = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
+    text-align: center;
     justify-content: center;
 
     h1 {
@@ -44,15 +45,17 @@ export const AudioLanding = styled.section`
     width: calc(100vw - 5%);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 10px 0 10px 0;
 `;
 
 export const AudioBox = styled.section`
-    width: 30%;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     padding: 5px;
 `;
 

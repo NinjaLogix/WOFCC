@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     width: 100%;
     height: 50px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: center;
     margin-top: 5%;
@@ -17,6 +19,7 @@ export const Wrapper = styled.div`
 `;
 
 export const FooterH4 = styled.h4`
+    font-size: 1em;
     font-weight: 600;
     color: black;
 `;
