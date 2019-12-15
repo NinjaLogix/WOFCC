@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 30px;
-    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 `;
 
 export const MenuBase = styled.section`
