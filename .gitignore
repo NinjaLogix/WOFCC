@@ -6,3 +6,4 @@ build
 .history
 .env
 .env.*
+wofcc_deploy.py
