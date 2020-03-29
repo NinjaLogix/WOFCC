@@ -20,14 +20,18 @@ export default class WofccCarousel extends React.Component{
     
         response.entries.forEach(async (fileName) => {
             const response2 = await dropBox.sharingListSharedLinks({path: fileName.path_display});
-    
-            const file = response2.links[0].name.substring(0, response2.links[0].name.indexOf('.'));
-            const startDate = new Date(file.split('-')[1]);
-            const endDate = new Date(file.split('-')[2]);
-            const today = new Date();
-    
-            if ((today >= startDate && today < endDate) || (this.ALT_REGEX.test(file))) {
-                this.setState({slidesToShow: [...this.state.slidesToShow, response2.links[0]]})
+            
+            if (response2.links.length > 0){
+                console.log(response2);
+
+                const file = response2.links[0].name.substring(0, response2.links[0].name.indexOf('.'));
+                const startDate = new Date(file.split('-')[1]);
+                const endDate = new Date(file.split('-')[2]);
+                const today = new Date();
+        
+                if ((today >= startDate && today < endDate) || (this.ALT_REGEX.test(file))) {
+                    this.setState({slidesToShow: [...this.state.slidesToShow, response2.links[0]]})
+                }
             }
         });
     }
