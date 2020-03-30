@@ -4,7 +4,7 @@ const header_url = process.env.REACT_APP_LANDING_HEADER_URL;
 
 export const Wrapper = styled.div`
     flex: 1 100%;
-    background-color: grey;
+    background-color: whitesmoke;
 `;
 
 export const Header = styled.section`
@@ -63,4 +63,9 @@ export const AudioBox = styled.section`
 export const CenterCarousel = styled.section`
     margin: auto;
     max-width: 70%;
+`;
+
+export const CarouselWrapper = styled.div`
+    width: 100%;
+    background-color: grey;
 `;
