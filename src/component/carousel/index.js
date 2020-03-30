@@ -1,5 +1,5 @@
-import WofccCarousel from './WofccCarousel';
+import {Carousel} from './Carousel';
 
 export {
-    WofccCarousel
+    Carousel
 }

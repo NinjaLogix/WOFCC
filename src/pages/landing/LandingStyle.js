@@ -4,6 +4,7 @@ const header_url = process.env.REACT_APP_LANDING_HEADER_URL;
 
 export const Wrapper = styled.div`
     flex: 1 100%;
+    background-color: grey;
 `;
 
 export const Header = styled.section`
@@ -60,9 +61,6 @@ export const AudioBox = styled.section`
 `;
 
 export const CenterCarousel = styled.section`
-    position: relative;
-    alignment: center;
-    min-width: 40%;
-    max-width: 840px;
-    margin: 0 auto;
+    margin: auto;
+    max-width: 70%;
 `;

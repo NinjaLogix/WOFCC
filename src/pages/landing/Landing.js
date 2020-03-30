@@ -3,7 +3,7 @@ import {SoundPlayer} from "../../component/mp3";
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {provideAudioData, providePageConfig, handlePageConfig, fixUrl} from '../../util';
-import {WofccCarousel} from '../../component/carousel';
+import {WofccCarousel, Carousel} from '../../component/carousel';
 import {Wrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel} from './LandingStyle';
 
 export const Landing = function(props){
@@ -65,8 +65,8 @@ export const Landing = function(props){
                 </AudioLanding>
             </CarouselBox>
 
-            <CenterCarousel style={{margin: 'auto'}}>
-                <WofccCarousel/>
+            <CenterCarousel>
+                <Carousel/>
             </CenterCarousel>
 
             <Footer/>
