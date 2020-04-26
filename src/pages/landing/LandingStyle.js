@@ -12,6 +12,10 @@ export const Header = styled.section`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+	-webkit-box-shadow: -5px 8px 6px -6px black;
+	   -moz-box-shadow: -5px 8px 6px -6px black;
+	        box-shadow: -5px 8px 6px -6px black;
 `;
 
 export const Title = styled.section`
@@ -62,10 +66,20 @@ export const AudioBox = styled.section`
 
 export const CenterCarousel = styled.section`
     margin: auto;
+    padding: 1% 0 2.4% 0;
     max-width: 70%;
 `;
 
 export const CarouselWrapper = styled.div`
     width: 100%;
     background-color: grey;
+    
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+`;
+
+export const VideoWrapper = styled.div`
+    width: 100%;
+    
 `;

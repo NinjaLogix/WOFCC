@@ -22,15 +22,17 @@ export const Heading2 = styled(Heading1)``;
 
 export const MapContainer = styled.section`
     width: 100vw;
-    height: 60vh;
-    display: inline-flex;
-    justify-content: space-evenly;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     section {
         padding: 0 1% 0 1%;
         h2, h4 {
             color: black;
         }
+        margin: auto;
     }
 `;
 
