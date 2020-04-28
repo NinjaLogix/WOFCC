@@ -81,5 +81,8 @@ export const CarouselWrapper = styled.div`
 
 export const VideoWrapper = styled.div`
     width: 100%;
-    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
 `;

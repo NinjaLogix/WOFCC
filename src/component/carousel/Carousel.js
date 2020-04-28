@@ -30,7 +30,7 @@ export const Carousel = function(props){
         // use moment to figure out which ones we need to show
         responses.entries.forEach(entry => {
             const file_name = entry.name.replace('.png', '').split('-');
-            console.log('filename', file_name)
+            // console.log('filename', file_name)
 
             if (/^[0-9]{4}$/.test(file_name[1].trim())){
                 // this image is a yearly image, if it fits in this year then show it
@@ -51,8 +51,8 @@ export const Carousel = function(props){
         for (const x of files_needed){
             const {links} = await dropBox.sharingListSharedLinks({path: x.path_display});
 
-            console.log('links', links.length)
-            console.log(links[0])
+            // console.log('links', links.length)
+            // console.log(links[0])
 
             if (links != undefined)
                 finalized.push(fixUrl(links[0].url));
