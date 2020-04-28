@@ -2,39 +2,25 @@ import React, {useState, useEffect} from 'react';
 import {SoundPlayer} from "../../component/mp3";
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
-import {provideAudioData, providePageConfig, handlePageConfig, fixUrl} from '../../util';
-import {WofccCarousel} from '../../component/carousel';
-import {Wrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel} from './LandingStyle';
+import {provideAudioData, handlePageConfig, fixUrl} from '../../util';
+import {Carousel} from '../../component/carousel';
+import {Wrapper, CarouselWrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel, VideoWrapper} from './LandingStyle';
+import {VideoPlayer} from '../../component/av/VideoPlayer';
 
 export const Landing = function(props){
     const [audioData, setAudioData] = useState(null);
     const [context, setContext] = useState({});
-    const [loaded, setLoaded] = useState(false);
 
     const LogoSmall = process.env.REACT_APP_LOGO_SMALL_URL;
 
-    const setupContext = () => {
-        handlePageConfig()
-            .then(response => {
-                console.log('context', response.data)
-                setContext(response.data)
-            })
-            .catch();
-    };
-
     useEffect(() => {
-        if (!loaded){
-            setupContext();
-            provideAudioData()
-                .then(response => setAudioData(response))
-                .catch(error => console.log('error getting audio data', error));
-        }
-        
-        return () => {
-            if (!loaded){
-                setLoaded(true);
-            }
-        }
+        handlePageConfig()
+            .then(response => setContext(response.data))
+            .catch();
+
+        provideAudioData()
+            .then(response => setAudioData(response))
+            .catch(error => console.log('error getting audio data', error));
     }, []);
 
     return(
@@ -65,10 +51,19 @@ export const Landing = function(props){
                 </AudioLanding>
             </CarouselBox>
 
-            <CenterCarousel style={{margin: 'auto'}}>
-                <WofccCarousel/>
-            </CenterCarousel>
+            <CarouselWrapper>
+                <CenterCarousel>
+                    <Carousel/>
+                </CenterCarousel>
+            </CarouselWrapper>
 
+            {context.vid_url && 
+                <VideoWrapper>
+                    <h1>Word of Faith Online</h1>
+                    <h3>{context.vid_ttl}</h3>
+                    <VideoPlayer vid={context.vid_url}/>
+                </VideoWrapper>
+            }
             <Footer/>
         </Wrapper>
     )

@@ -20,15 +20,13 @@ export const Header = styled.section`
 `;
 
 export const Context = styled.section`
-    position: relative;
-    width: 50%;
-`;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 2% 5%;
 
-export const List = styled.ul`
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    width: 50%;
+    #item {
+        width: 70%;
+    }
 `;

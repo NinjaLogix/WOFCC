@@ -1,7 +1,7 @@
 import {dropBox} from "../../component/api";
 import {readConfig} from '..';
 
-const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
+// const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
 /**
  * @param path
@@ -66,7 +66,7 @@ export const provideMinistriesImages = async () => {
 }
 
 export const fixUrl = (url) => {
-    return url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL);
+    return url ? url.replace(process.env.REACT_APP_DROPBOX_BAD_URL, process.env.REACT_APP_DROPBOX_GOOD_URL) : '';
 };
 
 /**

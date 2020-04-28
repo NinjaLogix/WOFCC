@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import {Redirect} from 'react-router-dom';
-import {Container, StyledCard, SectionFlex, StyledAvatar, SubSectionFlex, GalleryH3, StyledCardMedia, StyledButton} from './GalleryCardStyle';
+import {Container, StyledCard, SectionFlex, StyledAvatar, SubSectionFlex, GalleryH3, StyledCardMedia} from './GalleryCardStyle';
 
 export const GalleryCard = props => {
     const [redirect, setRedirect] = useState(false);

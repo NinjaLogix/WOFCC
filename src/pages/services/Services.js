@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import uuidv1 from "uuid";
 import WebCard from '../../component/info/WebCard';
-import {provideUrl, handlePageConfig, fixUrl, convertMarkdown} from '../../util';
-import {dropBox} from '../../component/api';
+import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {Container, MidContainer, ServiceFlexBox, ServiceWebCardContainer} from './ServicesStyle';
