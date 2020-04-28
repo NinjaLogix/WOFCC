@@ -1,7 +1,7 @@
 import {dropBox} from "../../component/api";
 import {readConfig} from '..';
 
-const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
+// const ALT_REGEX = RegExp(process.env.REACT_APP_REGEX_ALT + new Date().getFullYear());
 
 /**
  * @param path

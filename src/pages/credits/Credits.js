@@ -1,9 +1,9 @@
+/*eslint react/style-prop-object:0 */
 import React, {useState} from 'react';
 import uuidv1 from 'uuid';
 import {Wrapper, CreditList, ListWrapper} from './CreditsStyle';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
-import {Link, Redirect} from 'react-router-dom';
 
 export const Credits =  function(props){
     const [freepik] = useState([

@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import {MapWrapper} from './MapStyle';
 
 export const WOFCCMap = (info) => {
     const [location] = useState([34.948353, -90.02126]);
-    const {lat, long, addrs, addrs_info} = info;
+    const {lat, long, addrs} = info;
 
     return (
         <MapWrapper>

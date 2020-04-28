@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Menu } from '../../component/navigation/menu';
 import { Footer } from '../../component/navigation/footer';
-import {Container, Heading1, Heading2, MapContainer, GMapsIframe} from './DirectionsStyle';
+import {Container, Heading1, Heading2, MapContainer} from './DirectionsStyle';
 import { handlePageConfig, fixUrl } from '../../util';
 import {WOFCCMap} from '../../component/info';
 

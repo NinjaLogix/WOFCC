@@ -54,7 +54,7 @@ export const Carousel = function(props){
             // console.log('links', links.length)
             // console.log(links[0])
 
-            if (links != undefined)
+            if (links !== undefined)
                 finalized.push(fixUrl(links[0].url));
             else
                 console.warn(`File ${x.name} didn't have a shared link. Please go make one...`)
