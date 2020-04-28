@@ -1,4 +1,4 @@
-/*eslint no-unused-vars:0 */
+/*eslint-disable no-unused-vars*/
 import React, {useState} from 'react';
 import Plyr from 'plyr';
 import {Wrapper, Video} from './VideoPlayerStyle';

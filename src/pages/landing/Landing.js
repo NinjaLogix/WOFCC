@@ -59,7 +59,8 @@ export const Landing = function(props){
 
             {context.vid_url && 
                 <VideoWrapper>
-                    <h1>Check out our latest service!</h1>
+                    <h1>Word of Faith Online</h1>
+                    <h3>{context.vid_ttl}</h3>
                     <VideoPlayer vid={context.vid_url}/>
                 </VideoWrapper>
             }

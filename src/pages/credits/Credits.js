@@ -1,4 +1,4 @@
-/*eslint react/style-prop-object:0 */
+/*eslint-disable react/style-prop-object*/
 import React, {useState} from 'react';
 import uuidv1 from 'uuid';
 import {Wrapper, CreditList, ListWrapper} from './CreditsStyle';
