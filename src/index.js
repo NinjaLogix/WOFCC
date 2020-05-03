@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
         flex-flow: row wrap;
         -webkit-align-items: stretch;
         align-items: stretch;
+        background-color: #eeeeee;
     }
 
     h1{font-family: 'Permanent Marker', cursive;}

@@ -1,10 +1,22 @@
+/*eslint-disable no-unused-vars*/
 import React, {useState, useEffect} from 'react';
-import {SoundPlayer} from "../../component/mp3";
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {provideAudioData, handlePageConfig, fixUrl} from '../../util';
 import {Carousel} from '../../component/carousel';
-import {Wrapper, CarouselWrapper, Header, Title, CarouselBox, AudioLanding, AudioBox, CenterCarousel, VideoWrapper} from './LandingStyle';
+import {
+    Wrapper, 
+    CarouselWrapper,
+    Header,
+    Title,
+    WelcomeBox, 
+    WelcomeLeft, 
+    WelcomeRight,
+    CenterCarousel, 
+    VideoWrapper, 
+    VideoLeft, 
+    VideoRight
+} from './LandingStyle';
 import {VideoPlayer} from '../../component/av/VideoPlayer';
 
 export const Landing = function(props){
@@ -15,7 +27,7 @@ export const Landing = function(props){
 
     useEffect(() => {
         handlePageConfig()
-            .then(response => setContext(response.data))
+            .then(({data}) => setContext(data))
             .catch();
 
         provideAudioData()
@@ -35,21 +47,21 @@ export const Landing = function(props){
                 </Title>
             </Header>
 
-            <CarouselBox>
-                <AudioLanding>
-                    {audioData && 
-                        <SoundPlayer data={audioData}/>
-                    }
+            <WelcomeBox>
+                <WelcomeLeft/>
 
-                    <AudioBox>
+                <WelcomeRight>
+                    <section>
                         <h1>Come as you are</h1>
-                        <h2>Service Time @ {context.service ? context.service.time : ''}</h2>
-                        <h2>Find Us Here At</h2>
-                        <h3>{context.service ? context.service.addrs1 : ''}</h3>
-                        <h3>{context.service ? context.service.addrs2 : ''}</h3>
-                    </AudioBox>
-                </AudioLanding>
-            </CarouselBox>
+                        <h2>Service starts @ {context.service ? context.service.time : ''}</h2>
+                    </section>
+
+                    <span>
+                        <h1>You can find us here!</h1>
+                        <h2>{context.service ? context.service.addrs1 : ''} {context.service ? context.service.addrs2 : ''}</h2>
+                    </span>
+                </WelcomeRight>
+            </WelcomeBox>
 
             <CarouselWrapper>
                 <CenterCarousel>
@@ -59,9 +71,23 @@ export const Landing = function(props){
 
             {context.vid_url && 
                 <VideoWrapper>
-                    <h1>Word of Faith Online</h1>
-                    <h3>{context.vid_ttl}</h3>
-                    <VideoPlayer vid={context.vid_url}/>
+                    <VideoLeft>
+                        <VideoPlayer vid={context.vid_url}/>
+                    </VideoLeft>
+
+                    <VideoRight>
+                        <section>
+                            <h1>Word of Faith Facebook Live!</h1>
+                        </section>
+
+                        <section>
+                            <h3>{context.media_ttl}</h3>
+                        </section>
+
+                        <section>
+                            <h3>{context.media_date}</h3>
+                        </section>
+                    </VideoRight>
                 </VideoWrapper>
             }
             <Footer/>
