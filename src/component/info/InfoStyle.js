@@ -33,7 +33,7 @@ const TextSection = styled.section`
         width: 100%;
         height: 45%;
         padding: 2%;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         span {
 

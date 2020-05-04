@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {fixUrl} from '../../util'
 import {dropBox} from '../../component/api';
 import moment from 'moment';
-import {ImageWrapper} from './CarouselStyle';
+import {Wrapper} from './CarouselStyle';
 
 export const Carousel = function(props){
     const [slides, setSlides] = useState([]);
@@ -69,14 +69,10 @@ export const Carousel = function(props){
     }, [])
       
     return (
-        <div style={{textAlign: 'center'}}>
+        <Wrapper>
             <Slider {...settings}>
-                {slides.map(image => (
-                    <ImageWrapper>
-                        <img alt={'840x400'} src={image}/>
-                    </ImageWrapper>
-                ))}
+                {slides.map(image => <img alt={'840x400'} src={image}/>)}
             </Slider>
-        </div>
+        </Wrapper>
     )
 }

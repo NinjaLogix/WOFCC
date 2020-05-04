@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
-export const ImageWrapper = styled.div`
-    text-align: center;
+export const Wrapper = styled.div`
+    min-width: 50%;
+    max-width: 80%;
 `;

@@ -51,22 +51,20 @@ export const Landing = function(props){
                 <WelcomeLeft/>
 
                 <WelcomeRight>
-                    <section>
+                    <span>
                         <h1>Come as you are</h1>
                         <h2>Service starts @ {context.service ? context.service.time : ''}</h2>
-                    </section>
+                    </span>
 
                     <span>
                         <h1>You can find us here!</h1>
-                        <h2>{context.service ? context.service.addrs1 : ''} {context.service ? context.service.addrs2 : ''}</h2>
+                        <h2>{context.service ? context.service.addrs1 : ''}</h2><h2> {context.service ? context.service.addrs2 : ''}</h2>
                     </span>
                 </WelcomeRight>
             </WelcomeBox>
 
             <CarouselWrapper>
-                <CenterCarousel>
-                    <Carousel/>
-                </CenterCarousel>
+                <Carousel/>
             </CarouselWrapper>
 
             {context.vid_url && 
