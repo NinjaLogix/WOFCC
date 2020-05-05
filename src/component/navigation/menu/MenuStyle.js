@@ -30,3 +30,7 @@ export const MenuH2 = styled.h3`
         text-decoration: underline;
     }
 `;
+
+export const DrawerList = styled.section`
+    width: 10vw;
+`;
