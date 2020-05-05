@@ -1,50 +1,97 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {Wrapper, MenuBase, MenuH2} from './MenuStyle';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
+import {Wrapper, MenuBase, MenuH2, DrawerList} from './MenuStyle'
+import {config} from '../../../config/config'
+import {IconButton, Drawer, List, ListItem} from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu'
 
-export default class Menu extends React.PureComponent{
-    state = {
-        givingUrl: '',
-        navOptions: [
-            {title: 'About Us', url: '/about-us'},
-            {title: 'Contact Us', url: '/contact-us'},
-            {title: 'Directions', url: '/directions'},
-            {title: 'Services', url: '/services'},
-            {title: 'Ministries', url: '/ministries'},
-            {title: 'Events', url: '/events'},
-            {title: 'Giving'}
-        ]
-    }
+const Menu = () => {
+    const [menu, setMenu] = useState();
+    const [open, setOpen] = useState(false);
+    
+    const toggleDrawer = () => setOpen(!open);
 
-    //* ----------------------------------------------------> Lifecycle Methods
-    componentDidMount(){
-        this.setState({givingUrl: process.env.REACT_APP_GIVING_URL});
-    }
+    const fullMenu = () => (
+        <Wrapper>
+            <MenuBase>
+                {window.location.pathname !== '/' && 
+                    <Link key={Date.now()} to={'/'}>
+                        <MenuH2>Home</MenuH2>
+                    </Link>
+                }
 
-    render(){
-        const {navOptions, givingUrl} = this.state;
+                {config.menuOptions.map(option => 
+                    option.title !== 'Giving'
+                    ?
+                        <Link key={option} to={option.url}>
+                            <MenuH2>{option.title}</MenuH2>
+                        </Link>
+                    :
+                        <a target='_blank' href={config.givingUrl} key={option}>
+                            <MenuH2>{option.title}</MenuH2>
+                        </a>
+                )}
+            </MenuBase>
+        </Wrapper>
+    );
 
-        return (
-            <Wrapper>
-                <MenuBase>
-                    {window.location.pathname !== '/' && 
+    const mobileList = () => (
+        <DrawerList
+            onClick={() => toggleDrawer()}
+            onKeyDown={() => toggleDrawer()}>
+
+            <List>
+                {window.location.pathname !== '/' && 
+                    <ListItem>
                         <Link key={Date.now()} to={'/'}>
                             <MenuH2>Home</MenuH2>
                         </Link>
-                    }
-                    {navOptions.map((option, index) => 
-                        option.title !== 'Giving'
-                        ?
-                            <Link key={index} to={option.url}>
-                                <MenuH2>{option.title}</MenuH2>
-                            </Link>
-                        :
-                            <a target='_blank' href={givingUrl} key={index}>
-                                <MenuH2>{option.title}</MenuH2>
-                            </a>
-                    )}
-                </MenuBase>
-            </Wrapper>
-        )
+                    </ListItem>
+                }
+
+                {config.menuOptions.map(option => 
+                    option.title !== 'Giving'
+                    ?
+                    <ListItem>
+                        <Link key={option} to={option.url}>
+                            <MenuH2>{option.title}</MenuH2>
+                        </Link>
+                        </ListItem>
+                    :
+                    <ListItem>
+                        <a target='_blank' href={config.givingUrl} key={option}>
+                            <MenuH2>{option.title}</MenuH2>
+                        </a>
+                        </ListItem>
+                )}
+            </List>
+        </DrawerList>
+    )
+
+    const mobileMenu = () => (
+        <Wrapper>
+            <Drawer anchor={'left'} open={open} onClose={() => toggleDrawer()}>
+                {mobileList()}
+            </Drawer>
+
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleDrawer()}>
+                <MenuIcon/>
+            </IconButton>
+        </Wrapper>
+    );
+
+    const showMenu = () => {
+        if (config.isMobile)
+            return mobileMenu()
+        else
+            return fullMenu()
     }
+
+    return (
+        <div>
+            {showMenu()}
+        </div>
+    )
 }
+
+export default Menu;
