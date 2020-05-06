@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Wrapper, MenuBase, MenuH2, DrawerList} from './MenuStyle'
 import {config} from '../../../config/config'
@@ -6,7 +6,6 @@ import {IconButton, Drawer, List, ListItem} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
 const Menu = () => {
-    const [menu, setMenu] = useState();
     const [open, setOpen] = useState(false);
     
     const toggleDrawer = () => setOpen(!open);

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {InfoWrapper, ImgSection, TextSection} from './InfoStyle';
 import {InfoModal} from './InfoModal';
 import {convertMarkdown} from '../../util';
+import {config} from '../../config/config'
 
 export const InfoCard = ({src, title, text, detail}) => {
     const text_limit = 200;
@@ -16,16 +17,18 @@ export const InfoCard = ({src, title, text, detail}) => {
         <InfoWrapper 
             elevation={3} 
             onClick={handleClick}
-            expanded={useExpanded}>
+            expanded={useExpanded}
+            mobile={config.isMobile}>
 
             {useExpanded && 
                 <InfoModal open={open} setOpen={setOpen} title={title} text={detail} img={src}/>
             }
 
             <ImgSection src={src}/>
+
             <TextSection>
                 <section>
-                    <h2>{title}</h2>
+                    <h3>{title}</h3>
                 </section>
                 {useExpanded
                     ?
