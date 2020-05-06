@@ -32,5 +32,5 @@ export const MenuH2 = styled.h3`
 `;
 
 export const DrawerList = styled.section`
-    width: 10vw;
+    width: 30vw;
 `;

@@ -70,13 +70,13 @@ export const SocialBadge = styled.img`
 `;
 
 export const BottomContainer = styled.section`
-display: inline-flex;
-height: auto;
-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
 `;
 
 export const ContactLeftBottom = styled.section`
-width:30%;
 margin-top: 20px;
 `;
 
@@ -92,4 +92,9 @@ export const PastorImg = styled.img`
 export const ContactRightBottom = styled.section`
     width:70%;
     margin-top: 20px;
+
+    p {
+        font-size: 1.2em;
+        text-align: center;
+    }
 `;
