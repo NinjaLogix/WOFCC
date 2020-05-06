@@ -21,12 +21,9 @@ export const Header = styled.section`
 
 export const Context = styled.section`
     width: 100%;
+    height: auto;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 2% 5%;
-
-    #item {
-        width: 70%;
-    }
 `;

@@ -23,12 +23,11 @@ export const Ministries = function(props) {
             </Header>
             <Context>
                 {ministries.map(el => (
-                    <section key={el.key} id={'item'}>
-                        <InfoCard 
-                            src={fixUrl(el.img_url)} 
-                            title={el.ttl} 
-                            text={el.txt}/>
-                    </section>
+                    <InfoCard
+                        key={el.key}
+                        src={fixUrl(el.img_url)} 
+                        title={el.ttl} 
+                        text={el.txt}/>
                 ))}
             </Context>
             <Footer/>
