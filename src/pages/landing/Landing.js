@@ -4,6 +4,7 @@ import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 import {provideAudioData, handlePageConfig, fixUrl} from '../../util';
 import {Carousel} from '../../component/carousel';
+import {AudioPlayer} from '../../component/av/AudioPlayer'
 import {
     Wrapper, 
     CarouselWrapper,
@@ -70,7 +71,11 @@ export const Landing = function(props){
             {context.vid_url && 
                 <VideoWrapper>
                     <VideoLeft>
-                        <VideoPlayer vid={context.vid_url}/>
+                        {context.vid_url ?
+                            <VideoPlayer vid={context.vid_url}/>
+                            :
+                            <AudioPlayer track={context.audio_url}/>
+                        }
                     </VideoLeft>
 
                     <VideoRight>
