@@ -22,11 +22,11 @@ const Menu = () => {
                 {config.menuOptions.map(option => 
                     option.title !== 'Giving'
                     ?
-                        <Link key={option} to={option.url}>
+                        <Link key={option.title} to={option.url}>
                             <MenuH2>{option.title}</MenuH2>
                         </Link>
                     :
-                        <a target='_blank' href={config.givingUrl} key={option}>
+                        <a key={option.title} target='_blank' href={config.givingUrl} key={option}>
                             <MenuH2>{option.title}</MenuH2>
                         </a>
                 )}

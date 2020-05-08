@@ -23,7 +23,7 @@ export const Footer = function(props){
                         <FooterH4>{option.title}</FooterH4>
                     </Link>
                 :
-                    <a target="_blank" href={option.url}>
+                    <a key={index} target="_blank" href={option.url}>
                         <FooterH4>{option.title}</FooterH4>
                     </a>
             )}

@@ -71,7 +71,7 @@ export const Carousel = function(props){
     return (
         <Wrapper>
             <Slider {...settings}>
-                {slides.map(image => <img alt={'840x400'} src={image}/>)}
+                {slides.map((image, idx) => <img key={idx} alt={'840x400'} src={image}/>)}
             </Slider>
         </Wrapper>
     )
