@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
+import {App} from './app/App';
 import registerServiceWorker from './script/registerServiceWorker';
 import HttpsRedirect from 'react-https-redirect';
 import {createGlobalStyle} from 'styled-components';
