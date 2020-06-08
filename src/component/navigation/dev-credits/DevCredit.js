@@ -25,7 +25,7 @@ const Text = styled.section`
 export const DevCredit = () => (
     <Wrapper>
         <Logo>
-            <img style={{height: '100%'}} src={require('../../../resources/GitHub_Logo.png')} alt={'dev_credit'}/>
+            <img style={{height: '100%'}} src={require('../../../assets/GitHub_Logo.png')} alt={'dev_credit'}/>
         </Logo>
 
         <Text>

@@ -26,7 +26,7 @@ const Menu = () => {
                             <MenuH2>{option.title}</MenuH2>
                         </Link>
                     :
-                        <a key={option.title} target='_blank' href={config.givingUrl} key={option}>
+                        <a key={option.title} target='_blank' href={config.givingUrl}>
                             <MenuH2>{option.title}</MenuH2>
                         </a>
                 )}

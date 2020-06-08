@@ -1,7 +1,13 @@
-import {Landing, Services, Directions, ContactUs, AboutUs, Ministries, Events, Credits} from '../pages'
+import {
+    Landing,
+    Services,
+    Directions,
+    ContactUs,
+    AboutUs,
+    Ministries,
+    Events,
+    Credits} from '../pages'
 import {GalleryView} from '../component/gallery'
-import {Route} from 'react-router-dom'
-import React from 'react'
 
 const defaults = {
     isMobile: typeof window.orientation !== 'undefined',
@@ -14,6 +20,17 @@ const defaults = {
         {title: 'Ministries', url: '/ministries'},
         {title: 'Events', url: '/events'},
         {title: 'Giving'}
+    ],
+    routes: [
+        {component: Landing, path: '/', title: 'Landing'},
+        {component: AboutUs, route: '/about-us', title: 'About Us'},
+        {component: ContactUs, route: '/contact-us', title: 'Contact Us'},
+        {component: Directions, route: '/directions', title: 'Directions'},
+        {component: Services, route: '/services', title: 'Services'},
+        {component: Ministries, route: '/ministries', title: 'Ministries'},
+        {component: Events, route: '/events', title: 'Events'},
+        {component: GalleryView, route: '/gallery-view', title: 'Gallery View'},
+        {component: Credits, route: '/credits', title: 'Credits'}
     ],
     sanity_queries: {
         locations: process.env.REACT_APP_QUERY_LOCATIONS,

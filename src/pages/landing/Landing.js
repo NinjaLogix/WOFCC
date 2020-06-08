@@ -1,9 +1,9 @@
 /*eslint-disable no-unused-vars*/
-import React, {useState, useEffect} from 'react';
-import {Menu} from '../../component/navigation/menu';
-import {Footer} from '../../component/navigation/footer';
-import {provideAudioData, handlePageConfig, fixUrl} from '../../util';
-import {Carousel} from '../../component/carousel';
+import React, {useState, useContext, useEffect} from 'react'
+import {WofccContext} from '../../component/context/WofccContext'
+import {Menu} from '../../component/navigation/menu'
+import {Footer} from '../../component/navigation/footer'
+import {Carousel} from '../../component/carousel'
 import {AudioPlayer} from '../../component/av/AudioPlayer'
 import {
     Wrapper, 
@@ -13,37 +13,58 @@ import {
     WelcomeBox, 
     WelcomeLeft, 
     WelcomeRight,
-    CenterCarousel, 
     VideoWrapper, 
     VideoLeft, 
-    VideoRight
-} from './LandingStyle';
-import {VideoPlayer} from '../../component/av/VideoPlayer';
+    VideoRight} from './LandingStyle'
+import {VideoPlayer} from '../../component/av/VideoPlayer'
+import {config} from '../../config/config'
+import {
+    smallWofccLogo,
+    LandingBackground} from '../../assets'
 
 export const Landing = function(props){
-    const [audioData, setAudioData] = useState(null);
-    const [context, setContext] = useState({});
+    const [api] = useContext(WofccContext);
 
-    const LogoSmall = process.env.REACT_APP_LOGO_SMALL_URL;
+    const [location, setLocation] = useState();
+    const [carousel, setCarousel] = useState();
+    const [av, setAV] = useState();
 
     useEffect(() => {
-        handlePageConfig()
-            .then(({data}) => setContext(data))
-            .catch();
+        const lookups = async () => {
+            const [location, carousel, av] = await Promise.all([
+              api.sanity_query(api.singleton, {query:config.sanity_queries.locations}),
+              api.sanity_query(api.singleton, {query:config.sanity_queries.carousel}),
+              api.sanity_query(api.singleton, {query:config.sanity_queries.av})
+            ]);
 
-        provideAudioData()
-            .then(response => setAudioData(response))
-            .catch(error => console.log('error getting audio data', error));
+            setLocation(location[0]);
+            setCarousel(carousel);
+            setAV(av);
+        }
+
+        lookups();
     }, []);
+
+    const getLatestAv = () => av[av.length - 1];
+
+    const getReleventAv = () => {
+        const latest = getLatestAv();
+
+        if (latest.videoDetails)
+            return <VideoPlayer vid={latest.videoDetails[0]}/>
+
+        if (latest.audioDetails)
+            return <AudioPlayer track={latest.audioDetails[0]}/>
+    }
 
     return(
         <Wrapper>
-            <Header backgroundImg={context.header_img ? fixUrl(context.header_img) : ''}>
+            <Header backgroundImg={LandingBackground}>
                 <Menu/>
                 <Title>
                     <h1>Word of Faith Christian Center</h1>
                     <section>
-                        <img src={LogoSmall} alt={'badge'}/>
+                        <img src={smallWofccLogo} alt={'badge'}/>
                     </section>
                 </Title>
             </Header>
@@ -54,28 +75,37 @@ export const Landing = function(props){
                 <WelcomeRight>
                     <span>
                         <h1>Come as you are</h1>
-                        <h2>Service starts @ {context.service ? context.service.time : ''}</h2>
+
+                        {location &&
+                            <section>
+                                <h3>Service starts @ {location.service_time}</h3>
+                            </section>
+                        }
                     </span>
 
                     <span>
                         <h1>You can find us here!</h1>
-                        <h2>{context.service ? context.service.addrs1 : ''}</h2><h2> {context.service ? context.service.addrs2 : ''}</h2>
+
+                        {location &&
+                            <section>
+                                <h3>{location.address}</h3>
+                                <h3>{location.address_cont}</h3>
+                            </section>
+                        }
                     </span>
                 </WelcomeRight>
             </WelcomeBox>
 
-            <CarouselWrapper>
-                <Carousel/>
-            </CarouselWrapper>
+            {carousel &&
+                <CarouselWrapper>
+                    <Carousel playlists={carousel}/>
+                </CarouselWrapper>
+            }
 
-            {context.vid_url && 
+            {av &&
                 <VideoWrapper>
                     <VideoLeft>
-                        {context.vid_url ?
-                            <VideoPlayer vid={context.vid_url}/>
-                            :
-                            <AudioPlayer track={context.audio_url}/>
-                        }
+                        {getReleventAv()}
                     </VideoLeft>
 
                     <VideoRight>
@@ -84,11 +114,11 @@ export const Landing = function(props){
                         </section>
 
                         <section>
-                            <h3>{context.media_ttl}</h3>
+                            <h3>{getLatestAv().title}</h3>
                         </section>
 
                         <section>
-                            <h3>{context.media_date}</h3>
+                            <h3>{getLatestAv().date}</h3>
                         </section>
                     </VideoRight>
                 </VideoWrapper>

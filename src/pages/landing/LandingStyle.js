@@ -75,9 +75,9 @@ export const WelcomeRight = styled.section`
         line-height: 1;
     }
 
-    h2 {
-        font-size: 1.5em;
-        line-height: 0;
+    h3 {
+        font-size: 1.7em;
+        line-height: 0.5;
     }
 
     span {

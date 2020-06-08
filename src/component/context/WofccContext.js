@@ -1,5 +1,9 @@
 import React, {useState, createContext} from 'react'
-import {client, queryData, listenToQuery, stopListeningToQuery} from '../api/Sanity'
+import {
+  client,
+  queryData,
+  listenToQuery,
+  stopListeningToQuery} from '../api/Sanity'
 
 const WofccContext = createContext([{}, () => {}]);
 
