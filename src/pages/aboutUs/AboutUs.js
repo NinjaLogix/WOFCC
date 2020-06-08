@@ -1,37 +1,51 @@
-import React, {useState, useEffect} from 'react';
-import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
-import {Menu} from '../../component/navigation/menu';
-import {Footer} from '../../component/navigation/footer';
-import {Wrapper, Header, Context} from '../ministries/MinistriesStyle';
-import {InfoCard} from '../../component/info';
+import React, {useState, useEffect, useContext} from 'react'
+import {Menu} from '../../component/navigation/menu'
+import {Footer} from '../../component/navigation/footer'
+import {
+  Wrapper,
+  Header,
+  Context} from '../ministries/MinistriesStyle'
+import {InfoCard} from '../../component/info'
+import {WofccContext} from '../../component/context/WofccContext'
+import {AboutBackground} from '../../assets'
+import {config} from '../../config/config'
 
 export const AboutUs = function(props) {
-    const [abouts, setAbouts] = useState({});
+  const [api] = useContext(WofccContext);
+  const [about, setAbout] = useState([]);
 
-    useEffect(() => {
-        handlePageConfig('about-us')
-            .then(response => setAbouts(response.data))
-            .catch();
-    }, []);
+  useEffect(() => {
+    const queryData = async () => {
+      const data = await api.sanity_query(api.singleton, {query: config.sanity_queries.about});
 
-    return (
-        <Wrapper>
-            <Header backgroundImg={abouts.header_img ? fixUrl(abouts.header_img) : ''}>
-                <Menu/>
-                <h1>WOFCC - Southaven</h1>
-                <h3>A little about who we are...</h3>
-            </Header>
-            <Context>
-                {abouts.us && abouts.us.map(el => (
-                    <InfoCard
-                        key={el.key}
-                        src={fixUrl(el.img_url)} 
-                        title={el.ttl} 
-                        text={el.txt}
-                        detail={convertMarkdown(el.txt)}/>
-                ))}
-            </Context>
-            <Footer/>
-        </Wrapper>
-    )
+      setAbout([...data]);
+    }
+
+    queryData();
+  }, []);
+
+  return (
+    <Wrapper>
+      <Header backgroundImg={AboutBackground}>
+        <Menu/>
+        <h1>WOFCC - Southaven</h1>
+        <h3>A little about who we are...</h3>
+      </Header>
+
+      <Context>
+        {about &&
+          about.map(thing => (
+            <InfoCard
+              key={thing.title}
+              src={thing.imageUrl}
+              title={thing.title}
+              text={thing.description}
+              detail={thing.description}/>
+          ))
+        }
+      </Context>
+
+      <Footer/>
+    </Wrapper>
+  )
 }
