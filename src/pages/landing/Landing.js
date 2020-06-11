@@ -23,7 +23,7 @@ import {
     LandingBackground} from '../../assets'
 
 export const Landing = function(props){
-    const [api] = useContext(WofccContext);
+    const [api, setApi] = useContext(WofccContext);
 
     const [location, setLocation] = useState();
     const [carousel, setCarousel] = useState();
@@ -40,6 +40,8 @@ export const Landing = function(props){
             setLocation(location[0]);
             setCarousel(carousel);
             setAV(av);
+
+            setApi({...api, location: location[0]});
         }
 
         lookups();

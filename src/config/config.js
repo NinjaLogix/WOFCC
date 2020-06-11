@@ -12,6 +12,7 @@ import {GalleryView} from '../component/gallery'
 const defaults = {
     isMobile: typeof window.orientation !== 'undefined',
     givingUrl: process.env.REACT_APP_GIVING_URL,
+    faceBookUrl: process.env.REACT_APP_FACEBOOK_URL,
     menuOptions: [
         {title: 'About Us', url: '/about-us'},
         {title: 'Contact Us', url: '/contact-us'},

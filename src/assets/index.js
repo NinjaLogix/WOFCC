@@ -3,11 +3,17 @@ import smallWofccLogo from './badge_small.png'
 import largeWofccLogo from './logo_large.png'
 import LandingBackground from './102434-OLS3V2-932.jpg'
 import AboutBackground from './2144.jpg'
+import FaceBookLogo from './Facebook_Home_logo_old.svg.png'
+import ContactUsBackground from'./1024.jpg'
+import Pastors from './PBLC-3.png'
 
 export {
   GithubLogo,
   smallWofccLogo,
   largeWofccLogo,
   LandingBackground,
-  AboutBackground
+  AboutBackground,
+  FaceBookLogo,
+  ContactUsBackground,
+  Pastors
 }

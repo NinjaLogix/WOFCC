@@ -10,6 +10,7 @@ const WofccContext = createContext([{}, () => {}]);
 const WofccProvider = ({children}) => {
   const [state, setState] = useState({
     singleton: client,
+    location: undefined,
     sanity_query: queryData,
     sanity_listen: listenToQuery,
     sanity_unListen: stopListeningToQuery
