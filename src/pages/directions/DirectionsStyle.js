@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Iframe from 'react-iframe';
 
 const container_url = process.env.REACT_APP_DIRECTIONS_CONTAINER_URL;
 

@@ -1,34 +1,38 @@
-import React, {useState, useEffect} from 'react';
-import uuidv1 from "uuid";
-import WebCard from '../../component/info/WebCard';
-import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
-import {Menu} from '../../component/navigation/menu';
-import {Footer} from '../../component/navigation/footer';
-import {Container, MidContainer, ServiceFlexBox, ServiceWebCardContainer} from './ServicesStyle';
+import React, {useState, useEffect, useContext} from 'react'
+import WebCard from '../../component/info/WebCard'
+import {Menu} from '../../component/navigation/menu'
+import {Footer} from '../../component/navigation/footer'
+import {Container, MidContainer, ServiceFlexBox, ServiceWebCardContainer} from './ServicesStyle'
+import {config} from '../../config/config'
+import {WofccContext} from '../../component/context/WofccContext'
+import {ServicesBackground} from '../../assets'
 
 export const Services = () => {
-    const [context, setContext] = useState({});
-
-    const setupContext = async () => {
-        const data = await handlePageConfig('services');
-        setContext(data.data);
-    }
+    const [api] = useContext(WofccContext);
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
-        setupContext();
+        const getServices = async () => {
+            const data = await api.sanity_query(api.singleton, {query:config.sanity_queries.services});
+            setServices(data);
+        }
+
+        getServices();
     }, []);
 
     return (
         <Container>
-            <MidContainer backgroundImg={context.header_img ? fixUrl(context.header_img) : '#'}>
+            <MidContainer backgroundImg={ServicesBackground}>
                 <Menu/>
                 <h1>Our Services to You</h1>
                 <ServiceFlexBox>
-                    {context.ministries && context.ministries.map(el =>(
-                        <ServiceWebCardContainer key={uuidv1()}>
-                            <WebCard image={fixUrl(el.img ? el.img : '#')} headline={el.ttl ? el.ttl : ''} context={convertMarkdown(el.txt ? el.txt : '')}/>
-                        </ServiceWebCardContainer>
-                    ))}
+                    {services &&
+                        services.map((service, index) => (
+                          <ServiceWebCardContainer key={index}>
+                              <WebCard image={service.imageUrl} headline={service.title} context={service.description}/>
+                          </ServiceWebCardContainer>
+                        ))
+                    }
                 </ServiceFlexBox>
             </MidContainer>
 
