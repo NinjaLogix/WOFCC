@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import {  Grid  } from '@material-ui/core'
 
 const header_url = process.env.REACT_APP_RECENT_EVENTS_HEADER_URL;
 
@@ -20,17 +21,12 @@ export const Header = styled.section`
     }
 `;
 
-export const FlexBox = styled.section`
-    display: flex;
-    flex-flow: row wrap;
-    width: auto;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    align-items: center;
-    justify-content: center;
+export const GalleryWrapper = styled.section`
+  height: calc(100vh - 33.5vh);
+  
+  background-color: aqua;
 `;
 
-export const SpinnerBox = styled.section`
-    margin-top: 80px;
-`;
+export const GridContainer = styled(Grid)``;
+
+export const GridItem = styled(Grid)``;

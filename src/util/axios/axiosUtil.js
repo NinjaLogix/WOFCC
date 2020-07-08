@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {fixUrl} from '../dropbox/dropboxUtil';
 
+
+//depreciated
 export const provideAudioData = async () => {
     const audioData = {};
     
@@ -14,6 +16,7 @@ export const provideAudioData = async () => {
     return audioData;
 }
 
+//depreciated
 export const providePageConfig = async () => {
     let page = {conf: ''};
 
@@ -60,6 +63,7 @@ export const providePageConfig = async () => {
     return final_config;
 }
 
+//depreciated
 export const readConfig = async (location, split) => {
     const response = await axios.get(fixUrl(location));
     return split ? response.data.split('\n') : response.data;

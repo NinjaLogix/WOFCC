@@ -1,8 +1,8 @@
 import React from 'react'
 import {
-    Router,
-    Route,
-    Switch} from 'react-router-dom'
+  Router,
+  Route,
+  Switch} from 'react-router-dom'
 import history from '../history/history'
 import {
     Landing,
@@ -17,22 +17,25 @@ import {GalleryView} from '../component/gallery'
 import {AppStyle} from './AppStyle'
 import {WofccProvider} from '../component/context/WofccContext'
 
-export const App = () => (
-    <WofccProvider>
-        <AppStyle>
-            <Router history={history}>
-                <Switch>
-                    <Route exact path={'/'} component={Landing}/>
-                    <Route path={'/services'} component={Services}/>
-                    <Route path={'/directions'} component={Directions}/>
-                    <Route path={'/contact-us'} component={ContactUs}/>
-                    <Route path={'/about-us'} component={AboutUs}/>
-                    <Route path={'/ministries'} component={Ministries}/>
-                    <Route path={'/events'} component={Events}/>
-                    <Route path={'/credits'} component={Credits}/>
-                    <Route path={'/gallery-view'} component={GalleryView}/>
-                </Switch>
-            </Router>
-        </AppStyle>
-    </WofccProvider>
-);
+export const App = () => {
+
+  return(
+  <WofccProvider>
+    <AppStyle>
+      <Router history={history}>
+        <Switch>
+          <Route exact path={'/'} component={Landing}/>
+          <Route path={'/services'} component={Services}/>
+          <Route path={'/directions'} component={Directions}/>
+          <Route path={'/contact-us'} component={ContactUs}/>
+          <Route path={'/about-us'} component={AboutUs}/>
+          <Route path={'/ministries'} component={Ministries}/>
+          <Route path={'/events'} component={Events}/>
+          <Route path={'/credits'} component={Credits}/>
+        </Switch>
+      </Router>
+
+    {/*todo -> footer*/}
+    </AppStyle>
+  </WofccProvider>
+)};
