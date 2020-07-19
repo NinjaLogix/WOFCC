@@ -1,15 +1,11 @@
 import styled from 'styled-components';
-import { Grid } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import { AboutBackground } from '../../assets';
-
-export const Wrapper = styled.div`
-    width: 100%;
-`;
 
 export const Header = styled.section`
     width: 100%;
     height: 15vh;
-    background-image: url('${AboutBackground}');
+    background-image: url(${AboutBackground});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -20,13 +16,16 @@ export const Header = styled.section`
     }
 `;
 
-export const GalleryWrapper = styled.section`
-  height: calc(85vh - 7.9em);
+export const StyledImage = styled.img`
   padding: 1em;
-  overflow: scroll;
-  flex-grow: 1;
+  max-width: 20rem;
 `;
 
-export const GridContainer = styled(Grid)`
-  overflow: hidden;
+export const DisplayImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+export const StyledAppBar = styled(AppBar)`
+position: relative;
 `;

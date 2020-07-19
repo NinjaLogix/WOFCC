@@ -5,6 +5,7 @@ import registerServiceWorker from './scripts/registerServiceWorker';
 import HttpsRedirect from 'react-https-redirect';
 import {createGlobalStyle} from 'styled-components';
 
+//todo -> create global style from material-ui
 const GlobalStyle = createGlobalStyle`
     html,body{
         padding: 0;

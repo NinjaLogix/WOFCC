@@ -84,6 +84,10 @@ export const WelcomeRight = styled.section`
         margin-top: 3%;
         margin-left: 7%;
     }
+    
+    section > a {
+      color: dodgerblue;
+    }
 `;
 
 export const AudioLanding = styled.section`
@@ -147,4 +151,16 @@ export const VideoRight = styled.section`
         width: 70%;
         padding-right: 2%;
     }
+`;
+
+export const BadgeText = styled.section`
+  display: flex;
+  flex-flow: row nowrap;
+  
+`;
+
+export const Badge = styled.img`
+    border-radius: 5px;
+    width: 3rem;
+    display: block;
 `;
