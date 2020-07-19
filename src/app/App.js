@@ -15,7 +15,7 @@ import {
   Events,
   Credits
 } from '../pages';
-import { AppStyle } from './AppStyle';
+import { AppStyle } from './style/AppStyle';
 import { Gallery } from '../component/gallery/Gallery';
 import { WofccProvider } from '../component/context/WofccContext';
 
