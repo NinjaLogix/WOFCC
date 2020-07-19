@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Menu } from '../../component/navigation/menu';
 import { Footer } from '../../component/navigation/footer';
+import { Wrapper, Header, TitleBanner } from '../shared_style/SharedPageStyle';
 import {
-  Wrapper,
-  Header,
   GalleryWrapper,
   GridContainer
 } from './style/EventsStyle';
 import { config } from '../../config/config';
 import { WofccContext } from '../../component/context/WofccContext';
 import { Album } from '../../component/gallery/Album';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 export const Events = function(props) {
   const [api] = useContext(WofccContext);
@@ -32,7 +31,9 @@ export const Events = function(props) {
     <Wrapper>
       <Header>
         <Menu/>
-        <h2>Pics from recent events and activities</h2>
+        <TitleBanner>
+          <Typography gutterBottom variant={'h2'} component={'h2'}>Pics from recent events and activities</Typography>
+        </TitleBanner>
       </Header>
 
       <GalleryWrapper>

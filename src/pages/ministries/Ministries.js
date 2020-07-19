@@ -1,14 +1,12 @@
-import React, {useState, useEffect, useContext} from 'react'
-import {InfoCard} from '../../component/info'
-import {Menu} from '../../component/navigation/menu'
-import {Footer} from '../../component/navigation/footer'
-import {
-  Wrapper,
-  Header,
-  Context} from './style/MinistriesStyle'
-import {config} from '../../config/config'
-import {WofccContext} from '../../component/context/WofccContext'
-import {AboutBackground} from '../../assets'
+import React, { useState, useEffect, useContext } from 'react';
+import { InfoCard } from '../../component/info';
+import { Menu } from '../../component/navigation/menu';
+import { Footer } from '../../component/navigation/footer';
+import { Wrapper, Context, Header, TitleBanner } from '../shared_style/SharedPageStyle';
+import { config } from '../../config/config';
+import { WofccContext } from '../../component/context/WofccContext';
+import { AboutBackground } from '../../assets';
+import { Typography } from '@material-ui/core';
 
 export const Ministries = function(props) {
   const [api] = useContext(WofccContext);
@@ -16,20 +14,22 @@ export const Ministries = function(props) {
 
   useEffect(() => {
     const getMinistries = async () => {
-      const data = await api.sanity_query(api.singleton, {query:config.sanity_queries.ministries});
+      const data = await api.sanity_query(api.singleton, { query: config.sanity_queries.ministries });
 
       setMinistries(data);
-    }
+    };
 
     getMinistries();
   }, []);
 
-  return(
+  return (
     <Wrapper>
       <Header backgroundImg={AboutBackground}>
         <Menu/>
-        <h1>WOFCC - Southaven</h1>
-        <h3>The ministries we currently provide...</h3>
+        <TitleBanner>
+          <Typography gutterBottom variant={'h1'} component={'h1'}>WOFCC - Southaven</Typography>
+          <Typography gutterBottom variant={'h3'} component={'h3'}>The ministries we currently provide...</Typography>
+        </TitleBanner>
       </Header>
 
       <Context>
@@ -43,5 +43,5 @@ export const Ministries = function(props) {
       </Context>
       <Footer/>
     </Wrapper>
-  )
-}
+  );
+};
