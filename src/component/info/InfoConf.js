@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 import {
   Wrapper,
   InfoPaper
-} from './InfoConfStyle';
+} from './style/InfoConfStyle';
 import moment from 'moment';
 
 export const InfoConf = ({ notes }) => {

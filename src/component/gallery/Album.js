@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Wrapper,
   Content
-} from './AlbumStyle';
+} from './style/AlbumStyle';
 import { Typography } from '@material-ui/core';
 import moment from 'moment';
 import { Link } from 'react-router-dom';

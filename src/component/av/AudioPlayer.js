@@ -1,7 +1,7 @@
 /*eslint-disable no-unused-vars*/
 import React, {useState} from 'react'
 import Plyr from 'plyr'
-import {Wrapper, Audio} from './AudioPlayerStyle'
+import {Wrapper, Audio} from './style/AudioPlayerStyle'
 
 export const AudioPlayer = (track) => {
     const [player] = useState(new Plyr('#wofcc_audio_recent'));

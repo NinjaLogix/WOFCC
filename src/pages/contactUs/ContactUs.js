@@ -13,7 +13,7 @@ import {
     BottomContainer,
     ContactLeftBottom,
     PastorImg,
-    ContactRightBottom} from './ContactUsStyle';
+    ContactRightBottom} from './style/ContactUsStyle';
 import {config} from '../../config/config'
 import {WofccContext} from '../../component/context/WofccContext'
 import {

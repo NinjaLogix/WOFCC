@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Wrapper, MenuBase, MenuH2, DrawerList} from './MenuStyle'
+import {Wrapper, MenuBase, MenuH2, DrawerList} from './style/MenuStyle'
 import {config} from '../../../config/config'
 import {IconButton, Drawer, List, ListItem} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'

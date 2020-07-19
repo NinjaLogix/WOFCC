@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Menu } from '../navigation/menu';
 import { Footer } from '../navigation/footer';
-import { Header, StyledImage, StyledAppBar, DisplayImage } from './GalleryStyle';
+import { Header, StyledImage, StyledAppBar, DisplayImage } from './style/GalleryStyle';
 import { config } from '../../config/config';
 import { WofccContext } from '../context/WofccContext';
 import { Grid, Dialog, Slide, Toolbar, IconButton } from '@material-ui/core';

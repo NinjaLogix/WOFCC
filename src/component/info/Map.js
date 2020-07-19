@@ -4,7 +4,7 @@ import {
     TileLayer,
     Marker,
     Popup} from 'react-leaflet';
-import {MapWrapper} from './MapStyle';
+import {MapWrapper} from './style/MapStyle';
 
 export const WOFCCMap = ({info}) => (
     <MapWrapper>

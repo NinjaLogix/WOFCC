@@ -6,7 +6,7 @@ import {
   Header,
   GalleryWrapper,
   GridContainer
-} from './EventsStyle';
+} from './style/EventsStyle';
 import { config } from '../../config/config';
 import { WofccContext } from '../../component/context/WofccContext';
 import { Album } from '../../component/gallery/Album';

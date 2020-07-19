@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Wrapper, FooterH4} from './FooterStyle';
+import {Wrapper, FooterH4} from './style/FooterStyle';
 import {DevCredit} from '../dev-credits';
 import {Link} from 'react-router-dom';
 

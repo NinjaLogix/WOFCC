@@ -1,7 +1,7 @@
 /*eslint-disable react/style-prop-object*/
 import React, {useState} from 'react';
 import uuidv1 from 'uuid';
-import {Wrapper, CreditList, ListWrapper} from './CreditsStyle';
+import {Wrapper, CreditList, ListWrapper} from './style/CreditsStyle';
 import {Menu} from '../../component/navigation/menu';
 import {Footer} from '../../component/navigation/footer';
 

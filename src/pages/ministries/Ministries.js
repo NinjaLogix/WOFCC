@@ -5,7 +5,7 @@ import {Footer} from '../../component/navigation/footer'
 import {
   Wrapper,
   Header,
-  Context} from './MinistriesStyle'
+  Context} from './style/MinistriesStyle'
 import {config} from '../../config/config'
 import {WofccContext} from '../../component/context/WofccContext'
 import {AboutBackground} from '../../assets'

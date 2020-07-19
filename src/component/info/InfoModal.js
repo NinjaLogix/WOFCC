@@ -1,6 +1,6 @@
 import React from 'react';
 import {DialogContent, DialogContentText, DialogTitle, Typography} from '@material-ui/core';
-import {TitleWrapper, StyledDialog} from './InfoStyle';
+import {TitleWrapper, StyledDialog} from './style/InfoStyle';
 
 
 export const InfoModal = ({open, setOpen, title, text, img}) => {

@@ -16,7 +16,7 @@ import {
   VideoWrapper,
   VideoLeft,
   VideoRight
-} from './LandingStyle';
+} from './style/LandingStyle';
 import { InfoConf } from '../../component/info';
 import { VideoPlayer } from '../../component/av/VideoPlayer';
 import { config } from '../../config/config';

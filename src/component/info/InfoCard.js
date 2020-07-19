@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InfoWrapper, ImgSection, TextSection } from './InfoStyle';
+import { InfoWrapper, ImgSection, TextSection } from './style/InfoStyle';
 import { InfoModal } from './InfoModal';
 import { config } from '../../config/config';
 import { Typography } from '@material-ui/core';
@@ -20,10 +20,10 @@ export const InfoCard = ({ src, title, text, detail }) => {
   };
 
   const allowDetail = () => {
-    if (config.isMobile || useExpanded){
+    if (config.isMobile || useExpanded) {
       return (<InfoModal open={open} setOpen={setOpen} title={title} text={detail ? detail : text} img={src}/>);
     }
-  }
+  };
 
   return (
     <InfoWrapper

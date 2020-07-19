@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AppBar } from '@material-ui/core';
-import { AboutBackground } from '../../assets';
+import { AboutBackground } from '../../../assets';
 
 export const Header = styled.section`
     width: 100%;

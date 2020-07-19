@@ -4,7 +4,7 @@ import {Footer} from '../../component/navigation/footer'
 import {
   Wrapper,
   Header,
-  Context} from '../ministries/MinistriesStyle'
+  Context} from '../ministries/style/MinistriesStyle'
 import {InfoCard} from '../../component/info'
 import {WofccContext} from '../../component/context/WofccContext'
 import {AboutBackground} from '../../assets'

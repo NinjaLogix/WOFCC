@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import moment from 'moment'
-import {Wrapper} from './CarouselStyle'
+import {Wrapper} from './style/CarouselStyle'
 
 export const Carousel = ({playlists}) => {
     const [entries, setEntries] = useState([]);

@@ -7,7 +7,7 @@ import {
   Heading2,
   MapContainer,
   SubContainer,
-  AddrsContainer} from './DirectionsStyle'
+  AddrsContainer} from './style/DirectionsStyle'
 import {WOFCCMap} from '../../component/info'
 import {config} from '../../config/config'
 import {WofccContext} from '../../component/context/WofccContext'
