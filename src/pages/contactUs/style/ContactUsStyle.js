@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const header_url = process.env.REACT_APP_CONTACT_US_HEADER_URL;
+import {ContactUsBackground} from '../../../assets'
 
 export const Container = styled.div`
 
@@ -9,7 +8,7 @@ export const Container = styled.div`
 export const Header = styled.section`
     width:100%;
     height:400px;
-    background-image: url('${props => props.backgroundImg ? props.backgroundImg : header_url}');
+    background-image: url('${ContactUsBackground}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

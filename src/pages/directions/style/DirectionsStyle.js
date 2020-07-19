@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const container_url = process.env.REACT_APP_DIRECTIONS_CONTAINER_URL;
+import {LandingBackground} from '../../../assets'
 
 export const Container = styled.div`
     width: 100%;
@@ -14,7 +13,7 @@ export const Heading1 = styled.h1`
 `;
 
 export const SubContainer = styled.section`
-    background-image: url('${props => props ? props.backgroundImage : container_url}');
+    background-image: url('${LandingBackground}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

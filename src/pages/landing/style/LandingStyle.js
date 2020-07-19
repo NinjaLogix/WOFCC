@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-
-const header_url = process.env.REACT_APP_LANDING_HEADER_URL;
+import {LandingBackground} from '../../../assets'
 
 export const Wrapper = styled.div`
     flex: 1 100%;
 `;
 
 export const Header = styled.section`
-    background-image: url('${props => props.backgroundImg ? props.backgroundImg : header_url}');
+    background-image: url('${LandingBackground}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

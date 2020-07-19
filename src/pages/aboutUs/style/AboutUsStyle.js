@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const header_url = process.env.REACT_APP_ABOUT_US_HEADER_URL;
+import {AboutBackground} from '../../../assets'
 
 export const Wrapper = styled.div`
     width: 100%;
@@ -9,7 +8,7 @@ export const Wrapper = styled.div`
 export const Header = styled.section`
     width: 100%;
     height: 150px;
-    background-image: url('${props => props.backgroundImg ? props.backgroundImg : header_url}');
+    background-image: url('${AboutBackground}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-
-const mid_container_url = process.env.REACT_APP_SERVICES_MID_CONTAINER_URL;
+import {ServicesBackground} from '../../../assets'
 
 export const Container = styled.div`
     height: 100vh;
 `;
 
 export const MidContainer = styled.section`
-    background-image: url('${props => props ? props.backgroundImg : mid_container_url}');
+    background-image: url('${ServicesBackground}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
