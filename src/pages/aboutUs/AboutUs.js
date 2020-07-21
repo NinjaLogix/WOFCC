@@ -45,7 +45,7 @@ export const AboutUs = function (props) {
 
       <Context>
         {about &&
-          about.map((thing) => (
+          about.map(thing => (
             <InfoCard
               key={thing.title}
               src={thing.imageUrl}

@@ -14,9 +14,8 @@ export const WOFCCMap = ({ info }) => (
         scrollWheelZoom={true}
         dragging={true}
         animate={true}
-        easeLinearity={0.35}
-      >
-        <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+        easeLinearity={0.35}>
+        <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
 
         <Marker position={[info.lat, info.long]}>
           <Popup>{info.addrs}</Popup>

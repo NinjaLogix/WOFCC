@@ -22,21 +22,21 @@ const listenToQuery = (clientRef, groqObj) => {
 
     return clientRef
       .listen(groqObj.query, groqObj.params)
-      .subscribe((update) => console.log('update: ', update));
+      .subscribe(update => console.log('update: ', update));
   } catch (error) {
     console.error(error);
   }
 };
 
 // stop listening
-const stopListeningToQuery = (subscription) => subscription.unsubscribe();
+const stopListeningToQuery = subscription => subscription.unsubscribe();
 
 // test groqObj
-const testGroq = (groqObj) => {
+const testGroq = groqObj => {
   const accepted_keys = ['query', 'params'];
 
   // checks existing keys with the accepted keys
-  return Object.keys(groqObj).every((key) => accepted_keys.includes(key));
+  return Object.keys(groqObj).every(key => accepted_keys.includes(key));
 };
 
 export { client, queryData, listenToQuery, stopListeningToQuery };

@@ -4,6 +4,7 @@ import { DevCredit } from '../dev-credits';
 import { Link } from 'react-router-dom';
 import { config } from '../../../config/config';
 
+//todo -> mobile:fix mobile formatting with footer. Maybe switch this to a grid. and also fix the height
 export const Footer = function (props) {
   const [navOptions] = useState([
     { title: 'About Us', url: '/about-us' },
@@ -24,13 +25,13 @@ export const Footer = function (props) {
             <FooterH4>{option.title}</FooterH4>
           </Link>
         ) : (
-          <a key={index} target="_blank" href={option.url}>
+          <a key={index} target='_blank' href={option.url}>
             <FooterH4>{option.title}</FooterH4>
           </a>
         )
       )}
 
-      <a target="_blank" href={config.dev_url}>
+      <a target='_blank' href={config.dev_url}>
         <DevCredit />
       </a>
     </Wrapper>

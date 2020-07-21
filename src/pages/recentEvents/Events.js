@@ -8,6 +8,7 @@ import { WofccContext } from '../../component/context/WofccContext';
 import { Album } from '../../component/gallery/Album';
 import { Grid, Typography } from '@material-ui/core';
 
+//todo -> mobile:forgot to include the backgroundImg prop to wrapper
 export const Events = function (props) {
   const [api] = useContext(WofccContext);
   const [galleries, setGalleries] = useState([]);
@@ -20,7 +21,7 @@ export const Events = function (props) {
         query: config.sanity_queries.all_albums,
       });
 
-      setGalleries([...data.filter((e) => !e.isTemp)]);
+      setGalleries([...data.filter(e => !e.isTemp)]);
     };
 
     queryForAlbums();
@@ -42,9 +43,8 @@ export const Events = function (props) {
           container
           spacing={spacing}
           justify={'space-evenly'}
-          alignItems={'center'}
-        >
-          {galleries.map((item) => (
+          alignItems={'center'}>
+          {galleries.map(item => (
             <Grid key={item.id} item xl={break_point} xs={break_point}>
               <Album
                 title={item.description}

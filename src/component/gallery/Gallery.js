@@ -12,6 +12,7 @@ import { WofccContext } from '../context/WofccContext';
 import { Grid, Dialog, Slide, Toolbar, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
+//todo -> mobile:fix full screen image sizing
 export const Gallery = ({ match }) => {
   const [api] = useContext(WofccContext);
   const [pics, setPics] = useState([]);
@@ -20,13 +21,13 @@ export const Gallery = ({ match }) => {
 
   const handleDialogState = () => setOpen(!open);
 
-  const showImage = (id) => {
+  const showImage = id => {
     setImageToShow(pics[id]);
     handleDialogState();
   };
 
   const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction='up' ref={ref} {...props} />;
   });
 
   const GalleryDialog = () => (
@@ -34,15 +35,13 @@ export const Gallery = ({ match }) => {
       fullScreen
       open={open}
       onClose={handleDialogState}
-      TransitionComponent={Transition}
-    >
+      TransitionComponent={Transition}>
       <StyledAppBar>
         <Toolbar>
           <IconButton
             edge={'start'}
             color={'inherit'}
-            onClick={handleDialogState}
-          >
+            onClick={handleDialogState}>
             <CloseIcon />
           </IconButton>
         </Toolbar>
@@ -52,7 +51,7 @@ export const Gallery = ({ match }) => {
   );
 
   useEffect(() => {
-    const looking = async (id) => {
+    const looking = async id => {
       const [gallery] = await api.sanity_query(api.singleton, {
         query: config.sanity_queries.single_album(id),
       });
@@ -75,7 +74,7 @@ export const Gallery = ({ match }) => {
 
       <Grid container spacing={3}>
         {pics.length >= 1 &&
-          pics.map((p) => (
+          pics.map(p => (
             <Grid key={p.id} item xs onClick={() => showImage(p.id)}>
               <StyledImage src={p.url} alt={'img'} />
             </Grid>

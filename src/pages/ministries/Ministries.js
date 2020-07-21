@@ -44,7 +44,7 @@ export const Ministries = function (props) {
       </Header>
 
       <Context>
-        {ministries.map((el) => (
+        {ministries.map(el => (
           <InfoCard
             key={el.key}
             src={el.imageUrl}

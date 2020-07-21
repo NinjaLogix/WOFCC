@@ -25,6 +25,7 @@ import { smallWofccLogo, LandingBackground } from '../../assets';
 import moment from 'moment';
 import { Typography } from '@material-ui/core';
 
+//todo -> mobile:text on service time needs to scale correctly
 export const Landing = function (props) {
   const [api, setApi] = useContext(WofccContext);
 
@@ -52,10 +53,10 @@ export const Landing = function (props) {
       if (location[0])
         setTimes({
           worship_service: location[0].times.filter(
-            (t) => t.type[0] === 'worship_service'
+            t => t.type[0] === 'worship_service'
           )[0],
           bible_study: location[0].times.filter(
-            (t) => t.type[0] === 'bible_study'
+            t => t.type[0] === 'bible_study'
           )[0],
         });
 
@@ -105,8 +106,7 @@ export const Landing = function (props) {
               gutterBottom
               variant={'h1'}
               component={'h1'}
-              align={'center'}
-            >
+              align={'center'}>
               Come as you are
             </Typography>
 
@@ -116,14 +116,12 @@ export const Landing = function (props) {
                   gutterBottom
                   variant={'h3'}
                   component={'h3'}
-                  align={'center'}
-                >
+                  align={'center'}>
                   Service via{' '}
                   <a
                     href={
                       times.worship_service.url ? times.worship_service.url : ''
-                    }
-                  >
+                    }>
                     FaceBook Live
                   </a>
                   @ {times.worship_service.time} on{' '}
@@ -143,8 +141,7 @@ export const Landing = function (props) {
                   gutterBottom
                   variant={'h3'}
                   component={'h3'}
-                  align={'center'}
-                >
+                  align={'center'}>
                   Bible Study via{' '}
                   <a href={times.bible_study.url ? times.bible_study.url : ''}>
                     Zoom
@@ -166,8 +163,7 @@ export const Landing = function (props) {
               gutterBottom
               variant={'h1'}
               component={'h1'}
-              align={'center'}
-            >
+              align={'center'}>
               You can find us here!
             </Typography>
 
@@ -177,8 +173,7 @@ export const Landing = function (props) {
                   gutterBottom
                   variant={'h3'}
                   component={'h3'}
-                  align={'center'}
-                >
+                  align={'center'}>
                   {location.address}
                 </Typography>
               </SmallPadding>
@@ -190,8 +185,7 @@ export const Landing = function (props) {
                   gutterBottom
                   variant={'h3'}
                   component={'h3'}
-                  align={'center'}
-                >
+                  align={'center'}>
                   {location.address_cont}
                 </Typography>
               </SmallPadding>
@@ -216,8 +210,7 @@ export const Landing = function (props) {
                 gutterBottom
                 align={'center'}
                 variant={'h1'}
-                component={'h1'}
-              >
+                component={'h1'}>
                 Word of Faith Facebook Live!
               </Typography>
             </section>
@@ -227,8 +220,7 @@ export const Landing = function (props) {
                 gutterBottom
                 align={'center'}
                 variant={'h3'}
-                component={'h3'}
-              >
+                component={'h3'}>
                 {getLatestAv().title}
               </Typography>
             </section>
@@ -238,8 +230,7 @@ export const Landing = function (props) {
                 gutterBottom
                 align={'center'}
                 variant={'h3'}
-                component={'h3'}
-              >
+                component={'h3'}>
                 {getLatestAv().date}
               </Typography>
             </section>

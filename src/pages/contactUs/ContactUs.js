@@ -19,11 +19,11 @@ import { config } from '../../config/config';
 import { WofccContext } from '../../component/context/WofccContext';
 import { FaceBookLogo, Pastors, ContactUsBackground } from '../../assets';
 
-export const ContactUs = (props) => {
+export const ContactUs = props => {
   const [api] = useContext(WofccContext);
   const [location, setLocation] = useState();
 
-  const formatPhone = (phone) => {
+  const formatPhone = phone => {
     const ph = phone.toString();
 
     if (ph.length === 10)
@@ -94,7 +94,7 @@ export const ContactUs = (props) => {
           <P>or give us a call at:</P>
 
           {location &&
-            location.phones.map((phone) => (
+            location.phones.map(phone => (
               <Heading3>{formatPhone(phone.phone)}</Heading3>
             ))}
         </ContactRightBottom>

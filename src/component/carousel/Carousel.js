@@ -21,7 +21,7 @@ export const Carousel = ({ playlists }) => {
   useEffect(() => {
     let all_slides = [];
 
-    playlists.forEach((playlist) => {
+    playlists.forEach(playlist => {
       if (
         moment().isBetween(
           moment(playlist.start_date),
@@ -32,7 +32,7 @@ export const Carousel = ({ playlists }) => {
         playlist.runYearly
       )
         all_slides.push(
-          ...playlist.entries.map((entry) => ({
+          ...playlist.entries.map(entry => ({
             ts_crt: playlist._createdAt,
             description: entry.description,
             url: entry.url,
@@ -46,7 +46,7 @@ export const Carousel = ({ playlists }) => {
   return (
     <Wrapper>
       <Slider {...settings}>
-        {entries.map((entry) => (
+        {entries.map(entry => (
           <img key={entry.description} alt={'840x400'} src={entry.url} />
         ))}
       </Slider>

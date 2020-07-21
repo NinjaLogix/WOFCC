@@ -4,14 +4,15 @@ import { InfoModal } from './InfoModal';
 import { config } from '../../config/config';
 import { Typography } from '@material-ui/core';
 
+//todo -> mobile:if the text is too long it doesn't scale correctly
 export const InfoCard = ({ src, title, text, detail }) => {
   const text_limit = 200;
   const [useExpanded] = useState(text.length >= text_limit);
   const [open, setOpen] = useState(false);
 
-  const concatText = (text) => `${text.substring(0, text_limit)}....`;
+  const concatText = text => `${text.substring(0, text_limit)}....`;
 
-  const handleClick = (e) => setOpen(!open);
+  const handleClick = e => setOpen(!open);
 
   const showText = () => {
     if (!config.isMobile) {
@@ -42,8 +43,7 @@ export const InfoCard = ({ src, title, text, detail }) => {
       elevation={3}
       onClick={handleClick}
       expanded={useExpanded}
-      mobile={config.isMobile}
-    >
+      mobile={config.isMobile}>
       {allowDetail()}
 
       <ImgSection src={src} />

@@ -19,13 +19,13 @@ const Menu = () => {
           </Link>
         )}
 
-        {config.menuOptions.map((option) =>
+        {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
             <Link key={option.title} to={option.url}>
               <MenuH2>{option.title}</MenuH2>
             </Link>
           ) : (
-            <a key={option.title} target="_blank" href={config.givingUrl}>
+            <a key={option.title} target='_blank' href={config.givingUrl}>
               <MenuH2>{option.title}</MenuH2>
             </a>
           )
@@ -45,7 +45,7 @@ const Menu = () => {
           </ListItem>
         )}
 
-        {config.menuOptions.map((option) =>
+        {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
             <ListItem>
               <Link key={option} to={option.url}>
@@ -54,7 +54,7 @@ const Menu = () => {
             </ListItem>
           ) : (
             <ListItem>
-              <a target="_blank" href={config.givingUrl} key={option}>
+              <a target='_blank' href={config.givingUrl} key={option}>
                 <MenuH2>{option.title}</MenuH2>
               </a>
             </ListItem>
@@ -71,11 +71,10 @@ const Menu = () => {
       </Drawer>
 
       <IconButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        onClick={() => toggleDrawer()}
-      >
+        edge='start'
+        color='inherit'
+        aria-label='menu'
+        onClick={() => toggleDrawer()}>
         <MenuIcon />
       </IconButton>
     </Wrapper>

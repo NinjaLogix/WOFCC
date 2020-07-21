@@ -12,9 +12,8 @@ export const InfoConf = ({ notes }) => {
           return (
             <a
               key={index}
-              target="_blank"
-              href={notes[0].url ? notes[0].url : '#'}
-            >
+              target='_blank'
+              href={notes[0].url ? notes[0].url : '#'}>
               <Wrapper>
                 <InfoPaper>
                   <Typography align={'center'} variant={'h1'} component={'h3'}>

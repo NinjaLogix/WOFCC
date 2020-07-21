@@ -20,7 +20,7 @@ const defaults = {
     about: process.env.REACT_APP_QUERY_ABOUT,
     carousel: process.env.REACT_APP_QUERY_CAROUSEL_PLAYLIST,
     all_albums: process.env.REACT_APP_QUERY_GALLERY_ALL_ALBUMS,
-    single_album: (id) =>
+    single_album: id =>
       process.env.REACT_APP_QUERY_GALLERY_SINGLE_ALBUM.replace(':doc-id', id),
     side_notes: process.env.REACT_APP_QUERY_SIDE_NOTES,
   },
