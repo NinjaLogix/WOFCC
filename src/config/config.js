@@ -26,8 +26,8 @@ const defaults = {
   sanity_config: {
     projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
     dataset: process.env.REACT_APP_SANITY_DATASET,
-    token: process.env.REACT_APP_SANITY_TOKEN,
-    useCdn: false
+    token: '',
+    useCdn: true
   }
 };
 

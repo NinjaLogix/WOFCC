@@ -10,10 +10,10 @@ import moment from 'moment';
 export const InfoConf = ({ notes }) => {
   return (
     <div>
-      {notes.map(note => {
+      {notes.map((note, index) => {
         if (!note.ts_exp || moment().isBefore(note.ts_exp))
           return (
-            <a target='_blank' href={notes[0].url ? notes[0].url : '#'}>
+            <a key={index} target='_blank' href={notes[0].url ? notes[0].url : '#'}>
               <Wrapper>
                 <InfoPaper>
                   <Typography align={'center'} variant={'h1'} component={'h3'}>

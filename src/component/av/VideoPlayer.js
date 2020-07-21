@@ -11,7 +11,7 @@ export const VideoPlayer = ({vid}) => {
     return (
         <Wrapper id={'wofcc_live_recent'}>
             <Video controls crossorigin playsinline>
-              {resolutions.map(res => <source src={url} type="video/mp4" size={res}/>)}
+              {resolutions.map((res, index) => <source key={index} src={url} type="video/mp4" size={res}/>)}
               <a href={url} download>Download</a>
             </Video>
         </Wrapper>
