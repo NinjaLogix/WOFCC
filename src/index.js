@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
-import registerServiceWorker from './script/registerServiceWorker';
+import {App} from './app/App';
+import registerServiceWorker from './scripts/registerServiceWorker';
 import HttpsRedirect from 'react-https-redirect';
 import {createGlobalStyle} from 'styled-components';
 
+//todo -> create global style from material-ui
 const GlobalStyle = createGlobalStyle`
     html,body{
         padding: 0;

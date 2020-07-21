@@ -1,38 +1,46 @@
-import React, {useState, useEffect} from 'react';
-import uuidv1 from "uuid";
-import WebCard from '../../component/info/WebCard';
-import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
-import {Menu} from '../../component/navigation/menu';
-import {Footer} from '../../component/navigation/footer';
-import {Container, MidContainer, ServiceFlexBox, ServiceWebCardContainer} from './ServicesStyle';
+import React, { useState, useEffect, useContext } from 'react';
+import { Menu } from '../../component/navigation/menu';
+import { Footer } from '../../component/navigation/footer';
+import { config } from '../../config/config';
+import { WofccContext } from '../../component/context/WofccContext';
+import { ServicesBackground } from '../../assets';
+import { Wrapper, Context, Header, TitleBanner } from '../shared_style/SharedPageStyle';
+import { InfoCard } from '../../component/info';
+import { Typography } from '@material-ui/core';
 
 export const Services = () => {
-    const [context, setContext] = useState({});
+  const [api] = useContext(WofccContext);
+  const [services, setServices] = useState([]);
 
-    const setupContext = async () => {
-        const data = await handlePageConfig('services');
-        setContext(data.data);
-    }
+  useEffect(() => {
+    const getServices = async () => {
+      const data = await api.sanity_query(api.singleton, { query: config.sanity_queries.services });
+      setServices(data);
+    };
 
-    useEffect(() => {
-        setupContext();
-    }, []);
+    getServices();
+  }, []);
 
-    return (
-        <Container>
-            <MidContainer backgroundImg={context.header_img ? fixUrl(context.header_img) : '#'}>
-                <Menu/>
-                <h1>Our Services to You</h1>
-                <ServiceFlexBox>
-                    {context.ministries && context.ministries.map(el =>(
-                        <ServiceWebCardContainer key={uuidv1()}>
-                            <WebCard image={fixUrl(el.img ? el.img : '#')} headline={el.ttl ? el.ttl : ''} context={convertMarkdown(el.txt ? el.txt : '')}/>
-                        </ServiceWebCardContainer>
-                    ))}
-                </ServiceFlexBox>
-            </MidContainer>
+  return (
+    <Wrapper>
+      <Header backgroundImg={ServicesBackground}>
+        <Menu/>
+        <TitleBanner>
+          <Typography gutterBottom variant={'h1'} component={'h1'}>Our Services to You</Typography>
+        </TitleBanner>
+      </Header>
 
-            <Footer/>
-        </Container>
-    )
-}
+      <Context>
+        {services.map((e, index) => (
+          <InfoCard
+            key={index}
+            src={e.imageUrl}
+            title={e.title}
+            text={e.description}/>
+        ))}
+      </Context>
+
+      <Footer/>
+    </Wrapper>
+  );
+};

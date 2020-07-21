@@ -1,20 +1,18 @@
 /*eslint-disable no-unused-vars*/
-import React, {useState} from 'react';
-import Plyr from 'plyr';
-import {Wrapper, Video} from './VideoPlayerStyle';
-import {fixUrl} from '../../util';
+import React, {useState} from 'react'
+import Plyr from 'plyr'
+import {Wrapper, Video} from './style/VideoPlayerStyle'
 
 export const VideoPlayer = ({vid}) => {
     const [player] = useState(new Plyr('#wofcc_live_recent'));
+    const [url] = useState(vid.videoUrl);
+    const [resolutions] = useState(['720']); // other576, 720, 1080
 
     return (
         <Wrapper id={'wofcc_live_recent'}>
             <Video controls crossorigin playsinline>
-                {/* <source src={fixUrl(vid)} type="video/mp4" size="576"/> */}
-                <source src={fixUrl(vid)} type="video/mp4" size="720"/>                
-                {/* <source src={fixUrl(vid)} type="video/mp4" size="1080"/>    */}
-                
-                <a href={vid} download>Download</a>
+              {resolutions.map((res, index) => <source key={index} src={url} type="video/mp4" size={res}/>)}
+              <a href={url} download>Download</a>
             </Video>
         </Wrapper>
     )

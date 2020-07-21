@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Wrapper, MenuBase, MenuH2, DrawerList} from './MenuStyle'
+import {Wrapper, MenuBase, MenuH2, DrawerList} from './style/MenuStyle'
 import {config} from '../../../config/config'
 import {IconButton, Drawer, List, ListItem} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -26,7 +26,7 @@ const Menu = () => {
                             <MenuH2>{option.title}</MenuH2>
                         </Link>
                     :
-                        <a key={option.title} target='_blank' href={config.givingUrl} key={option}>
+                        <a key={option.title} target='_blank' href={config.givingUrl}>
                             <MenuH2>{option.title}</MenuH2>
                         </a>
                 )}

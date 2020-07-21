@@ -1,41 +1,71 @@
-import React, {useState, useEffect} from 'react';
-import {handlePageConfig, fixUrl, convertMarkdown} from '../../util';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
-import {Container, Header, Heading1, Heading2, Heading3, P, ContactAContainer, SocialBadge, BottomContainer, ContactLeftBottom, PastorImg, ContactRightBottom} from './ContactUsStyle';
+import React, {useState, useEffect, useContext} from 'react';
+import {Menu} from '../../component/navigation/menu';
+import {Footer} from '../../component/navigation/footer';
+import {
+    Container,
+    Header,
+    Heading1,
+    Heading2,
+    Heading3,
+    P,
+    ContactAContainer,
+    SocialBadge,
+    BottomContainer,
+    ContactLeftBottom,
+    PastorImg,
+    ContactRightBottom} from './style/ContactUsStyle';
+import {config} from '../../config/config'
+import {WofccContext} from '../../component/context/WofccContext'
+import {
+    FaceBookLogo,
+    Pastors,
+    ContactUsBackground} from '../../assets'
 
 export const ContactUs = (props) => {
-    const [context, setContext] = useState({});
-    const FacebookUrl = process.env.REACT_APP_FACEBOOK_URL;
+    const [api] = useContext(WofccContext);
+    const [location, setLocation] = useState();
 
-    const setupContext = () => {
-        handlePageConfig('contact-us')
-            .then(response => setContext(response.data))
-            .catch();
+    const formatPhone = phone => {
+        const ph = phone.toString();
+
+        if (ph.length === 10)
+            return '(' + ph.substring(0,3) + ') ' + ph.substring(3,6) + '-' + ph.substring(6,10)
+        else
+            return ''
     }
 
     useEffect(() => {
-        setupContext();
+        const lookupLocation = async () => {
+            if (api.location)
+                setLocation(api.location);
+            else{
+                const location = await api.sanity_query(api.singleton, {query:config.sanity_queries.locations});
+                setLocation(location[0]);
+            }
+        }
+
+        lookupLocation();
     }, []);
 
     return(
         <Container>
-            <Header backgroundImg={context.header_img ? fixUrl(context.header_img) : '#'}>
+            <Header backgroundImg={ContactUsBackground}>
                 <Menu/>
                 <Heading1>Keep In Touch</Heading1>
                 <Heading3>We love you! Come back anytime!</Heading3>
                 <Heading2>FaceBook</Heading2>
                 <ContactAContainer>
-                    <a href={FacebookUrl}>
-                        <SocialBadge src={context.social_facebook ? fixUrl(context.social_facebook) : '#'} alt={'facebook'}/>
+                    <a href={config.faceBookUrl}>
+                        <SocialBadge src={FaceBookLogo} alt={'facebook'}/>
                     </a>
                 </ContactAContainer>
                 <h3>Keep in touch with us on Facebook!</h3>
             </Header>
             <BottomContainer>
                 <ContactLeftBottom>
-                    <PastorImg src={context.pastors ? fixUrl(context.pastors) : '#'} alt={'pastor'}/>
+                    <PastorImg src={Pastors} alt={'pastor'}/>
                 </ContactLeftBottom>
+
                 <ContactRightBottom>
                     <p>
                         You have a concern, we have a care! It's all love around here!
@@ -43,15 +73,25 @@ export const ContactUs = (props) => {
                         <br/>
                         Feel free to email us at:
                     </p>
-                    <Heading2>{context.contact_info ? context.contact_info.email : ''}</Heading2>
+
+                    {location &&
+                        <Heading2>{location.email}</Heading2>
+                    }
 
                     <P>You can find us here:</P>
-                    <Heading3 dangerouslySetInnerHTML={{__html: context.contact_info ? convertMarkdown(context.contact_info.addrs) : ''}}/>
+
+                    {location &&
+                        <section>
+                            <Heading3>{location.address}</Heading3>
+                            <Heading3>{location.address_cont}</Heading3>
+                        </section>
+                    }
 
                     <P>or give us a call at:</P>
-                    <Heading2>{context.contact_info ? context.contact_info.phone_one : ''}</Heading2>
-                    <P>or</P>
-                    <Heading2>{context.contact_info ? context.contact_info.phone_two : ''}</Heading2>
+
+                    {location &&
+                        location.phones.map(phone => <Heading3>{formatPhone(phone.phone)}</Heading3>)
+                    }
                 </ContactRightBottom>
             </BottomContainer>
             <Footer/>
