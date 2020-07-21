@@ -9,19 +9,31 @@ export const InfoCard = ({ src, title, text, detail }) => {
   const [useExpanded] = useState(text.length >= text_limit);
   const [open, setOpen] = useState(false);
 
-  const concatText = text => `${text.substring(0, text_limit)}....`;
+  const concatText = (text) => `${text.substring(0, text_limit)}....`;
 
-  const handleClick = e => setOpen(!open);
+  const handleClick = (e) => setOpen(!open);
 
   const showText = () => {
     if (!config.isMobile) {
-      return (<Typography variant={'subtitle2'}>{useExpanded ? concatText(text) : text}</Typography>);
+      return (
+        <Typography variant={'subtitle2'}>
+          {useExpanded ? concatText(text) : text}
+        </Typography>
+      );
     }
   };
 
   const allowDetail = () => {
     if (config.isMobile || useExpanded) {
-      return (<InfoModal open={open} setOpen={setOpen} title={title} text={detail ? detail : text} img={src}/>);
+      return (
+        <InfoModal
+          open={open}
+          setOpen={setOpen}
+          title={title}
+          text={detail ? detail : text}
+          img={src}
+        />
+      );
     }
   };
 
@@ -30,11 +42,11 @@ export const InfoCard = ({ src, title, text, detail }) => {
       elevation={3}
       onClick={handleClick}
       expanded={useExpanded}
-      mobile={config.isMobile}>
-
+      mobile={config.isMobile}
+    >
       {allowDetail()}
 
-      <ImgSection src={src}/>
+      <ImgSection src={src} />
 
       <TextSection>
         <section>

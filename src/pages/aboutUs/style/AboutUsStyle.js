@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import {AboutBackground} from '../../../assets'
+import { AboutBackground } from '../../../assets';
 
 export const Wrapper = styled.div`
-    width: 100%;
+  width: 100%;
 `;
 
 export const Header = styled.section`
@@ -19,15 +19,15 @@ export const Header = styled.section`
 `;
 
 export const Context = styled.section`
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 50%;
 `;
 
 export const List = styled.ul`
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    width: 50%;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  width: 50%;
 `;

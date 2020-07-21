@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './app/App';
+import { App } from './app/App';
 import registerServiceWorker from './scripts/registerServiceWorker';
 import HttpsRedirect from 'react-https-redirect';
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 //todo -> create global style from material-ui
 const GlobalStyle = createGlobalStyle`
@@ -38,9 +38,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 ReactDOM.render(
-        <HttpsRedirect>
-            <GlobalStyle/>
-            <App/>
-        </HttpsRedirect>,
-    document.getElementById('app'));
+  <HttpsRedirect>
+    <GlobalStyle />
+    <App />
+  </HttpsRedirect>,
+  document.getElementById('app')
+);
 registerServiceWorker();

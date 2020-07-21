@@ -15,19 +15,29 @@ export const Carousel = ({ playlists }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    pauseOnHover: true
+    pauseOnHover: true,
   });
 
   useEffect(() => {
     let all_slides = [];
 
-    playlists.forEach(playlist => {
-      if (moment().isBetween(moment(playlist.start_date), moment(playlist.end_date), undefined, '[]') || playlist.runYearly)
-        all_slides.push(...playlist.entries.map(entry => ({
-          ts_crt: playlist._createdAt,
-          description: entry.description,
-          url: entry.url
-        })));
+    playlists.forEach((playlist) => {
+      if (
+        moment().isBetween(
+          moment(playlist.start_date),
+          moment(playlist.end_date),
+          undefined,
+          '[]'
+        ) ||
+        playlist.runYearly
+      )
+        all_slides.push(
+          ...playlist.entries.map((entry) => ({
+            ts_crt: playlist._createdAt,
+            description: entry.description,
+            url: entry.url,
+          }))
+        );
     });
 
     setEntries(all_slides);
@@ -36,7 +46,9 @@ export const Carousel = ({ playlists }) => {
   return (
     <Wrapper>
       <Slider {...settings}>
-        {entries.map(entry => <img key={entry.description} alt={'840x400'} src={entry.url}/>)}
+        {entries.map((entry) => (
+          <img key={entry.description} alt={'840x400'} src={entry.url} />
+        ))}
       </Slider>
     </Wrapper>
   );

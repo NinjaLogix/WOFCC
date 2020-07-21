@@ -1,5 +1,3 @@
-import {DevCredit} from './DevCredit';
+import { DevCredit } from './DevCredit';
 
-export {
-    DevCredit
-}
+export { DevCredit };

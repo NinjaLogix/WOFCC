@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import { AboutBackground } from '../../../assets';
 
 export const Wrapper = styled.div`
-    width: 100%;
+  width: 100%;
 `;
 
 export const Header = styled.section`

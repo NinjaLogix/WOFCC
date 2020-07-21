@@ -10,7 +10,8 @@ const defaults = {
     { title: 'Services', url: '/services' },
     { title: 'Ministries', url: '/ministries' },
     { title: 'Events', url: '/events' },
-    { title: 'Giving' }],
+    { title: 'Giving' },
+  ],
   sanity_queries: {
     locations: process.env.REACT_APP_QUERY_LOCATIONS,
     services: process.env.REACT_APP_QUERY_SERVICES,
@@ -19,16 +20,17 @@ const defaults = {
     about: process.env.REACT_APP_QUERY_ABOUT,
     carousel: process.env.REACT_APP_QUERY_CAROUSEL_PLAYLIST,
     all_albums: process.env.REACT_APP_QUERY_GALLERY_ALL_ALBUMS,
-    single_album: id => process.env.REACT_APP_QUERY_GALLERY_SINGLE_ALBUM.replace(':doc-id', id),
-    side_notes: process.env.REACT_APP_QUERY_SIDE_NOTES
+    single_album: (id) =>
+      process.env.REACT_APP_QUERY_GALLERY_SINGLE_ALBUM.replace(':doc-id', id),
+    side_notes: process.env.REACT_APP_QUERY_SIDE_NOTES,
   },
 
   sanity_config: {
     projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
     dataset: process.env.REACT_APP_SANITY_DATASET,
     token: '',
-    useCdn: true
-  }
+    useCdn: true,
+  },
 };
 
-export const config = ({ ...defaults });
+export const config = { ...defaults };

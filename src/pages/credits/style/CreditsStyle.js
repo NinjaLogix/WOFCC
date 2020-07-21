@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 `;
 
 export const ListWrapper = styled.section`
-    width: 100vw;
-    padding: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    overflow-y: auto;
-    padding-top: 7%;
+  width: 100vw;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-y: auto;
+  padding-top: 7%;
 `;
 
 export const CreditList = styled.ul`
@@ -21,7 +21,7 @@ export const CreditList = styled.ul`
   padding: 0;
 
   li {
-      color: black;
-      padding: 5px 10px;
+    color: black;
+    padding: 5px 10px;
   }
 `;

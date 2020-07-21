@@ -4,7 +4,12 @@ import { Footer } from '../../component/navigation/footer';
 import { config } from '../../config/config';
 import { WofccContext } from '../../component/context/WofccContext';
 import { ServicesBackground } from '../../assets';
-import { Wrapper, Context, Header, TitleBanner } from '../shared_style/SharedPageStyle';
+import {
+  Wrapper,
+  Context,
+  Header,
+  TitleBanner,
+} from '../shared_style/SharedPageStyle';
 import { InfoCard } from '../../component/info';
 import { Typography } from '@material-ui/core';
 
@@ -14,7 +19,9 @@ export const Services = () => {
 
   useEffect(() => {
     const getServices = async () => {
-      const data = await api.sanity_query(api.singleton, { query: config.sanity_queries.services });
+      const data = await api.sanity_query(api.singleton, {
+        query: config.sanity_queries.services,
+      });
       setServices(data);
     };
 
@@ -24,9 +31,11 @@ export const Services = () => {
   return (
     <Wrapper>
       <Header backgroundImg={ServicesBackground}>
-        <Menu/>
+        <Menu />
         <TitleBanner>
-          <Typography gutterBottom variant={'h1'} component={'h1'}>Our Services to You</Typography>
+          <Typography gutterBottom variant={'h1'} component={'h1'}>
+            Our Services to You
+          </Typography>
         </TitleBanner>
       </Header>
 
@@ -36,11 +45,12 @@ export const Services = () => {
             key={index}
             src={e.imageUrl}
             title={e.title}
-            text={e.description}/>
+            text={e.description}
+          />
         ))}
       </Context>
 
-      <Footer/>
+      <Footer />
     </Wrapper>
   );
 };

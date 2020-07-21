@@ -2,16 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Menu } from '../../component/navigation/menu';
 import { Footer } from '../../component/navigation/footer';
 import { Wrapper, Header, TitleBanner } from '../shared_style/SharedPageStyle';
-import {
-  GalleryWrapper,
-  GridContainer
-} from './style/EventsStyle';
+import { GalleryWrapper, GridContainer } from './style/EventsStyle';
 import { config } from '../../config/config';
 import { WofccContext } from '../../component/context/WofccContext';
 import { Album } from '../../component/gallery/Album';
 import { Grid, Typography } from '@material-ui/core';
 
-export const Events = function(props) {
+export const Events = function (props) {
   const [api] = useContext(WofccContext);
   const [galleries, setGalleries] = useState([]);
   const [break_point] = useState(4);
@@ -19,9 +16,11 @@ export const Events = function(props) {
 
   useEffect(() => {
     const queryForAlbums = async () => {
-      const data = await api.sanity_query(api.singleton, { query: config.sanity_queries.all_albums });
+      const data = await api.sanity_query(api.singleton, {
+        query: config.sanity_queries.all_albums,
+      });
 
-      setGalleries([...data.filter(e => !e.isTemp)]);
+      setGalleries([...data.filter((e) => !e.isTemp)]);
     };
 
     queryForAlbums();
@@ -30,9 +29,11 @@ export const Events = function(props) {
   return (
     <Wrapper>
       <Header>
-        <Menu/>
+        <Menu />
         <TitleBanner>
-          <Typography gutterBottom variant={'h2'} component={'h2'}>Pics from recent events and activities</Typography>
+          <Typography gutterBottom variant={'h2'} component={'h2'}>
+            Pics from recent events and activities
+          </Typography>
         </TitleBanner>
       </Header>
 
@@ -41,20 +42,22 @@ export const Events = function(props) {
           container
           spacing={spacing}
           justify={'space-evenly'}
-          alignItems={'center'}>
-          {galleries.map(item => (
+          alignItems={'center'}
+        >
+          {galleries.map((item) => (
             <Grid key={item.id} item xl={break_point} xs={break_point}>
               <Album
                 title={item.description}
                 cover={item.cover_image.url}
                 id={item.id}
-                date={item.create_date}/>
+                date={item.create_date}
+              />
             </Grid>
           ))}
         </GridContainer>
       </GalleryWrapper>
 
-      <Footer/>
+      <Footer />
     </Wrapper>
   );
 };

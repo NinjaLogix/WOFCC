@@ -15,19 +15,17 @@ import {
   WelcomeRight,
   VideoWrapper,
   VideoLeft,
-  VideoRight, SmallPadding
+  VideoRight,
+  SmallPadding,
 } from './style/LandingStyle';
 import { InfoConf } from '../../component/info';
 import { VideoPlayer } from '../../component/av/VideoPlayer';
 import { config } from '../../config/config';
-import {
-  smallWofccLogo,
-  LandingBackground
-} from '../../assets';
+import { smallWofccLogo, LandingBackground } from '../../assets';
 import moment from 'moment';
 import { Typography } from '@material-ui/core';
 
-export const Landing = function(props) {
+export const Landing = function (props) {
   const [api, setApi] = useContext(WofccContext);
 
   const [location, setLocation] = useState();
@@ -39,16 +37,26 @@ export const Landing = function(props) {
   useEffect(() => {
     const lookups = async () => {
       const [location, carousel, av, notes] = await Promise.all([
-        api.sanity_query(api.singleton, { query: config.sanity_queries.locations }),
-        api.sanity_query(api.singleton, { query: config.sanity_queries.carousel }),
+        api.sanity_query(api.singleton, {
+          query: config.sanity_queries.locations,
+        }),
+        api.sanity_query(api.singleton, {
+          query: config.sanity_queries.carousel,
+        }),
         api.sanity_query(api.singleton, { query: config.sanity_queries.av }),
-        api.sanity_query(api.singleton, { query: config.sanity_queries.side_notes })
+        api.sanity_query(api.singleton, {
+          query: config.sanity_queries.side_notes,
+        }),
       ]);
 
       if (location[0])
         setTimes({
-          worship_service: location[0].times.filter(t => t.type[0] === 'worship_service')[0],
-          bible_study: location[0].times.filter(t => t.type[0] === 'bible_study')[0]
+          worship_service: location[0].times.filter(
+            (t) => t.type[0] === 'worship_service'
+          )[0],
+          bible_study: location[0].times.filter(
+            (t) => t.type[0] === 'bible_study'
+          )[0],
         });
 
       setLocation(location[0]);
@@ -68,52 +76,89 @@ export const Landing = function(props) {
     const latest = getLatestAv();
 
     if (latest.videoDetails)
-      return <VideoPlayer vid={latest.videoDetails[0]}/>;
+      return <VideoPlayer vid={latest.videoDetails[0]} />;
 
     if (latest.audioDetails)
-      return <AudioPlayer track={latest.audioDetails[0]}/>;
+      return <AudioPlayer track={latest.audioDetails[0]} />;
   };
 
   return (
     <Wrapper>
-      {notes.length >= 1 &&
-      <InfoConf notes={notes}/>
-      }
+      {notes.length >= 1 && <InfoConf notes={notes} />}
 
       <Header backgroundImg={LandingBackground}>
-        <Menu/>
+        <Menu />
         <Title>
           <h1>Word of Faith Christian Center</h1>
           <section>
-            <img src={smallWofccLogo} alt={'badge'}/>
+            <img src={smallWofccLogo} alt={'badge'} />
           </section>
         </Title>
       </Header>
 
       <WelcomeBox>
-        <WelcomeLeft/>
+        <WelcomeLeft />
 
         <WelcomeRight>
           <span>
-            <Typography gutterBottom variant={'h1'} component={'h1'} align={'center'}>Come as you are</Typography>
+            <Typography
+              gutterBottom
+              variant={'h1'}
+              component={'h1'}
+              align={'center'}
+            >
+              Come as you are
+            </Typography>
 
-            {times.worship_service &&
-            <SmallPadding>
-              <Typography gutterBottom variant={'h3'} component={'h3'} align={'center'}>
-                Service via <a href={times.worship_service.url ? times.worship_service.url : ''}>FaceBook Live</a>
-                @ {times.worship_service.time} on {moment().day(times.worship_service.weekdays[0]).toString().split(' ')[0]}
-              </Typography>
-            </SmallPadding>
-            }
+            {times.worship_service && (
+              <SmallPadding>
+                <Typography
+                  gutterBottom
+                  variant={'h3'}
+                  component={'h3'}
+                  align={'center'}
+                >
+                  Service via{' '}
+                  <a
+                    href={
+                      times.worship_service.url ? times.worship_service.url : ''
+                    }
+                  >
+                    FaceBook Live
+                  </a>
+                  @ {times.worship_service.time} on{' '}
+                  {
+                    moment()
+                      .day(times.worship_service.weekdays[0])
+                      .toString()
+                      .split(' ')[0]
+                  }
+                </Typography>
+              </SmallPadding>
+            )}
 
-            {times.bible_study &&
-            <SmallPadding>
-              <Typography gutterBottom variant={'h3'} component={'h3'} align={'center'}>
-                Bible Study via <a href={times.bible_study.url ? times.bible_study.url : ''}>Zoom</a>
-                @ {times.bible_study.time} on {moment().day(times.bible_study.weekdays[0]).toString().split(' ')[0]}
-              </Typography>
-            </SmallPadding>
-            }
+            {times.bible_study && (
+              <SmallPadding>
+                <Typography
+                  gutterBottom
+                  variant={'h3'}
+                  component={'h3'}
+                  align={'center'}
+                >
+                  Bible Study via{' '}
+                  <a href={times.bible_study.url ? times.bible_study.url : ''}>
+                    Zoom
+                  </a>
+                  @ {times.bible_study.time} on{' '}
+                  {
+                    moment()
+                      .day(times.bible_study.weekdays[0])
+                      .toString()
+                      .split(' ')[0]
+                  }
+                </Typography>
+              </SmallPadding>
+            )}
           </span>
 
           <span>
@@ -121,66 +166,87 @@ export const Landing = function(props) {
               gutterBottom
               variant={'h1'}
               component={'h1'}
-              align={'center'}>
+              align={'center'}
+            >
               You can find us here!
             </Typography>
 
-            {location &&
-            <SmallPadding>
-              <Typography
-                gutterBottom
-                variant={'h3'}
-                component={'h3'}
-                align={'center'}>
-                {location.address}
-              </Typography>
-            </SmallPadding>
-            }
+            {location && (
+              <SmallPadding>
+                <Typography
+                  gutterBottom
+                  variant={'h3'}
+                  component={'h3'}
+                  align={'center'}
+                >
+                  {location.address}
+                </Typography>
+              </SmallPadding>
+            )}
 
-            {location &&
-            <SmallPadding>
-              <Typography
-                gutterBottom
-                variant={'h3'}
-                component={'h3'}
-                align={'center'}>
-                {location.address_cont}
-              </Typography>
-            </SmallPadding>
-            }
+            {location && (
+              <SmallPadding>
+                <Typography
+                  gutterBottom
+                  variant={'h3'}
+                  component={'h3'}
+                  align={'center'}
+                >
+                  {location.address_cont}
+                </Typography>
+              </SmallPadding>
+            )}
           </span>
         </WelcomeRight>
       </WelcomeBox>
 
-      {carousel &&
-      <CarouselWrapper>
-        <Carousel playlists={carousel}/>
-      </CarouselWrapper>
-      }
+      {carousel && (
+        <CarouselWrapper>
+          <Carousel playlists={carousel} />
+        </CarouselWrapper>
+      )}
 
-      {av &&
-      <VideoWrapper>
-        <VideoLeft>
-          {getReleventAv()}
-        </VideoLeft>
+      {av && (
+        <VideoWrapper>
+          <VideoLeft>{getReleventAv()}</VideoLeft>
 
-        <VideoRight>
-          <section>
-            <Typography gutterBottom align={'center'} variant={'h1'} component={'h1'}>Word of Faith Facebook
-              Live!</Typography>
-          </section>
+          <VideoRight>
+            <section>
+              <Typography
+                gutterBottom
+                align={'center'}
+                variant={'h1'}
+                component={'h1'}
+              >
+                Word of Faith Facebook Live!
+              </Typography>
+            </section>
 
-          <section>
-            <Typography gutterBottom align={'center'} variant={'h3'} component={'h3'}>{getLatestAv().title}</Typography>
-          </section>
+            <section>
+              <Typography
+                gutterBottom
+                align={'center'}
+                variant={'h3'}
+                component={'h3'}
+              >
+                {getLatestAv().title}
+              </Typography>
+            </section>
 
-          <section>
-            <Typography gutterBottom align={'center'} variant={'h3'} component={'h3'}>{getLatestAv().date}</Typography>
-          </section>
-        </VideoRight>
-      </VideoWrapper>
-      }
-      <Footer/>
+            <section>
+              <Typography
+                gutterBottom
+                align={'center'}
+                variant={'h3'}
+                component={'h3'}
+              >
+                {getLatestAv().date}
+              </Typography>
+            </section>
+          </VideoRight>
+        </VideoWrapper>
+      )}
+      <Footer />
     </Wrapper>
   );
 };
