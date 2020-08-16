@@ -142,10 +142,7 @@ export const Landing = function (props) {
                   variant={'h3'}
                   component={'h3'}
                   align={'center'}>
-                  Bible Study via{' '}
-                  <a href={times.bible_study.url ? times.bible_study.url : ''}>
-                    Zoom
-                  </a>
+                  {times.bible_study.description}
                   @ {times.bible_study.time} on{' '}
                   {
                     moment()
@@ -153,6 +150,14 @@ export const Landing = function (props) {
                       .toString()
                       .split(' ')[0]
                   }
+                </Typography>
+
+                <Typography
+                  gutterBottom
+                  variant={'h3'}
+                  component={'h3'}
+                  align={'center'}>
+                  {times.bible_study.notes}
                 </Typography>
               </SmallPadding>
             )}

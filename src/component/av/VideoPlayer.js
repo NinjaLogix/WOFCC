@@ -5,8 +5,8 @@ import { Wrapper, Video } from './style/VideoPlayerStyle';
 
 export const VideoPlayer = ({ vid }) => {
   const [player] = useState(new Plyr('#wofcc_live_recent'));
-  const [url] = useState(vid.videoUrl);
-  const [resolutions] = useState(['720']); // other576, 720, 1080
+  const [url] = useState(vid.url ? vid.url : vid.videoUrl);
+  const [resolutions] = useState(['720']); // others -> 576, 720, 1080
 
   return (
     <Wrapper id={'wofcc_live_recent'}>
