@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
 import {
   Wrapper,
   Context,
   Header,
   TitleBanner,
-} from '../shared_style/SharedPageStyle';
-import { InfoCard } from '../../component/info';
-import { WofccContext } from '../../component/context/WofccContext';
-import { AboutBackground } from '../../assets';
-import { config } from '../../config/config';
+} from './style/SharedPageStyle';
+import { InfoCard } from '../component/info';
+import { WofccContext } from '../component/context/WofccContext';
+import { AboutBackground } from '../assets';
+import { config } from '../config/config';
 import { Typography } from '@material-ui/core';
 
 export const AboutUs = function (props) {

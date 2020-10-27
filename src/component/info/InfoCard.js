@@ -14,16 +14,6 @@ export const InfoCard = ({ src, title, text, detail }) => {
 
   const handleClick = e => setOpen(!open);
 
-  const showText = () => {
-    if (!config.isMobile) {
-      return (
-        <Typography variant={'subtitle2'}>
-          {useExpanded ? concatText(text) : text}
-        </Typography>
-      );
-    }
-  };
-
   const allowDetail = () => {
     if (config.isMobile || useExpanded) {
       return (
@@ -44,16 +34,21 @@ export const InfoCard = ({ src, title, text, detail }) => {
       onClick={handleClick}
       expanded={useExpanded}
       mobile={config.isMobile}>
+
       {allowDetail()}
 
       <ImgSection src={src} />
 
       <TextSection>
-        <section>
-          <h3>{title}</h3>
-        </section>
+        <Typography variant={'h3'} component={'h3'}>
+          {title}
+        </Typography>
 
-        {showText()}
+        {!config.isMobile &&
+          <Typography variant={'subtitle2'}>
+            {useExpanded ? concatText(text) : text}
+          </Typography>
+        }
       </TextSection>
     </InfoWrapper>
   );

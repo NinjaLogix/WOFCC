@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
-import { Wrapper, Header, TitleBanner } from '../shared_style/SharedPageStyle';
-import { GalleryWrapper, GridContainer } from './style/EventsStyle';
-import { config } from '../../config/config';
-import { WofccContext } from '../../component/context/WofccContext';
-import { Album } from '../../component/gallery/Album';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
+import { Wrapper, Header, TitleBanner } from './style/SharedPageStyle';
+import { GalleryWrapper, GridContainer } from './EventsStyle';
+import { config } from '../config/config';
+import { WofccContext } from '../component/context/WofccContext';
+import { Album } from '../component/gallery/Album';
 import { Grid, Typography } from '@material-ui/core';
 
 //todo -> mobile:forgot to include the backgroundImg prop to wrapper

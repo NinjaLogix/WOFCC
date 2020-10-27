@@ -24,23 +24,12 @@ const ImgSection = styled.img`
 `;
 
 const TextSection = styled.section`
-  width: 70%;
+  width: ${({short}) => short ? '70%' : '60%'};
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-
-  section {
-    width: 100%;
-    height: 45%;
-    padding: 2%;
-    overflow-y: auto;
-
-    h3 {
-      font-size: 2.3em;
-      line-height: 0;
-    }
-  }
+  padding: 2%;
 `;
 
 const BtnWrapper = styled.section`

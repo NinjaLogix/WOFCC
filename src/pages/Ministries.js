@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { InfoCard } from '../../component/info';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
+import { InfoCard } from '../component/info';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
 import {
   Wrapper,
   Context,
   Header,
   TitleBanner,
-} from '../shared_style/SharedPageStyle';
-import { config } from '../../config/config';
-import { WofccContext } from '../../component/context/WofccContext';
-import { AboutBackground } from '../../assets';
+} from './style/SharedPageStyle';
+import { config } from '../config/config';
+import { WofccContext } from '../component/context/WofccContext';
+import { AboutBackground } from '../assets';
 import { Typography } from '@material-ui/core';
 
 export const Ministries = function (props) {

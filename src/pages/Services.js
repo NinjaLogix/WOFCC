@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
-import { config } from '../../config/config';
-import { WofccContext } from '../../component/context/WofccContext';
-import { ServicesBackground } from '../../assets';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
+import { config } from '../config/config';
+import { WofccContext } from '../component/context/WofccContext';
+import { ServicesBackground } from '../assets';
 import {
   Wrapper,
   Context,
   Header,
   TitleBanner,
-} from '../shared_style/SharedPageStyle';
-import { InfoCard } from '../../component/info';
+} from './style/SharedPageStyle';
+import { InfoCard } from '../component/info';
 import { Typography } from '@material-ui/core';
 
 export const Services = () => {

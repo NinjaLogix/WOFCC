@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ContactUsBackground } from '../../../assets';
+import { ContactUsBackground } from '../../assets';
 
 export const Container = styled.div``;
 
