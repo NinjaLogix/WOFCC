@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import uuidv1 from 'uuid';
 import { Wrapper, CreditList, ListWrapper } from './style/CreditsStyle';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
 
 export const Credits = function (props) {
   const [freepik] = useState([

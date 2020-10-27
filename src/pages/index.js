@@ -1,11 +1,11 @@
-import { Directions } from './directions/Directions';
-import { Landing } from './landing/Landing';
-import { Services } from './services/Services';
-import { ContactUs } from './contactUs/ContactUs';
-import { AboutUs } from './aboutUs/AboutUs';
-import { Ministries } from './ministries/Ministries';
-import { Events } from './recentEvents/Events';
-import { Credits } from './credits/Credits';
+import { Directions } from './Directions';
+import { Landing } from './Landing';
+import { Services } from './Services';
+import { ContactUs } from './ContactUs';
+import { AboutUs } from './AboutUs';
+import { Ministries } from './Ministries';
+import { Events } from './Events';
+import { Credits } from './Credits';
 
 export {
   Landing,

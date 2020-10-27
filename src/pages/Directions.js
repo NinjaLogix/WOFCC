@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
 import {
   Container,
   Heading1,
@@ -9,10 +9,10 @@ import {
   SubContainer,
   AddrsContainer,
 } from './style/DirectionsStyle';
-import { WOFCCMap } from '../../component/info';
-import { config } from '../../config/config';
-import { WofccContext } from '../../component/context/WofccContext';
-import { LandingBackground } from '../../assets';
+import { WOFCCMap } from '../component/info';
+import { config } from '../config/config';
+import { WofccContext } from '../component/context/WofccContext';
+import { LandingBackground } from '../assets';
 
 export const Directions = () => {
   const [api] = useContext(WofccContext);

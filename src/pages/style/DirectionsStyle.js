@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { LandingBackground } from '../../../assets';
+import { LandingBackground } from '../../assets';
 
 export const Container = styled.div`
   width: 100%;

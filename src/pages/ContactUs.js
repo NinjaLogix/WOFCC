@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../../component/navigation/menu';
-import { Footer } from '../../component/navigation/footer';
+import { Menu } from '../component/navigation/menu';
+import { Footer } from '../component/navigation/footer';
 import {
   Container,
   Header,
@@ -15,9 +15,9 @@ import {
   PastorImg,
   ContactRightBottom,
 } from './style/ContactUsStyle';
-import { config } from '../../config/config';
-import { WofccContext } from '../../component/context/WofccContext';
-import { FaceBookLogo, Pastors, ContactUsBackground } from '../../assets';
+import { config } from '../config/config';
+import { WofccContext } from '../component/context/WofccContext';
+import { FaceBookLogo, Pastors, ContactUsBackground } from '../assets';
 
 export const ContactUs = props => {
   const [api] = useContext(WofccContext);
