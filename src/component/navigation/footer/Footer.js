@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Wrapper, FooterH4 } from './style/FooterStyle';
+import { Wrapper, StyledLink, StyledA } from './style/FooterStyle';
 import { DevCredit } from '../dev-credits';
-import { Link } from 'react-router-dom';
 import { config } from '../../../config/config';
+import { Grid, Typography } from '@material-ui/core';
 
 //todo -> mobile:fix mobile formatting with footer. Maybe switch this to a grid. and also fix the height
 export const Footer = function (props) {
@@ -14,26 +14,35 @@ export const Footer = function (props) {
     { title: 'Ministries', url: '/ministries' },
     { title: 'Events', url: '/events' },
     { title: 'Credits', url: '/credits' },
-    { title: 'Giving', url: config.givingUrl },
   ]);
 
   return (
-    <Wrapper>
-      {navOptions.map((option, index) =>
-        option.title !== 'Giving' ? (
-          <Link key={index} to={`${option.url}`}>
-            <FooterH4>{option.title}</FooterH4>
-          </Link>
-        ) : (
-          <a key={index} target='_blank' href={option.url}>
-            <FooterH4>{option.title}</FooterH4>
-          </a>
-        )
-      )}
+    <Wrapper
+      container
+      direction={'row'}
+      wrap={'wrap'}
+      align={'center'}
+      justifyItems={'center'}
+    >
+      {navOptions.map((o, index) => (
+        <Grid item xs={3} key={index}>
+          <StyledLink to={o.url}>
+            <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>{o.title}</Typography>
+          </StyledLink>
+        </Grid>
+      ))}
 
-      <a target='_blank' href={config.dev_url}>
-        <DevCredit />
-      </a>
+      <Grid item xs={3}>
+        <StyledA target='_blank' href={config.givingUrl}>
+          <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>Giving</Typography>
+        </StyledA>
+      </Grid>
+
+      <Grid item xs={12}>
+        <StyledA target='_blank' href={config.dev_url}>
+          <DevCredit />
+        </StyledA>
+      </Grid>
     </Wrapper>
   );
 };
