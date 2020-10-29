@@ -1,4 +1,5 @@
-import styled from 'styled-components';import { Grid } from '@material-ui/core';
+import styled from 'styled-components';
+import { Grid } from '@material-ui/core';
 
 const Box = styled(Grid)`
   width: 100%;
@@ -7,6 +8,4 @@ const Box = styled(Grid)`
   background-color: #eeeeee;
 `;
 
-export {
-  Box
-}
+export { Box };

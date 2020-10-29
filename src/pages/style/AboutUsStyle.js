@@ -6,16 +6,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.section`
-    width: 100%;
-    height: 150px;
-    background-image: url('${AboutBackground}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  width: 100%;
+  height: 150px;
+  background-image: url('${AboutBackground}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    h1, h2, h3 {
-        text-align: center;
-    }
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
 `;
 
 export const Context = styled.section`

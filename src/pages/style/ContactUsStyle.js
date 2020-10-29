@@ -4,16 +4,16 @@ import { ContactUsBackground } from '../../assets';
 export const Container = styled.div``;
 
 export const Header = styled.section`
-    width:100%;
-    height:400px;
-    background-image: url('${ContactUsBackground}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  width: 100%;
+  height: 400px;
+  background-image: url('${ContactUsBackground}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    h3 {
-        text-align: center;
-    }
+  h3 {
+    text-align: center;
+  }
 `;
 
 export const Heading1 = styled.h1`

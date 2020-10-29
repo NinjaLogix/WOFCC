@@ -28,7 +28,7 @@ const Menu = () => {
             <a key={option.title} target='_blank' href={config.givingUrl}>
               <MenuH2>{option.title}</MenuH2>
             </a>
-          )
+          ),
         )}
       </MenuBase>
     </Wrapper>
@@ -58,7 +58,7 @@ const Menu = () => {
                 <MenuH2>{option.title}</MenuH2>
               </a>
             </ListItem>
-          )
+          ),
         )}
       </List>
     </DrawerList>
@@ -74,7 +74,8 @@ const Menu = () => {
         edge='start'
         color='inherit'
         aria-label='menu'
-        onClick={() => toggleDrawer()}>
+        onClick={() => toggleDrawer()}
+      >
         <MenuIcon />
       </IconButton>
     </Wrapper>

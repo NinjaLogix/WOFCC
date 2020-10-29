@@ -33,8 +33,8 @@ export const InfoCard = ({ src, title, text, detail }) => {
       elevation={3}
       onClick={handleClick}
       expanded={useExpanded}
-      mobile={config.isMobile}>
-
+      mobile={config.isMobile}
+    >
       {allowDetail()}
 
       <ImgSection src={src} />
@@ -44,11 +44,11 @@ export const InfoCard = ({ src, title, text, detail }) => {
           {title}
         </Typography>
 
-        {!config.isMobile &&
+        {!config.isMobile && (
           <Typography variant={'subtitle2'}>
             {useExpanded ? concatText(text) : text}
           </Typography>
-        }
+        )}
       </TextSection>
     </InfoWrapper>
   );

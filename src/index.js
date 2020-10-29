@@ -42,6 +42,6 @@ ReactDOM.render(
     <GlobalStyle />
     <App />
   </HttpsRedirect>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
 registerServiceWorker();

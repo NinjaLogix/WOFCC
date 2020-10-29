@@ -24,7 +24,7 @@ const ImgSection = styled.img`
 `;
 
 const TextSection = styled.section`
-  width: ${({short}) => short ? '70%' : '60%'};
+  width: ${({ short }) => (short ? '70%' : '60%')};
 
   display: flex;
   flex-flow: column nowrap;

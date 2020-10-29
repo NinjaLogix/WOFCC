@@ -27,14 +27,18 @@ export const Footer = function (props) {
       {navOptions.map((o, index) => (
         <Grid item xs={3} key={index}>
           <StyledLink to={o.url}>
-            <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>{o.title}</Typography>
+            <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>
+              {o.title}
+            </Typography>
           </StyledLink>
         </Grid>
       ))}
 
       <Grid item xs={3}>
         <StyledA target='_blank' href={config.givingUrl}>
-          <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>Giving</Typography>
+          <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>
+            Giving
+          </Typography>
         </StyledA>
       </Grid>
 

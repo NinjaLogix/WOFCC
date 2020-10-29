@@ -35,13 +35,15 @@ export const Gallery = ({ match }) => {
       fullScreen
       open={open}
       onClose={handleDialogState}
-      TransitionComponent={Transition}>
+      TransitionComponent={Transition}
+    >
       <StyledAppBar>
         <Toolbar>
           <IconButton
             edge={'start'}
             color={'inherit'}
-            onClick={handleDialogState}>
+            onClick={handleDialogState}
+          >
             <CloseIcon />
           </IconButton>
         </Toolbar>

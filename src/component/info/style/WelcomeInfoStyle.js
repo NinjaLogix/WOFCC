@@ -8,6 +8,4 @@ const Box = styled(Grid)`
   background-color: #eeeeee;
 `;
 
-export {
-  Box
-}
+export { Box };

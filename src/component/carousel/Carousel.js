@@ -27,7 +27,7 @@ export const Carousel = ({ playlists }) => {
           moment(playlist.start_date),
           moment(playlist.end_date),
           undefined,
-          '[]'
+          '[]',
         ) ||
         playlist.runYearly
       )
@@ -36,7 +36,7 @@ export const Carousel = ({ playlists }) => {
             ts_crt: playlist._createdAt,
             description: entry.description,
             url: entry.url,
-          }))
+          })),
         );
     });
 

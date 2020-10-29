@@ -55,10 +55,10 @@ export const Landing = function (props) {
       if (location[0])
         setTimes({
           worship_service: location[0].times.filter(
-            t => t.type[0] === 'worship_service'
+            t => t.type[0] === 'worship_service',
           )[0],
           bible_study: location[0].times.filter(
-            t => t.type[0] === 'bible_study'
+            t => t.type[0] === 'bible_study',
           )[0],
         });
 
@@ -87,7 +87,7 @@ export const Landing = function (props) {
         </Title>
       </Header>
 
-      <WelcomeInfo times={times} location={location}/>
+      <WelcomeInfo times={times} location={location} />
 
       {carousel && (
         <CarouselWrapper>
@@ -95,7 +95,7 @@ export const Landing = function (props) {
         </CarouselWrapper>
       )}
 
-      <VideoInfo av={av}/>
+      <VideoInfo av={av} />
       <Footer />
     </Wrapper>
   );

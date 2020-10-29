@@ -13,12 +13,12 @@ export const Heading1 = styled.h1`
 `;
 
 export const SubContainer = styled.section`
-    background-image: url('${LandingBackground}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    
-    padding: 0 0 4% 0;
+  background-image: url('${LandingBackground}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  padding: 0 0 4% 0;
 `;
 
 export const AddrsContainer = styled.section`

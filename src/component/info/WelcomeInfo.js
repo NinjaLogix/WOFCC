@@ -5,11 +5,16 @@ import { SmallPadding } from '../../pages/style/LandingStyle';
 import moment from 'moment';
 import { config } from '../../config/config';
 
-export const WelcomeInfo = ({times, location}) => {
+export const WelcomeInfo = ({ times, location }) => {
   return (
     <Box container direction={config.isMobile ? 'column' : 'row'}>
       <Grid item xs direction={'column'}>
-        <Typography  gutterBottom variant={'h1'} component={'h1'} align={'center'}>
+        <Typography
+          gutterBottom
+          variant={'h1'}
+          component={'h1'}
+          align={'center'}
+        >
           Come as you are
         </Typography>
 
@@ -19,12 +24,14 @@ export const WelcomeInfo = ({times, location}) => {
               gutterBottom
               variant={'h3'}
               component={'h3'}
-              align={'center'}>
+              align={'center'}
+            >
               Service via{' '}
               <a
                 href={
                   times.worship_service.url ? times.worship_service.url : ''
-                }>
+                }
+              >
                 FaceBook Live
               </a>
               @ {times.worship_service.time} on{' '}
@@ -44,9 +51,9 @@ export const WelcomeInfo = ({times, location}) => {
               gutterBottom
               variant={'h3'}
               component={'h3'}
-              align={'center'}>
-              {times.bible_study.description}
-              @ {times.bible_study.time} on{' '}
+              align={'center'}
+            >
+              {times.bible_study.description}@ {times.bible_study.time} on{' '}
               {
                 moment()
                   .day(times.bible_study.weekdays[0])
@@ -59,7 +66,8 @@ export const WelcomeInfo = ({times, location}) => {
               gutterBottom
               variant={'h3'}
               component={'h3'}
-              align={'center'}>
+              align={'center'}
+            >
               {times.bible_study.notes}
             </Typography>
           </SmallPadding>
@@ -71,7 +79,8 @@ export const WelcomeInfo = ({times, location}) => {
           gutterBottom
           variant={'h1'}
           component={'h1'}
-          align={'center'}>
+          align={'center'}
+        >
           You can find us here!
         </Typography>
 
@@ -81,7 +90,8 @@ export const WelcomeInfo = ({times, location}) => {
               gutterBottom
               variant={'h3'}
               component={'h3'}
-              align={'center'}>
+              align={'center'}
+            >
               {location.address}
             </Typography>
           </SmallPadding>
@@ -93,12 +103,13 @@ export const WelcomeInfo = ({times, location}) => {
               gutterBottom
               variant={'h3'}
               component={'h3'}
-              align={'center'}>
+              align={'center'}
+            >
               {location.address_cont}
             </Typography>
           </SmallPadding>
         )}
       </Grid>
     </Box>
-  )
-}
+  );
+};

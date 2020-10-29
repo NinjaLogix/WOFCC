@@ -7,17 +7,17 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.section`
-    width: 100%;
-    height: 15vh;
-    background-image: url('${AboutBackground}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  width: 100%;
+  height: 15vh;
+  background-image: url('${AboutBackground}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    h2 {
-        text-align: center;
-        line-height: 0;
-    }
+  h2 {
+    text-align: center;
+    line-height: 0;
+  }
 `;
 
 export const GalleryWrapper = styled.section`

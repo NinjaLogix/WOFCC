@@ -6,17 +6,17 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.section`
-    background-image: url('${LandingBackground}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url('${LandingBackground}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-	-webkit-box-shadow: -5px 8px 6px -6px black;
-	   -moz-box-shadow: -5px 8px 6px -6px black;
-	        box-shadow: -5px 8px 6px -6px black;
+  -webkit-box-shadow: -5px 8px 6px -6px black;
+  -moz-box-shadow: -5px 8px 6px -6px black;
+  box-shadow: -5px 8px 6px -6px black;
 
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 `;
 
 export const Title = styled.section`

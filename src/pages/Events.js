@@ -43,7 +43,8 @@ export const Events = function (props) {
           container
           spacing={spacing}
           justify={'space-evenly'}
-          alignItems={'center'}>
+          alignItems={'center'}
+        >
           {galleries.map(item => (
             <Grid key={item.id} item xl={break_point} xs={break_point}>
               <Album

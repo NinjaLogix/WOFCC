@@ -4,12 +4,7 @@ import { Footer } from '../component/navigation/footer';
 import { config } from '../config/config';
 import { WofccContext } from '../component/context/WofccContext';
 import { ServicesBackground } from '../assets';
-import {
-  Wrapper,
-  Context,
-  Header,
-  TitleBanner,
-} from './style/SharedPageStyle';
+import { Wrapper, Context, Header, TitleBanner } from './style/SharedPageStyle';
 import { InfoCard } from '../component/info';
 import { Typography } from '@material-ui/core';
 
