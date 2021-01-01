@@ -2,8 +2,13 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  background-color: inherit;
 `;
 
 export const MenuBase = styled.section`

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history/history';
+import { _routes } from "../_routes";
 import {
   Landing,
   Services,
@@ -14,14 +15,21 @@ import {
 import { AppStyle } from './style/AppStyle';
 import { Gallery } from '../component/gallery/Gallery';
 import { WofccProvider } from '../component/context/WofccContext';
+import { Menu } from '../component/navigation/menu';
+import { Home } from "../pages/Home";
 
 export const App = () => {
   return (
     <WofccProvider>
       <AppStyle>
-        <Router history={history}>
+        <Menu />
+        <Router>
           <Switch>
-            <Route exact path={'/'} component={Landing} />
+            {_routes.map((e, index) => (
+              <Route exact={e.target === '/'} path={e.target} component={e.component} />
+            ))}
+            {/*<Route exact path={'/'} component={Landing} />
+            <Route path={'/home'} component={Home} />
             <Route path={'/services'} component={Services} />
             <Route path={'/directions'} component={Directions} />
             <Route path={'/contact-us'} component={ContactUs} />
@@ -29,7 +37,7 @@ export const App = () => {
             <Route path={'/ministries'} component={Ministries} />
             <Route path={'/events'} component={Events} />
             <Route path={'/credits'} component={Credits} />
-            <Route path={'/gallery/:id'} component={Gallery} />
+            <Route path={'/gallery/:id'} component={Gallery} />*/}
           </Switch>
         </Router>
 

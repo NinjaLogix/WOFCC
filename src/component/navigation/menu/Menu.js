@@ -14,16 +14,16 @@ const Menu = () => {
     <Wrapper>
       <MenuBase>
         {window.location.pathname !== '/' && (
-          <Link key={Date.now()} to={'/'}>
+          /*<Link key={Date.now()} to={'/'}>*/
             <MenuH2>Home</MenuH2>
-          </Link>
+          /*</Link>*/
         )}
 
         {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
-            <Link key={option.title} to={option.url}>
+            /*<Link key={option.title} to={option.url}>*/
               <MenuH2>{option.title}</MenuH2>
-            </Link>
+            /*</Link>*/
           ) : (
             <a key={option.title} target='_blank' href={config.givingUrl}>
               <MenuH2>{option.title}</MenuH2>
@@ -39,18 +39,18 @@ const Menu = () => {
       <List>
         {window.location.pathname !== '/' && (
           <ListItem>
-            <Link key={Date.now()} to={'/'}>
+            {/*<Link key={Date.now()} to={'/'}>*/}
               <MenuH2>Home</MenuH2>
-            </Link>
+           {/* </Link>*/}
           </ListItem>
         )}
 
         {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
             <ListItem>
-              <Link key={option} to={option.url}>
+              {/*<Link key={option} to={option.url}>*/}
                 <MenuH2>{option.title}</MenuH2>
-              </Link>
+              {/*</Link>*/}
             </ListItem>
           ) : (
             <ListItem>

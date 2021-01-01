@@ -27,7 +27,6 @@ import { Typography } from '@material-ui/core';
 import { WelcomeInfo } from '../component/info/WelcomeInfo';
 import { VideoInfo } from '../component/av/VideoInfo';
 
-//todo -> mobile:text on service time needs to scale correctly
 export const Landing = function (props) {
   const [api, setApi] = useContext(WofccContext);
 
