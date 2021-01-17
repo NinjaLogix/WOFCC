@@ -7,6 +7,7 @@ import FaceBookLogo from './Facebook_Home_logo_old.svg.png';
 import ContactUsBackground from './1024.jpg';
 import Pastors from './PBLC-3.png';
 import ServicesBackground from './ODRAX20.jpg';
+import PineBackground from './pine.jpg';
 
 export {
   GithubLogo,
@@ -18,4 +19,5 @@ export {
   ContactUsBackground,
   Pastors,
   ServicesBackground,
+  PineBackground,
 };

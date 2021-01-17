@@ -8,4 +8,12 @@ const Box = styled(Grid)`
   background-color: #eeeeee;
 `;
 
-export { Box };
+const Wrapper = styled.section`
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  background-color: aqua;
+`;
+
+export { Box, Wrapper };

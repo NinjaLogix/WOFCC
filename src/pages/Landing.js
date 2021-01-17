@@ -25,7 +25,7 @@ import { smallWofccLogo, LandingBackground } from '../assets';
 import moment from 'moment';
 import { Typography } from '@material-ui/core';
 import { WelcomeInfo } from '../component/info/WelcomeInfo';
-import { VideoInfo } from '../component/av/VideoInfo';
+import { AVSource } from '../component/av/AVSource';
 
 export const Landing = function (props) {
   const [api, setApi] = useContext(WofccContext);
@@ -94,7 +94,7 @@ export const Landing = function (props) {
         </CarouselWrapper>
       )}
 
-      <VideoInfo av={av} />
+      <AVSource av={av} />
       <Footer />
     </Wrapper>
   );

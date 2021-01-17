@@ -24,7 +24,6 @@ const defaults = {
       process.env.REACT_APP_QUERY_GALLERY_SINGLE_ALBUM.replace(':doc-id', id),
     side_notes: process.env.REACT_APP_QUERY_SIDE_NOTES,
   },
-
   sanity_config: {
     projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
     dataset: process.env.REACT_APP_SANITY_DATASET,

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './app/App';
 import registerServiceWorker from './scripts/registerServiceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 import { createGlobalStyle } from 'styled-components';
 
@@ -38,10 +39,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 ReactDOM.render(
-  <HttpsRedirect>
+  <Router>
     <GlobalStyle />
     <App />
-  </HttpsRedirect>,
+  </Router>,
   document.getElementById('app'),
 );
 registerServiceWorker();
