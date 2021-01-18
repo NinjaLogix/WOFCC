@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { App } from './app/App';
 import registerServiceWorker from './scripts/registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-import HttpsRedirect from 'react-https-redirect';
+// import HttpsRedirect from 'react-https-redirect';
 import { createGlobalStyle } from 'styled-components';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
 //todo -> create global style from material-ui
 const GlobalStyle = createGlobalStyle`
@@ -38,10 +39,46 @@ const GlobalStyle = createGlobalStyle`
     p{font-family: 'Nunito', sans-serif;}
 `;
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: 'rgb(15, 86, 80)',
+    },
+    secondary: {
+      main: 'rgb(246, 217, 176)'
+    },
+    text: {
+      primary: 'rgb(51, 51, 51)',
+      secondary: 'rgb(216, 216, 216)',
+    }
+  },
+  typography: {
+    h1:{fontFamily: `'Permanent Marker', cursive`},
+    h2:{fontFamily: `'Roboto', sans-serif`},
+    h3:{ fontFamily: `'Teko', sans-serif` },
+    h4:{fontFamily: `'Roboto', sans-serif`},
+    h5:{},
+    h6:{},
+    subtitle1:{},
+    subtitle2:{},
+    body1: {
+      fontFamily: `'Nunito', sans-serif`,
+    },
+    body2: {
+      fontFamily: `'Nunito', sans-serif`
+    },
+    button:{},
+    caption:{},
+    overline:{}
+  }
+})
+
 ReactDOM.render(
   <Router>
     <GlobalStyle />
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Router>,
   document.getElementById('app'),
 );

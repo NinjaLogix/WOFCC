@@ -6,7 +6,7 @@ export const WOFCCMap = ({ info }) => (
   <MapWrapper>
     {info && (
       <LeafletMap
-        center={[info.lat, info.long]}
+        center={[info.lat, info.lng]}
         zoom={14}
         attributionControl={true}
         zoomControl={true}
@@ -18,8 +18,7 @@ export const WOFCCMap = ({ info }) => (
       >
         <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
 
-        <Marker position={[info.lat, info.long]}>
-          <Popup>{info.addrs}</Popup>
+        <Marker position={[info.lat, info.lng]}>
         </Marker>
       </LeafletMap>
     )}

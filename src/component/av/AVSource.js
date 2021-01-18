@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { VideoPlayer } from './VideoPlayer';
 import { AudioPlayer } from './AudioPlayer';
-import { Grid, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import {
   AVInfoWrapper,
   AVWrapper,
@@ -10,6 +10,7 @@ import {
 } from './style/AVSourceStyle';
 import { WofccContext } from '../context/WofccContext';
 import { config } from '../../config/config';
+import { Facebook } from '@material-ui/icons';
 
 export const AVSource = () => {
   const [api] = useContext(WofccContext);
@@ -21,6 +22,8 @@ export const AVSource = () => {
     api
       .sanity_query(api.singleton, { query: config.sanity_queries.av })
       .then(response => {
+        console.debug('full response', response);
+
         const latest = response[response.length - 1];
 
         const { videoDetails } = latest;
@@ -63,9 +66,9 @@ export const AVSource = () => {
           </Typography>
         )}
 
-        <SocialBanner>
-          <Typography gutterBottom align={'center'} variant={'h4'}>
-            Facebook
+        <SocialBanner href={config.faceBookUrl}>
+          <Typography align={'right'} variant={'h4'} color={'textSecondary'}>
+            More @<Facebook fontSize={'large'} />
           </Typography>
         </SocialBanner>
       </AVInfoWrapper>

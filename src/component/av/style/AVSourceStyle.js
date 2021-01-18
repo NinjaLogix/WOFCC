@@ -3,6 +3,7 @@ import { CardActionArea, Grid } from '@material-ui/core';
 
 const Box = styled.div`
   width: 100%;
+  padding: 2% 0 4% 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;

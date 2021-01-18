@@ -27,5 +27,4 @@ const Social = styled.section``;
 export {
   Wrapper,
   Media,
-  VideoBackground,
 }

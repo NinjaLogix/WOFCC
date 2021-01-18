@@ -13,6 +13,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
+  align-items: center;
   background-color: aqua;
 `;
 

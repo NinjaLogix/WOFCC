@@ -15,23 +15,31 @@ export const VideoPlayer = ({ vid }) => {
   );
 
   useEffect(() => {
-    console.log('vid', vid);
     if (typeof vid === `string`) {
       setType('iframe');
       setUrl(vid);
     }
 
-    if (typeof vid === `object`) {
+    if (typeof vid === `object` && Object.keys(vid).includes('videoDetails')) {
+      const [url] = vid.videoDetails;
+      console.log('url', url);
+
       setType('url');
-      setUrl(vid.url ? vid.url : vid.videoUrl);
+      setUrl(url);
     }
+
+    //remove after testing
+    setType('iframe');
+    setUrl(
+      `<iframe src="https://www.facebook.com/plugins/video.php?height=315&href=https%3A%2F%2Fwww.facebook.com%2FWordOfFaithSouthaven%2Fvideos%2F730344167599688%2F&show_text=false&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>`,
+    );
   }, []);
 
   return (
     <Wrapper id={'wofcc_live_recent'}>
-      {type && type === 'iframe' ? (
-        <Iframe frame={url} />
-      ) : (
+      {type === `iframe` && <Iframe frame={url} />}
+
+      {type === 'url' && (
         <Video controls crossorigin playsinline>
           {resolutions.map((res, index) => (
             <source key={index} src={url} type='video/mp4' size={res} />
