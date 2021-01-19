@@ -67,8 +67,12 @@ export const AVSource = () => {
         )}
 
         <SocialBanner href={config.faceBookUrl}>
-          <Typography align={'right'} variant={'h4'} color={'textSecondary'}>
-            More @<Facebook fontSize={'large'} />
+          <Typography display={'inline'} align={'right'} variant={'h4'} color={'textSecondary'}>
+            Visit us @
+          </Typography>
+
+          <Typography variant={'h4'} color={'textSecondary'}>
+            <Facebook style={{fontSize: '3ch'}} />
           </Typography>
         </SocialBanner>
       </AVInfoWrapper>

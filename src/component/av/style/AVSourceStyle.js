@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CardActionArea, Grid } from '@material-ui/core';
+import { CardActionArea, Grid, Typography } from '@material-ui/core';
 
 const Box = styled.div`
   width: 100%;
@@ -23,7 +23,10 @@ const AVInfoWrapper = styled.section`
 const SocialBanner = styled(CardActionArea)`
   width: 100%;
   background-color: blue !important;
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 1% 100%);
+  display: inline-flex !important;
+  justify-content: flex-end !important;
+  border-radius: 5px !important;
 `;
 
 export { Box, AVWrapper, AVInfoWrapper, SocialBanner };
