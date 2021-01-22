@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Wrapper, StyledLink, StyledA } from './style/FooterStyle';
 import { DevCredit } from '../dev-credits';
 import { config } from '../../../config/config';
@@ -6,7 +6,7 @@ import { Grid, Typography } from '@material-ui/core';
 import { _routes } from '../../../_routes';
 
 export const Footer = () => {
-  const navOptions = _routes.filter(e => !['gallery'].includes(e.title.toLowerCase()));
+  const navOptions = _routes.filter(e => !['gallery', 'events'].includes(e.title.toLowerCase()));
 
   return (
     <Wrapper

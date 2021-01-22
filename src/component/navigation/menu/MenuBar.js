@@ -9,7 +9,7 @@ export const MenuBar = () => {
   const { pathname } = useLocation();
 
   const [options, setOptions] = useState([
-    ..._routes.filter(e => ['Home', 'About', 'Contact'].includes(e.title)),
+    ..._routes.filter(e => ['Home', 'About', 'Ministries', 'Services'].includes(e.title)),
     { target: process.env.REACT_APP_GIVING_URL, title: 'Giving' },
   ]);
 

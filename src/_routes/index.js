@@ -1,14 +1,12 @@
 import { Home } from "../pages/Home";
-import { AboutUs, Credits, Events } from "../pages";
-import { Gallery } from "../component/gallery/Gallery";
+import { AboutUs, Credits, Ministries, Services } from '../pages';
 
 export const _routes = [
-  //updated
   { target: '/', title: 'Home', component: Home },
   { target: '/about', title: 'About', component: AboutUs },
-
-  //existing
-  { target: '/events', title: 'Events', component: Events },
+  { target: '/ministries', title: 'Ministries', component: Ministries },
+  { target: '/services', title: 'Services', component: Services },
   { target: '/credits', title: 'Credits', component: Credits },
-  { target: '/gallery/:id', title: 'Gallery', component: Gallery },
+  // { target: '/events', title: 'Events', component: Events },
+  // { target: '/gallery/:id', title: 'Gallery', component: Gallery },
 ];

@@ -6,7 +6,7 @@ import { config } from '../config/config';
 import { WofccContext } from '../component/context/WofccContext';
 
 export const Home = () => {
-  const [api, setApi] = useContext(WofccContext);
+  const [api] = useContext(WofccContext);
 
   const [notes, setNotes] = useState([]);
 
