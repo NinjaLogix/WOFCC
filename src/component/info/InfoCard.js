@@ -45,7 +45,7 @@ export const InfoCard = ({ src, title, text, detail }) => {
         </Typography>
 
         {!config.isMobile && (
-          <Typography variant={'subtitle2'}>
+          <Typography variant={'body1'}>
             {useExpanded ? concatText(text) : text}
           </Typography>
         )}
