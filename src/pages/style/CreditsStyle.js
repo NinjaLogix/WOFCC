@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
 `;
 
 export const ListWrapper = styled.section`
-  width: 100vw;
-  padding: 2%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
