@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled(Grid)`
   width: 100%;
-  border-top: 5px solid #595959;
-
-  background: rgb(20, 98, 5);
-  background: linear-gradient(
-    0deg,
-    rgba(20, 98, 5, 1) 0%,
-    rgba(117, 165, 1, 1) 100%
-  );
+  
+  background: #5A8A81;
+  background: -webkit-linear-gradient(top, #5A8A81, #1E1E1E);
+  background: -moz-linear-gradient(top, #5A8A81, #1E1E1E);
+  background: linear-gradient(to bottom, #5A8A81, #1E1E1E);
 `;
 
 export const StyledLink = styled(Link)`
