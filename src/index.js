@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
-//todo -> create global style from material-ui
 const GlobalStyle = createGlobalStyle`
     html,body{
         padding: 0;
@@ -45,33 +44,27 @@ const theme = createMuiTheme({
       main: 'rgb(15, 86, 80)',
     },
     secondary: {
-      main: 'rgb(246, 217, 176)'
+      main: 'rgb(246, 217, 176)',
     },
     text: {
       primary: 'rgb(51, 51, 51)',
       secondary: 'rgb(216, 216, 216)',
-    }
+    },
   },
   typography: {
-    h1:{fontFamily: `'Permanent Marker', cursive`},
-    h2:{fontFamily: `'Roboto', sans-serif`},
-    h3:{ fontFamily: `'Teko', sans-serif` },
-    h4:{fontFamily: `'Roboto', sans-serif`},
-    h5:{},
-    h6:{},
-    subtitle1:{},
-    subtitle2:{},
+    h1: { fontFamily: `'Permanent Marker', cursive` },
+    h2: { fontFamily: `'Roboto', sans-serif` },
+    h3: { fontFamily: `'Teko', sans-serif` },
+    h4: { fontFamily: `'Roboto', sans-serif` },
     body1: {
       fontFamily: `'Nunito', sans-serif`,
+      fontSize: 15,
     },
     body2: {
-      fontFamily: `'Nunito', sans-serif`
+      fontFamily: `'Nunito', sans-serif`,
     },
-    button:{},
-    caption:{},
-    overline:{}
-  }
-})
+  },
+});
 
 ReactDOM.render(
   <Router>
@@ -82,4 +75,5 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app'),
 );
+
 registerServiceWorker();
