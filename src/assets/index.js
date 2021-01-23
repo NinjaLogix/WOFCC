@@ -8,6 +8,7 @@ import ContactUsBackground from './1024.jpg';
 import Pastors from './PBLC-3.png';
 import ServicesBackground from './ODRAX20.jpg';
 import PineBackground from './pine.jpg';
+import AllBlank from './all_Blank.jpg';
 
 export {
   GithubLogo,
@@ -20,4 +21,5 @@ export {
   Pastors,
   ServicesBackground,
   PineBackground,
+  AllBlank,
 };

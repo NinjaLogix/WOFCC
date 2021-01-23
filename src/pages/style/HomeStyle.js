@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { PineBackground } from '../../assets';
+import { BeyondBlessed, PineBackground } from '../../assets';
 
 const Wrapper = styled.section`
+  position: relative;
   width: 100%;
   padding-top: 5%;
   display: flex;
@@ -16,7 +17,7 @@ const Wrapper = styled.section`
 
 const Media = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 88.5vh;
   z-index: 0;
 `;
 

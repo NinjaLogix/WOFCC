@@ -38,8 +38,6 @@ export const DrawerList = styled.section`
 
 const Bar = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   background-color: rgba(0,0,0,0.6);
   display: flex;

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import moment from 'moment';
-import { StyledImg, Wrapper } from './style/CarouselStyle';
+import { Wrapper } from './style/CarouselStyle';
 import { WofccContext } from '../context/WofccContext';
 import { config } from '../../config/config';
 
@@ -56,10 +56,10 @@ export const Carousel = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper id={'carousel'}>
       <Slider {...settings}>
         {entries.map(entry => (
-          <StyledImg key={entry.description} alt={'840x400'} src={entry.url} />
+          <img id={'slick_image'} key={entry.description} alt={'840x400'} src={entry.url} />
         ))}
       </Slider>
     </Wrapper>
