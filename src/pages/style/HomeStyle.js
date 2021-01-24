@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BeyondBlessed, PineBackground } from '../../assets';
+import { PineForrest } from '../../assets';
 
 const Wrapper = styled.section`
   position: relative;
@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-flow: row wrap;
   
-  background: url(${PineBackground}) no-repeat center center fixed;
+  background: url(${PineForrest}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
