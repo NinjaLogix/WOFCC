@@ -7,8 +7,10 @@ import { Wrapper } from './style/CarouselStyle';
 import { WofccContext } from '../context/WofccContext';
 import { config } from '../../config/config';
 
-export const Carousel = () => {
+//todo -> make a new carousel component that's reusable
+export const Carousel = ({type}) => {
   const [api] = useContext(WofccContext);
+
   const [entries, setEntries] = useState([]);
   const [settings] = useState({
     swipeToSlide: true,
