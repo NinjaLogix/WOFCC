@@ -21,10 +21,6 @@ const Media = styled.section`
   z-index: 0;
 `;
 
-const Video = styled.section``;
-
-const Social = styled.section``;
-
 export {
   Wrapper,
   Media,

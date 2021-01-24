@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CardActionArea, Grid, Typography } from '@material-ui/core';
+import { CardActionArea } from '@material-ui/core';
 
 const Box = styled.div`
   width: 100%;

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { WofccContext } from '../context/WofccContext';
-import { FullStyledCard, StyledCard } from './style/SharedCardStyle';
+import { FullStyledCard } from './style/SharedCardStyle';
 import { WOFCCMap } from './Map';
 
 export const MapCard = () => {
