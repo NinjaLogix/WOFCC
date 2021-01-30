@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { _routes } from '../_routes';
+import { _routes } from '../routes';
 import { AppStyle } from './style/AppStyle';
 import { WofccProvider } from '../component/context/WofccContext';
 import { MenuBar } from '../component/navigation/menu/MenuBar';

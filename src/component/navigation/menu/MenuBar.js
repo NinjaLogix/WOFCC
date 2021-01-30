@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Bar, MenuLabel, StyledLogo } from './style/MenuStyle';
-import { _routes } from '../../../_routes';
+import { _routes } from '../../../routes';
 import { Button } from '@material-ui/core';
 import { smallWofccLogo } from '../../../assets';
 

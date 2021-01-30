@@ -23,6 +23,10 @@ const ImgSection = styled.img`
   }
 `;
 
+const StyledA = styled.a`
+  color: black;
+`;
+
 const TextSection = styled.section`
   width: ${({ short }) => (short ? '70%' : '60%')};
 
@@ -55,4 +59,5 @@ export {
   BtnWrapper,
   TitleWrapper,
   StyledDialog,
+  StyledA,
 };

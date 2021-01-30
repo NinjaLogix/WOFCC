@@ -21,7 +21,22 @@ const Media = styled.section`
   z-index: 0;
 `;
 
+const Slide = styled.section`
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SlideImage = styled.img`
+  width: 60vw;
+  max-height: 80vh;
+`;
+
 export {
   Wrapper,
   Media,
+  Slide,
+  SlideImage,
 }
