@@ -24,6 +24,7 @@ export const Slides = ({
   effect,
   useNavigation,
   visibleSlides,
+  delay,
 }) => {
   // install Swiper components
   SwiperCore.use([
@@ -40,10 +41,12 @@ export const Slides = ({
   let settings = {
     navigation: useNavigation,
     effect,
+    slidesPerView: visibleSlides,
+    autoplay: { delay },
   };
 
   if (useNavigation)
-    settings = {...settings, pagination: {clickable: true}}
+    settings = { ...settings, pagination: { clickable: true } };
 
   useEffect(() => {
     const apiCall = async () => {
@@ -57,14 +60,7 @@ export const Slides = ({
   }, [entries]);
 
   return (
-    <Swiper
-      {...settings}
-      slidesPerView={visibleSlides}
-      /*navigation*/
-      /*effect={'fade'}*/
-      autoplay={{ delay: 4000 }}
-      /*pagination={{ clickable: true }}*/
-    >
+    <Swiper {...settings}>
       {slides.map((e, index) => (
         <SwiperSlide key={index}>{e.view}</SwiperSlide>
       ))}
@@ -83,6 +79,7 @@ Slides.propTypes = {
   getAsync: PropTypes.func,
   checkAsync: PropTypes.func,
   visibleSlides: PropTypes.number,
+  delay: PropTypes.number,
 };
 
 Slides.defaultProps = {
@@ -90,4 +87,5 @@ Slides.defaultProps = {
   useNavigation: true,
   effect: 'slide',
   entries: [],
+  delay: 4500,
 };
