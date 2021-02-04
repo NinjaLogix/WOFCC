@@ -18,23 +18,24 @@ export const InfoConf = () => {
         query: config.sanity_queries.side_notes,
       });
 
-      setNotes(
-        all
-          .filter(e => moment().isBefore(moment(e.ts_exp)))
-          .map((e, index) => ({
-            view: e.url ? (
-              <StyledA key={index} target={'_blank'} href={e.url}>
-                <Typography align={'center'} variant={'h3'}>
+      if (Array.isArray(all))
+        setNotes(
+          all
+            .filter(e => moment().isBefore(moment(e.ts_exp)))
+            .map((e, index) => ({
+              view: e.url ? (
+                <StyledA key={index} target={'_blank'} href={e.url}>
+                  <Typography align={'center'} variant={'h3'}>
+                    {e.msg}
+                  </Typography>
+                </StyledA>
+              ) : (
+                <Typography key={index} align={'center'} variant={'h3'}>
                   {e.msg}
                 </Typography>
-              </StyledA>
-            ) : (
-              <Typography key={index} align={'center'} variant={'h3'}>
-                {e.msg}
-              </Typography>
-            ),
-          })),
-      );
+              ),
+            })),
+        );
     };
 
     getNotes();
@@ -42,10 +43,7 @@ export const InfoConf = () => {
 
   return (
     <Boxed>
-      <Slides
-        useNavigation={false}
-        entries={notes}
-      />
+      <Slides useNavigation={false} entries={notes} />
     </Boxed>
   );
 };

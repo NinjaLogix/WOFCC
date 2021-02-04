@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card } from '@material-ui/core';
+import { config } from '../../../config/config';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,6 +24,8 @@ const Picture = styled.section`
 `;
 
 const PastorCard = styled(Card)`
+  width: ${config.isMobile ? `38rem` : `48rem`};
+  
   #title {
     padding: 1% 0;
   }
@@ -33,7 +36,7 @@ const PastorCard = styled(Card)`
 `;
 
 const PastorImg = styled.img`
-  height: 90mm;
+  width: 100%;
 `;
 
 export { Wrapper, InfoWrapper, Picture, PastorCard, PastorImg }

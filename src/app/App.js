@@ -11,7 +11,6 @@ export const App = () => (
   <WofccProvider>
     <AppStyle>
       <InfoConf />
-
       <MenuBar />
 
       <Switch>

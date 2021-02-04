@@ -15,24 +15,24 @@ export const VideoPlayer = ({ vid }) => {
   );
 
   useEffect(() => {
+    console.log('vid', vid);
+
+    const [videos] = vid;
+
+    console.log('url', videos);
+
     if (typeof vid === `string`) {
       setType('iframe');
       setUrl(vid);
     }
 
-    if (typeof vid === `object` && Object.keys(vid).includes('videoDetails')) {
-      const [url] = vid.videoDetails;
+    if (typeof vid === `object`) {
+      const [url] = vid;
       console.log('url', url);
 
       setType('url');
-      setUrl(url);
+      setUrl(url.url);
     }
-
-    //remove after testing
-    setType('iframe');
-    setUrl(
-      `<iframe src="https://www.facebook.com/plugins/video.php?height=315&href=https%3A%2F%2Fwww.facebook.com%2FWordOfFaithSouthaven%2Fvideos%2F730344167599688%2F&show_text=false&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>`,
-    );
   }, []);
 
   return (

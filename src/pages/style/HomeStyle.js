@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PineForrest } from '../../assets';
+import { config } from '../../config/config';
 
 const Wrapper = styled.section`
   position: relative;
@@ -16,9 +17,18 @@ const Wrapper = styled.section`
 `;
 
 const Media = styled.section`
-  width: 100%;
-  height: 88.5vh;
+  width: 96.7vw;
+  min-height: calc(100vh - ${config.isMobile ? `3.2rem` : `6.13rem`});
   z-index: 0;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  
+  #slides-box {
+    width: 100%;
+  }
 `;
 
 const Slide = styled.section`
@@ -29,9 +39,14 @@ const Slide = styled.section`
   align-items: center;
 `;
 
+//todo -> set these as percentages that scale with the screen
+/*
+  width: ${config.isMobile ? `100%` : `54vw`};
+  ${config.isMobile && `height: 35rem;`}
+ */
 const SlideImage = styled.img`
-  width: 60vw;
-  max-height: 80vh;
+  width: 73.25%;
+  height: 45%;
 `;
 
 export {

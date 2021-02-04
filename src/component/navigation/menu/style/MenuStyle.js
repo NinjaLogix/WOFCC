@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { config } from '../../../../config/config';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -42,7 +43,7 @@ const Bar = styled.div`
   background-color: rgba(0,0,0,0.6);
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: ${config.isMobile ? `flex-end` : `space-evenly`};
   z-index: 1;
 `;
 

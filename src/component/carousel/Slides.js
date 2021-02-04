@@ -8,10 +8,7 @@ import SwiperCore, {
   Autoplay,
   EffectFade,
 } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -26,7 +23,6 @@ export const Slides = ({
   visibleSlides,
   delay,
 }) => {
-  // install Swiper components
   SwiperCore.use([
     Navigation,
     Pagination,

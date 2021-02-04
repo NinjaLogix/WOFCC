@@ -53,7 +53,7 @@ const theme = createMuiTheme({
   },
   typography: {
     h1: { fontFamily: `'Permanent Marker', cursive` },
-    h2: { fontFamily: `'Roboto', sans-serif` },
+    h2: { fontFamily: `'Teko', sans-serif` },
     h3: { fontFamily: `'Teko', sans-serif` },
     h4: { fontFamily: `'Roboto', sans-serif` },
     body1: {

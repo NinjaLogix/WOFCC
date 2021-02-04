@@ -23,9 +23,11 @@ const WofccProvider = ({ children }) => {
       query: config.sanity_queries.locations,
     })
       .then(response => {
-        const [location_data] = response;
+        if (!!response) {
+          const [location_data] = response;
 
-        setState({ ...state, location: location_data });
+          setState({ ...state, location: location_data });
+        }
       })
       .catch();
   }, []);

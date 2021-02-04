@@ -23,18 +23,21 @@ export const AVSource = () => {
       .sanity_query(api.singleton, { query: config.sanity_queries.av })
       .then(response => {
         console.debug('full response', response);
+        
+        if (Array.isArray(response)) {
+          const latest = response[response.length - 1];
 
-        const latest = response[response.length - 1];
+          const { videoDetails } = latest;
+          const { audioDetails } = latest;
 
-        const { videoDetails } = latest;
-        const { audioDetails } = latest;
+          if (videoDetails)
+            setAvComponent([<VideoPlayer vid={videoDetails} />]);
 
-        if (videoDetails) setAvComponent([<VideoPlayer vid={videoDetails} />]);
+          if (audioDetails)
+            setAvComponent([<AudioPlayer track={audioDetails} />]);
 
-        if (audioDetails)
-          setAvComponent([<AudioPlayer track={audioDetails} />]);
-
-        setAvData(latest);
+          setAvData(latest);
+        }
       })
       .catch();
   }, []);
