@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Wrapper, StyledLink, StyledA } from './style/FooterStyle';
 import { DevCredit } from '../dev-credits';
 import { config } from '../../../config/config';
 import { Grid, Typography } from '@material-ui/core';
+import { _routes } from '../../../routes';
 
-//todo -> mobile:fix mobile formatting with footer. Maybe switch this to a grid. and also fix the height
-export const Footer = function (props) {
-  const [navOptions] = useState([
-    { title: 'About Us', url: '/about-us' },
-    { title: 'Contact Us', url: '/contact-us' },
-    { title: 'Directions', url: '/directions' },
-    { title: 'Services', url: '/services' },
-    { title: 'Ministries', url: '/ministries' },
-    { title: 'Events', url: '/events' },
-    { title: 'Credits', url: '/credits' },
-  ]);
+export const Footer = () => {
+  const navOptions = _routes.filter(
+    e => !['gallery', 'events'].includes(e.title.toLowerCase()),
+  );
 
   return (
     <Wrapper
@@ -22,11 +16,11 @@ export const Footer = function (props) {
       direction={'row'}
       wrap={'wrap'}
       align={'center'}
-      justifyItems={'center'}
+      justify={'center'}
     >
       {navOptions.map((o, index) => (
         <Grid item xs={3} key={index}>
-          <StyledLink to={o.url}>
+          <StyledLink to={o.target}>
             <Typography variant={'h3'} component={'h3'} color={'textPrimary'}>
               {o.title}
             </Typography>

@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Menu } from '../component/navigation/menu';
-import { Footer } from '../component/navigation/footer';
 import { config } from '../config/config';
 import { WofccContext } from '../component/context/WofccContext';
 import { ServicesBackground } from '../assets';
@@ -26,7 +24,6 @@ export const Services = () => {
   return (
     <Wrapper>
       <Header backgroundImg={ServicesBackground}>
-        <Menu />
         <TitleBanner>
           <Typography gutterBottom variant={'h1'} component={'h1'}>
             Our Services to You
@@ -44,8 +41,6 @@ export const Services = () => {
           />
         ))}
       </Context>
-
-      <Footer />
     </Wrapper>
   );
 };

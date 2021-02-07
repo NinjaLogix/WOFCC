@@ -1,12 +1,12 @@
 import React from 'react';
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import { MapWrapper } from './style/MapStyle';
 
 export const WOFCCMap = ({ info }) => (
   <MapWrapper>
     {info && (
       <LeafletMap
-        center={[info.lat, info.long]}
+        center={[info.lat, info.lng]}
         zoom={14}
         attributionControl={true}
         zoomControl={true}
@@ -18,9 +18,7 @@ export const WOFCCMap = ({ info }) => (
       >
         <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
 
-        <Marker position={[info.lat, info.long]}>
-          <Popup>{info.addrs}</Popup>
-        </Marker>
+        <Marker position={[info.lat, info.lng]}></Marker>
       </LeafletMap>
     )}
   </MapWrapper>

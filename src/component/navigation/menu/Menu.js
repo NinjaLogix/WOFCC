@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Wrapper, MenuBase, MenuH2, DrawerList } from './style/MenuStyle';
+import { useLocation } from 'react-router-dom';
+import { Wrapper, MenuBase, MenuLabel, DrawerList } from './style/MenuStyle';
 import { config } from '../../../config/config';
-import { IconButton, Drawer, List, ListItem } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import {
+  IconButton,
+  Typography,
+  Drawer,
+  List,
+  ListItem,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const Menu = () => {
+  const { pathname } = useLocation();
+
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = () => setOpen(!open);
@@ -13,20 +22,20 @@ const Menu = () => {
   const fullMenu = () => (
     <Wrapper>
       <MenuBase>
-        {window.location.pathname !== '/' && (
+        {pathname !== '/' && (
           <Link key={Date.now()} to={'/'}>
-            <MenuH2>Home</MenuH2>
+            <Typography variant={'h5'}>Home</Typography>
           </Link>
         )}
 
         {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
-            <Link key={option.title} to={option.url}>
-              <MenuH2>{option.title}</MenuH2>
-            </Link>
+            /*<Link key={option.title} to={option.url}>*/
+            <MenuLabel>{option.title}</MenuLabel>
           ) : (
+            /*</Link>*/
             <a key={option.title} target='_blank' href={config.givingUrl}>
-              <MenuH2>{option.title}</MenuH2>
+              <MenuLabel>{option.title}</MenuLabel>
             </a>
           ),
         )}
@@ -35,27 +44,27 @@ const Menu = () => {
   );
 
   const mobileList = () => (
-    <DrawerList onClick={() => toggleDrawer()} onKeyDown={() => toggleDrawer()}>
+    <DrawerList onClick={toggleDrawer} onKeyDown={toggleDrawer}>
       <List>
         {window.location.pathname !== '/' && (
           <ListItem>
-            <Link key={Date.now()} to={'/'}>
-              <MenuH2>Home</MenuH2>
-            </Link>
+            {/*<Link key={Date.now()} to={'/'}>*/}
+            <MenuLabel>Home</MenuLabel>
+            {/* </Link>*/}
           </ListItem>
         )}
 
         {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
             <ListItem>
-              <Link key={option} to={option.url}>
-                <MenuH2>{option.title}</MenuH2>
-              </Link>
+              {/*<Link key={option} to={option.url}>*/}
+              <MenuLabel>{option.title}</MenuLabel>
+              {/*</Link>*/}
             </ListItem>
           ) : (
             <ListItem>
               <a target='_blank' href={config.givingUrl} key={option}>
-                <MenuH2>{option.title}</MenuH2>
+                <MenuLabel>{option.title}</MenuLabel>
               </a>
             </ListItem>
           ),
@@ -66,7 +75,7 @@ const Menu = () => {
 
   const mobileMenu = () => (
     <Wrapper>
-      <Drawer anchor={'left'} open={open} onClose={() => toggleDrawer()}>
+      <Drawer anchor={'left'} open={open} onClose={toggleDrawer}>
         {mobileList()}
       </Drawer>
 
@@ -74,7 +83,7 @@ const Menu = () => {
         edge='start'
         color='inherit'
         aria-label='menu'
-        onClick={() => toggleDrawer()}
+        onClick={toggleDrawer}
       >
         <MenuIcon />
       </IconButton>
