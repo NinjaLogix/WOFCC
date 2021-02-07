@@ -29,10 +29,10 @@ export const AVSource = () => {
           const { audioDetails } = latest;
 
           if (videoDetails)
-            setAvComponent([<VideoPlayer vid={videoDetails} />]);
+            setAvComponent(<VideoPlayer vid={videoDetails} />);
 
           if (audioDetails)
-            setAvComponent([<AudioPlayer track={audioDetails} />]);
+            setAvComponent(<AudioPlayer track={audioDetails} />);
 
           setAvData(latest);
         }

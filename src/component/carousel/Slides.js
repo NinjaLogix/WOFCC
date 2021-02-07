@@ -65,13 +65,15 @@ export const Slides = ({
 };
 
 Slides.propTypes = {
-  entries: PropTypes.shape({
-    view: PropTypes.node,
-    ts: PropTypes.string,
-    description: PropTypes.string,
-    type: PropTypes.oneOf(['image', 'text']),
-    url: PropTypes.string,
-  }),
+  entries: PropTypes.arrayOf(
+    PropTypes.shape({
+      view: PropTypes.node,
+      ts: PropTypes.string,
+      description: PropTypes.string,
+      type: PropTypes.oneOf(['image', 'text']),
+      url: PropTypes.string,
+    }),
+  ),
   getAsync: PropTypes.func,
   checkAsync: PropTypes.func,
   visibleSlides: PropTypes.number,

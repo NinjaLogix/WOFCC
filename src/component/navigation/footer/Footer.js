@@ -14,7 +14,7 @@ export const Footer = () => {
       direction={'row'}
       wrap={'wrap'}
       align={'center'}
-      justifyItems={'center'}
+      justify={'center'}
     >
       {navOptions.map((o, index) => (
         <Grid item xs={3} key={index}>

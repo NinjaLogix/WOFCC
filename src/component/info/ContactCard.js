@@ -39,8 +39,8 @@ export const ContactCard = () => {
                 ...or call us.
               </Typography>
 
-              {loc.phones.map(e => (
-                <Typography variant={'h4'} gutterBottom align={'center'}>
+              {loc.phones.map((e, index) => (
+                <Typography key={index} variant={'h4'} gutterBottom align={'center'}>
                   {formatPhone(e.phone)}
                 </Typography>
               ))}
