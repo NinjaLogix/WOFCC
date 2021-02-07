@@ -5,11 +5,4 @@ import { Ministries } from './Ministries';
 import { Events } from './Events';
 import { Credits } from './Credits';
 
-export {
-  Services,
-  ContactUs,
-  AboutUs,
-  Ministries,
-  Events,
-  Credits,
-};
+export { Services, ContactUs, AboutUs, Ministries, Events, Credits };

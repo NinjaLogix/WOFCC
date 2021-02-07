@@ -25,13 +25,13 @@ const Picture = styled.section`
 
 const PastorCard = styled(Card)`
   width: ${config.isMobile ? `38rem` : `48rem`};
-  
+
   #title {
     padding: 1% 0;
   }
-  
+
   #banner {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 `;
 
@@ -39,4 +39,4 @@ const PastorImg = styled.img`
   width: 100%;
 `;
 
-export { Wrapper, InfoWrapper, Picture, PastorCard, PastorImg }
+export { Wrapper, InfoWrapper, Picture, PastorCard, PastorImg };

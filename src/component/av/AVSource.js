@@ -28,8 +28,7 @@ export const AVSource = () => {
           const { videoDetails } = latest;
           const { audioDetails } = latest;
 
-          if (videoDetails)
-            setAvComponent(<VideoPlayer vid={videoDetails} />);
+          if (videoDetails) setAvComponent(<VideoPlayer vid={videoDetails} />);
 
           if (audioDetails)
             setAvComponent(<AudioPlayer track={audioDetails} />);

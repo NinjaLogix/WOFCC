@@ -32,7 +32,7 @@ export const CarouselBody = styled.section`
   .slick-next::before {
     color: dimgrey;
   }
-  
+
   a {
     color: black;
   }

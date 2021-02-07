@@ -6,7 +6,9 @@ import { Grid, Typography } from '@material-ui/core';
 import { _routes } from '../../../routes';
 
 export const Footer = () => {
-  const navOptions = _routes.filter(e => !['gallery', 'events'].includes(e.title.toLowerCase()));
+  const navOptions = _routes.filter(
+    e => !['gallery', 'events'].includes(e.title.toLowerCase()),
+  );
 
   return (
     <Wrapper

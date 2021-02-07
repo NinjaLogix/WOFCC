@@ -1,4 +1,4 @@
-import { Home } from "../pages/Home";
+import { Home } from '../pages/Home';
 import { AboutUs, Credits, Ministries, Services } from '../pages';
 
 export const _routes = [

@@ -3,7 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { Wrapper, MenuBase, MenuLabel, DrawerList } from './style/MenuStyle';
 import { config } from '../../../config/config';
 import { Link } from 'react-router-dom';
-import { IconButton, Typography, Drawer, List, ListItem } from '@material-ui/core';
+import {
+  IconButton,
+  Typography,
+  Drawer,
+  List,
+  ListItem,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const Menu = () => {
@@ -25,9 +31,9 @@ const Menu = () => {
         {config.menuOptions.map(option =>
           option.title !== 'Giving' ? (
             /*<Link key={option.title} to={option.url}>*/
-              <MenuLabel>{option.title}</MenuLabel>
-            /*</Link>*/
+            <MenuLabel>{option.title}</MenuLabel>
           ) : (
+            /*</Link>*/
             <a key={option.title} target='_blank' href={config.givingUrl}>
               <MenuLabel>{option.title}</MenuLabel>
             </a>
@@ -43,8 +49,8 @@ const Menu = () => {
         {window.location.pathname !== '/' && (
           <ListItem>
             {/*<Link key={Date.now()} to={'/'}>*/}
-              <MenuLabel>Home</MenuLabel>
-           {/* </Link>*/}
+            <MenuLabel>Home</MenuLabel>
+            {/* </Link>*/}
           </ListItem>
         )}
 
@@ -52,7 +58,7 @@ const Menu = () => {
           option.title !== 'Giving' ? (
             <ListItem>
               {/*<Link key={option} to={option.url}>*/}
-                <MenuLabel>{option.title}</MenuLabel>
+              <MenuLabel>{option.title}</MenuLabel>
               {/*</Link>*/}
             </ListItem>
           ) : (

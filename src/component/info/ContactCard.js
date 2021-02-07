@@ -40,7 +40,12 @@ export const ContactCard = () => {
               </Typography>
 
               {loc.phones.map((e, index) => (
-                <Typography key={index} variant={'h4'} gutterBottom align={'center'}>
+                <Typography
+                  key={index}
+                  variant={'h4'}
+                  gutterBottom
+                  align={'center'}
+                >
                   {formatPhone(e.phone)}
                 </Typography>
               ))}

@@ -58,9 +58,7 @@ export const Home = () => {
     <Wrapper>
       <Media>
         {!config.isMobile && (
-          <Typography variant={'h2'}>
-            Word of Faith Southaven
-          </Typography>
+          <Typography variant={'h2'}>Word of Faith Southaven</Typography>
         )}
 
         <section id={'slides-box'}>

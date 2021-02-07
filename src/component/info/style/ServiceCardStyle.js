@@ -8,6 +8,4 @@ const InfoFlex = styled.section`
   align-items: center;
 `;
 
-export {
-  InfoFlex
-}
+export { InfoFlex };

@@ -42,7 +42,6 @@ export const ServiceCard = () => {
           </section>
 
           <section>
-
             <Typography variant={'h4'} align={'center'}>
               -
             </Typography>

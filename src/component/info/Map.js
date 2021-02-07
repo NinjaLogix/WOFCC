@@ -18,8 +18,7 @@ export const WOFCCMap = ({ info }) => (
       >
         <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
 
-        <Marker position={[info.lat, info.lng]}>
-        </Marker>
+        <Marker position={[info.lat, info.lng]}></Marker>
       </LeafletMap>
     )}
   </MapWrapper>

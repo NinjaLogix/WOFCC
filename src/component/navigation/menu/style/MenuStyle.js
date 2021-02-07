@@ -40,7 +40,7 @@ export const DrawerList = styled.section`
 const Bar = styled.div`
   position: absolute;
   width: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-flow: row wrap;
   justify-content: ${config.isMobile ? `flex-end` : `space-evenly`};
@@ -54,7 +54,4 @@ const StyledLogo = styled.img`
   width: 30mm;
 `;
 
-export {
-  Bar,
-  StyledLogo,
-}
+export { Bar, StyledLogo };

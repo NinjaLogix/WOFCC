@@ -4,7 +4,7 @@ import { Card } from '@material-ui/core';
 const StyledCard = styled(Card)`
   min-width: 100mm;
   max-width: 160mm;
-  
+
   margin: 2mm 0;
 `;
 
