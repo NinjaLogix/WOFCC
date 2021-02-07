@@ -6,6 +6,8 @@ import { Typography } from '@material-ui/core';
 
 //todo -> mobile:if the text is too long it doesn't scale correctly
 export const InfoCard = ({ src, title, text, detail }) => {
+  console.log('text', text, detail);
+
   const text_limit = 200;
   const [useExpanded] = useState(text.length >= text_limit);
   const [open, setOpen] = useState(false);
@@ -40,9 +42,7 @@ export const InfoCard = ({ src, title, text, detail }) => {
       <ImgSection src={src} />
 
       <TextSection>
-        <Typography variant={'h3'} component={'h3'}>
-          {title}
-        </Typography>
+        <Typography variant={'h3'}>{title}</Typography>
 
         {!config.isMobile && (
           <Typography variant={'body1'}>

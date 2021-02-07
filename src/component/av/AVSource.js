@@ -22,8 +22,6 @@ export const AVSource = () => {
     api
       .sanity_query(api.singleton, { query: config.sanity_queries.av })
       .then(response => {
-        console.debug('full response', response);
-        
         if (Array.isArray(response)) {
           const latest = response[response.length - 1];
 
@@ -52,7 +50,7 @@ export const AVSource = () => {
             gutterBottom
             align={'center'}
             variant={'h3'}
-            component={'h3'}
+            color={'textSecondary'}
           >
             {avData.title}
           </Typography>
@@ -63,19 +61,24 @@ export const AVSource = () => {
             gutterBottom
             align={'center'}
             variant={'h3'}
-            component={'h3'}
+            color={'textSecondary'}
           >
             {avData.date}
           </Typography>
         )}
 
         <SocialBanner href={config.faceBookUrl}>
-          <Typography display={'inline'} align={'right'} variant={'h4'} color={'textSecondary'}>
+          <Typography
+            display={'inline'}
+            align={'right'}
+            variant={'h4'}
+            color={'textSecondary'}
+          >
             Visit us @
           </Typography>
 
           <Typography variant={'h4'} color={'textSecondary'}>
-            <Facebook style={{fontSize: '3ch'}} />
+            <Facebook style={{ fontSize: '3ch' }} />
           </Typography>
         </SocialBanner>
       </AVInfoWrapper>

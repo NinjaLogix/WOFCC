@@ -58,7 +58,7 @@ export const Home = () => {
     <Wrapper>
       <Media>
         {!config.isMobile && (
-          <Typography variant={'h2'} gutterBottom>
+          <Typography variant={'h2'}>
             Word of Faith Southaven
           </Typography>
         )}

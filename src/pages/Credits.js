@@ -116,14 +116,22 @@ export const Credits = () => {
       key: uuidv1(),
       img_desc: 'Ben White',
       link_text: 'Ben White',
-      link: 'https://unsplash.com/@benwhitephotography?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge'
+      link:
+        'https://unsplash.com/@benwhitephotography?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge',
     },
     {
       key: uuidv1(),
       img_desc: 'Priscilla Du Preez',
       link_text: 'Priscilla Du Preez',
-      link: 'https://unsplash.com/@priscilladupreez?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge'
-    }
+      link:
+        'https://unsplash.com/@priscilladupreez?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge',
+    },
+    {
+      key: uuidv1(),
+      img_desc: 'Nature Vectors by Vecteezy',
+      link_text: 'Nature Vectors by Vecteezy',
+      link: 'https://www.vecteezy.com/free-vector/nature',
+    },
   ]);
 
   return (

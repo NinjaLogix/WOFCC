@@ -7,7 +7,12 @@ import { ContactInfo } from './ContactInfo';
 export const WelcomeInfo = () => (
   <Wrapper>
     <section id={'group1'}>
-      <Typography gutterBottom variant={'h1'} component={'h2'} align={'center'}>
+      <Typography
+        gutterBottom
+        variant={'h1'}
+        align={'center'}
+        color={'textSecondary'}
+      >
         Our Latest Service
       </Typography>
 

@@ -8,34 +8,45 @@ import { createGlobalStyle } from 'styled-components';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
 const GlobalStyle = createGlobalStyle`
-    html,body{
-        padding: 0;
-        margin: 0;
-        -ms-box-orient: horizontal;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -moz-flex;
-        display: -webkit-flex;
-        display: flex;
+  html, body {
+    padding: 0;
+    margin: 0;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
 
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 
-        -webkit-justify-content: space-around;
-        justify-content: space-around;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        -webkit-align-items: stretch;
-        align-items: stretch;
-        background-color: #eeeeee;
-    }
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    background-color: #eeeeee;
+  }
 
-    h1{font-family: 'Permanent Marker', cursive;}
-    h2{font-family: 'Courgette', cursive;}
-    h3{font-family: 'Teko', sans-serif;}
-    p{font-family: 'Nunito', sans-serif;}
+  h1 {
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  h2 {
+    font-family: 'Courgette', cursive;
+  }
+
+  h3 {
+    font-family: 'Teko', sans-serif;
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+  }
 `;
 
 const theme = createMuiTheme({
@@ -52,13 +63,22 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    h1: { fontFamily: `'Permanent Marker', cursive` },
-    h2: { fontFamily: `'Teko', sans-serif` },
-    h3: { fontFamily: `'Teko', sans-serif` },
-    h4: { fontFamily: `'Roboto', sans-serif` },
+    h1: {
+      fontFamily: `'Permanent Marker', cursive`,
+    },
+    h2: {
+      fontFamily: `'Teko', sans-serif`,
+      fontSize: `5rem`,
+    },
+    h3: {
+      fontFamily: `'Teko', sans-serif`,
+    },
+    h4: {
+      fontFamily: `'Roboto', sans-serif`,
+    },
     body1: {
       fontFamily: `'Nunito', sans-serif`,
-      fontSize: 15,
+      fontSize: `1.4rem`,
     },
     body2: {
       fontFamily: `'Nunito', sans-serif`,

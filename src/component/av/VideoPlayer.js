@@ -11,28 +11,54 @@ export const VideoPlayer = ({ vid }) => {
   const resolutions = ['720']; // others -> 576, 720, 1080
 
   const Iframe = ({ frame }) => (
-    <div dangerouslySetInnerHTML={{ __html: frame ? frame : `` }} />
+    <div dangerouslySetInnerHTML={{ __html: frame }} />
   );
 
-  useEffect(() => {
-    console.log('vid', vid);
+  const setSource = thing => {
+    const { embed, url, videoUrl } = thing;
 
-    const [videos] = vid;
+    if (!!embed) {
+      console.log('using embed...');
 
-    console.log('url', videos);
-
-    if (typeof vid === `string`) {
       setType('iframe');
-      setUrl(vid);
+      setUrl(embed);
+
+      return true;
     }
 
-    if (typeof vid === `object`) {
-      const [url] = vid;
-      console.log('url', url);
+    if (!!url) {
+      console.log('using url...');
 
       setType('url');
-      setUrl(url.url);
+      setUrl(url);
+
+      return true;
     }
+
+    if (!!videoUrl) {
+      console.log('using uploaded file...');
+
+      setType('url');
+      setUrl(videoUrl);
+
+      return true;
+    }
+
+    return false;
+  };
+
+  /* 
+  todo 
+   -> this isn't currently setup to handle more than one video
+   -> use Slider to allow mutiple videos
+   */
+  useEffect(() => {
+    const [videos] = vid;
+    const { embed, url, videoUrl } = videos;
+
+    if (setSource({ embed, url, videoUrl }))
+      console.log('video details set...');
+    else console.log('there was an issue setting the video...');
   }, []);
 
   return (
