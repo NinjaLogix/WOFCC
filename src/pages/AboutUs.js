@@ -26,10 +26,10 @@ export const AboutUs = () => {
     <Wrapper>
       <Header backgroundImg={AboutBackground}>
         <TitleBanner>
-          <Typography gutterBottom variant={'h1'} component={'h1'}>
+          <Typography gutterBottom variant={'h1'}>
             WOFCC - Southaven
           </Typography>
-          <Typography gutterBottom variant={'h3'} component={'h3'}>
+          <Typography gutterBottom variant={'h3'}>
             A little about who we are...
           </Typography>
         </TitleBanner>

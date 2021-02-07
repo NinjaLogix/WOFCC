@@ -15,6 +15,8 @@ export const VideoPlayer = ({ vid }) => {
   );
 
   const setSource = thing => {
+    console.log('whole thing', thing);
+
     const { embed, url, videoUrl } = thing;
 
     if (!!embed) {

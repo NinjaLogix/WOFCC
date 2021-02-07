@@ -14,6 +14,9 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/effect-fade/effect-fade.min.css';
 
+/*
+ todo -> sometimes the slides don't actually center themselves
+ */
 export const Slides = ({
   entries,
   getAsync,
