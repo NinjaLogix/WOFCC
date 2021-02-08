@@ -26,11 +26,8 @@ export const AboutUs = () => {
     <Wrapper>
       <Header backgroundImg={AboutBackground}>
         <TitleBanner>
-          <Typography gutterBottom variant={'h1'}>
-            WOFCC - Southaven
-          </Typography>
-          <Typography gutterBottom variant={'h3'}>
-            A little about who we are...
+          <Typography gutterBottom variant={'h2'}>
+            Who we are
           </Typography>
         </TitleBanner>
       </Header>

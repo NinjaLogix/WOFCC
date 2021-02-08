@@ -26,11 +26,8 @@ export const Ministries = () => {
     <Wrapper>
       <Header backgroundImg={AboutBackground}>
         <TitleBanner>
-          <Typography gutterBottom variant={'h1'}>
-            WOFCC - Southaven
-          </Typography>
-          <Typography gutterBottom variant={'h3'}>
-            The ministries we currently provide...
+          <Typography gutterBottom variant={'h2'}>
+            Our ministries
           </Typography>
         </TitleBanner>
       </Header>
