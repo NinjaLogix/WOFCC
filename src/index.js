@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './app/App';
 import registerServiceWorker from './scripts/registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import HttpsRedirect from 'react-https-redirect';
+import HttpsRedirect from 'react-https-redirect';
 import { createGlobalStyle } from 'styled-components';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
@@ -88,10 +88,12 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <Router>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <HttpsRedirect>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </HttpsRedirect>
   </Router>,
   document.getElementById('app'),
 );

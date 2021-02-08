@@ -26,7 +26,7 @@ export const Services = () => {
       <Header backgroundImg={ServicesBackground}>
         <TitleBanner>
           <Typography gutterBottom variant={'h2'}>
-            Our Services to You
+            Our Services
           </Typography>
         </TitleBanner>
       </Header>

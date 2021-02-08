@@ -2,19 +2,19 @@ import styled from 'styled-components';
 import { Forrest } from '../../assets';
 import { config } from '../../config/config';
 
+//todo -> background size isn't quite right on mobile
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
   padding-top: 5%;
   display: flex;
   flex-flow: row wrap;
-
-  background: url(${Forrest}) no-repeat center center fixed;
-  background-position: bottom center;
+  background: url(${Forrest}) no-repeat bottom center ${config.isMobile ? undefined : `fixed`};
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
 `;
 
 const Media = styled.section`
