@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   padding-top: 5%;
   display: flex;
   flex-flow: row wrap;
-  background: url(${Forrest}) no-repeat bottom center ${config.isMobile ? undefined : `fixed`};
+  background: url(${Forrest}) no-repeat bottom center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,7 +19,7 @@ const Wrapper = styled.section`
 
 const Media = styled.section`
   width: 96.7vw;
-  min-height: calc(100vh - ${config.isMobile ? `3.2rem` : `6.13rem`});
+  height: calc(100vh - ${config.isMobile ? `3.2rem` : `6.13rem`});
   z-index: 0;
 
   display: flex;
