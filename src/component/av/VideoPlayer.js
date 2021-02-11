@@ -14,6 +14,7 @@ export const VideoPlayer = ({ vid }) => {
 
   const Iframe = ({ frame }) => (
     <iframe
+      title={'wofcc_vid'}
       {...getIframeSettings(
         frame,
         !config.isMobile ? 230 : 560,
