@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Plyr from 'plyr';
 import { Wrapper, Video } from './style/VideoPlayerStyle';
+import { getIframeSettings } from '../../util';
+import { config } from '../../config/config';
 
 export const VideoPlayer = ({ vid }) => {
   const [type, setType] = useState(undefined);
@@ -11,7 +13,13 @@ export const VideoPlayer = ({ vid }) => {
   const resolutions = ['720']; // others -> 576, 720, 1080
 
   const Iframe = ({ frame }) => (
-    <div dangerouslySetInnerHTML={{ __html: frame }} />
+    <iframe
+      {...getIframeSettings(
+        frame,
+        !config.isMobile ? 230 : 560,
+        !config.isMobile ? 175 : 315,
+      )}
+    />
   );
 
   const setSource = thing => {
